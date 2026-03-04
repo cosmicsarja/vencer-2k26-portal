@@ -1,33 +1,45 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Events", href: "#events" },
-  { label: "Schedule", href: "#schedule" },
-  { label: "Prizes", href: "#prizes" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Events", href: "/events" },
+  { label: "Branches", href: "/branches" },
+  { label: "Schedule", href: "/schedule" },
+  { label: "Sponsors", href: "/sponsors" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Developers", href: "/developers" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/30">
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="font-display text-lg tracking-wider text-primary text-glow-cyan">
+        <Link to="/" className="font-display text-lg tracking-wider text-primary text-glow-orange">
           VENCER 2K26
-        </a>
-        <div className="hidden md:flex items-center gap-8">
+        </Link>
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="font-heading text-sm uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors duration-300">
+            <Link
+              key={l.href}
+              to={l.href}
+              className={`font-heading text-sm uppercase tracking-widest transition-colors duration-300 ${
+                location.pathname === l.href
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
+        <button onClick={() => setOpen(!open)} className="lg:hidden text-foreground">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -37,13 +49,22 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden glass border-t border-border/30 overflow-hidden"
+            className="lg:hidden glass border-t border-border/30 overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-4">
               {navLinks.map((l) => (
-                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="font-heading text-sm uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  key={l.href}
+                  to={l.href}
+                  onClick={() => setOpen(false)}
+                  className={`font-heading text-sm uppercase tracking-widest transition-colors ${
+                    location.pathname === l.href
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
                   {l.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>

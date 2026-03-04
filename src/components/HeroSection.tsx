@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Code, Gamepad2, Camera, Music, BookOpen, Lightbulb } from "lucide-react";
 import vencerLogo from "@/assets/vencer-logo.png";
 
 const floatingIcons = [
-  { Icon: Code, x: -200, y: -100, delay: 0, color: "text-neon-cyan" },
-  { Icon: Gamepad2, x: 220, y: -80, delay: 0.3, color: "text-neon-magenta" },
-  { Icon: Camera, x: -250, y: 60, delay: 0.6, color: "text-neon-yellow" },
-  { Icon: Music, x: 260, y: 80, delay: 0.9, color: "text-neon-green" },
-  { Icon: BookOpen, x: -150, y: 150, delay: 1.2, color: "text-neon-orange" },
-  { Icon: Lightbulb, x: 180, y: 160, delay: 1.5, color: "text-neon-cyan" },
+  { Icon: Code, x: -200, y: -100, delay: 0, color: "text-fest-teal" },
+  { Icon: Gamepad2, x: 220, y: -80, delay: 0.3, color: "text-fest-purple" },
+  { Icon: Camera, x: -250, y: 60, delay: 0.6, color: "text-fest-yellow" },
+  { Icon: Music, x: 260, y: 80, delay: 0.9, color: "text-fest-blue" },
+  { Icon: BookOpen, x: -150, y: 150, delay: 1.2, color: "text-fest-orange" },
+  { Icon: Lightbulb, x: 180, y: 160, delay: 1.5, color: "text-fest-teal" },
 ];
 
 const FEST_DATE = new Date("2026-03-20T09:00:00");
@@ -37,8 +38,8 @@ const CountdownTimer = () => {
     <div className="flex gap-3 sm:gap-6 justify-center">
       {Object.entries(time).map(([label, value]) => (
         <div key={label} className="flex flex-col items-center">
-          <div className="glass glow-border-cyan rounded-lg w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
-            <span className="font-display text-2xl sm:text-3xl text-primary text-glow-cyan">
+          <div className="glass glow-border-orange rounded-lg w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+            <span className="font-display text-2xl sm:text-3xl text-primary text-glow-orange">
               {String(value).padStart(2, "0")}
             </span>
           </div>
@@ -52,12 +53,10 @@ const CountdownTimer = () => {
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Radial glow bg */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(230_25%_12%)_0%,hsl(230_25%_5%)_70%)]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,hsl(190_100%_50%_/_0.08)_0%,transparent_70%)]" />
-      <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-[radial-gradient(circle,hsl(310_100%_60%_/_0.06)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(225_20%_12%)_0%,hsl(225_20%_5%)_70%)]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,hsl(25_95%_55%_/_0.08)_0%,transparent_70%)]" />
+      <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-[radial-gradient(circle,hsl(270_60%_55%_/_0.06)_0%,transparent_70%)]" />
 
-      {/* Floating icons */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         {floatingIcons.map(({ Icon, x, y, delay, color }, i) => (
           <motion.div
@@ -96,7 +95,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="font-display text-lg sm:text-2xl md:text-3xl tracking-wider neon-gradient-text mb-3"
+          className="font-display text-lg sm:text-2xl md:text-3xl tracking-wider fest-gradient-text mb-3"
         >
           National Level Techno-Cultural Fest
         </motion.h1>
@@ -124,12 +123,12 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.8 }}
         >
-          <a
-            href="#events"
-            className="inline-block font-display text-sm tracking-wider px-8 py-4 rounded-lg bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-yellow text-primary-foreground hover:shadow-[0_0_30px_hsl(190_100%_50%_/_0.4)] transition-all duration-300 hover:scale-105"
+          <Link
+            to="/events"
+            className="inline-block font-display text-sm tracking-wider px-8 py-4 rounded-lg bg-gradient-to-r from-primary via-accent to-fest-teal text-primary-foreground hover:shadow-[0_0_30px_hsl(25_95%_55%_/_0.4)] transition-all duration-300 hover:scale-105"
           >
             Explore Events
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

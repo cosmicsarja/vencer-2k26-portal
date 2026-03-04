@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Instagram, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -12,7 +12,7 @@ const ContactSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-3xl sm:text-4xl tracking-wider neon-gradient-text mb-4">Contact Us</h2>
+          <h2 className="font-display text-3xl sm:text-4xl tracking-wider fest-gradient-text mb-4">Contact Us</h2>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">

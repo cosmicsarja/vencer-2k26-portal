@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { branches, culturalEvents, gamingEvents } from "@/data/events";
-import EventCard from "./EventCard";
+import EventCard from "@/components/EventCard";
 
-const EventsSection = () => {
+const Events = () => {
   const [activeBranch, setActiveBranch] = useState(0);
   const [activeTab, setActiveTab] = useState<"branches" | "cultural" | "gaming">("branches");
 
@@ -14,22 +14,20 @@ const EventsSection = () => {
   ];
 
   return (
-    <section id="events" className="relative py-24 overflow-hidden">
+    <section className="relative py-24 pt-28 min-h-screen">
       <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="font-display text-3xl sm:text-4xl tracking-wider neon-gradient-text mb-4">Events</h2>
+          <h1 className="font-display text-3xl sm:text-4xl tracking-wider fest-gradient-text mb-4">Events</h1>
           <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-            50+ events across technical, cultural, and gaming categories. Something for everyone!
+            50+ events across technical, cultural, and gaming categories.
           </p>
         </motion.div>
 
-        {/* Category tabs */}
         <div className="flex justify-center gap-2 sm:gap-4 mb-8 flex-wrap">
           {tabs.map((tab) => (
             <button
@@ -37,7 +35,7 @@ const EventsSection = () => {
               onClick={() => setActiveTab(tab.key)}
               className={`font-display text-xs sm:text-sm tracking-wider px-4 sm:px-6 py-2.5 rounded-lg transition-all duration-300 ${
                 activeTab === tab.key
-                  ? "bg-gradient-to-r from-neon-cyan to-neon-magenta text-primary-foreground shadow-[0_0_20px_hsl(190_100%_50%_/_0.3)]"
+                  ? "bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_0_20px_hsl(25_95%_55%_/_0.3)]"
                   : "glass text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -48,7 +46,6 @@ const EventsSection = () => {
 
         {activeTab === "branches" && (
           <>
-            {/* Branch selector */}
             <div className="flex justify-center gap-2 mb-10 flex-wrap">
               {branches.map((b, i) => (
                 <button
@@ -56,7 +53,7 @@ const EventsSection = () => {
                   onClick={() => setActiveBranch(i)}
                   className={`font-heading text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-300 ${
                     activeBranch === i
-                      ? "glass glow-border-cyan text-primary"
+                      ? "glass glow-border-orange text-primary"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -102,4 +99,4 @@ const EventsSection = () => {
   );
 };
 
-export default EventsSection;
+export default Events;

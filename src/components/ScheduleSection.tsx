@@ -45,7 +45,7 @@ const ScheduleSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-3xl sm:text-4xl tracking-wider neon-gradient-text mb-4">Event Schedule</h2>
+          <h2 className="font-display text-3xl sm:text-4xl tracking-wider fest-gradient-text mb-4">Event Schedule</h2>
           <p className="font-body text-muted-foreground">Three days of non-stop action</p>
         </motion.div>
 
@@ -60,7 +60,7 @@ const ScheduleSection = () => {
               className="glass rounded-xl p-6"
             >
               <div className="flex items-center gap-2 mb-6">
-                <Calendar size={20} className="text-neon-cyan" />
+                <Calendar size={20} className="text-primary" />
                 <h3 className="font-display text-sm tracking-wider text-primary">{day.day}</h3>
               </div>
               <div className="space-y-4">

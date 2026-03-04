@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface Particle {
   id: number;
@@ -10,10 +10,10 @@ interface Particle {
 }
 
 const colors = [
-  "hsl(190 100% 50% / 0.3)",
-  "hsl(310 100% 60% / 0.3)",
-  "hsl(45 100% 55% / 0.2)",
-  "hsl(150 100% 50% / 0.2)",
+  "hsl(25 95% 55% / 0.25)",
+  "hsl(45 95% 55% / 0.2)",
+  "hsl(175 70% 45% / 0.2)",
+  "hsl(270 60% 55% / 0.15)",
 ];
 
 const ParticleBackground = () => {
