@@ -13,7 +13,7 @@ const GallerySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-3xl sm:text-4xl tracking-wider neon-gradient-text mb-4">Gallery</h2>
+          <h2 className="font-display text-3xl sm:text-4xl tracking-wider fest-gradient-text mb-4">Gallery</h2>
           <p className="font-body text-muted-foreground">Moments from previous editions</p>
         </motion.div>
 
@@ -25,7 +25,7 @@ const GallerySection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="glass rounded-xl aspect-video flex items-center justify-center overflow-hidden group cursor-pointer transition-all duration-500 hover:glow-border-cyan"
+              className="glass rounded-xl aspect-video flex items-center justify-center overflow-hidden group cursor-pointer transition-all duration-500 hover:glow-border-orange"
             >
               <div className="text-muted-foreground/30 font-display text-xs tracking-wider">
                 Coming Soon

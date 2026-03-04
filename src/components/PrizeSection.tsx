@@ -12,16 +12,16 @@ const PrizeSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-3xl sm:text-4xl tracking-wider neon-gradient-text mb-4">Prize Pool</h2>
-          <p className="font-display text-5xl sm:text-7xl text-foreground text-glow-cyan mt-6">₹5,00,000+</p>
+          <h2 className="font-display text-3xl sm:text-4xl tracking-wider fest-gradient-text mb-4">Prize Pool</h2>
+          <p className="font-display text-5xl sm:text-7xl text-foreground text-glow-orange mt-6">₹5,00,000+</p>
           <p className="font-heading text-lg text-muted-foreground mt-4">in prizes across all events</p>
         </motion.div>
 
         <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
           {[
-            { icon: Trophy, label: "1st Place", value: "Cash + Trophy + Certificate", color: "text-neon-yellow" },
-            { icon: Medal, label: "2nd Place", value: "Cash + Medal + Certificate", color: "text-neon-cyan" },
-            { icon: Award, label: "3rd Place", value: "Cash + Certificate", color: "text-neon-magenta" },
+            { icon: Trophy, label: "1st Place", value: "Cash + Trophy + Certificate", color: "text-fest-yellow" },
+            { icon: Medal, label: "2nd Place", value: "Cash + Medal + Certificate", color: "text-fest-teal" },
+            { icon: Award, label: "3rd Place", value: "Cash + Certificate", color: "text-fest-purple" },
           ].map((item, i) => (
             <motion.div
               key={item.label}

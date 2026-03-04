@@ -13,7 +13,7 @@ const SponsorsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-3xl sm:text-4xl tracking-wider neon-gradient-text mb-4">Our Sponsors</h2>
+          <h2 className="font-display text-3xl sm:text-4xl tracking-wider fest-gradient-text mb-4">Our Sponsors</h2>
           <p className="font-body text-muted-foreground">Proudly supported by</p>
         </motion.div>
 
