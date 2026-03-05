@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Code, Gamepad2, Camera, Music, BookOpen, Lightbulb } from "lucide-react";
@@ -12,43 +11,6 @@ const floatingIcons = [
   { Icon: BookOpen, x: -150, y: 150, delay: 1.2, color: "text-fest-orange" },
   { Icon: Lightbulb, x: 180, y: 160, delay: 1.5, color: "text-fest-teal" },
 ];
-
-const FEST_DATE = new Date("2026-03-20T09:00:00");
-
-const CountdownTimer = () => {
-  const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    const tick = () => {
-      const diff = FEST_DATE.getTime() - Date.now();
-      if (diff <= 0) return;
-      setTime({
-        days: Math.floor(diff / 86400000),
-        hours: Math.floor((diff % 86400000) / 3600000),
-        minutes: Math.floor((diff % 3600000) / 60000),
-        seconds: Math.floor((diff % 60000) / 1000),
-      });
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <div className="flex gap-3 sm:gap-6 justify-center">
-      {Object.entries(time).map(([label, value]) => (
-        <div key={label} className="flex flex-col items-center">
-          <div className="glass glow-border-orange rounded-lg w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
-            <span className="font-display text-2xl sm:text-3xl text-primary text-glow-orange">
-              {String(value).padStart(2, "0")}
-            </span>
-          </div>
-          <span className="font-heading text-xs uppercase tracking-widest text-muted-foreground mt-2">{label}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
 
 const HeroSection = () => {
   return (
@@ -64,7 +26,7 @@ const HeroSection = () => {
             className={`absolute ${color} opacity-30`}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 0.3, scale: 1 }}
-            transition={{ delay: delay + 1, duration: 0.8 }}
+            transition={{ delay: delay + 0.5, duration: 0.8 }}
             style={{ left: `calc(50% + ${x}px)`, top: `calc(50% + ${y}px)` }}
           >
             <motion.div
@@ -106,28 +68,26 @@ const HeroSection = () => {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="font-heading text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10"
         >
-          Hosted at Angadi Institute of Technology and Management, Belagavi
+          Angadi Institute of Technology and Management, Belagavi
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
-          className="mb-10"
-        >
-          <CountdownTimer />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.8 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link
             to="/events"
             className="inline-block font-display text-sm tracking-wider px-8 py-4 rounded-lg bg-gradient-to-r from-primary via-accent to-fest-teal text-primary-foreground hover:shadow-[0_0_30px_hsl(25_95%_55%_/_0.4)] transition-all duration-300 hover:scale-105"
           >
             Explore Events
+          </Link>
+          <Link
+            to="/timeline"
+            className="inline-block font-display text-sm tracking-wider px-8 py-4 rounded-lg glass border border-primary/30 text-foreground hover:glow-border-orange transition-all duration-300 hover:scale-105"
+          >
+            View Timeline
           </Link>
         </motion.div>
       </div>

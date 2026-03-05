@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import vencerLogo from "@/assets/vencer-logo.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Events", href: "/events" },
+  { label: "Timeline", href: "/timeline" },
   { label: "Branches", href: "/branches" },
-  { label: "Schedule", href: "/schedule" },
-  { label: "Sponsors", href: "/sponsors" },
-  { label: "Gallery", href: "/gallery" },
   { label: "Developers", href: "/developers" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -21,8 +21,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/30">
       <div className="container flex items-center justify-between h-16">
-        <Link to="/" className="font-display text-lg tracking-wider text-primary text-glow-orange">
-          VENCER 2K26
+        <Link to="/" className="flex items-center gap-2">
+          <img src={vencerLogo} alt="VENCER" className="h-10 w-auto" />
         </Link>
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((l) => (

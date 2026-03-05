@@ -2,15 +2,31 @@ import { motion } from "framer-motion";
 import { Trophy, IndianRupee, ExternalLink, ImageIcon } from "lucide-react";
 import type { Event } from "@/data/events";
 
-const categoryColors: Record<string, string> = {
-  Technical: "from-fest-teal/20 to-fest-teal/5 border-fest-teal/30 text-fest-teal",
-  "Non-Technical": "from-fest-purple/20 to-fest-purple/5 border-fest-purple/30 text-fest-purple",
-  Cultural: "from-fest-yellow/20 to-fest-yellow/5 border-fest-yellow/30 text-fest-yellow",
-  Gaming: "from-fest-blue/20 to-fest-blue/5 border-fest-blue/30 text-fest-blue",
+const categoryCardColors: Record<string, { bg: string; border: string; badge: string }> = {
+  Technical: {
+    bg: "from-fest-teal/10 to-transparent",
+    border: "border-fest-teal/40 hover:border-fest-teal/70 hover:shadow-[0_0_25px_hsl(var(--fest-teal)_/_0.2)]",
+    badge: "bg-fest-teal/20 text-fest-teal border-fest-teal/30",
+  },
+  "Non-Technical": {
+    bg: "from-fest-purple/10 to-transparent",
+    border: "border-fest-purple/40 hover:border-fest-purple/70 hover:shadow-[0_0_25px_hsl(var(--fest-purple)_/_0.2)]",
+    badge: "bg-fest-purple/20 text-fest-purple border-fest-purple/30",
+  },
+  Cultural: {
+    bg: "from-fest-yellow/10 to-transparent",
+    border: "border-fest-yellow/40 hover:border-fest-yellow/70 hover:shadow-[0_0_25px_hsl(var(--fest-yellow)_/_0.2)]",
+    badge: "bg-fest-yellow/20 text-fest-yellow border-fest-yellow/30",
+  },
+  Gaming: {
+    bg: "from-fest-blue/10 to-transparent",
+    border: "border-fest-blue/40 hover:border-fest-blue/70 hover:shadow-[0_0_25px_hsl(var(--fest-blue)_/_0.2)]",
+    badge: "bg-fest-blue/20 text-fest-blue border-fest-blue/30",
+  },
 };
 
 const EventCard = ({ event, index }: { event: Event; index: number }) => {
-  const colorClass = categoryColors[event.category] || categoryColors.Technical;
+  const colors = categoryCardColors[event.category] || categoryCardColors.Technical;
 
   return (
     <motion.div
@@ -18,38 +34,48 @@ const EventCard = ({ event, index }: { event: Event; index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ delay: index * 0.08, duration: 0.5 }}
-      className="glass glass-hover rounded-xl overflow-hidden transition-all duration-500 group flex flex-col"
+      className={`rounded-2xl overflow-hidden transition-all duration-500 group flex flex-col border-2 ${colors.border} bg-gradient-to-b ${colors.bg}`}
+      style={{ backdropFilter: "blur(20px)" }}
     >
-      {/* Poster placeholder */}
-      <div className="aspect-[4/3] bg-muted/30 flex items-center justify-center border-b border-border/30">
+      {/* Poster */}
+      <div className="aspect-[4/3] bg-muted/20 flex items-center justify-center relative overflow-hidden">
         {event.posterUrl ? (
           <img src={event.posterUrl} alt={event.title} className="w-full h-full object-cover" />
         ) : (
-          <div className="flex flex-col items-center gap-2 text-muted-foreground/40">
+          <div className="flex flex-col items-center gap-2 text-muted-foreground/30">
             <ImageIcon size={32} />
             <span className="font-heading text-xs tracking-wider">Poster Coming Soon</span>
           </div>
         )}
+        {/* UNO-style corner accent */}
+        <div className="absolute top-3 right-3">
+          <span className={`inline-flex px-2.5 py-1 rounded-full text-[10px] font-display tracking-wider border ${colors.badge}`}>
+            {event.category}
+          </span>
+        </div>
       </div>
 
-      <div className="p-5 flex flex-col flex-1">
-        <div className={`inline-flex self-start px-3 py-1 rounded-full text-xs font-display tracking-wider bg-gradient-to-r ${colorClass} border mb-3`}>
-          {event.category}
-        </div>
+      <div className="p-5 flex flex-col flex-1 bg-card/60">
         {event.branch && (
           <p className="text-xs text-muted-foreground font-heading mb-1">{event.branch}</p>
         )}
         <h4 className="font-heading text-xl font-bold text-foreground mb-2">{event.title}</h4>
         <p className="text-sm text-muted-foreground mb-4 flex-1">{event.description}</p>
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-          <span className="flex items-center gap-1"><Trophy size={14} className="text-fest-yellow" />{event.prizePool}</span>
-          <span className="flex items-center gap-1"><IndianRupee size={14} className="text-fest-teal" />{event.entryFee}</span>
+          <span className="flex items-center gap-1">
+            <Trophy size={14} className="text-fest-yellow" />
+            {event.prizePool}
+          </span>
+          <span className="flex items-center gap-1">
+            <IndianRupee size={14} className="text-fest-teal" />
+            {event.entryFee}
+          </span>
         </div>
         <a
           href={event.formLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 font-display text-xs tracking-wider px-5 py-2.5 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_0_20px_hsl(25_95%_55%_/_0.3)] transition-all duration-300 hover:scale-105"
+          className="inline-flex items-center justify-center gap-2 font-display text-xs tracking-wider px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_0_20px_hsl(25_95%_55%_/_0.3)] transition-all duration-300 hover:scale-105"
         >
           Register Now <ExternalLink size={12} />
         </a>
