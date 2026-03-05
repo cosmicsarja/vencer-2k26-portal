@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import vencerLogo from "@/assets/vencer-logo.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Events", href: "/events" },
+  { label: "Rulebook", href: "/rulebook" },
   { label: "Timeline", href: "/timeline" },
   { label: "Branches", href: "/branches" },
   { label: "Developers", href: "/developers" },
@@ -17,6 +18,25 @@ const navLinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") !== "light";
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.classList.add("dark");
+      root.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.add("light");
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/30">
@@ -38,10 +58,26 @@ const Navbar = () => {
               {l.label}
             </Link>
           ))}
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className="w-9 h-9 rounded-full flex items-center justify-center glass text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Toggle theme"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
         </div>
-        <button onClick={() => setOpen(!open)} className="lg:hidden text-foreground">
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className="w-9 h-9 rounded-full flex items-center justify-center glass text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Toggle theme"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button onClick={() => setOpen(!open)} className="text-foreground">
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
       <AnimatePresence>
         {open && (

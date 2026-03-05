@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Branches from "./pages/Branches";
 import Timeline from "./pages/Timeline";
+import Rulebook from "./pages/Rulebook";
 import Sponsors from "./pages/Sponsors";
 import Gallery from "./pages/Gallery";
 import Developers from "./pages/Developers";
@@ -32,6 +33,7 @@ const App = () => {
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
+              <Route path="/rulebook" element={<Rulebook />} />
               <Route path="/branches" element={<Branches />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/sponsors" element={<Sponsors />} />
