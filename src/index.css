@@ -5,7 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @layer base {
-  :root {
+  :root,
+  .dark {
     --background: 225 20% 7%;
     --foreground: 210 30% 95%;
 
@@ -50,6 +51,51 @@
     --sidebar-accent-foreground: 240 5% 90%;
     --sidebar-border: 225 12% 20%;
     --sidebar-ring: 25 95% 55%;
+  }
+
+  .light {
+    --background: 40 30% 96%;
+    --foreground: 225 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 20% 12%;
+
+    --primary: 25 95% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 50% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 20% 90%;
+    --muted-foreground: 225 10% 40%;
+
+    --accent: 45 90% 50%;
+    --accent-foreground: 225 20% 10%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 82%;
+    --input: 40 15% 82%;
+    --ring: 25 95% 50%;
+
+    --fest-orange: 25 95% 50%;
+    --fest-yellow: 45 90% 48%;
+    --fest-teal: 175 65% 38%;
+    --fest-blue: 215 75% 48%;
+    --fest-purple: 270 55% 48%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 225 20% 12%;
+    --sidebar-primary: 25 95% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 92%;
+    --sidebar-accent-foreground: 225 20% 12%;
+    --sidebar-border: 40 15% 82%;
+    --sidebar-ring: 25 95% 50%;
   }
 }
 

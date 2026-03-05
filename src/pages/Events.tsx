@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { branches, culturalEvents, gamingEvents } from "@/data/events";
+import type { Event } from "@/data/events";
 import EventCard from "@/components/EventCard";
+import EventDetailModal from "@/components/EventDetailModal";
 
 const Events = () => {
   const [activeBranch, setActiveBranch] = useState(0);
   const [activeTab, setActiveTab] = useState<"branches" | "cultural" | "gaming">("branches");
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   const tabs = [
     { key: "branches" as const, label: "Branch Events" },
@@ -24,7 +27,7 @@ const Events = () => {
         >
           <h1 className="font-display text-3xl sm:text-4xl tracking-wider fest-gradient-text mb-4">Events</h1>
           <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-            50+ events across technical, cultural, and gaming categories.
+            50+ events across technical, cultural, and gaming categories. Click any event to view rules.
           </p>
         </motion.div>
 
@@ -73,7 +76,7 @@ const Events = () => {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {branches[activeBranch].events.map((event, i) => (
-                <EventCard key={event.title} event={event} index={i} />
+                <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
               ))}
             </div>
           </>
@@ -82,7 +85,7 @@ const Events = () => {
         {activeTab === "cultural" && (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {culturalEvents.map((event, i) => (
-              <EventCard key={event.title} event={event} index={i} />
+              <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
             ))}
           </div>
         )}
@@ -90,11 +93,13 @@ const Events = () => {
         {activeTab === "gaming" && (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {gamingEvents.map((event, i) => (
-              <EventCard key={event.title} event={event} index={i} />
+              <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
             ))}
           </div>
         )}
       </div>
+
+      <EventDetailModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
     </section>
   );
 };
