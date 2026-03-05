@@ -12,32 +12,12 @@ interface Developer {
 
 const developers: Developer[] = [
   {
-    name: "Developer 1",
-    role: "Frontend Developer",
-    instagram: "https://instagram.com",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Developer 2",
-    role: "Backend Developer",
-    instagram: "https://instagram.com",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Developer 3",
-    role: "UI/UX Designer",
-    instagram: "https://instagram.com",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Developer 4",
-    role: "Frontend Developer",
-    instagram: "https://instagram.com",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    name: "Cosmicsarja",
+    role: "Full Stack Developer",
+    photo: "https://github.com/cosmicsarja.png",
+    instagram: "https://instagram.com/cosmicsarja",
+    github: "https://github.com/cosmicsarja",
+    linkedin: "https://linkedin.com/in/cosmicsarja",
   },
 ];
 
@@ -57,7 +37,7 @@ const Developers = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="flex justify-center gap-6 max-w-5xl mx-auto">
           {developers.map((dev, i) => (
             <motion.div
               key={dev.name}
