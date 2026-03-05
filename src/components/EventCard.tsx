@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Trophy, IndianRupee, ExternalLink, ImageIcon } from "lucide-react";
+import { Trophy, IndianRupee, ImageIcon } from "lucide-react";
 import type { Event } from "@/data/events";
 
 const categoryCardColors: Record<string, { bg: string; border: string; badge: string }> = {
@@ -25,7 +25,7 @@ const categoryCardColors: Record<string, { bg: string; border: string; badge: st
   },
 };
 
-const EventCard = ({ event, index }: { event: Event; index: number }) => {
+const EventCard = ({ event, index, onClick }: { event: Event; index: number; onClick?: () => void }) => {
   const colors = categoryCardColors[event.category] || categoryCardColors.Technical;
 
   return (
@@ -34,7 +34,8 @@ const EventCard = ({ event, index }: { event: Event; index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ delay: index * 0.08, duration: 0.5 }}
-      className={`rounded-2xl overflow-hidden transition-all duration-500 group flex flex-col border-2 ${colors.border} bg-gradient-to-b ${colors.bg}`}
+      onClick={onClick}
+      className={`rounded-2xl overflow-hidden transition-all duration-500 group flex flex-col border-2 cursor-pointer ${colors.border} bg-gradient-to-b ${colors.bg}`}
       style={{ backdropFilter: "blur(20px)" }}
     >
       {/* Poster */}
@@ -47,10 +48,15 @@ const EventCard = ({ event, index }: { event: Event; index: number }) => {
             <span className="font-heading text-xs tracking-wider">Poster Coming Soon</span>
           </div>
         )}
-        {/* UNO-style corner accent */}
         <div className="absolute top-3 right-3">
           <span className={`inline-flex px-2.5 py-1 rounded-full text-[10px] font-display tracking-wider border ${colors.badge}`}>
             {event.category}
+          </span>
+        </div>
+        {/* View details overlay */}
+        <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span className="font-display text-xs tracking-widest text-foreground px-4 py-2 rounded-full border border-foreground/30">
+            VIEW DETAILS
           </span>
         </div>
       </div>
@@ -61,7 +67,7 @@ const EventCard = ({ event, index }: { event: Event; index: number }) => {
         )}
         <h4 className="font-heading text-xl font-bold text-foreground mb-2">{event.title}</h4>
         <p className="text-sm text-muted-foreground mb-4 flex-1">{event.description}</p>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+        <div className="flex items-center gap-4 text-sm text-muted-foreground">
           <span className="flex items-center gap-1">
             <Trophy size={14} className="text-fest-yellow" />
             {event.prizePool}
@@ -71,14 +77,6 @@ const EventCard = ({ event, index }: { event: Event; index: number }) => {
             {event.entryFee}
           </span>
         </div>
-        <a
-          href={event.formLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 font-display text-xs tracking-wider px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_0_20px_hsl(25_95%_55%_/_0.3)] transition-all duration-300 hover:scale-105"
-        >
-          Register Now <ExternalLink size={12} />
-        </a>
       </div>
     </motion.div>
   );
