@@ -37,7 +37,7 @@ const Developers = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="flex justify-center gap-6 max-w-5xl mx-auto">
           {developers.map((dev, i) => (
             <motion.div
               key={dev.name}
