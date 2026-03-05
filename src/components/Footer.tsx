@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Instagram, Github, Linkedin, Youtube, Mail } from "lucide-react";
+import { Instagram, Github, Linkedin } from "lucide-react";
+import vencerLogo from "@/assets/vencer-logo.png";
 
 const footerLinks = [
   { label: "Home", href: "/" },
@@ -10,10 +11,8 @@ const footerLinks = [
 
 const socialLinks = [
   { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
   { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Mail, href: "mailto:vencer@aitm.ac.in", label: "Email" },
 ];
 
 const Footer = () => {
@@ -22,7 +21,7 @@ const Footer = () => {
       <div className="container px-4">
         <div className="grid sm:grid-cols-3 gap-8 mb-8">
           <div>
-            <p className="font-display text-sm tracking-wider text-primary text-glow-orange mb-3">VENCER 2K26</p>
+            <img src={vencerLogo} alt="VENCER 2K26" className="h-12 w-auto mb-3" />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Angadi Institute of Technology and Management<br />
               Belagavi, Karnataka
