@@ -11,7 +11,7 @@ const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   const tabs = [
-    { key: "branches" as const, label: "Branch Events" },
+    { key: "branches" as const, label: "Tribe Events" },
     { key: "cultural" as const, label: "Cultural" },
     { key: "gaming" as const, label: "Gaming" },
   ];
@@ -25,7 +25,7 @@ const Events = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="font-display text-3xl sm:text-4xl tracking-wider fest-gradient-text mb-4">Events</h1>
+          <h1 className="font-display text-3xl sm:text-4xl tracking-wider pandora-gradient-text mb-4">Events</h1>
           <p className="font-body text-muted-foreground max-w-2xl mx-auto">
             50+ events across technical, cultural, and gaming categories. Click any event to view rules.
           </p>
@@ -36,10 +36,10 @@ const Events = () => {
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`font-display text-xs sm:text-sm tracking-wider px-4 sm:px-6 py-2.5 rounded-lg transition-all duration-300 ${
+              className={`font-display text-xs sm:text-sm tracking-wider px-4 sm:px-6 py-2.5 rounded-xl transition-all duration-300 ${
                 activeTab === tab.key
-                  ? "bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_0_20px_hsl(25_95%_55%_/_0.3)]"
-                  : "glass text-muted-foreground hover:text-foreground"
+                  ? "bg-gradient-to-r from-primary to-fest-cyan text-primary-foreground shadow-[0_0_20px_hsl(var(--fest-teal)_/_0.3)]"
+                  : "glass-pandora text-muted-foreground hover:text-foreground"
               }`}
             >
               {tab.label}
@@ -54,9 +54,9 @@ const Events = () => {
                 <button
                   key={b.shortName}
                   onClick={() => setActiveBranch(i)}
-                  className={`font-heading text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-300 ${
+                  className={`font-heading text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl transition-all duration-300 ${
                     activeBranch === i
-                      ? "glass glow-border-orange text-primary"
+                      ? "glass-pandora glow-border-teal text-primary"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
