@@ -6,17 +6,18 @@ import vencerLogo from "@/assets/vencer-logo.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "Tribes", href: "/branches" },
   { label: "Events", href: "/events" },
+  { label: "Journey", href: "/timeline" },
   { label: "Rulebook", href: "/rulebook" },
-  { label: "Timeline", href: "/timeline" },
-  { label: "Branches", href: "/branches" },
-  { label: "Developers", href: "/developers" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Developers", href: "/developers" },
   { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
@@ -38,20 +39,32 @@ const Navbar = () => {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/30">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "glass-pandora shadow-[0_4px_30px_hsl(var(--fest-teal)_/_0.08)]"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
-          <img src={vencerLogo} alt="VENCER" className="h-10 w-auto" />
+          <img src={vencerLogo} alt="VENCER" className="h-10 w-auto bioluminescent-glow" />
         </Link>
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((l) => (
             <Link
               key={l.href}
               to={l.href}
-              className={`font-heading text-sm uppercase tracking-widest transition-colors duration-300 ${
+              className={`font-heading text-sm uppercase tracking-widest transition-all duration-300 ${
                 location.pathname === l.href
-                  ? "text-primary"
+                  ? "text-primary text-glow-teal"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -60,7 +73,7 @@ const Navbar = () => {
           ))}
           <button
             onClick={() => setIsDark(!isDark)}
-            className="w-9 h-9 rounded-full flex items-center justify-center glass text-muted-foreground hover:text-foreground transition-colors"
+            className="w-9 h-9 rounded-full flex items-center justify-center glass-pandora text-muted-foreground hover:text-foreground transition-all duration-300 hover:glow-border-teal"
             aria-label="Toggle theme"
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
@@ -69,7 +82,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3 lg:hidden">
           <button
             onClick={() => setIsDark(!isDark)}
-            className="w-9 h-9 rounded-full flex items-center justify-center glass text-muted-foreground hover:text-foreground transition-colors"
+            className="w-9 h-9 rounded-full flex items-center justify-center glass-pandora text-muted-foreground hover:text-foreground transition-colors"
             aria-label="Toggle theme"
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
@@ -85,7 +98,7 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden glass border-t border-border/30 overflow-hidden"
+            className="lg:hidden glass-pandora border-t border-border/20 overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-4">
               {navLinks.map((l) => (
@@ -95,7 +108,7 @@ const Navbar = () => {
                   onClick={() => setOpen(false)}
                   className={`font-heading text-sm uppercase tracking-widest transition-colors ${
                     location.pathname === l.href
-                      ? "text-primary"
+                      ? "text-primary text-glow-teal"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >

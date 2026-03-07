@@ -8,10 +8,10 @@ interface EventDetailModalProps {
 }
 
 const categoryColors: Record<string, { accent: string; bg: string }> = {
-  Technical: { accent: "text-fest-teal", bg: "bg-fest-teal/10 border-fest-teal/30" },
-  "Non-Technical": { accent: "text-fest-purple", bg: "bg-fest-purple/10 border-fest-purple/30" },
-  Cultural: { accent: "text-fest-yellow", bg: "bg-fest-yellow/10 border-fest-yellow/30" },
-  Gaming: { accent: "text-fest-blue", bg: "bg-fest-blue/10 border-fest-blue/30" },
+  Technical: { accent: "text-fest-teal", bg: "bg-fest-teal/10 border-fest-teal/25" },
+  "Non-Technical": { accent: "text-fest-purple", bg: "bg-fest-purple/10 border-fest-purple/25" },
+  Cultural: { accent: "text-fest-yellow", bg: "bg-fest-yellow/10 border-fest-yellow/25" },
+  Gaming: { accent: "text-fest-blue", bg: "bg-fest-blue/10 border-fest-blue/25" },
 };
 
 const EventDetailModal = ({ event, onClose }: EventDetailModalProps) => {
@@ -33,23 +33,21 @@ const EventDetailModal = ({ event, onClose }: EventDetailModalProps) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 30 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-2xl glass border border-border/50 shadow-2xl"
+          className="relative w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-2xl glass-pandora border border-primary/15 shadow-[0_0_60px_hsl(var(--fest-teal)_/_0.1)]"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-muted/80 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+            className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-muted/60 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
           >
             <X size={16} />
           </button>
 
-          {/* Poster */}
-          <div className="aspect-[16/9] bg-muted/20 flex items-center justify-center relative overflow-hidden rounded-t-2xl">
+          <div className="aspect-[16/9] bg-muted/10 flex items-center justify-center relative overflow-hidden rounded-t-2xl">
             {event.posterUrl ? (
               <img src={event.posterUrl} alt={event.title} className="w-full h-full object-cover" />
             ) : (
-              <div className="flex flex-col items-center gap-2 text-muted-foreground/30">
+              <div className="flex flex-col items-center gap-2 text-muted-foreground/20">
                 <BookOpen size={40} />
                 <span className="font-heading text-sm tracking-wider">Event Poster</span>
               </div>
@@ -62,14 +60,12 @@ const EventDetailModal = ({ event, onClose }: EventDetailModalProps) => {
           </div>
 
           <div className="p-6 space-y-5">
-            {/* Title & Branch */}
             {event.branch && (
               <p className="text-xs text-muted-foreground font-heading tracking-wider uppercase">{event.branch}</p>
             )}
             <h2 className="font-heading text-2xl font-bold text-foreground">{event.title}</h2>
-            <p className="text-sm text-muted-foreground">{event.description}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{event.description}</p>
 
-            {/* Info Grid */}
             <div className="grid grid-cols-2 gap-3">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Trophy size={14} className="text-fest-yellow shrink-0" />
@@ -99,7 +95,6 @@ const EventDetailModal = ({ event, onClose }: EventDetailModalProps) => {
               )}
             </div>
 
-            {/* Rules */}
             {event.rules && event.rules.length > 0 && (
               <div>
                 <h3 className="font-heading text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
@@ -109,7 +104,7 @@ const EventDetailModal = ({ event, onClose }: EventDetailModalProps) => {
                 <ul className="space-y-2">
                   {event.rules.map((rule, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-primary`} />
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-primary" />
                       {rule}
                     </li>
                   ))}
@@ -117,12 +112,11 @@ const EventDetailModal = ({ event, onClose }: EventDetailModalProps) => {
               </div>
             )}
 
-            {/* Register Button */}
             <a
               href={event.formLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full font-display text-sm tracking-wider px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_0_25px_hsl(25_95%_55%_/_0.4)] transition-all duration-300 hover:scale-[1.02]"
+              className="flex items-center justify-center gap-2 w-full font-display text-sm tracking-wider px-6 py-3 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-[1.02]"
             >
               Register Now <ExternalLink size={14} />
             </a>

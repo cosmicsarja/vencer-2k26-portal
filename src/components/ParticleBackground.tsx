@@ -7,26 +7,45 @@ interface Particle {
   duration: number;
   delay: number;
   color: string;
+  type: "spore" | "ember";
 }
 
-const colors = [
-  "hsl(25 95% 55% / 0.25)",
-  "hsl(45 95% 55% / 0.2)",
-  "hsl(175 70% 45% / 0.2)",
-  "hsl(270 60% 55% / 0.15)",
+const sporeColors = [
+  "hsl(175 80% 50% / 0.3)",
+  "hsl(185 90% 55% / 0.25)",
+  "hsl(210 85% 60% / 0.2)",
+  "hsl(270 55% 60% / 0.15)",
+  "hsl(175 80% 60% / 0.35)",
+];
+
+const emberColors = [
+  "hsl(30 90% 55% / 0.2)",
+  "hsl(15 95% 50% / 0.15)",
+  "hsl(45 85% 55% / 0.15)",
 ];
 
 const ParticleBackground = () => {
-  const [particles] = useState<Particle[]>(() =>
-    Array.from({ length: 40 }, (_, i) => ({
+  const [particles] = useState<Particle[]>(() => {
+    const spores = Array.from({ length: 35 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
-      size: Math.random() * 4 + 1,
-      duration: Math.random() * 15 + 10,
+      size: Math.random() * 5 + 2,
+      duration: Math.random() * 20 + 15,
+      delay: Math.random() * 15,
+      color: sporeColors[Math.floor(Math.random() * sporeColors.length)],
+      type: "spore" as const,
+    }));
+    const embers = Array.from({ length: 12 }, (_, i) => ({
+      id: i + 35,
+      x: Math.random() * 100,
+      size: Math.random() * 3 + 1,
+      duration: Math.random() * 12 + 8,
       delay: Math.random() * 10,
-      color: colors[Math.floor(Math.random() * colors.length)],
-    }))
-  );
+      color: emberColors[Math.floor(Math.random() * emberColors.length)],
+      type: "ember" as const,
+    }));
+    return [...spores, ...embers];
+  });
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -39,8 +58,8 @@ const ParticleBackground = () => {
             width: `${p.size}px`,
             height: `${p.size}px`,
             backgroundColor: p.color,
-            boxShadow: `0 0 ${p.size * 3}px ${p.color}`,
-            animation: `particle-drift ${p.duration}s linear ${p.delay}s infinite`,
+            boxShadow: `0 0 ${p.size * 4}px ${p.color}`,
+            animation: `${p.type === "spore" ? "spore-drift" : "ember-drift"} ${p.duration}s linear ${p.delay}s infinite`,
           }}
         />
       ))}

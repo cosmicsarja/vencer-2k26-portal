@@ -5,6 +5,7 @@ import vencerLogo from "@/assets/vencer-logo.png";
 const footerLinks = [
   { label: "Home", href: "/" },
   { label: "Events", href: "/events" },
+  { label: "Tribes", href: "/branches" },
   { label: "Developers", href: "/developers" },
   { label: "Contact", href: "/contact" },
 ];
@@ -17,11 +18,12 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border/30 py-12">
-      <div className="container px-4">
+    <footer className="border-t border-border/20 py-12 relative">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(175_80%_40%_/_0.03)_0%,transparent_50%)]" />
+      <div className="container px-4 relative">
         <div className="grid sm:grid-cols-3 gap-8 mb-8">
           <div>
-            <img src={vencerLogo} alt="VENCER 2K26" className="h-12 w-auto mb-3" />
+            <img src={vencerLogo} alt="VENCER 2K26" className="h-12 w-auto mb-3 bioluminescent-glow" />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Angadi Institute of Technology and Management<br />
               Belagavi, Karnataka
@@ -46,7 +48,7 @@ const Footer = () => {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 glass rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-border-orange transition-all duration-300"
+                  className="w-10 h-10 glass-pandora rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-border-teal transition-all duration-300"
                 >
                   <s.icon size={18} />
                 </a>
@@ -54,7 +56,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-border/30 pt-6 text-center">
+        <div className="border-t border-border/20 pt-6 text-center">
           <p className="text-xs text-muted-foreground">
             © 2026 VENCER. All rights reserved. | Angadi Institute of Technology and Management, Belagavi
           </p>

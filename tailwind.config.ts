@@ -58,6 +58,8 @@ export default {
           teal: "hsl(var(--fest-teal))",
           blue: "hsl(var(--fest-blue))",
           purple: "hsl(var(--fest-purple))",
+          cyan: "hsl(var(--fest-cyan))",
+          ember: "hsl(var(--fest-ember))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
