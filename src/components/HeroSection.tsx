@@ -145,17 +145,11 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex justify-center"
         >
           <Link
-            to="/events"
-            className="inline-block font-display text-sm tracking-wider px-8 py-4 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground font-bold hover:shadow-[0_0_35px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-105"
-          >
-            Explore Events
-          </Link>
-          <Link
             to="/branches"
-            className="inline-block font-display text-sm tracking-wider px-8 py-4 rounded-xl border-2 border-primary/40 bg-card/60 text-foreground font-bold hover:border-primary/70 hover:shadow-[0_0_25px_hsl(var(--fest-teal)_/_0.3)] transition-all duration-300 hover:scale-105"
+            className="inline-block font-display text-sm tracking-wider px-8 py-4 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground font-bold hover:shadow-[0_0_35px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-105"
           >
             Enter the Tribes
           </Link>
