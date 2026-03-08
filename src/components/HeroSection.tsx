@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useMemo, lazy, Suspense, forwardRef } from "react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
+import tribesCharacters from "@/assets/tribes-characters.png";
 
 const JellyfishBackground = lazy(() => import("./JellyfishBackground"));
 
