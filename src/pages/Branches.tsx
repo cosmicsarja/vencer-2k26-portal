@@ -107,13 +107,15 @@ const Branches = () => {
             const Icon = tribe.icon;
             const totalEvents = branch.events.length + branch.culturalEvents.length + branch.gamingEvents.length;
             return (
+              <Link to={`/events?branch=${encodeURIComponent(branch.shortName)}`}>
               <motion.div
                 key={branch.shortName}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.6 }}
-                className={`relative rounded-2xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80`}
+                className={`relative rounded-2xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80 cursor-pointer`}
+              >
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${tribe.gradient}`} />
 
