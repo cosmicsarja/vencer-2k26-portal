@@ -63,7 +63,7 @@ const EventCard = ({ event, index, onClick }: { event: Event; index: number; onC
         </div>
       </div>
 
-      <div className="p-5 flex flex-col flex-1 border-t-2 border-border/20 bg-card/60">
+      <div className="p-5 flex flex-col flex-1 border-t-2 border-border/20 bg-card/90">
         {event.branch && (
           <p className="text-xs text-muted-foreground font-heading mb-1 font-bold">{event.branch}</p>
         )}
