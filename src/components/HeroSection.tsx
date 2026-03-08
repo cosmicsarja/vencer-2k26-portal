@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useMemo, lazy, Suspense } from "react";
+import { useMemo, lazy, Suspense, forwardRef } from "react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
 
 const JellyfishBackground = lazy(() => import("./JellyfishBackground"));
 
-const HeroSection = () => {
+const HeroSection = forwardRef<HTMLElement>((_, ref) => {
   const sporeData = useMemo(
     () =>
       Array.from({ length: 15 }).map(() => ({
@@ -29,7 +29,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Pandora background */}
       <motion.div
         className="absolute inset-0"
@@ -157,6 +157,8 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
+});
+
+HeroSection.displayName = "HeroSection";
 
 export default HeroSection;
