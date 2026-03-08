@@ -30,7 +30,13 @@ const categoryCardColors: Record<string, { bg: string; border: string; badge: st
   },
 };
 
-const EventCard = memo(forwardRef<HTMLDivElement, { event: Event; index: number; onClick?: () => void }>(
+interface EventCardProps {
+  event: Event;
+  index: number;
+  onClick?: () => void;
+}
+
+const EventCardInner = forwardRef<HTMLDivElement, EventCardProps>(
   ({ event, index, onClick }, ref) => {
     const colors = categoryCardColors[event.category] || categoryCardColors.Technical;
 
@@ -96,8 +102,11 @@ const EventCard = memo(forwardRef<HTMLDivElement, { event: Event; index: number;
       </motion.div>
     );
   }
-));
+);
 
+EventCardInner.displayName = "EventCardInner";
+
+const EventCard = memo(EventCardInner);
 EventCard.displayName = "EventCard";
 
 export default EventCard;
