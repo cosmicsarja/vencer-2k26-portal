@@ -60,23 +60,23 @@ const typeColors: Record<string, string> = {
 
 const Timeline = () => {
   return (
-    <section className="relative py-24 pt-28 min-h-screen">
-      <div className="container px-4">
+    <section className="relative py-20 pt-24 sm:py-24 sm:pt-28 min-h-screen">
+      <div className="container px-3 sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h1 className="font-display text-3xl sm:text-4xl tracking-wider pandora-gradient-text mb-4">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-wider pandora-gradient-text mb-3 sm:mb-4">
             VENCER 2K26 — Schedule
           </h1>
-          <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-body text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
             Two days of non-stop action. Here's the complete timetable.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {schedule.map((day, di) => (
             <motion.div
               key={day.day}
@@ -86,40 +86,34 @@ const Timeline = () => {
               transition={{ delay: di * 0.2, duration: 0.6 }}
               className="rounded-2xl border-2 border-primary/30 bg-card/80 overflow-hidden shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.1)]"
             >
-              {/* Day header */}
-              <div className="bg-gradient-to-r from-primary to-fest-cyan px-6 py-4">
+              <div className="bg-gradient-to-r from-primary to-fest-cyan px-4 sm:px-6 py-3 sm:py-4">
                 <div className="flex items-center gap-3">
-                  <Calendar size={22} className="text-primary-foreground" />
+                  <Calendar size={20} className="text-primary-foreground shrink-0" />
                   <div>
-                    <h2 className="font-display text-lg tracking-wider text-primary-foreground font-bold">{day.day}</h2>
-                    <p className="font-heading text-sm text-primary-foreground/80">{day.date}</p>
+                    <h2 className="font-display text-base sm:text-lg tracking-wider text-primary-foreground font-bold">{day.day}</h2>
+                    <p className="font-heading text-xs sm:text-sm text-primary-foreground/80">{day.date}</p>
                   </div>
                 </div>
               </div>
 
-              {/* Events list */}
               <div className="divide-y divide-border/30">
                 {day.events.map((event, ei) => (
-                  <motion.div
+                  <div
                     key={event.title + ei}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: ei * 0.03, duration: 0.3 }}
-                    className="flex items-start gap-4 px-5 py-3 hover:bg-muted/30 transition-colors"
+                    className="flex items-start gap-2 sm:gap-4 px-3 sm:px-5 py-2.5 sm:py-3 hover:bg-muted/30 transition-colors"
                   >
-                    <div className="flex items-center gap-1.5 text-muted-foreground min-w-[90px] pt-0.5">
-                      <Clock size={13} className="shrink-0" />
-                      <span className="text-xs font-display tracking-wide font-bold">{event.time}</span>
+                    <div className="flex items-center gap-1 sm:gap-1.5 text-muted-foreground min-w-[70px] sm:min-w-[90px] pt-0.5">
+                      <Clock size={12} className="shrink-0" />
+                      <span className="text-[10px] sm:text-xs font-display tracking-wide font-bold">{event.time}</span>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="font-heading text-sm font-bold text-foreground">{event.title}</div>
-                      <div className="text-xs text-muted-foreground">{event.venue}</div>
+                      <div className="font-heading text-xs sm:text-sm font-bold text-foreground truncate">{event.title}</div>
+                      <div className="text-[10px] sm:text-xs text-muted-foreground">{event.venue}</div>
                     </div>
-                    <span className={`shrink-0 px-2.5 py-0.5 rounded-full text-[10px] font-display tracking-wider ${typeColors[event.type] || typeColors.General}`}>
+                    <span className={`shrink-0 px-1.5 sm:px-2.5 py-0.5 rounded-full text-[8px] sm:text-[10px] font-display tracking-wider ${typeColors[event.type] || typeColors.General}`}>
                       {event.type}
                     </span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </motion.div>
