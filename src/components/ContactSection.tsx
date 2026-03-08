@@ -48,7 +48,7 @@ const ContactSection = () => {
           className="max-w-4xl mx-auto glass rounded-xl overflow-hidden"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.0!2d74.4977!3d15.8537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf65f6a4e5bceb%3A0x7a8e1a0f01234567!2sAngadi%20Institute%20of%20Technology%20and%20Management!5e0!3m2!1sen!2sin!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.0!2d74.4977!3d15.8537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf658e8f6e5b1d%3A0x43d1e71e7a7e4b0a!2sAngadi%20Institute%20of%20Technology%20and%20Management%2C%20Savagaon%20Road%2C%20Belagavi%2C%20Savgaon%2C%20Karnataka%20590006%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000"
             width="100%"
             height="300"
             style={{ border: 0 }}
