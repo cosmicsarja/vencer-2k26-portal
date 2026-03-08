@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import vencerLogo from "@/assets/vencer-logo.png";
 
@@ -19,25 +19,12 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") !== "light";
-    }
-    return true;
-  });
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (isDark) {
-      root.classList.add("dark");
-      root.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.add("light");
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDark]);
+    document.documentElement.classList.add("dark");
+    document.documentElement.classList.remove("light");
+    localStorage.setItem("theme", "dark");
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -71,22 +58,8 @@ const Navbar = () => {
               {l.label}
             </Link>
           ))}
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="w-9 h-9 rounded-full flex items-center justify-center glass-pandora text-muted-foreground hover:text-foreground transition-all duration-300 hover:glow-border-teal"
-            aria-label="Toggle theme"
-          >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
         </div>
         <div className="flex items-center gap-3 lg:hidden">
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="w-9 h-9 rounded-full flex items-center justify-center glass-pandora text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Toggle theme"
-          >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
           <button onClick={() => setOpen(!open)} className="text-foreground">
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
