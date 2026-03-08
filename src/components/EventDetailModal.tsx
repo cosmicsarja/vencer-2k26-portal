@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Trophy, IndianRupee, Clock, Users, MapPin, BookOpen } from "lucide-react";
 import type { Event } from "@/data/events";
@@ -16,8 +16,7 @@ const categoryColors: Record<string, { accent: string; bg: string }> = {
   Gaming: { accent: "text-fest-blue", bg: "bg-fest-blue/15 border-fest-blue/30" },
 };
 
-const EventDetailModal = ({ event, onClose, onRegister }: EventDetailModalProps) => {
-  // Close on Escape key
+const EventDetailModal = forwardRef<HTMLDivElement, EventDetailModalProps>(({ event, onClose, onRegister }, ref) => {
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") onClose();
   }, [onClose]);
@@ -40,6 +39,7 @@ const EventDetailModal = ({ event, onClose, onRegister }: EventDetailModalProps)
   return (
     <AnimatePresence>
       <motion.div
+        ref={ref}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -145,6 +145,8 @@ const EventDetailModal = ({ event, onClose, onRegister }: EventDetailModalProps)
       </motion.div>
     </AnimatePresence>
   );
-};
+});
+
+EventDetailModal.displayName = "EventDetailModal";
 
 export default EventDetailModal;
