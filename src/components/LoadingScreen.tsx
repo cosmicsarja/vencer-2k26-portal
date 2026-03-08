@@ -115,18 +115,37 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
             transition={{ delay: 0.8, duration: 2, ease: "easeOut" }}
           />
 
-          {/* Logo */}
-          <motion.img
-            src={vencerLogo}
-            alt="VENCER 2K26"
-            className="w-[200px] sm:w-[300px] relative z-10"
+          {/* Video + Logo */}
+          <motion.div
+            className="relative z-10 flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: [0.5, 1.08, 1] }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            style={{
-              filter: "drop-shadow(0 0 30px hsl(175 80% 45% / 0.5)) drop-shadow(0 0 60px hsl(185 90% 50% / 0.3))",
-            }}
-          />
+          >
+            <video
+              autoPlay
+              muted
+              playsInline
+              loop
+              className="w-[280px] sm:w-[400px] md:w-[500px] rounded-2xl"
+              style={{
+                filter: "drop-shadow(0 0 30px hsl(175 80% 45% / 0.5)) drop-shadow(0 0 60px hsl(185 90% 50% / 0.3))",
+              }}
+            >
+              <source src="/loading-video.mp4" type="video/mp4" />
+            </video>
+            <motion.img
+              src={vencerLogo}
+              alt="VENCER 2K26"
+              className="w-[160px] sm:w-[240px] mt-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
+              style={{
+                filter: "drop-shadow(0 0 20px hsl(175 80% 45% / 0.5)) drop-shadow(0 0 40px hsl(185 90% 50% / 0.3))",
+              }}
+            />
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
