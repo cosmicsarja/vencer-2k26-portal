@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Brain, Monitor, Cog, Building2, Cpu, Zap, Bot } from "lucide-react";
@@ -10,78 +11,77 @@ import signalSkyAvatar from "@/assets/signal-sky-avatar.png";
 import energyStormAvatar from "@/assets/energy-storm-avatar.png";
 import steelSentinelAvatar from "@/assets/steel-sentinel-avatar.png";
 
-const tribes = [
-  {
-    clanName: "Spirit Tech Clan",
-    icon: Brain,
-    biome: "Neural Forest",
-    accent: "fest-teal",
-    glowVar: "--fest-teal",
-    gradient: "from-fest-teal/20 via-fest-cyan/10 to-transparent",
-    borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.35)]",
-    desc: "Masters of the spirit network — weaving artificial minds into the fabric of Pandora's consciousness.",
-  },
-  {
-    clanName: "Digital Forest Clan",
-    icon: Monitor,
-    biome: "Code Jungle",
-    accent: "fest-cyan",
-    glowVar: "--fest-cyan",
-    gradient: "from-fest-cyan/20 via-fest-blue/10 to-transparent",
-    borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-cyan)_/_0.35)]",
-    desc: "Architects of the digital canopy — building the infinite forest of logic and software.",
-  },
-  {
-    clanName: "Iron Mountain Clan",
-    icon: Cog,
-    biome: "Volcanic Forge",
-    accent: "fest-orange",
-    glowVar: "--fest-orange",
-    gradient: "from-fest-orange/20 via-fest-ember/10 to-transparent",
-    borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-orange)_/_0.35)]",
-    desc: "Forged in volcanic fire — shaping metal and machine with the strength of mountains.",
-  },
-  {
-    clanName: "Earth Builders Clan",
-    icon: Building2,
-    biome: "Stone Valley",
-    accent: "fest-yellow",
-    glowVar: "--fest-yellow",
-    gradient: "from-fest-yellow/20 via-fest-orange/10 to-transparent",
-    borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-yellow)_/_0.35)]",
-    desc: "Guardians of the land — raising structures that stand as monuments to Pandora's strength.",
-  },
-  {
-    clanName: "Signal Sky Clan",
-    icon: Cpu,
-    biome: "Aurora Heights",
-    accent: "fest-purple",
-    glowVar: "--fest-purple",
-    gradient: "from-fest-purple/20 via-fest-blue/10 to-transparent",
-    borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-purple)_/_0.35)]",
-    desc: "Riders of the aurora — channeling electromagnetic waves across Pandora's skies.",
-  },
-  {
-    clanName: "Energy Storm Clan",
-    icon: Zap,
-    biome: "Lightning Plains",
-    accent: "fest-blue",
-    glowVar: "--fest-blue",
-    gradient: "from-fest-blue/20 via-fest-teal/10 to-transparent",
-    borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-blue)_/_0.35)]",
-    desc: "Harvesters of the storm — commanding the raw power that flows through all living things.",
-  },
-  {
-    clanName: "Steel Sentinel Clan",
-    icon: Bot,
-    biome: "Mech Frontier",
-    accent: "fest-cyan",
-    glowVar: "--fest-cyan",
-    gradient: "from-fest-cyan/20 via-fest-teal/10 to-transparent",
-    borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-cyan)_/_0.35)]",
-    desc: "Builders of sentient machines — commanding steel and code to create autonomous warriors.",
-  },
+const avatars = [
+  spiritTechAvatar, digitalForestAvatar, ironMountainAvatar,
+  earthBuildersAvatar, signalSkyAvatar, energyStormAvatar, steelSentinelAvatar,
 ];
+
+const tribes = [
+  { clanName: "Spirit Tech Clan", icon: Brain, biome: "Neural Forest", accent: "fest-teal", glowVar: "--fest-teal", gradient: "from-fest-teal/20 via-fest-cyan/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.35)]", desc: "Masters of the spirit network — weaving artificial minds into the fabric of Pandora's consciousness.", filterColor: "175 80% 40%" },
+  { clanName: "Digital Forest Clan", icon: Monitor, biome: "Code Jungle", accent: "fest-cyan", glowVar: "--fest-cyan", gradient: "from-fest-cyan/20 via-fest-blue/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-cyan)_/_0.35)]", desc: "Architects of the digital canopy — building the infinite forest of logic and software.", filterColor: "185 90% 45%" },
+  { clanName: "Iron Mountain Clan", icon: Cog, biome: "Volcanic Forge", accent: "fest-orange", glowVar: "--fest-orange", gradient: "from-fest-orange/20 via-fest-ember/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-orange)_/_0.35)]", desc: "Forged in volcanic fire — shaping metal and machine with the strength of mountains.", filterColor: "30 90% 55%" },
+  { clanName: "Earth Builders Clan", icon: Building2, biome: "Stone Valley", accent: "fest-yellow", glowVar: "--fest-yellow", gradient: "from-fest-yellow/20 via-fest-orange/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-yellow)_/_0.35)]", desc: "Guardians of the land — raising structures that stand as monuments to Pandora's strength.", filterColor: "45 85% 55%" },
+  { clanName: "Signal Sky Clan", icon: Cpu, biome: "Aurora Heights", accent: "fest-purple", glowVar: "--fest-purple", gradient: "from-fest-purple/20 via-fest-blue/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-purple)_/_0.35)]", desc: "Riders of the aurora — channeling electromagnetic waves across Pandora's skies.", filterColor: "270 55% 50%" },
+  { clanName: "Energy Storm Clan", icon: Zap, biome: "Lightning Plains", accent: "fest-blue", glowVar: "--fest-blue", gradient: "from-fest-blue/20 via-fest-teal/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-blue)_/_0.35)]", desc: "Harvesters of the storm — commanding the raw power that flows through all living things.", filterColor: "210 85% 50%" },
+  { clanName: "Steel Sentinel Clan", icon: Bot, biome: "Mech Frontier", accent: "fest-cyan", glowVar: "--fest-cyan", gradient: "from-fest-cyan/20 via-fest-teal/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-cyan)_/_0.35)]", desc: "Builders of sentient machines — commanding steel and code to create autonomous warriors.", filterColor: "185 90% 45%" },
+];
+
+const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branches[0]; tribe: typeof tribes[0]; index: number; avatar: string }) => {
+  const Icon = tribe.icon;
+  const totalEvents = branch.events.length + branch.culturalEvents.length + branch.gamingEvents.length;
+
+  return (
+    <Link to={`/events?branch=${encodeURIComponent(branch.shortName)}`} aria-label={`View ${tribe.clanName} events`}>
+      <motion.article
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: Math.min(index * 0.08, 0.4), duration: 0.6 }}
+        className={`relative rounded-2xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80 cursor-pointer`}
+      >
+        <div className={`absolute inset-0 bg-gradient-to-br ${tribe.gradient}`} />
+
+        <motion.img
+          src={avatar}
+          alt={`${tribe.clanName} Avatar`}
+          className="absolute right-[-10px] bottom-0 w-[100px] sm:w-[140px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
+          loading="lazy"
+          decoding="async"
+          style={{
+            filter: `drop-shadow(0 0 15px hsl(${tribe.filterColor} / 0.5)) drop-shadow(0 0 40px hsl(${tribe.filterColor} / 0.3))`,
+          }}
+          animate={{ y: [0, -8, 0], scale: [1, 1.02, 1] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <div className="relative p-4 sm:p-6 pr-[90px] sm:pr-[120px]">
+          <span className={`font-display text-[10px] tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
+            {tribe.biome}
+          </span>
+
+          <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-${tribe.accent}/15 flex items-center justify-center my-2 sm:my-3 transition-all group-hover:bg-${tribe.accent}/25 group-hover:shadow-[0_0_20px_hsl(var(${tribe.glowVar})_/_0.3)]`}>
+            <Icon size={20} className={`text-${tribe.accent}`} />
+          </div>
+
+          <h3 className="font-heading text-sm sm:text-base font-bold text-foreground mb-1">{tribe.clanName}</h3>
+          <p className="font-heading text-xs text-muted-foreground mb-1">{branch.name}</p>
+          <p className="text-[11px] sm:text-xs text-muted-foreground/80 mb-3 sm:mb-4 leading-relaxed line-clamp-2">{tribe.desc}</p>
+
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] sm:text-xs text-muted-foreground font-heading font-bold">
+              {totalEvents} Events
+            </span>
+            <span className={`text-[10px] sm:text-xs font-display tracking-wider text-${tribe.accent} font-bold`}>
+              View Events →
+            </span>
+          </div>
+        </div>
+      </motion.article>
+    </Link>
+  );
+});
+
+TribeCard.displayName = "TribeCard";
 
 const Branches = () => {
   return (
@@ -104,194 +104,14 @@ const Branches = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {branches.map((branch, i) => {
             const tribe = tribes[i] || tribes[0];
-            const Icon = tribe.icon;
-            const totalEvents = branch.events.length + branch.culturalEvents.length + branch.gamingEvents.length;
             return (
-              <Link to={`/events?branch=${encodeURIComponent(branch.shortName)}`}>
-              <motion.div
+              <TribeCard
                 key={branch.shortName}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.6 }}
-                className={`relative rounded-2xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80 cursor-pointer`}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${tribe.gradient}`} />
-
-                {/* Spirit Tech Avatar */}
-                {i === 0 && (
-                  <motion.img
-                    src={spiritTechAvatar}
-                    alt="Spirit Tech Clan Avatar"
-                    className="absolute right-[-10px] bottom-0 w-[120px] sm:w-[160px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
-                    style={{
-                      filter: "drop-shadow(0 0 15px hsl(var(--fest-teal) / 0.5)) drop-shadow(0 0 40px hsl(var(--fest-cyan) / 0.3))",
-                    }}
-                    animate={{
-                      y: [0, -8, 0],
-                      scale: [1, 1.02, 1],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
-                )}
-
-                {/* Digital Forest Avatar */}
-                {i === 1 && (
-                  <motion.img
-                    src={digitalForestAvatar}
-                    alt="Digital Forest Clan Avatar"
-                    className="absolute right-[-10px] bottom-0 w-[120px] sm:w-[160px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
-                    style={{
-                      filter: "drop-shadow(0 0 15px hsl(var(--fest-cyan) / 0.5)) drop-shadow(0 0 40px hsl(var(--fest-blue) / 0.3))",
-                    }}
-                    animate={{
-                      y: [0, -8, 0],
-                      scale: [1, 1.02, 1],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
-                )}
-
-                {/* Iron Mountain Avatar */}
-                {i === 2 && (
-                  <motion.img
-                    src={ironMountainAvatar}
-                    alt="Iron Mountain Clan Avatar"
-                    className="absolute right-[-10px] bottom-0 w-[120px] sm:w-[160px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
-                    style={{
-                      filter: "drop-shadow(0 0 15px hsl(var(--fest-orange) / 0.5)) drop-shadow(0 0 40px hsl(var(--fest-ember) / 0.3))",
-                    }}
-                    animate={{
-                      y: [0, -8, 0],
-                      scale: [1, 1.02, 1],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
-                )}
-
-                {/* Earth Builders Avatar */}
-                {i === 3 && (
-                  <motion.img
-                    src={earthBuildersAvatar}
-                    alt="Earth Builders Clan Avatar"
-                    className="absolute right-[-10px] bottom-0 w-[120px] sm:w-[160px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
-                    style={{
-                      filter: "drop-shadow(0 0 15px hsl(var(--fest-yellow) / 0.5)) drop-shadow(0 0 40px hsl(var(--fest-orange) / 0.3))",
-                    }}
-                    animate={{
-                      y: [0, -8, 0],
-                      scale: [1, 1.02, 1],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
-                )}
-
-                {/* Signal Sky Avatar */}
-                {i === 4 && (
-                  <motion.img
-                    src={signalSkyAvatar}
-                    alt="Signal Sky Clan Avatar"
-                    className="absolute right-[-10px] bottom-0 w-[120px] sm:w-[160px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
-                    style={{
-                      filter: "drop-shadow(0 0 15px hsl(var(--fest-purple) / 0.5)) drop-shadow(0 0 40px hsl(var(--fest-blue) / 0.3))",
-                    }}
-                    animate={{
-                      y: [0, -8, 0],
-                      scale: [1, 1.02, 1],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
-                )}
-
-                {/* Energy Storm Avatar */}
-                {i === 5 && (
-                  <motion.img
-                    src={energyStormAvatar}
-                    alt="Energy Storm Clan Avatar"
-                    className="absolute right-[-10px] bottom-0 w-[120px] sm:w-[160px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
-                    style={{
-                      filter: "drop-shadow(0 0 15px hsl(var(--fest-blue) / 0.5)) drop-shadow(0 0 40px hsl(var(--fest-cyan) / 0.3))",
-                    }}
-                    animate={{
-                      y: [0, -8, 0],
-                      scale: [1, 1.02, 1],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
-                )}
-
-                {/* Steel Sentinel Avatar */}
-                {i === 6 && (
-                  <motion.img
-                    src={steelSentinelAvatar}
-                    alt="Steel Sentinel Clan Avatar"
-                    className="absolute right-[-10px] bottom-0 w-[120px] sm:w-[160px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
-                    style={{
-                      filter: "drop-shadow(0 0 15px hsl(var(--fest-cyan) / 0.5)) drop-shadow(0 0 40px hsl(var(--fest-blue) / 0.3))",
-                    }}
-                    animate={{
-                      y: [0, -8, 0],
-                      scale: [1, 1.02, 1],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
-                )}
-
-                <div className="relative p-4 sm:p-6 pr-[100px] sm:pr-[130px]">
-                  <span className={`font-display text-[10px] tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
-                    {tribe.biome}
-                  </span>
-
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-${tribe.accent}/15 flex items-center justify-center my-3 sm:my-4 transition-all group-hover:bg-${tribe.accent}/25 group-hover:shadow-[0_0_20px_hsl(var(${tribe.glowVar})_/_0.3)]`}>
-                    <Icon size={24} className={`text-${tribe.accent}`} />
-                  </div>
-
-                  <h3 className="font-heading text-base sm:text-lg font-bold text-foreground mb-1">{tribe.clanName}</h3>
-                  <p className="font-heading text-xs sm:text-sm text-muted-foreground mb-1 sm:mb-2">{branch.name}</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground/80 mb-4 sm:mb-5 leading-relaxed">{tribe.desc}</p>
-
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground font-heading font-bold">
-                      {totalEvents} Events
-                    </span>
-                    <Link
-                      to="/events"
-                      className={`text-xs font-display tracking-wider text-${tribe.accent} hover:text-foreground transition-colors font-bold`}
-                    >
-                      View Events →
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-              </Link>
+                branch={branch}
+                tribe={tribe}
+                index={i}
+                avatar={avatars[i] || avatars[0]}
+              />
             );
           })}
         </div>

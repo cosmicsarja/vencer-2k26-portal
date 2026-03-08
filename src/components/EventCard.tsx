@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { Trophy, IndianRupee, ImageIcon } from "lucide-react";
 import type { Event } from "@/data/events";
@@ -29,7 +30,7 @@ const categoryCardColors: Record<string, { bg: string; border: string; badge: st
   },
 };
 
-const EventCard = ({ event, index, onClick }: { event: Event; index: number; onClick?: () => void }) => {
+const EventCard = memo(({ event, index, onClick }: { event: Event; index: number; onClick?: () => void }) => {
   const colors = categoryCardColors[event.category] || categoryCardColors.Technical;
 
   return (
@@ -37,14 +38,24 @@ const EventCard = ({ event, index, onClick }: { event: Event; index: number; onC
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ delay: index * 0.08, duration: 0.5 }}
+      transition={{ delay: Math.min(index * 0.08, 0.4), duration: 0.5 }}
       whileHover={{ y: -6, scale: 1.02 }}
       onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && onClick?.()}
+      aria-label={`View details for ${event.title}`}
       className={`rounded-2xl overflow-hidden transition-all duration-500 group flex flex-col border-2 cursor-pointer ${colors.border} ${colors.glow} bg-gradient-to-b ${colors.bg} bg-card/80`}
     >
       <div className="aspect-[4/3] bg-muted/10 flex items-center justify-center relative overflow-hidden">
         {event.posterUrl ? (
-          <img src={event.posterUrl} alt={event.title} className="w-full h-full object-cover" />
+          <img
+            src={event.posterUrl}
+            alt={`${event.title} poster`}
+            className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
         ) : (
           <div className="flex flex-col items-center gap-2 text-muted-foreground/20">
             <ImageIcon size={32} />
@@ -63,13 +74,13 @@ const EventCard = ({ event, index, onClick }: { event: Event; index: number; onC
         </div>
       </div>
 
-      <div className="p-5 flex flex-col flex-1 border-t-2 border-border/20 bg-card/90">
+      <div className="p-4 sm:p-5 flex flex-col flex-1 border-t-2 border-border/20 bg-card/90">
         {event.branch && (
-          <p className="text-xs text-muted-foreground font-heading mb-1 font-bold">{event.branch}</p>
+          <p className="text-[10px] sm:text-xs text-muted-foreground font-heading mb-1 font-bold">{event.branch}</p>
         )}
-        <h4 className="font-heading text-xl font-bold text-foreground mb-2">{event.title}</h4>
-        <p className="text-sm text-muted-foreground mb-4 flex-1 leading-relaxed">{event.description}</p>
-        <div className="flex items-center gap-4 text-sm text-foreground/90 font-bold">
+        <h4 className="font-heading text-base sm:text-xl font-bold text-foreground mb-1 sm:mb-2">{event.title}</h4>
+        <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 flex-1 leading-relaxed line-clamp-2">{event.description}</p>
+        <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-foreground/90 font-bold">
           <span className="flex items-center gap-1">
             <Trophy size={14} className="text-fest-yellow" />
             {event.prizePool}
@@ -82,6 +93,8 @@ const EventCard = ({ event, index, onClick }: { event: Event; index: number; onC
       </div>
     </motion.div>
   );
-};
+});
+
+EventCard.displayName = "EventCard";
 
 export default EventCard;

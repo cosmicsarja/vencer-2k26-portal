@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { useMemo, lazy, Suspense } from "react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
-import JellyfishBackground from "./JellyfishBackground";
+
+const JellyfishBackground = lazy(() => import("./JellyfishBackground"));
 
 const HeroSection = () => {
   const sporeData = useMemo(
     () =>
-      Array.from({ length: 20 }).map(() => ({
+      Array.from({ length: 15 }).map(() => ({
         size: 2 + Math.random() * 4,
         left: `${Math.random() * 100}%`,
         bottom: `-${Math.random() * 10}%`,
@@ -36,12 +37,14 @@ const HeroSection = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
       >
-        <motion.img
+        <img
           src={pandoraBg}
           alt=""
           className="w-full h-full object-cover"
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          loading="eager"
+          width={1920}
+          height={1080}
+          decoding="async"
         />
         <div className="absolute inset-0 bg-background/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
@@ -49,7 +52,9 @@ const HeroSection = () => {
 
       {/* Jellyfish layer above background */}
       <div className="absolute inset-0 z-[1]">
-        <JellyfishBackground />
+        <Suspense fallback={null}>
+          <JellyfishBackground />
+        </Suspense>
       </div>
 
       {/* Color overlays */}
@@ -60,20 +65,13 @@ const HeroSection = () => {
       >
         <div className="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--fest-teal)_/_0.3)_0%,transparent_70%)]" />
       </motion.div>
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        animate={{ opacity: [0.06, 0.12, 0.06] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      >
-        <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-[radial-gradient(ellipse_at_top_right,hsl(var(--fest-orange)_/_0.25)_0%,transparent_70%)]" />
-      </motion.div>
 
-      {/* Floating spore particles */}
+      {/* Floating spore particles - reduced count */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {sporeData.map((s, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full"
+            className="absolute rounded-full will-change-transform"
             style={{
               width: s.size,
               height: s.size,
@@ -103,20 +101,16 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="mb-8"
+          className="mb-6 sm:mb-8"
         >
-          <motion.img
+          <img
             src={vencerLogo}
             alt="VENCER 2K26 Logo"
-            className="mx-auto w-[260px] sm:w-[380px] md:w-[480px] lg:w-[560px] bioluminescent-glow"
-            animate={{
-              filter: [
-                "drop-shadow(0 0 20px hsl(175 80% 40% / 0.5)) drop-shadow(0 0 50px hsl(185 90% 45% / 0.3))",
-                "drop-shadow(0 0 35px hsl(175 80% 40% / 0.7)) drop-shadow(0 0 80px hsl(185 90% 45% / 0.5))",
-                "drop-shadow(0 0 20px hsl(175 80% 40% / 0.5)) drop-shadow(0 0 50px hsl(185 90% 45% / 0.3))",
-              ],
-            }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="mx-auto w-[220px] sm:w-[320px] md:w-[420px] lg:w-[520px] bioluminescent-glow"
+            loading="eager"
+            width={520}
+            height={260}
+            decoding="async"
           />
         </motion.div>
 
@@ -124,7 +118,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="font-display text-lg sm:text-2xl md:text-3xl tracking-wider pandora-gradient-text mb-3"
+          className="font-display text-base sm:text-xl md:text-3xl tracking-wider pandora-gradient-text mb-3"
         >
           National Level Techno-Cultural Fest
         </motion.h1>
@@ -133,7 +127,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="font-heading text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-2"
+          className="font-heading text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-2"
         >
           Angadi Institute of Technology and Management
         </motion.p>
@@ -142,7 +136,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="font-heading text-sm text-muted-foreground/70 mb-10"
+          className="font-heading text-xs sm:text-sm text-muted-foreground/70 mb-8 sm:mb-10"
         >
           Belagavi, Karnataka
         </motion.p>
@@ -155,7 +149,7 @@ const HeroSection = () => {
         >
           <Link
             to="/branches"
-            className="inline-block font-display text-sm tracking-wider px-8 py-4 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground font-bold hover:shadow-[0_0_35px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-105"
+            className="inline-block font-display text-xs sm:text-sm tracking-wider px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground font-bold hover:shadow-[0_0_35px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-105"
           >
             Enter the Tribes
           </Link>
