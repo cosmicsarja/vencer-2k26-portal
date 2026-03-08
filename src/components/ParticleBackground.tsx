@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useMemo } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface Particle {
   id: number;
@@ -25,8 +26,12 @@ const emberColors = [
 ];
 
 const ParticleBackground = () => {
-  const [particles] = useState<Particle[]>(() => {
-    const spores = Array.from({ length: 35 }, (_, i) => ({
+  const isMobile = useIsMobile();
+  const sporeCount = isMobile ? 12 : 35;
+  const emberCount = isMobile ? 4 : 12;
+
+  const particles = useMemo<Particle[]>(() => {
+    const spores = Array.from({ length: sporeCount }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       size: Math.random() * 5 + 2,
@@ -35,8 +40,8 @@ const ParticleBackground = () => {
       color: sporeColors[Math.floor(Math.random() * sporeColors.length)],
       type: "spore" as const,
     }));
-    const embers = Array.from({ length: 12 }, (_, i) => ({
-      id: i + 35,
+    const embers = Array.from({ length: emberCount }, (_, i) => ({
+      id: i + sporeCount,
       x: Math.random() * 100,
       size: Math.random() * 3 + 1,
       duration: Math.random() * 12 + 8,
@@ -45,14 +50,14 @@ const ParticleBackground = () => {
       type: "ember" as const,
     }));
     return [...spores, ...embers];
-  });
+  }, [sporeCount, emberCount]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {particles.map((p) => (
         <div
           key={p.id}
-          className="absolute rounded-full"
+          className="absolute rounded-full will-change-transform"
           style={{
             left: `${p.x}%`,
             width: `${p.size}px`,

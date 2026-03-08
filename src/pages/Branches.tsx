@@ -78,23 +78,23 @@ const tribes = [
 
 const Branches = () => {
   return (
-    <section className="relative py-24 pt-28 min-h-screen">
-      <div className="container px-4">
+    <section className="relative py-20 pt-24 sm:py-24 sm:pt-28 min-h-screen">
+      <div className="container px-3 sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h1 className="font-display text-3xl sm:text-4xl tracking-wider pandora-gradient-text mb-4">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-wider pandora-gradient-text mb-3 sm:mb-4">
             The Tribes of VENCER
           </h1>
-          <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-body text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
             Seven clans, one world. Each tribe commands a unique biome of knowledge and innovation.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {branches.map((branch, i) => {
             const tribe = tribes[i] || tribes[0];
             const Icon = tribe.icon;
@@ -105,23 +105,23 @@ const Branches = () => {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
+                transition={{ delay: i * 0.08, duration: 0.6 }}
                 className={`relative rounded-2xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80`}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${tribe.gradient}`} />
 
-                <div className="relative p-6">
+                <div className="relative p-4 sm:p-6">
                   <span className={`font-display text-[10px] tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
                     {tribe.biome}
                   </span>
 
-                  <div className={`w-14 h-14 rounded-xl bg-${tribe.accent}/15 flex items-center justify-center my-4 transition-all group-hover:bg-${tribe.accent}/25 group-hover:shadow-[0_0_20px_hsl(var(${tribe.glowVar})_/_0.3)]`}>
-                    <Icon size={28} className={`text-${tribe.accent}`} />
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-${tribe.accent}/15 flex items-center justify-center my-3 sm:my-4 transition-all group-hover:bg-${tribe.accent}/25 group-hover:shadow-[0_0_20px_hsl(var(${tribe.glowVar})_/_0.3)]`}>
+                    <Icon size={24} className={`text-${tribe.accent}`} />
                   </div>
 
-                  <h3 className="font-heading text-lg font-bold text-foreground mb-1">{tribe.clanName}</h3>
-                  <p className="font-heading text-sm text-muted-foreground mb-2">{branch.name}</p>
-                  <p className="text-sm text-muted-foreground/80 mb-5 leading-relaxed">{tribe.desc}</p>
+                  <h3 className="font-heading text-base sm:text-lg font-bold text-foreground mb-1">{tribe.clanName}</h3>
+                  <p className="font-heading text-xs sm:text-sm text-muted-foreground mb-1 sm:mb-2">{branch.name}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground/80 mb-4 sm:mb-5 leading-relaxed">{tribe.desc}</p>
 
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-muted-foreground font-heading font-bold">
