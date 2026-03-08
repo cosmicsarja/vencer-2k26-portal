@@ -4,17 +4,39 @@ import { branches, culturalEvents, gamingEvents } from "@/data/events";
 import type { Event } from "@/data/events";
 import EventCard from "@/components/EventCard";
 import EventDetailModal from "@/components/EventDetailModal";
+import RegistrationModal from "@/components/RegistrationModal";
 
 const Events = () => {
   const [activeBranch, setActiveBranch] = useState(0);
   const [activeTab, setActiveTab] = useState<"branches" | "cultural" | "gaming">("branches");
+  const [branchSubTab, setBranchSubTab] = useState<"technical" | "cultural" | "gaming">("technical");
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [registrationLink, setRegistrationLink] = useState<string | null>(null);
 
   const tabs = [
     { key: "branches" as const, label: "Tribe Events" },
     { key: "cultural" as const, label: "Cultural" },
     { key: "gaming" as const, label: "Gaming" },
   ];
+
+  const branchSubTabs = [
+    { key: "technical" as const, label: "Technical" },
+    { key: "cultural" as const, label: "Cultural" },
+    { key: "gaming" as const, label: "Gaming" },
+  ];
+
+  const currentBranch = branches[activeBranch];
+  const branchEvents =
+    branchSubTab === "technical"
+      ? currentBranch.events
+      : branchSubTab === "cultural"
+      ? currentBranch.culturalEvents
+      : currentBranch.gamingEvents;
+
+  const handleRegister = (formLink: string) => {
+    setSelectedEvent(null);
+    setRegistrationLink(formLink);
+  };
 
   return (
     <section className="relative py-24 pt-28 min-h-screen">
@@ -36,10 +58,10 @@ const Events = () => {
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`font-display text-xs sm:text-sm tracking-wider px-4 sm:px-6 py-2.5 rounded-xl transition-all duration-300 ${
+              className={`font-display text-xs sm:text-sm tracking-wider px-4 sm:px-6 py-2.5 rounded-xl transition-all duration-300 font-bold ${
                 activeTab === tab.key
                   ? "bg-gradient-to-r from-primary to-fest-cyan text-primary-foreground shadow-[0_0_20px_hsl(var(--fest-teal)_/_0.3)]"
-                  : "glass-pandora text-muted-foreground hover:text-foreground"
+                  : "bg-card/80 border-2 border-border text-muted-foreground hover:text-foreground"
               }`}
             >
               {tab.label}
@@ -49,14 +71,14 @@ const Events = () => {
 
         {activeTab === "branches" && (
           <>
-            <div className="flex justify-center gap-2 mb-10 flex-wrap">
+            <div className="flex justify-center gap-2 mb-6 flex-wrap">
               {branches.map((b, i) => (
                 <button
                   key={b.shortName}
-                  onClick={() => setActiveBranch(i)}
-                  className={`font-heading text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl transition-all duration-300 ${
+                  onClick={() => { setActiveBranch(i); setBranchSubTab("technical"); }}
+                  className={`font-heading text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl transition-all duration-300 font-bold ${
                     activeBranch === i
-                      ? "glass-pandora glow-border-teal text-primary"
+                      ? "bg-card border-2 border-primary text-primary shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -65,20 +87,43 @@ const Events = () => {
               ))}
             </div>
 
-            <motion.h3
-              key={branches[activeBranch].name}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="font-heading text-xl sm:text-2xl text-center text-foreground mb-8"
-            >
-              {branches[activeBranch].name}
-            </motion.h3>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-              {branches[activeBranch].events.map((event, i) => (
-                <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
+            {/* Branch sub-tabs for Technical/Cultural/Gaming */}
+            <div className="flex justify-center gap-2 mb-6">
+              {branchSubTabs.map((st) => (
+                <button
+                  key={st.key}
+                  onClick={() => setBranchSubTab(st.key)}
+                  className={`font-heading text-xs px-4 py-1.5 rounded-lg transition-all font-bold ${
+                    branchSubTab === st.key
+                      ? "bg-primary/20 text-primary border border-primary/40"
+                      : "text-muted-foreground hover:text-foreground border border-transparent"
+                  }`}
+                >
+                  {st.label}
+                </button>
               ))}
             </div>
+
+            <motion.h3
+              key={currentBranch.name + branchSubTab}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="font-heading text-xl sm:text-2xl text-center text-foreground mb-8 font-bold"
+            >
+              {currentBranch.name} — {branchSubTab.charAt(0).toUpperCase() + branchSubTab.slice(1)}
+            </motion.h3>
+
+            {branchEvents.length > 0 ? (
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+                {branchEvents.map((event, i) => (
+                  <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-16 text-muted-foreground font-heading">
+                No {branchSubTab} events for this branch yet.
+              </div>
+            )}
           </>
         )}
 
@@ -99,7 +144,15 @@ const Events = () => {
         )}
       </div>
 
-      <EventDetailModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+      <EventDetailModal
+        event={selectedEvent}
+        onClose={() => setSelectedEvent(null)}
+        onRegister={handleRegister}
+      />
+      <RegistrationModal
+        formLink={registrationLink}
+        onClose={() => setRegistrationLink(null)}
+      />
     </section>
   );
 };

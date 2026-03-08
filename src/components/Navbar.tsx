@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Tribes", href: "/branches" },
   { label: "Events", href: "/events" },
-  { label: "Journey", href: "/timeline" },
+  { label: "Schedule", href: "/timeline" },
   { label: "Rulebook", href: "/rulebook" },
   { label: "Gallery", href: "/gallery" },
   { label: "Developers", href: "/developers" },
