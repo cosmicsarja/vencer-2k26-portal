@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Download, BookOpen, FileText } from "lucide-react";
+import { Download, BookOpen, FileText, X } from "lucide-react";
 
 const Rulebook = () => {
+  const [showViewer, setShowViewer] = useState(false);
+
   return (
     <section className="relative py-24 pt-28 min-h-screen">
       <div className="container px-4">
@@ -46,16 +49,34 @@ const Rulebook = () => {
                 <Download size={18} />
                 Download Rulebook (PDF)
               </a>
-              <a
-                href="/VENCER_2K26_Rulebook.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setShowViewer(true)}
                 className="inline-flex items-center gap-3 font-display text-sm tracking-wider px-8 py-3.5 rounded-xl border border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300 hover:scale-105"
               >
                 <BookOpen size={18} />
                 View Rulebook
-              </a>
+              </button>
             </div>
+
+            {showViewer && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="relative w-full mt-4"
+              >
+                <button
+                  onClick={() => setShowViewer(false)}
+                  className="absolute -top-3 -right-3 z-10 w-8 h-8 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-destructive/20 transition-colors"
+                >
+                  <X size={16} />
+                </button>
+                <iframe
+                  src="/VENCER_2K26_Rulebook.pdf"
+                  className="w-full h-[70vh] rounded-xl border border-border/50"
+                  title="VENCER 2K26 Rulebook"
+                />
+              </motion.div>
+            )}
           </motion.div>
 
           <motion.div
