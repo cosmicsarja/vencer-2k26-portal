@@ -155,7 +155,28 @@ const Branches = () => {
                   />
                 )}
 
-                <div className={`relative p-4 sm:p-6 ${i <= 1 ? "pr-[100px] sm:pr-[130px]" : ""}`}>
+                {/* Iron Mountain Avatar */}
+                {i === 2 && (
+                  <motion.img
+                    src={ironMountainAvatar}
+                    alt="Iron Mountain Clan Avatar"
+                    className="absolute right-[-10px] bottom-0 w-[120px] sm:w-[160px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
+                    style={{
+                      filter: "drop-shadow(0 0 15px hsl(var(--fest-orange) / 0.5)) drop-shadow(0 0 40px hsl(var(--fest-ember) / 0.3))",
+                    }}
+                    animate={{
+                      y: [0, -8, 0],
+                      scale: [1, 1.02, 1],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                )}
+
+                <div className={`relative p-4 sm:p-6 ${i <= 2 ? "pr-[100px] sm:pr-[130px]" : ""}`}>
                   <span className={`font-display text-[10px] tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
                     {tribe.biome}
                   </span>
