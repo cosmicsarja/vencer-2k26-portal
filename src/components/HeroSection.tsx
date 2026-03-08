@@ -13,35 +13,6 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/20" />
       </div>
 
-      {/* Holographic floating icons */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {floatingIcons.map(({ Icon, x, y, delay, color }, i) => (
-          <motion.div
-            key={i}
-            className={`absolute ${color} opacity-25`}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.25, scale: 1 }}
-            transition={{ delay: delay + 0.5, duration: 0.8 }}
-            style={{ left: `calc(50% + ${x}px)`, top: `calc(50% + ${y}px)` }}
-          >
-            <motion.div
-              animate={{ y: [0, -18, 0] }}
-              transition={{ duration: 4 + i * 0.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="relative">
-                <Icon size={30} />
-                <div
-                  className="absolute inset-0 blur-md opacity-50"
-                  style={{ color: "inherit" }}
-                >
-                  <Icon size={30} />
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        ))}
-      </div>
-
       <div className="relative z-10 container text-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
