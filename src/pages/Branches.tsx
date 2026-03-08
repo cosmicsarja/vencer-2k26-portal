@@ -201,6 +201,27 @@ const Branches = () => {
                   />
                 )}
 
+                {/* Signal Sky Avatar */}
+                {i === 4 && (
+                  <motion.img
+                    src={signalSkyAvatar}
+                    alt="Signal Sky Clan Avatar"
+                    className="absolute right-[-10px] bottom-0 w-[120px] sm:w-[160px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
+                    style={{
+                      filter: "drop-shadow(0 0 15px hsl(var(--fest-purple) / 0.5)) drop-shadow(0 0 40px hsl(var(--fest-blue) / 0.3))",
+                    }}
+                    animate={{
+                      y: [0, -8, 0],
+                      scale: [1, 1.02, 1],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                )}
+
                 {/* Energy Storm Avatar */}
                 {i === 5 && (
                   <motion.img
@@ -243,7 +264,7 @@ const Branches = () => {
                   />
                 )}
 
-                <div className={`relative p-4 sm:p-6 ${[0, 1, 2, 3, 5, 6].includes(i) ? "pr-[100px] sm:pr-[130px]" : ""}`}>
+                <div className="relative p-4 sm:p-6 pr-[100px] sm:pr-[130px]">
                   <span className={`font-display text-[10px] tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
                     {tribe.biome}
                   </span>
