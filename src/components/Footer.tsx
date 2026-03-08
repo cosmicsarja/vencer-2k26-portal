@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Instagram, Github, Linkedin } from "lucide-react";
 import vencerLogo from "@/assets/vencer-logo.png";
