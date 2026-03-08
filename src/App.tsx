@@ -31,6 +31,10 @@ const PageFallback = () => (
 const App = () => {
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    return useGlobalClickSound();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
