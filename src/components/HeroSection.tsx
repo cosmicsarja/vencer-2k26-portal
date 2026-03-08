@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Code, Cpu, Gamepad2, Music, Camera } from "lucide-react";
 import vencerLogo from "@/assets/vencer-logo.png";
+import pandoraBg from "@/assets/pandora-bg.png";
 
 const floatingIcons = [
   { Icon: Code, x: -220, y: -120, delay: 0, color: "text-fest-teal" },
@@ -14,20 +15,12 @@ const floatingIcons = [
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Pandora landscape backgrounds */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(220_30%_10%)_0%,hsl(220_30%_3%)_80%)]" />
-      
-      {/* Bioluminescent forest glow */}
-      <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-[radial-gradient(ellipse_at_bottom,hsl(175_80%_30%_/_0.08)_0%,transparent_60%)]" />
-      
-      {/* Water reflection */}
-      <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-[radial-gradient(ellipse_at_bottom_center,hsl(210_85%_50%_/_0.06)_0%,transparent_50%)]" />
-      
-      {/* Volcanic ember glow top-right */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,hsl(30_90%_55%_/_0.05)_0%,transparent_70%)]" />
-      
-      {/* Purple nebula */}
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle,hsl(270_55%_50%_/_0.06)_0%,transparent_70%)]" />
+      {/* Pandora background image */}
+      <div className="absolute inset-0">
+        <img src={pandoraBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/20" />
+      </div>
 
       {/* Holographic floating icons */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
