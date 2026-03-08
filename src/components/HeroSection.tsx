@@ -6,7 +6,7 @@ import pandoraBg from "@/assets/pandora-bg.png";
 
 const JellyfishBackground = lazy(() => import("./JellyfishBackground"));
 
-const HeroSection = () => {
+const HeroSection = forwardRef<HTMLElement>((_, ref) => {
   const sporeData = useMemo(
     () =>
       Array.from({ length: 15 }).map(() => ({
