@@ -9,7 +9,6 @@ import RegistrationModal from "@/components/RegistrationModal";
 const Events = () => {
   const [activeBranch, setActiveBranch] = useState(0);
   const [activeTab, setActiveTab] = useState<"branches" | "cultural" | "gaming">("branches");
-  const [branchSubTab, setBranchSubTab] = useState<"technical" | "cultural" | "gaming">("technical");
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [registrationLink, setRegistrationLink] = useState<string | null>(null);
 
@@ -19,19 +18,25 @@ const Events = () => {
     { key: "gaming" as const, label: "Gaming" },
   ];
 
-  const branchSubTabs = [
-    { key: "technical" as const, label: "Technical" },
-    { key: "cultural" as const, label: "Cultural" },
-    { key: "gaming" as const, label: "Gaming" },
-  ];
-
   const currentBranch = branches[activeBranch];
-  const branchEvents =
-    branchSubTab === "technical"
-      ? currentBranch.events
-      : branchSubTab === "cultural"
-      ? currentBranch.culturalEvents
-      : currentBranch.gamingEvents;
+
+  const getEventsForTab = () => {
+    if (activeTab === "branches") return currentBranch.events;
+    if (activeTab === "cultural") return currentBranch.culturalEvents;
+    return currentBranch.gamingEvents;
+  };
+
+  const getTabLabel = () => {
+    if (activeTab === "branches") return "Technical";
+    if (activeTab === "cultural") return "Cultural";
+    return "Gaming";
+  };
+
+  // General cultural/gaming events (not branch-specific)
+  const generalCulturalEvents = culturalEvents;
+  const generalGamingEvents = gamingEvents;
+
+  const branchEvents = getEventsForTab();
 
   const handleRegister = (formLink: string) => {
     setSelectedEvent(null);
@@ -57,7 +62,7 @@ const Events = () => {
           {tabs.map((tab) => (
             <button
               key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
+              onClick={() => { setActiveTab(tab.key); setActiveBranch(0); }}
               className={`font-display text-xs sm:text-sm tracking-wider px-4 sm:px-6 py-2.5 rounded-xl transition-all duration-300 font-bold ${
                 activeTab === tab.key
                   ? "bg-gradient-to-r from-primary to-fest-cyan text-primary-foreground shadow-[0_0_20px_hsl(var(--fest-teal)_/_0.3)]"
@@ -69,77 +74,68 @@ const Events = () => {
           ))}
         </div>
 
-        {activeTab === "branches" && (
-          <>
-            <div className="flex justify-center gap-2 mb-6 flex-wrap">
-              {branches.map((b, i) => (
-                <button
-                  key={b.shortName}
-                  onClick={() => { setActiveBranch(i); setBranchSubTab("technical"); }}
-                  className={`font-heading text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl transition-all duration-300 font-bold ${
-                    activeBranch === i
-                      ? "bg-card border-2 border-primary text-primary shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {b.shortName}
-                </button>
-              ))}
-            </div>
-
-            {/* Branch sub-tabs for Technical/Cultural/Gaming */}
-            <div className="flex justify-center gap-2 mb-6">
-              {branchSubTabs.map((st) => (
-                <button
-                  key={st.key}
-                  onClick={() => setBranchSubTab(st.key)}
-                  className={`font-heading text-xs px-4 py-1.5 rounded-lg transition-all font-bold ${
-                    branchSubTab === st.key
-                      ? "bg-primary/20 text-primary border border-primary/40"
-                      : "text-muted-foreground hover:text-foreground border border-transparent"
-                  }`}
-                >
-                  {st.label}
-                </button>
-              ))}
-            </div>
-
-            <motion.h3
-              key={currentBranch.name + branchSubTab}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="font-heading text-xl sm:text-2xl text-center text-foreground mb-8 font-bold"
+        {/* Branch selector - shown for all tabs */}
+        <div className="flex justify-center gap-2 mb-6 flex-wrap">
+          {branches.map((b, i) => (
+            <button
+              key={b.shortName}
+              onClick={() => setActiveBranch(i)}
+              className={`font-heading text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl transition-all duration-300 font-bold ${
+                activeBranch === i
+                  ? "bg-card border-2 border-primary text-primary shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
-              {currentBranch.name} — {branchSubTab.charAt(0).toUpperCase() + branchSubTab.slice(1)}
-            </motion.h3>
+              {b.shortName}
+            </button>
+          ))}
+        </div>
 
-            {branchEvents.length > 0 ? (
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-                {branchEvents.map((event, i) => (
-                  <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-16 text-muted-foreground font-heading">
-                No {branchSubTab} events for this branch yet.
-              </div>
-            )}
-          </>
-        )}
+        <motion.h3
+          key={currentBranch.name + activeTab}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="font-heading text-xl sm:text-2xl text-center text-foreground mb-8 font-bold"
+        >
+          {currentBranch.name} — {getTabLabel()}
+        </motion.h3>
 
-        {activeTab === "cultural" && (
+        {branchEvents.length > 0 ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-            {culturalEvents.map((event, i) => (
+            {branchEvents.map((event, i) => (
               <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
             ))}
           </div>
+        ) : (
+          <div className="text-center py-16 text-muted-foreground font-heading">
+            No {getTabLabel().toLowerCase()} events for this branch yet.
+          </div>
         )}
 
-        {activeTab === "gaming" && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-            {gamingEvents.map((event, i) => (
-              <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
-            ))}
+        {/* Show general cultural/gaming events below branch events */}
+        {activeTab === "cultural" && generalCulturalEvents.length > 0 && (
+          <div className="mt-16">
+            <h3 className="font-heading text-xl sm:text-2xl text-center text-foreground mb-8 font-bold">
+              General Cultural Events
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+              {generalCulturalEvents.map((event, i) => (
+                <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === "gaming" && generalGamingEvents.length > 0 && (
+          <div className="mt-16">
+            <h3 className="font-heading text-xl sm:text-2xl text-center text-foreground mb-8 font-bold">
+              General Gaming Events
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+              {generalGamingEvents.map((event, i) => (
+                <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
+              ))}
+            </div>
           </div>
         )}
       </div>
