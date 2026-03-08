@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useMemo, memo } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -9,7 +8,7 @@ const JellyfishSVG = memo(({ size, opacity }: { size: number; opacity: number })
       const x = 12 + (i * 36) / (count - 1);
       const cp1x = x + (Math.random() - 0.5) * 10;
       const cp2x = x + (Math.random() - 0.5) * 14;
-      return { x, cp1x, cp2x, dur: 3 + Math.random() * 2 };
+      return { x, cp1x, cp2x };
     });
   }, []);
 
@@ -20,25 +19,13 @@ const JellyfishSVG = memo(({ size, opacity }: { size: number; opacity: number })
       <ellipse cx="30" cy="20" rx="10" ry="7" fill="hsl(var(--fest-cyan) / 0.2)" />
       <circle cx="30" cy="22" r="6" fill="hsl(var(--fest-cyan) / 0.3)" />
       {tentacles.map((t, i) => (
-        <motion.path
+        <path
           key={i}
           d={`M ${t.x} 40 C ${t.cp1x} 58, ${t.cp2x} 72, ${t.x + 4} 90`}
           stroke="hsl(var(--fest-cyan) / 0.35)"
           strokeWidth="1.2"
           fill="none"
           strokeLinecap="round"
-          animate={{
-            d: [
-              `M ${t.x} 40 C ${t.cp1x} 58, ${t.cp2x} 72, ${t.x + 4} 90`,
-              `M ${t.x} 40 C ${t.cp1x + 6} 55, ${t.cp2x - 5} 75, ${t.x - 3} 92`,
-              `M ${t.x} 40 C ${t.cp1x} 58, ${t.cp2x} 72, ${t.x + 4} 90`,
-            ],
-          }}
-          transition={{
-            duration: t.dur,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
         />
       ))}
     </svg>
@@ -57,41 +44,36 @@ const JellyfishBackground = memo(() => {
         size: 30 + Math.random() * 50,
         left: `${5 + Math.random() * 85}%`,
         top: `${10 + Math.random() * 65}%`,
-        delay: Math.random() * 6,
-        durationY: 10 + Math.random() * 8,
-        driftX: 30 + Math.random() * 60,
-        driftY: 25 + Math.random() * 50,
         opacity: 0.3 + Math.random() * 0.4,
-        rotate: -10 + Math.random() * 20,
+        animDuration: `${10 + Math.random() * 8}s`,
+        animDelay: `${Math.random() * 6}s`,
       })),
     [count]
   );
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+      <style>{`
+        @keyframes jf-float {
+          0%, 100% { transform: translateY(0) translateX(0); }
+          25% { transform: translateY(-30px) translateX(20px); }
+          50% { transform: translateY(-15px) translateX(-10px); }
+          75% { transform: translateY(-40px) translateX(15px); }
+        }
+      `}</style>
       {jellyfishData.map((jf, i) => (
-        <motion.div
+        <div
           key={`jf-${i}`}
           className="absolute will-change-transform"
           style={{
             left: jf.left,
             top: jf.top,
-            filter: `drop-shadow(0 0 10px hsl(var(--fest-cyan) / 0.4)) drop-shadow(0 0 25px hsl(var(--fest-teal) / 0.2))`,
-          }}
-          animate={{
-            y: [0, -jf.driftY, 0, jf.driftY * 0.5, 0],
-            x: [0, jf.driftX * 0.6, -jf.driftX * 0.4, jf.driftX * 0.2, 0],
-            rotate: [0, jf.rotate, -jf.rotate * 0.5, jf.rotate * 0.8, 0],
-          }}
-          transition={{
-            duration: jf.durationY,
-            repeat: Infinity,
-            delay: jf.delay,
-            ease: "easeInOut",
+            filter: `drop-shadow(0 0 10px hsl(var(--fest-cyan) / 0.4))`,
+            animation: `jf-float ${jf.animDuration} ease-in-out ${jf.animDelay} infinite`,
           }}
         >
           <JellyfishSVG size={jf.size} opacity={jf.opacity} />
-        </motion.div>
+        </div>
       ))}
     </div>
   );

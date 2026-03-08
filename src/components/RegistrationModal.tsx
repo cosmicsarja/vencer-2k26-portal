@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -6,19 +7,19 @@ interface RegistrationModalProps {
   onClose: () => void;
 }
 
-const RegistrationModal = ({ formLink, onClose }: RegistrationModalProps) => {
+const RegistrationModal = forwardRef<HTMLDivElement, RegistrationModalProps>(({ formLink, onClose }, ref) => {
   if (!formLink) return null;
 
-  // Convert Google Form link to embeddable format
   const embedUrl = formLink.includes("/viewform")
     ? formLink
-    : formLink.endsWith("/") 
+    : formLink.endsWith("/")
       ? formLink + "viewform?embedded=true"
       : formLink + "/viewform?embedded=true";
 
   return (
     <AnimatePresence>
       <motion.div
+        ref={ref}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -52,6 +53,8 @@ const RegistrationModal = ({ formLink, onClose }: RegistrationModalProps) => {
       </motion.div>
     </AnimatePresence>
   );
-};
+});
+
+RegistrationModal.displayName = "RegistrationModal";
 
 export default RegistrationModal;
