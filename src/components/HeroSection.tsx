@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Code, Cpu, Gamepad2, Music, Camera } from "lucide-react";
 import vencerLogo from "@/assets/vencer-logo.png";
+import pandoraBg from "@/assets/pandora-bg.png";
 
 const floatingIcons = [
   { Icon: Code, x: -220, y: -120, delay: 0, color: "text-fest-teal" },
