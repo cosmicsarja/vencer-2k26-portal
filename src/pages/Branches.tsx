@@ -292,6 +292,7 @@ const Branches = () => {
                   </div>
                 </div>
               </motion.div>
+              </Link>
             );
           })}
         </div>
