@@ -64,7 +64,7 @@ const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branc
           </div>
 
           <h3 className="font-heading text-sm sm:text-base font-bold text-foreground mb-1">{tribe.clanName}</h3>
-          <p className="font-heading text-xs text-muted-foreground mb-1">{branch.name}</p>
+          <p className={`font-heading text-xs font-bold text-${tribe.accent} mb-1`}>{branch.name}</p>
           <p className="text-[11px] sm:text-xs text-muted-foreground/80 mb-3 sm:mb-4 leading-relaxed line-clamp-2">{tribe.desc}</p>
 
           <div className="flex items-center justify-between">
