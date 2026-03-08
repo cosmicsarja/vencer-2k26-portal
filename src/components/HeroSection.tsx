@@ -1,16 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Code, Cpu, Gamepad2, Music, Camera } from "lucide-react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
-
-const floatingIcons = [
-  { Icon: Code, x: -220, y: -120, delay: 0, color: "text-fest-teal" },
-  { Icon: Cpu, x: 240, y: -90, delay: 0.3, color: "text-fest-cyan" },
-  { Icon: Camera, x: -270, y: 70, delay: 0.6, color: "text-fest-purple" },
-  { Icon: Music, x: 280, y: 90, delay: 0.9, color: "text-fest-blue" },
-  { Icon: Gamepad2, x: -160, y: 170, delay: 1.2, color: "text-fest-orange" },
-];
 
 const HeroSection = () => {
   return (
@@ -20,35 +11,6 @@ const HeroSection = () => {
         <img src={pandoraBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/20" />
-      </div>
-
-      {/* Holographic floating icons */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {floatingIcons.map(({ Icon, x, y, delay, color }, i) => (
-          <motion.div
-            key={i}
-            className={`absolute ${color} opacity-25`}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.25, scale: 1 }}
-            transition={{ delay: delay + 0.5, duration: 0.8 }}
-            style={{ left: `calc(50% + ${x}px)`, top: `calc(50% + ${y}px)` }}
-          >
-            <motion.div
-              animate={{ y: [0, -18, 0] }}
-              transition={{ duration: 4 + i * 0.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="relative">
-                <Icon size={30} />
-                <div
-                  className="absolute inset-0 blur-md opacity-50"
-                  style={{ color: "inherit" }}
-                >
-                  <Icon size={30} />
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        ))}
       </div>
 
       <div className="relative z-10 container text-center px-4">
