@@ -5,7 +5,7 @@ import pandoraBg from "@/assets/pandora-bg.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Pandora background */}
       <motion.div
         className="absolute inset-0"
