@@ -29,7 +29,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
   ];
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Pandora background */}
       <motion.div
         className="absolute inset-0"
