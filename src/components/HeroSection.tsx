@@ -1,16 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Code, Cpu, Gamepad2, Music, Camera } from "lucide-react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
-
-const floatingIcons = [
-  { Icon: Code, x: -220, y: -120, delay: 0, color: "text-fest-teal" },
-  { Icon: Cpu, x: 240, y: -90, delay: 0.3, color: "text-fest-cyan" },
-  { Icon: Camera, x: -270, y: 70, delay: 0.6, color: "text-fest-purple" },
-  { Icon: Music, x: 280, y: 90, delay: 0.9, color: "text-fest-blue" },
-  { Icon: Gamepad2, x: -160, y: 170, delay: 1.2, color: "text-fest-orange" },
-];
 
 const HeroSection = () => {
   return (
