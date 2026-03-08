@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useMemo, lazy, Suspense, forwardRef } from "react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
+import tribesCharacters from "@/assets/tribes-characters.png";
 
 const JellyfishBackground = lazy(() => import("./JellyfishBackground"));
 
@@ -29,7 +30,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
   ];
 
   return (
-    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[150vh] flex flex-col items-center overflow-hidden">
       {/* Pandora background */}
       <motion.div
         className="absolute inset-0"
@@ -66,7 +67,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
         <div className="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--fest-teal)_/_0.3)_0%,transparent_70%)]" />
       </motion.div>
 
-      {/* Floating spore particles - reduced count */}
+      {/* Floating spore particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {sporeData.map((s, i) => (
           <motion.div
@@ -96,7 +97,8 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
         ))}
       </div>
 
-      <div className="relative z-10 container text-center px-4">
+      {/* Hero content - centered in first viewport */}
+      <div className="relative z-10 container text-center px-4 h-screen flex flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -155,6 +157,22 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
           </Link>
         </motion.div>
       </div>
+
+      {/* Tribes Characters - scroll reveal */}
+      <motion.div
+        className="relative z-10 w-full flex justify-center mt-[-5vh] pb-12"
+        initial={{ opacity: 0, y: 120 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
+        <img
+          src={tribesCharacters}
+          alt="The Tribes of VENCER"
+          className="w-[90%] max-w-5xl drop-shadow-[0_0_40px_hsl(var(--fest-teal)_/_0.3)]"
+          loading="lazy"
+        />
+      </motion.div>
     </section>
   );
 });
