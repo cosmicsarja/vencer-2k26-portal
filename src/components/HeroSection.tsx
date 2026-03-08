@@ -163,7 +163,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
       {/* Tribes Characters - zoom out effect on scroll, clean bg */}
       <div className="relative w-full bg-background flex justify-center py-12 overflow-hidden">
         <motion.div
-          className="w-full flex justify-center"
+          className="w-full"
           initial={{ opacity: 0, scale: 1.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.15 }}
@@ -172,7 +172,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
           <img
             src={tribesCharacters}
             alt="The Tribes of VENCER"
-            className="w-[90%] max-w-5xl drop-shadow-[0_0_40px_hsl(var(--fest-teal)_/_0.3)]"
+            className="w-full drop-shadow-[0_0_40px_hsl(var(--fest-teal)_/_0.3)]"
             loading="lazy"
           />
         </motion.div>
