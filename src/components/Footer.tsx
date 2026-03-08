@@ -17,9 +17,9 @@ const socialLinks = [
   { icon: Github, href: "https://github.com", label: "GitHub" },
 ];
 
-const Footer = () => {
+const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer className="border-t border-border/20 py-8 sm:py-12 relative">
+    <footer ref={ref} className="border-t border-border/20 py-8 sm:py-12 relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(175_80%_40%_/_0.03)_0%,transparent_50%)]" />
       <div className="container px-4 relative">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
