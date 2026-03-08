@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, memo } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface Particle {
@@ -25,10 +25,10 @@ const emberColors = [
   "hsl(45 85% 55% / 0.15)",
 ];
 
-const ParticleBackground = () => {
+const ParticleBackground = memo(() => {
   const isMobile = useIsMobile();
-  const sporeCount = isMobile ? 12 : 35;
-  const emberCount = isMobile ? 4 : 12;
+  const sporeCount = isMobile ? 8 : 20;
+  const emberCount = isMobile ? 3 : 8;
 
   const particles = useMemo<Particle[]>(() => {
     const spores = Array.from({ length: sporeCount }, (_, i) => ({
@@ -53,7 +53,7 @@ const ParticleBackground = () => {
   }, [sporeCount, emberCount]);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
       {particles.map((p) => (
         <div
           key={p.id}
@@ -70,6 +70,8 @@ const ParticleBackground = () => {
       ))}
     </div>
   );
-};
+});
+
+ParticleBackground.displayName = "ParticleBackground";
 
 export default ParticleBackground;

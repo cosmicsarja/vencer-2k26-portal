@@ -1,14 +1,19 @@
+import { lazy, Suspense, memo } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import ParticleBackground from "./ParticleBackground";
-import JellyfishBackground from "./JellyfishBackground";
 
-const Layout = () => {
+// Lazy load heavy background components
+const ParticleBackground = lazy(() => import("./ParticleBackground"));
+const JellyfishBackground = lazy(() => import("./JellyfishBackground"));
+
+const Layout = memo(() => {
   return (
     <div className="min-h-screen bg-background relative">
-      <ParticleBackground />
-      <JellyfishBackground />
+      <Suspense fallback={null}>
+        <ParticleBackground />
+        <JellyfishBackground />
+      </Suspense>
       <Navbar />
       <main>
         <Outlet />
@@ -16,6 +21,8 @@ const Layout = () => {
       <Footer />
     </div>
   );
-};
+});
+
+Layout.displayName = "Layout";
 
 export default Layout;

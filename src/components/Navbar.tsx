@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,7 +15,7 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const Navbar = () => {
+const Navbar = memo(() => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -23,14 +23,20 @@ const Navbar = () => {
   useEffect(() => {
     document.documentElement.classList.add("dark");
     document.documentElement.classList.remove("light");
-    localStorage.setItem("theme", "dark");
   }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  const toggleMenu = useCallback(() => setOpen(prev => !prev), []);
 
   return (
     <nav
@@ -39,17 +45,19 @@ const Navbar = () => {
           ? "glass-pandora shadow-[0_4px_30px_hsl(var(--fest-teal)_/_0.08)]"
           : "bg-transparent"
       }`}
+      role="navigation"
+      aria-label="Main navigation"
     >
-      <div className="container flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={vencerLogo} alt="VENCER" className="h-10 w-auto bioluminescent-glow" />
+      <div className="container flex items-center justify-between h-14 sm:h-16">
+        <Link to="/" className="flex items-center gap-2" aria-label="VENCER Home">
+          <img src={vencerLogo} alt="VENCER" className="h-8 sm:h-10 w-auto bioluminescent-glow" width={80} height={40} />
         </Link>
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           {navLinks.map((l) => (
             <Link
               key={l.href}
               to={l.href}
-              className={`font-heading text-sm uppercase tracking-widest transition-all duration-300 ${
+              className={`font-heading text-xs xl:text-sm uppercase tracking-widest transition-all duration-300 ${
                 location.pathname === l.href
                   ? "text-primary text-glow-teal"
                   : "text-muted-foreground hover:text-foreground"
@@ -59,11 +67,14 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-3 lg:hidden">
-          <button onClick={() => setOpen(!open)} className="text-foreground">
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+        <button
+          onClick={toggleMenu}
+          className="lg:hidden text-foreground p-2"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+        >
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
       <AnimatePresence>
         {open && (
@@ -73,13 +84,12 @@ const Navbar = () => {
             exit={{ height: 0, opacity: 0 }}
             className="lg:hidden glass-pandora border-t border-border/20 overflow-hidden"
           >
-            <div className="flex flex-col p-4 gap-4">
+            <div className="flex flex-col p-4 gap-3">
               {navLinks.map((l) => (
                 <Link
                   key={l.href}
                   to={l.href}
-                  onClick={() => setOpen(false)}
-                  className={`font-heading text-sm uppercase tracking-widest transition-colors ${
+                  className={`font-heading text-sm uppercase tracking-widest transition-colors py-1 ${
                     location.pathname === l.href
                       ? "text-primary text-glow-teal"
                       : "text-muted-foreground hover:text-foreground"
@@ -94,6 +104,8 @@ const Navbar = () => {
       </AnimatePresence>
     </nav>
   );
-};
+});
+
+Navbar.displayName = "Navbar";
 
 export default Navbar;
