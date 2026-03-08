@@ -50,7 +50,7 @@ const Navbar = memo(() => {
     >
       <div className="container flex items-center justify-between h-14 sm:h-16">
         <Link to="/" className="flex items-center gap-2" aria-label="VENCER Home">
-          <img src={vencerLogo} alt="VENCER" className="h-8 sm:h-10 w-auto bioluminescent-glow" width={80} height={40} />
+          <img src={vencerLogo} alt="VENCER" className="h-12 sm:h-14 w-auto bioluminescent-glow" width={112} height={56} />
         </Link>
         <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           {navLinks.map((l) => (
