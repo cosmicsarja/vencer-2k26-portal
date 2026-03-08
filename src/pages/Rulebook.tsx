@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Download, BookOpen, FileText } from "lucide-react";
+import { Download, BookOpen, FileText, X } from "lucide-react";
 
 const Rulebook = () => {
+  const [showViewer, setShowViewer] = useState(false);
+
   return (
     <section className="relative py-24 pt-28 min-h-screen">
       <div className="container px-4">
