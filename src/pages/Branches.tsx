@@ -116,7 +116,6 @@ const Branches = () => {
                 transition={{ delay: i * 0.08, duration: 0.6 }}
                 className={`relative rounded-2xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80 cursor-pointer`}
               >
-              >
                 <div className={`absolute inset-0 bg-gradient-to-br ${tribe.gradient}`} />
 
                 {/* Spirit Tech Avatar */}
