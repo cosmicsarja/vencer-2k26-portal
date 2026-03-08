@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useMemo } from "react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
+import JellyfishBackground from "./JellyfishBackground";
 
 const HeroSection = () => {
   const sporeData = useMemo(
@@ -45,6 +46,11 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-background/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
       </motion.div>
+
+      {/* Jellyfish layer above background */}
+      <div className="absolute inset-0 z-[1]">
+        <JellyfishBackground />
+      </div>
 
       {/* Color overlays */}
       <motion.div
