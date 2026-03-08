@@ -6,6 +6,7 @@ import spiritTechAvatar from "@/assets/spirit-tech-avatar.png";
 import digitalForestAvatar from "@/assets/digital-forest-avatar.png";
 import ironMountainAvatar from "@/assets/iron-mountain-avatar.png";
 import earthBuildersAvatar from "@/assets/earth-builders-avatar.png";
+import signalSkyAvatar from "@/assets/signal-sky-avatar.png";
 import energyStormAvatar from "@/assets/energy-storm-avatar.png";
 import steelSentinelAvatar from "@/assets/steel-sentinel-avatar.png";
 
