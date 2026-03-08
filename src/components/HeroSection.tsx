@@ -1,12 +1,54 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
+import jellyfishImg from "@/assets/jellyfish.png";
+
+const JELLYFISH_COUNT = 8;
 
 const HeroSection = () => {
+  const jellyfishData = useMemo(
+    () =>
+      Array.from({ length: JELLYFISH_COUNT }).map((_, i) => ({
+        size: 40 + Math.random() * 60,
+        left: `${5 + Math.random() * 85}%`,
+        top: `${10 + Math.random() * 70}%`,
+        delay: Math.random() * 6,
+        durationY: 10 + Math.random() * 8,
+        durationX: 12 + Math.random() * 10,
+        driftX: 40 + Math.random() * 80,
+        driftY: 30 + Math.random() * 60,
+        opacity: 0.15 + Math.random() * 0.25,
+        rotate: -15 + Math.random() * 30,
+      })),
+    []
+  );
+
+  const sporeData = useMemo(
+    () =>
+      Array.from({ length: 20 }).map(() => ({
+        size: 2 + Math.random() * 4,
+        left: `${Math.random() * 100}%`,
+        bottom: `-${Math.random() * 10}%`,
+        colorIdx: Math.floor(Math.random() * 3),
+        yDist: -(600 + Math.random() * 400),
+        xDist: (Math.random() - 0.5) * 100,
+        duration: 8 + Math.random() * 8,
+        delay: Math.random() * 10,
+      })),
+    []
+  );
+
+  const colors = [
+    { bg: "hsl(var(--fest-teal))", shadow: "hsl(var(--fest-teal) / 0.6)" },
+    { bg: "hsl(var(--fest-cyan))", shadow: "hsl(var(--fest-cyan) / 0.6)" },
+    { bg: "hsl(var(--fest-purple))", shadow: "hsl(var(--fest-purple) / 0.6)" },
+  ];
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Pandora background */}
+      {/* Pandora background */}
       <motion.div
         className="absolute inset-0"
         initial={{ scale: 1.1, opacity: 0 }}
@@ -24,7 +66,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
       </motion.div>
 
-      {/* Animated color overlays matching theme */}
+      {/* Color overlays */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         animate={{ opacity: [0.08, 0.15, 0.08] }}
@@ -39,53 +81,70 @@ const HeroSection = () => {
       >
         <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-[radial-gradient(ellipse_at_top_right,hsl(var(--fest-orange)_/_0.25)_0%,transparent_70%)]" />
       </motion.div>
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        animate={{ opacity: [0.05, 0.1, 0.05] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-      >
-        <div className="absolute bottom-1/3 right-1/4 w-[40%] h-[40%] bg-[radial-gradient(circle,hsl(var(--fest-purple)_/_0.2)_0%,transparent_70%)]" />
-      </motion.div>
+
+      {/* Floating jellyfish */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {jellyfishData.map((jf, i) => (
+          <motion.img
+            key={`jf-${i}`}
+            src={jellyfishImg}
+            alt=""
+            className="absolute"
+            style={{
+              width: jf.size,
+              height: jf.size,
+              left: jf.left,
+              top: jf.top,
+              opacity: jf.opacity,
+              filter: `drop-shadow(0 0 12px hsl(var(--fest-cyan) / 0.5)) drop-shadow(0 0 30px hsl(var(--fest-teal) / 0.3))`,
+            }}
+            animate={{
+              y: [0, -jf.driftY, 0, jf.driftY * 0.5, 0],
+              x: [0, jf.driftX * 0.6, -jf.driftX * 0.4, jf.driftX * 0.2, 0],
+              rotate: [0, jf.rotate, -jf.rotate * 0.5, jf.rotate * 0.8, 0],
+              scale: [1, 1.05, 0.95, 1.02, 1],
+            }}
+            transition={{
+              duration: jf.durationY,
+              repeat: Infinity,
+              delay: jf.delay,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
 
       {/* Floating spore particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {Array.from({ length: 20 }).map((_, i) => (
+        {sporeData.map((s, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full"
             style={{
-              width: 2 + Math.random() * 4,
-              height: 2 + Math.random() * 4,
-              left: `${Math.random() * 100}%`,
-              bottom: `-${Math.random() * 10}%`,
-              background: i % 3 === 0
-                ? "hsl(var(--fest-teal))"
-                : i % 3 === 1
-                ? "hsl(var(--fest-cyan))"
-                : "hsl(var(--fest-purple))",
-              boxShadow: i % 3 === 0
-                ? "0 0 8px hsl(var(--fest-teal) / 0.6)"
-                : i % 3 === 1
-                ? "0 0 8px hsl(var(--fest-cyan) / 0.6)"
-                : "0 0 8px hsl(var(--fest-purple) / 0.6)",
+              width: s.size,
+              height: s.size,
+              left: s.left,
+              bottom: s.bottom,
+              background: colors[s.colorIdx].bg,
+              boxShadow: `0 0 8px ${colors[s.colorIdx].shadow}`,
             }}
             animate={{
-              y: [0, -(600 + Math.random() * 400)],
-              x: [0, (Math.random() - 0.5) * 100],
+              y: [0, s.yDist],
+              x: [0, s.xDist],
               opacity: [0, 0.8, 0.6, 0],
               scale: [0.5, 1, 0.3],
             }}
             transition={{
-              duration: 8 + Math.random() * 8,
+              duration: s.duration,
               repeat: Infinity,
-              delay: Math.random() * 10,
+              delay: s.delay,
               ease: "easeOut",
             }}
           />
         ))}
       </div>
 
-      <div className="relative z-10 container text-center px-4 py-8 rounded-3xl bg-background/50 backdrop-blur-sm max-w-3xl mx-auto">
+      <div className="relative z-10 container text-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
