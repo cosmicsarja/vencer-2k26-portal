@@ -85,7 +85,7 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="relative z-10 container text-center px-4">
+      <div className="relative z-10 container text-center px-4 py-8 rounded-3xl bg-background/50 backdrop-blur-sm max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
