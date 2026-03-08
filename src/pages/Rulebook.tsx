@@ -37,14 +37,25 @@ const Rulebook = () => {
                 Contains all event rules, eligibility criteria, code of conduct, and general guidelines for participants.
               </p>
             </div>
-            <a
-              href="/VENCER_2K26_Rulebook.pdf"
-              download
-              className="inline-flex items-center gap-3 font-display text-sm tracking-wider px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_0_25px_hsl(25_95%_55%_/_0.4)] transition-all duration-300 hover:scale-105"
-            >
-              <Download size={18} />
-              Download Rulebook (PDF)
-            </a>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <a
+                href="/VENCER_2K26_Rulebook.pdf"
+                download
+                className="inline-flex items-center gap-3 font-display text-sm tracking-wider px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_0_25px_hsl(25_95%_55%_/_0.4)] transition-all duration-300 hover:scale-105"
+              >
+                <Download size={18} />
+                Download Rulebook (PDF)
+              </a>
+              <a
+                href="/VENCER_2K26_Rulebook.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 font-display text-sm tracking-wider px-8 py-3.5 rounded-xl border border-primary/50 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300 hover:scale-105"
+              >
+                <BookOpen size={18} />
+                View Rulebook
+              </a>
+            </div>
           </motion.div>
 
           <motion.div
