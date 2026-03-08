@@ -63,13 +63,13 @@ const EventCard = ({ event, index, onClick }: { event: Event; index: number; onC
         </div>
       </div>
 
-      <div className="p-5 flex flex-col flex-1 border-t-2 border-border/20 bg-card/60">
+      <div className="p-5 flex flex-col flex-1 border-t-2 border-border/20 bg-card/90">
         {event.branch && (
           <p className="text-xs text-muted-foreground font-heading mb-1 font-bold">{event.branch}</p>
         )}
         <h4 className="font-heading text-xl font-bold text-foreground mb-2">{event.title}</h4>
         <p className="text-sm text-muted-foreground mb-4 flex-1 leading-relaxed">{event.description}</p>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground font-bold">
+        <div className="flex items-center gap-4 text-sm text-foreground/90 font-bold">
           <span className="flex items-center gap-1">
             <Trophy size={14} className="text-fest-yellow" />
             {event.prizePool}
