@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Brain, Monitor, Cog, Building2, Cpu, Zap, Bot } from "lucide-react";
 import { branches } from "@/data/events";
+import spiritTechAvatar from "@/assets/spirit-tech-avatar.png";
 
 const tribes = [
   {
