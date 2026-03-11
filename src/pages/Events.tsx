@@ -31,10 +31,22 @@ const Events = () => {
 
   const currentBranch = branches[activeBranch];
 
+  const getAllCulturalEvents = () => {
+    const all: Event[] = [];
+    branches.forEach(b => all.push(...b.culturalEvents));
+    return all;
+  };
+
+  const getAllGamingEvents = () => {
+    const all: Event[] = [];
+    branches.forEach(b => all.push(...b.gamingEvents));
+    return all;
+  };
+
   const getEventsForTab = () => {
     if (activeTab === "branches") return currentBranch.events;
-    if (activeTab === "cultural") return currentBranch.culturalEvents;
-    return currentBranch.gamingEvents;
+    if (activeTab === "cultural") return getAllCulturalEvents();
+    return getAllGamingEvents();
   };
 
   const getTabLabel = () => {
@@ -81,22 +93,24 @@ const Events = () => {
           ))}
         </div>
 
-        {/* Branch selector */}
-        <div className="flex justify-center gap-1.5 sm:gap-2 mb-6 flex-wrap px-2">
-          {branches.map((b, i) => (
-            <button
-              key={b.shortName}
-              onClick={() => setActiveBranch(i)}
-              className={`font-heading text-[10px] sm:text-xs px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all duration-300 font-bold ${
-                activeBranch === i
-                  ? "bg-card border-2 border-primary text-primary shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {b.shortName}
-            </button>
-          ))}
-        </div>
+        {/* Branch selector - only for tribe events */}
+        {activeTab === "branches" && (
+          <div className="flex justify-center gap-1.5 sm:gap-2 mb-6 flex-wrap px-2">
+            {branches.map((b, i) => (
+              <button
+                key={b.shortName}
+                onClick={() => setActiveBranch(i)}
+                className={`font-heading text-[10px] sm:text-xs px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all duration-300 font-bold ${
+                  activeBranch === i
+                    ? "bg-card border-2 border-primary text-primary shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {b.shortName}
+              </button>
+            ))}
+          </div>
+        )}
 
         <motion.h3
           key={currentBranch.name + activeTab}
@@ -104,7 +118,7 @@ const Events = () => {
           animate={{ opacity: 1 }}
           className="font-heading text-lg sm:text-xl md:text-2xl text-center text-foreground mb-6 sm:mb-8 font-bold"
         >
-          {currentBranch.name} — {getTabLabel()}
+          {activeTab === "branches" ? `${currentBranch.name} — ${getTabLabel()}` : getTabLabel() + " Events"}
         </motion.h3>
 
         {branchEvents.length > 0 ? (
