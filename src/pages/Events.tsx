@@ -81,22 +81,24 @@ const Events = () => {
           ))}
         </div>
 
-        {/* Branch selector */}
-        <div className="flex justify-center gap-1.5 sm:gap-2 mb-6 flex-wrap px-2">
-          {branches.map((b, i) => (
-            <button
-              key={b.shortName}
-              onClick={() => setActiveBranch(i)}
-              className={`font-heading text-[10px] sm:text-xs px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all duration-300 font-bold ${
-                activeBranch === i
-                  ? "bg-card border-2 border-primary text-primary shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {b.shortName}
-            </button>
-          ))}
-        </div>
+        {/* Branch selector - only for tribe events */}
+        {activeTab === "branches" && (
+          <div className="flex justify-center gap-1.5 sm:gap-2 mb-6 flex-wrap px-2">
+            {branches.map((b, i) => (
+              <button
+                key={b.shortName}
+                onClick={() => setActiveBranch(i)}
+                className={`font-heading text-[10px] sm:text-xs px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all duration-300 font-bold ${
+                  activeBranch === i
+                    ? "bg-card border-2 border-primary text-primary shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {b.shortName}
+              </button>
+            ))}
+          </div>
+        )}
 
         <motion.h3
           key={currentBranch.name + activeTab}
