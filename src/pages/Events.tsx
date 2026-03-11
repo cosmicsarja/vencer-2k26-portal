@@ -31,10 +31,22 @@ const Events = () => {
 
   const currentBranch = branches[activeBranch];
 
+  const getAllCulturalEvents = () => {
+    const all: Event[] = [];
+    branches.forEach(b => all.push(...b.culturalEvents));
+    return all;
+  };
+
+  const getAllGamingEvents = () => {
+    const all: Event[] = [];
+    branches.forEach(b => all.push(...b.gamingEvents));
+    return all;
+  };
+
   const getEventsForTab = () => {
     if (activeTab === "branches") return currentBranch.events;
-    if (activeTab === "cultural") return currentBranch.culturalEvents;
-    return currentBranch.gamingEvents;
+    if (activeTab === "cultural") return getAllCulturalEvents();
+    return getAllGamingEvents();
   };
 
   const getTabLabel = () => {
