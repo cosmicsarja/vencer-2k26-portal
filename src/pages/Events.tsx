@@ -118,7 +118,7 @@ const Events = () => {
           animate={{ opacity: 1 }}
           className="font-heading text-lg sm:text-xl md:text-2xl text-center text-foreground mb-6 sm:mb-8 font-bold"
         >
-          {currentBranch.name} — {getTabLabel()}
+          {activeTab === "branches" ? `${currentBranch.name} — ${getTabLabel()}` : getTabLabel() + " Events"}
         </motion.h3>
 
         {branchEvents.length > 0 ? (
