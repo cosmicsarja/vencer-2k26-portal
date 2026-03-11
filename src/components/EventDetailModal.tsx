@@ -134,6 +134,14 @@ const EventDetailModal = forwardRef<HTMLDivElement, EventDetailModalProps>(({ ev
               </div>
             )}
 
+            <a
+              href="/VENCER_2K26_Rulebook.pdf"
+              download
+              className="flex items-center justify-center gap-2 w-full font-display text-xs sm:text-sm tracking-wider px-6 py-3 rounded-xl border-2 border-primary/40 bg-primary/10 text-primary font-bold hover:bg-primary/20 hover:shadow-[0_0_20px_hsl(var(--fest-teal)_/_0.2)] transition-all duration-300 hover:scale-[1.02]"
+            >
+              <Download size={16} />
+              Download Rulebook
+            </a>
             <button
               onClick={() => onRegister?.(event.formLink)}
               className="flex items-center justify-center gap-2 w-full font-display text-xs sm:text-sm tracking-wider px-6 py-3 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground font-bold hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-[1.02]"
