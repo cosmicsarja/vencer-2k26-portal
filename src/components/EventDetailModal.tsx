@@ -1,6 +1,6 @@
 import { useEffect, useCallback, forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Trophy, IndianRupee, Clock, Users, MapPin, BookOpen } from "lucide-react";
+import { X, Trophy, IndianRupee, Clock, Users, MapPin, BookOpen, Download } from "lucide-react";
 import type { Event } from "@/data/events";
 
 interface EventDetailModalProps {
