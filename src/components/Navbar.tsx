@@ -57,7 +57,7 @@ const Navbar = memo(() => {
             <Link
               key={l.href}
               to={l.href}
-              className={`font-heading text-xs xl:text-sm uppercase tracking-widest transition-all duration-300 ${
+              className={`font-heading text-xs xl:text-sm font-bold uppercase tracking-widest transition-all duration-300 ${
                 location.pathname === l.href
                   ? "text-primary text-glow-teal"
                   : "text-muted-foreground hover:text-foreground"
@@ -89,7 +89,7 @@ const Navbar = memo(() => {
                 <Link
                   key={l.href}
                   to={l.href}
-                  className={`font-heading text-sm uppercase tracking-widest transition-colors py-1 ${
+                  className={`font-heading text-sm font-bold uppercase tracking-widest transition-colors py-1 ${
                     location.pathname === l.href
                       ? "text-primary text-glow-teal"
                       : "text-muted-foreground hover:text-foreground"
