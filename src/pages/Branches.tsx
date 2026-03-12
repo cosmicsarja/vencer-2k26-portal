@@ -10,10 +10,11 @@ import earthBuildersAvatar from "@/assets/earth-builders-avatar.png";
 import signalSkyAvatar from "@/assets/signal-sky-avatar.png";
 import energyStormAvatar from "@/assets/energy-storm-avatar.png";
 import steelSentinelAvatar from "@/assets/steel-sentinel-avatar.png";
+import codeBloomAvatar from "@/assets/code-bloom-avatar.png";
 
 const avatars = [
   spiritTechAvatar, digitalForestAvatar, ironMountainAvatar,
-  earthBuildersAvatar, signalSkyAvatar, energyStormAvatar, steelSentinelAvatar,
+  earthBuildersAvatar, signalSkyAvatar, energyStormAvatar, steelSentinelAvatar, codeBloomAvatar,
 ];
 
 const tribes = [
