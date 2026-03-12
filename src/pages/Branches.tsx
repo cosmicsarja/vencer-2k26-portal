@@ -10,10 +10,11 @@ import earthBuildersAvatar from "@/assets/earth-builders-avatar.png";
 import signalSkyAvatar from "@/assets/signal-sky-avatar.png";
 import energyStormAvatar from "@/assets/energy-storm-avatar.png";
 import steelSentinelAvatar from "@/assets/steel-sentinel-avatar.png";
+import codeBloomAvatar from "@/assets/code-bloom-avatar.png";
 
 const avatars = [
   spiritTechAvatar, digitalForestAvatar, ironMountainAvatar,
-  earthBuildersAvatar, signalSkyAvatar, energyStormAvatar, steelSentinelAvatar,
+  earthBuildersAvatar, signalSkyAvatar, energyStormAvatar, steelSentinelAvatar, codeBloomAvatar,
 ];
 
 const tribes = [
@@ -23,7 +24,8 @@ const tribes = [
   { clanName: "Earth Builders Clan", icon: Building2, biome: "Stone Valley", accent: "fest-yellow", glowVar: "--fest-yellow", gradient: "from-fest-yellow/20 via-fest-orange/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-yellow)_/_0.35)]", desc: "Guardians of the land — raising structures that stand as monuments to Pandora's strength.", filterColor: "45 85% 55%" },
   { clanName: "Signal Sky Clan", icon: Cpu, biome: "Aurora Heights", accent: "fest-purple", glowVar: "--fest-purple", gradient: "from-fest-purple/20 via-fest-blue/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-purple)_/_0.35)]", desc: "Riders of the aurora — channeling electromagnetic waves across Pandora's skies.", filterColor: "270 55% 50%" },
   { clanName: "Energy Storm Clan", icon: Zap, biome: "Lightning Plains", accent: "fest-blue", glowVar: "--fest-blue", gradient: "from-fest-blue/20 via-fest-teal/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-blue)_/_0.35)]", desc: "Harvesters of the storm — commanding the raw power that flows through all living things.", filterColor: "210 85% 50%" },
-  { clanName: "Steel Sentinel Clan", icon: Bot, biome: "Mech Frontier", accent: "fest-cyan", glowVar: "--fest-cyan", gradient: "from-fest-cyan/20 via-fest-teal/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-cyan)_/_0.35)]", desc: "Builders of sentient machines — commanding steel and code to create autonomous warriors.", filterColor: "185 90% 45%" },
+  { clanName: "Mech Guardian Clan", icon: Bot, biome: "Mech Frontier", accent: "fest-cyan", glowVar: "--fest-cyan", gradient: "from-fest-cyan/20 via-fest-teal/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-cyan)_/_0.35)]", desc: "Builders of sentient machines — commanding steel and code to create autonomous warriors.", filterColor: "185 90% 45%" },
+  { clanName: "Code Bloom Clan", icon: Monitor, biome: "Digital Meadow", accent: "fest-green", glowVar: "--fest-green", gradient: "from-fest-green/20 via-fest-teal/10 to-transparent", borderGlow: "hover:shadow-[0_0_30px_hsl(var(--fest-green)_/_0.35)]", desc: "Where code blooms into powerful applications — cultivating the digital wilderness with creativity.", filterColor: "140 70% 45%" },
 ];
 
 const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branches[0]; tribe: typeof tribes[0]; index: number; avatar: string }) => {
@@ -97,7 +99,7 @@ const Branches = () => {
             The Tribes of VENCER
           </h1>
           <p className="font-body text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-            Seven clans, one world. Each tribe commands a unique biome of knowledge and innovation.
+            Eight clans, one world. Each tribe commands a unique biome of knowledge and innovation.
           </p>
         </motion.div>
 

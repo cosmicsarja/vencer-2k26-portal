@@ -139,6 +139,22 @@ export const branches: Branch[] = [
       { title: "Bot Battle Arena", category: "Gaming", description: "Remote controlled bot fighting arena", prizePool: "₹10,000", entryFee: "₹250", formLink: "https://forms.google.com", branch: "ROBO", teamSize: "2-4 members", duration: "Full Day", venue: "Main Ground", rules: ["Team of 2-4 members", "Bot weight limit: 10 kg", "Remote controlled only", "No fire or chemical weapons", "3-minute rounds", "Knockout or points-based win"] },
     ],
   },
+  {
+    name: "Bachelor of Computer Applications",
+    shortName: "BCA",
+    color: "fest-green",
+    events: [
+      { title: "App Dev Sprint", category: "Technical", description: "Build a mobile/web application under pressure", prizePool: "₹15,000", entryFee: "₹150", formLink: "https://forms.google.com", branch: "BCA", teamSize: "2-3 members", duration: "5 Hours", venue: "CS Lab 3", rules: ["Team of 2-3 members", "Topic revealed on the spot", "Any framework or language allowed", "Must demo a working prototype", "Pre-built templates not allowed", "Judged on functionality, design, and innovation"] },
+      { title: "Debug Relay", category: "Technical", description: "Find and fix bugs in relay-style rounds", prizePool: "₹8,000", entryFee: "₹100", formLink: "https://forms.google.com", branch: "BCA", teamSize: "3 members", duration: "2 Hours", venue: "CS Lab 2", rules: ["Team of 3 members", "Each member debugs one round", "Languages: Python, Java, C++", "Fastest correct fixes win", "No internet allowed"] },
+      { title: "IT Quiz", category: "Non-Technical", description: "General IT and computer science quiz", prizePool: "₹5,000", entryFee: "₹50", formLink: "https://forms.google.com", branch: "BCA", teamSize: "2 members", duration: "1.5 Hours", venue: "Seminar Hall", rules: ["Team of 2 members", "Rounds: written, rapid fire, buzzer", "Topics: programming, OS, networking, current tech", "No electronic devices"] },
+    ],
+    culturalEvents: [
+      { title: "UI/UX Showdown", category: "Cultural", description: "Design stunning user interfaces for a given theme", prizePool: "₹5,000", entryFee: "₹100", formLink: "https://forms.google.com", branch: "BCA", teamSize: "Individual", duration: "3 Hours", venue: "CS Lab 1", rules: ["Individual participation", "Use Figma or any design tool", "Theme revealed on spot", "Judged on aesthetics, usability, and creativity"] },
+    ],
+    gamingEvents: [
+      { title: "Code Golf", category: "Gaming", description: "Solve problems with the shortest possible code", prizePool: "₹3,000", entryFee: "₹50", formLink: "https://forms.google.com", branch: "BCA", teamSize: "Individual", duration: "1.5 Hours", venue: "CS Lab 3", rules: ["Individual participation", "Solve given problems with minimum characters", "Any language allowed", "Correct output required", "Shortest correct code wins"] },
+    ],
+  },
 ];
 
 export const culturalEvents: Event[] = [
