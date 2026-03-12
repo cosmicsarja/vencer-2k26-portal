@@ -48,11 +48,11 @@ const Developers = () => {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="flex flex-col items-center"
           >
-            <div className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-primary/30 shadow-[0_0_40px_hsl(var(--primary)/0.2)] mb-6">
+            <div className="relative w-56 sm:w-72 mb-6">
               <img
                 src={dev.photo}
                 alt={dev.name}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-auto object-contain"
               />
             </div>
 
