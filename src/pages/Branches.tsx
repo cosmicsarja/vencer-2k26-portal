@@ -99,7 +99,7 @@ const Branches = () => {
             The Tribes of VENCER
           </h1>
           <p className="font-body text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-            Seven clans, one world. Each tribe commands a unique biome of knowledge and innovation.
+            Eight clans, one world. Each tribe commands a unique biome of knowledge and innovation.
           </p>
         </motion.div>
 
