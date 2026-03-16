@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import LoadingScreen from "./components/LoadingScreen";
+import ClickSpark from "./components/ClickSpark";
 
 // Lazy-loaded route components for code splitting
 const Home = lazy(() => import("./pages/Home"));
@@ -36,31 +37,33 @@ const App = () => {
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
-        <BrowserRouter>
-          <Suspense fallback={<PageFallback />}>
-            <Routes>
-              <Route element={<Layout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/rulebook" element={<Rulebook />} />
-                <Route path="/branches" element={<Branches />} />
-                <Route path="/timeline" element={<Timeline />} />
-                <Route path="/sponsors" element={<Sponsors />} />
-                <Route path="/gallery" element={<Gallery />} />
-                <Route path="/developers" element={<Developers />} />
-                <Route path="/contact" element={<Contact />} />
-              </Route>
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <ClickSpark sparkColor="hsl(175, 80%, 50%)" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
+          <BrowserRouter>
+            <Suspense fallback={<PageFallback />}>
+              <Routes>
+                <Route element={<Layout />}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/events" element={<Events />} />
+                  <Route path="/rulebook" element={<Rulebook />} />
+                  <Route path="/branches" element={<Branches />} />
+                  <Route path="/timeline" element={<Timeline />} />
+                  <Route path="/sponsors" element={<Sponsors />} />
+                  <Route path="/gallery" element={<Gallery />} />
+                  <Route path="/developers" element={<Developers />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Route>
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </ClickSpark>
   );
 };
 
