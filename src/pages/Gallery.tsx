@@ -31,7 +31,7 @@ const Gallery = () => {
           <p className="font-body text-muted-foreground">Moments from previous editions</p>
         </motion.div>
       </div>
-      <div className="flex-1 min-h-[60vh]">
+      <div className="flex-1 min-h-[75vh] sm:min-h-[60vh]">
         <CircularGallery
           items={galleryItems}
           bend={3}
