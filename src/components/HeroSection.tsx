@@ -103,15 +103,12 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="mb-6 sm:mb-8"
         >
-          <img
-            src={vencerLogo}
-            alt="VENCER 2K26 Logo"
-            className="mx-auto w-[220px] sm:w-[320px] md:w-[420px] lg:w-[520px] bioluminescent-glow"
-            loading="eager"
-            width={520}
-            height={260}
-            decoding="async"
-          />
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider uppercase pandora-gradient-text bioluminescent-glow leading-none">
+            VENCER
+          </h2>
+          <p className="font-heading text-sm sm:text-lg md:text-xl tracking-[0.3em] uppercase text-primary/80 mt-2">
+            spiritual Ingenior 2026
+          </p>
         </motion.div>
 
         <motion.h1
