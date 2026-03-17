@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef, memo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
-import vencerLogo from "@/assets/vencer-logo.png";
+
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -142,14 +142,10 @@ const Navbar = memo(() => {
         aria-label="Main navigation"
       >
         <div className="container flex items-center justify-between h-14 sm:h-16">
-          <Link to="/" className="flex items-center gap-2 z-[60]" aria-label="VENCER Home">
-            <img
-              src={vencerLogo}
-              alt="VENCER"
-              className="h-12 sm:h-14 w-auto bioluminescent-glow"
-              width={112}
-              height={56}
-            />
+          <Link to="/" className="flex items-center z-[60]" aria-label="VENCER Home">
+            <span className="font-display text-2xl sm:text-3xl tracking-wider uppercase pandora-gradient-text bioluminescent-glow leading-none">
+              VENCER
+            </span>
           </Link>
 
           {/* Desktop nav */}
