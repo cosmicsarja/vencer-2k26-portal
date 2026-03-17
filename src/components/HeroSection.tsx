@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useMemo, lazy, Suspense, forwardRef } from "react";
-import vencerLogo from "@/assets/vencer-logo.png";
+
 import pandoraBg from "@/assets/pandora-bg.png";
 
 const JellyfishBackground = lazy(() => import("./JellyfishBackground"));
