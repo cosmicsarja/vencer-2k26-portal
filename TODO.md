@@ -1,11 +1,12 @@
-# Task: Fit student coordinators names correctly in ContactSection.tsx cards
+# Simple Card Gallery Implementation
 
-## Steps:
-1. [x] Review and confirm plan for editing src/components/ContactSection.tsx
-2. [x] Edit the coordinators data: Fix capitalization and formatting for names
-3. [x] Adjust CSS classes for better text fitting (wrapping, sizing, height)
-4. [x] Test rendering on dev server
-5. [x] Mark complete and cleanup TODO.md
+## Steps
+- [x] 1. Create simple responsive GallerySection with 24 placeholder cards
+- [x] 2. Add GallerySection to src/pages/Home.tsx after HeroSection  
+- [x] 3. Replace src/pages/Gallery.tsx content with GallerySection
+- [x] 4. Clean up unused 3D gallery files (DomeGallery.tsx, CircularGallery.tsx, CircularGallery.css)
+- [x] 5. Test with npm run dev (build succeeded, dev server ready)
+- [x] 6. Mark complete
 
-Status: Task complete - names fitted correctly, map updated to accurate AITM location (@15.84528,74.471307). Run `npm run dev` to preview.
+
 
