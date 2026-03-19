@@ -5,14 +5,12 @@ import Footer from "./Footer";
 
 // Lazy load heavy background components
 const ParticleBackground = lazy(() => import("./ParticleBackground"));
-const JellyfishBackground = lazy(() => import("./JellyfishBackground"));
 
 const Layout = memo(() => {
   return (
     <div className="min-h-screen bg-background relative">
       <Suspense fallback={null}>
-        <ParticleBackground />
-        <JellyfishBackground />
+<ParticleBackground />
       </Suspense>
       <Navbar />
       <main>
