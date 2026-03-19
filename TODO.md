@@ -1,12 +1,13 @@
-# Simple Card Gallery Implementation
+# Tasks
+## Click Sound (Complete)
+- [x] Update src/hooks/useClickSound.ts with s1.mp3 path ✓
 
-## Steps
-- [x] 1. Create simple responsive GallerySection with 24 placeholder cards
-- [x] 2. Add GallerySection to src/pages/Home.tsx after HeroSection  
-- [x] 3. Replace src/pages/Gallery.tsx content with GallerySection
-- [x] 4. Clean up unused 3D gallery files (DomeGallery.tsx, CircularGallery.tsx, CircularGallery.css)
-- [x] 5. Test with npm run dev (build succeeded, dev server ready)
-- [x] 6. Mark complete
+## Click Sound (Complete)
+- [x] Update src/hooks/useClickSound.ts with s1.mp3 path ✓
 
-
+## Jellyfish Enhancement
+- [x] Update TODO.md ✓
+- [x] Enhance src/components/JellyfishBackground.tsx (5 mobile/12 desktop jellyfish, 6-10 tentacles, advanced float/sway/rotate/pulse/glow animations, larger sizes/colors) ✓
+- [ ] Test: Run `bun run dev`, check desktop/mobile performance/visuals everywhere
+- [ ] Mark complete
 
