@@ -54,20 +54,19 @@ const DeveloperCard = ({ dev, i }: { dev: Developer; i: number }) => {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const rotateX = useSpring(useTransform(x, [-100, 100], [-10, 10]), { stiffness: 100 });
-  const rotateY = useSpring(useTransform(y, [-100, 100], [10, -10]), { stiffness: 100 });
+  const rotateX = useSpring(useTransform(x, [-100, 100], [-8, 8]), { stiffness: 150 });
+  const rotateY = useSpring(useTransform(y, [-100, 100], [8, -8]), { stiffness: 150 });
 
   useEffect(() => {
     const card = ref.current;
     if (!card) return;
 
-    const rect = card.getBoundingClientRect();
     const handleMouseMove = (e: MouseEvent) => {
-      const rectCurrent = card.getBoundingClientRect();
-      const mouseX = e.clientX - rectCurrent.left - rectCurrent.width / 2;
-      const mouseY = e.clientY - rectCurrent.top - rectCurrent.height / 2;
-      x.set(mouseX);
-      y.set(mouseY);
+      const rect = card.getBoundingClientRect();
+      const mouseX = (e.clientX - rect.left) / rect.width * 2 - 1;
+      const mouseY = (e.clientY - rect.top) / rect.height * 2 - 1;
+      x.set(mouseX * 50);
+      y.set(mouseY * 50);
     };
 
     const handleMouseLeave = () => {
@@ -90,7 +89,7 @@ const DeveloperCard = ({ dev, i }: { dev: Developer; i: number }) => {
       style={{ 
         rotateX, 
         rotateY,
-        transformPerspective: 1000 
+        transformPerspective: 1200 
       }}
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
       animate={{ 
@@ -108,54 +107,54 @@ const DeveloperCard = ({ dev, i }: { dev: Developer; i: number }) => {
         }
       }}
       whileHover={{ 
-        scale: 1.05,
-        y: -20,
-        boxShadow: "0 35px 80px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255,255,255,0.1)"
+        scale: 1.04,
+        y: -15,
+        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px hsl(var(--primary))",
       }}
-      className="relative flex flex-col items-center p-10 bg-gradient-to-br from-slate-900/80 via-blue-900/30 to-purple-900/60 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl hover:shadow-glow overflow-hidden cursor-pointer group max-w-sm mx-auto"
+      className="relative flex flex-col items-center p-8 bg-card backdrop-blur-xl rounded-3xl border border-border shadow-xl hover:shadow-2xl overflow-hidden cursor-pointer group max-w-sm mx-auto transition-all duration-300 h-[500px]"
     >
-      {/* Magic Border Glow */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-all duration-1000 scale-105 blur-xl animate-pulse-glow" />
+      {/* Website Color Glow */}
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[hsl(var(--fest-teal)/0.1)] via-[hsl(var(--fest-cyan)/0.05)] to-[hsl(var(--fest-purple)/0.1)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl" />
       
-      {/* Spark Particles */}
+      {/* Optimized Sparks with website colors */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="spark absolute w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-all delay-200" style={{ top: '20%', left: '20%', animation: 'spark-float 2s infinite 0.5s' }} />
-        <div className="spark absolute w-1.5 h-1.5 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full opacity-0 group-hover:opacity-100 transition-all delay-300" style={{ top: '60%', right: '20%', animation: 'spark-float 2s infinite 1s' }} />
-        <div className="spark absolute w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-all delay-400" style={{ bottom: '30%', left: '60%', animation: 'spark-float 2s infinite 1.5s' }} />
+        <div className="spark absolute w-1.5 h-1.5 bg-[hsl(var(--fest-teal))] opacity-0 group-hover:opacity-90 transition-all duration-500 delay-200 rounded-full shadow-[0_0_8px_hsl(var(--fest-teal)/0.6)]" style={{ top: '25%', left: '25%', animation: 'spark-float 2.5s infinite 0.3s' }} />
+        <div className="spark absolute w-1 h-1 bg-[hsl(var(--fest-cyan))] opacity-0 group-hover:opacity-90 transition-all duration-500 delay-400 rounded-full shadow-[0_0_6px_hsl(var(--fest-cyan)/0.6)]" style={{ top: '55%', right: '25%', animation: 'spark-float 2.5s infinite 0.8s' }} />
+        <div className="spark absolute w-1.5 h-1.5 bg-[hsl(var(--fest-purple))] opacity-0 group-hover:opacity-90 transition-all duration-500 delay-600 rounded-full shadow-[0_0_8px_hsl(var(--fest-purple)/0.6)]" style={{ bottom: '35%', left: '65%', animation: 'spark-float 2.5s infinite 1.2s' }} />
       </div>
 
-      <div className="relative w-52 h-52 sm:w-60 sm:h-60 mb-10 overflow-hidden rounded-3xl ring-8 ring-white/10 group-hover:ring-primary/50 transition-all z-10">
-        <motion.img
-          src={dev.photo}
-          alt={dev.name}
-          className="w-full h-full object-cover object-center group-hover:scale-115 transition-transform duration-700"
-          whileHover={{ scale: 1.15 }}
-        />
-      </div>
+      {/* Direct Photo - Even Lower */}
+      <motion.img
+        src={dev.photo}
+        alt={dev.name}
+        className="w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44 mx-auto mt-24 mb-6 rounded-2xl object-cover brightness-110 contrast-[1.05] ring-4 ring-border/50 group-hover:ring-primary/50 transition-all duration-500 z-10 flex-shrink-0"
+        initial={{ scale: 1.05 }}
+        whileHover={{ scale: 1.15 }}
+        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+      />
 
       <motion.h3 
-        className="font-heading text-3xl sm:text-4xl font-black mb-4 bg-gradient-to-r from-white via-primary to-purple-400 bg-clip-text text-transparent drop-shadow-2xl relative z-10"
-        animate={{ textShadow: ["0 0 10px rgba(59,130,246,0.5)", "0 0 20px rgba(59,130,246,0.8)", "0 0 10px rgba(59,130,246,0.5)"] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        className="font-heading text-xl sm:text-2xl md:text-2.5xl font-bold mb-3 text-foreground drop-shadow-lg relative z-10 tracking-tight text-center px-2"
+        animate={{ textShadow: ["0 0 8px hsl(var(--fest-teal)/0.5)", "0 0 16px hsl(var(--fest-cyan)/0.4)", "0 0 8px hsl(var(--fest-teal)/0.5)"] }}
+        transition={{ duration: 3, repeat: Infinity }}
       >
         {dev.name}
       </motion.h3>
       
-      <p className="text-lg font-display tracking-widest text-primary/90 mb-10 uppercase letter-spacing-2 relative z-10">
+      <p className="text-sm sm:text-base md:text-lg font-display tracking-wider text-muted-foreground mb-10 uppercase font-semibold relative z-10 text-center px-4">
         {dev.role}
       </p>
 
-      <div className="flex gap-4 relative z-10">
+      <div className="flex gap-5 relative z-10 mt-auto">
         {dev.instagram && (
           <a
             href={dev.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center shadow-2xl hover:shadow-pink-500/50 hover:scale-125 transition-all duration-400 hover:rotate-12 group/social"
+            className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[hsl(var(--fest-teal)/0.2)] to-[hsl(var(--fest-teal)/0.1)] backdrop-blur-sm flex items-center justify-center border border-primary/30 hover:border-primary hover:shadow-[0_0_20px_hsl(var(--fest-teal)/0.4)] hover:scale-110 transition-all duration-400 hover:rotate-12 group/social"
             aria-label={`Instagram - ${dev.name}`}
           >
-            <Instagram size={28} className="drop-shadow-lg" />
-            <div className="absolute inset-0 rounded-2xl bg-white/20 scale-0 group-hover/social:scale-110 transition-transform origin-center" />
+            <Instagram size={20} className="text-primary drop-shadow-sm" />
           </a>
         )}
         {dev.github && (
@@ -163,11 +162,10 @@ const DeveloperCard = ({ dev, i }: { dev: Developer; i: number }) => {
             href={dev.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-2xl hover:shadow-gray-800/50 hover:scale-125 transition-all duration-400 hover:rotate-12 group/social"
+            className="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-800/80 to-slate-700/80 backdrop-blur-sm flex items-center justify-center border border-border hover:border-muted-foreground hover:shadow-[0_0_20px_hsl(var(--fest-cyan)/0.3)] hover:scale-110 transition-all duration-400 hover:rotate-12 group/social"
             aria-label={`GitHub - ${dev.name}`}
           >
-            <Github size={28} className="drop-shadow-lg" />
-            <div className="absolute inset-0 rounded-2xl bg-white/20 scale-0 group-hover/social:scale-110 transition-transform origin-center" />
+            <Github size={20} className="text-muted-foreground drop-shadow-sm" />
           </a>
         )}
         {dev.linkedin && (
@@ -175,58 +173,47 @@ const DeveloperCard = ({ dev, i }: { dev: Developer; i: number }) => {
             href={dev.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-2xl hover:shadow-blue-600/50 hover:scale-125 transition-all duration-400 hover:rotate-12 group/social"
+            className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[hsl(var(--fest-purple)/0.2)] to-[hsl(var(--fest-purple)/0.1)] backdrop-blur-sm flex items-center justify-center border border-primary/30 hover:border-primary hover:shadow-[0_0_20px_hsl(var(--fest-purple)/0.4)] hover:scale-110 transition-all duration-400 hover:rotate-12 group/social"
             aria-label={`LinkedIn - ${dev.name}`}
           >
-            <Linkedin size={28} className="drop-shadow-lg" />
-            <div className="absolute inset-0 rounded-2xl bg-white/20 scale-0 group-hover/social:scale-110 transition-transform origin-center" />
+            <Linkedin size={20} className="text-primary drop-shadow-sm" />
           </a>
         )}
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes spark-float {
-          0%, 100% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; }
-          50% { transform: translateY(-20px) scale(1.2) rotate(180deg); opacity: 1; }
+          0%, 100% { transform: translateY(0px) scale(0.8) rotate(0deg); opacity: 0; }
+          50% { transform: translateY(-25px) scale(1.3) rotate(180deg); opacity: 1; }
         }
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.05); }
-        }
-        .shadow-glow {
-          box-shadow: 0 0 50px rgba(99, 102, 241, 0.4);
-        }
-        .animate-pulse-glow {
-          animation: pulse-glow 2s ease-in-out infinite;
-        }
-      `}</style>
+      ` }} />
     </motion.div>
   );
 };
 
 const Developers = () => {
   return (
-    <section className="relative py-24 pt-28 min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-purple-950/30 to-black">
+    <section className="relative py-20 pt-28 min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background via-slate-950/50 to-background">
       <div className="container px-4 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <motion.h1 
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-widest bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent drop-shadow-2xl mb-8"
+            className="font-display text-3xl sm:text-4xl md:text-5xl tracking-wider pandora-gradient-text mb-4 font-bold"
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
             Meet the Developers
           </motion.h1>
-          <p className="font-body text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
-            The cosmic minds powering VENCER 2K26 portal ✨
+          <p className="font-body text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            The talented minds behind VENCER 2K26 portal
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto w-full">
           {developers.map((dev, i) => (
             <DeveloperCard key={dev.name} dev={dev} i={i} />
           ))}
