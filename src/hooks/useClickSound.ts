@@ -1,4 +1,4 @@
-const audio = typeof window !== "undefined" ? new Audio("/sounds/click.mp3") : null;
+const audio = typeof window !== "undefined" ? new Audio("/sound/s1.mp3") : null;
 
 export function playClickSound() {
   if (!audio) return;

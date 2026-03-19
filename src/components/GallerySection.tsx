@@ -19,7 +19,7 @@ const GallerySection = () => {
             Gallery
           </h2>
           <p className="font-body text-xl text-muted-foreground leading-relaxed">
-            Relive the moments from previous Vencer editions. 
+            Relive the moments from previous Vencer editions. click to see
             <br className="hidden sm:block" />
             <span className="text-primary font-semibold"></span>
           </p>

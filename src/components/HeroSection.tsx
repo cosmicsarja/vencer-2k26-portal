@@ -4,7 +4,7 @@ import { useMemo, lazy, Suspense, forwardRef } from "react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
 
-const JellyfishBackground = lazy(() => import("./JellyfishBackground"));
+
 
 const HeroSection = forwardRef<HTMLElement>((_, ref) => {
   const sporeData = useMemo(
@@ -50,12 +50,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
       </motion.div>
 
-      {/* Jellyfish layer above background */}
-      <div className="absolute inset-0 z-[1]">
-        <Suspense fallback={null}>
-          <JellyfishBackground />
-        </Suspense>
-      </div>
+
 
       {/* Color overlays */}
       <motion.div
