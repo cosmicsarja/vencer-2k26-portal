@@ -31,22 +31,12 @@ const Events = () => {
 
   const currentBranch = branches[activeBranch];
 
-  const getAllCulturalEvents = () => {
-    const all: Event[] = [];
-    branches.forEach(b => all.push(...b.culturalEvents));
-    return all;
-  };
 
-  const getAllGamingEvents = () => {
-    const all: Event[] = [];
-    branches.forEach(b => all.push(...b.gamingEvents));
-    return all;
-  };
 
   const getEventsForTab = () => {
     if (activeTab === "branches") return currentBranch.events;
-    if (activeTab === "cultural") return getAllCulturalEvents();
-    return getAllGamingEvents();
+    if (activeTab === "cultural") return culturalEvents;
+    return gamingEvents;
   };
 
   const getTabLabel = () => {
@@ -118,47 +108,21 @@ const Events = () => {
           animate={{ opacity: 1 }}
           className="font-heading text-lg sm:text-xl md:text-2xl text-center text-foreground mb-6 sm:mb-8 font-bold"
         >
-          {activeTab === "branches" ? `${currentBranch.name} — ${getTabLabel()}` : getTabLabel() + " Events"}
+          {activeTab === "branches" ? `${currentBranch.name} — ${getTabLabel()}` : getTabLabel()}
         </motion.h3>
 
-        {branchEvents.length > 0 ? (
+        {activeTab === "branches" && branchEvents.length === 0 ? (
+          <div className="text-center py-16 text-muted-foreground font-heading">
+            No {getTabLabel().toLowerCase()} events for this branch yet.
+          </div>
+        ) : branchEvents.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {branchEvents.map((event, i) => (
               <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
             ))}
           </div>
-        ) : (
-          <div className="text-center py-16 text-muted-foreground font-heading">
-            No {getTabLabel().toLowerCase()} events for this branch yet.
-          </div>
-        )}
+        ) : null}
 
-        {/* General cultural/gaming events below branch events */}
-        {activeTab === "cultural" && culturalEvents.length > 0 && (
-          <div className="mt-12 sm:mt-16">
-            <h3 className="font-heading text-lg sm:text-xl md:text-2xl text-center text-foreground mb-6 sm:mb-8 font-bold">
-              General Cultural Events
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-              {culturalEvents.map((event, i) => (
-                <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {activeTab === "gaming" && gamingEvents.length > 0 && (
-          <div className="mt-12 sm:mt-16">
-            <h3 className="font-heading text-lg sm:text-xl md:text-2xl text-center text-foreground mb-6 sm:mb-8 font-bold">
-              General Gaming Events
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-              {gamingEvents.map((event, i) => (
-                <EventCard key={event.title} event={event} index={i} onClick={() => setSelectedEvent(event)} />
-              ))}
-            </div>
-          </div>
-        )}
       </div>
 
       <EventDetailModal
