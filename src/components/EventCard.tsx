@@ -7,25 +7,25 @@ const categoryCardColors: Record<string, { bg: string; border: string; badge: st
   Technical: {
     bg: "from-fest-teal/15 to-transparent",
     border: "border-fest-teal/40 hover:border-fest-teal/70",
-    badge: "bg-fest-teal/20 text-fest-teal border-fest-teal/30 font-bold",
+    badge: "bg-gradient-to-r from-fest-teal/80 to-fest-teal/60 text-white border-fest-teal/60 font-bold shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.4)] hover:shadow-[0_0_20px_hsl(var(--fest-teal)_/_0.6)]",
     glow: "hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.2)]",
   },
   "Non-Technical": {
     bg: "from-fest-purple/15 to-transparent",
     border: "border-fest-purple/40 hover:border-fest-purple/70",
-    badge: "bg-fest-purple/20 text-fest-purple border-fest-purple/30 font-bold",
+    badge: "bg-gradient-to-r from-fest-purple/80 to-fest-purple/60 text-white border-fest-purple/60 font-bold shadow-[0_0_15px_hsl(var(--fest-purple)_/_0.4)] hover:shadow-[0_0_20px_hsl(var(--fest-purple)_/_0.6)]",
     glow: "hover:shadow-[0_0_30px_hsl(var(--fest-purple)_/_0.2)]",
   },
   Cultural: {
     bg: "from-fest-yellow/15 to-transparent",
     border: "border-fest-yellow/40 hover:border-fest-yellow/70",
-    badge: "bg-fest-yellow/20 text-fest-yellow border-fest-yellow/30 font-bold",
+    badge: "bg-gradient-to-r from-fest-yellow/80 to-fest-yellow/60 text-white border-fest-yellow/60 font-bold shadow-[0_0_15px_hsl(var(--fest-yellow)_/_0.4)] hover:shadow-[0_0_20px_hsl(var(--fest-yellow)_/_0.6)]",
     glow: "hover:shadow-[0_0_30px_hsl(var(--fest-yellow)_/_0.2)]",
   },
   Gaming: {
     bg: "from-fest-blue/15 to-transparent",
     border: "border-fest-blue/40 hover:border-fest-blue/70",
-    badge: "bg-fest-blue/20 text-fest-blue border-fest-blue/30 font-bold",
+    badge: "bg-gradient-to-r from-fest-blue/80 to-fest-blue/60 text-white border-fest-blue/60 font-bold shadow-[0_0_15px_hsl(var(--fest-blue)_/_0.4)] hover:shadow-[0_0_20px_hsl(var(--fest-blue)_/_0.6)]",
     glow: "hover:shadow-[0_0_30px_hsl(var(--fest-blue)_/_0.2)]",
   },
 };
@@ -71,7 +71,7 @@ const EventCardInner = forwardRef<HTMLDivElement, EventCardProps>(
             </div>
           )}
           <div className="absolute top-3 right-3">
-            <span className={`inline-flex px-2.5 py-1 rounded-full text-[10px] font-display tracking-wider border ${colors.badge}`}>
+            <span className={`inline-flex px-3 py-1.5 rounded-full text-[11px] font-display tracking-widest border uppercase font-extrabold transition-all duration-300 ${colors.badge}`}>
               {event.category}
             </span>
           </div>

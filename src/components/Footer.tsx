@@ -56,6 +56,26 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             </div>
           </div>
         </div>
+
+        {/* Sponsors Section */}
+        <div className="border-t border-border/20 py-6 sm:py-8 mb-4 sm:mb-6">
+          <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-foreground mb-4 sm:mb-5 text-center">Our Sponsors</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div
+                key={i}
+                className="aspect-square bg-gradient-to-br from-fest-teal/10 to-fest-cyan/5 border-2 border-dashed border-border/40 rounded-lg flex items-center justify-center hover:border-fest-teal/50 hover:bg-fest-teal/5 transition-all duration-300 group cursor-pointer"
+              >
+                <div className="text-center">
+                  <div className="text-muted-foreground/40 group-hover:text-muted-foreground/60 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                    Sponsor Logo
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="border-t border-border/20 pt-4 sm:pt-6 text-center">
           <p className="text-[10px] sm:text-xs text-muted-foreground">
             © 2026 VENCER. All rights reserved. | AITM, Belagavi

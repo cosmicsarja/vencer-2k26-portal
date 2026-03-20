@@ -275,12 +275,13 @@ export const branches: Branch[] = [
           "Students caught cheating will be eliminated",
           "Judges' decision will be final",
           "Topics: C programming, DBMS, Python, Java",
-          "Test your brainpower, boost your confidence"
+          "Test your brainpower, boost your confidence",
+          "Event coordinators:- Tanuja k:-9775741066, Sushil s:-9353362031",
         ]
       },
       {
         title: "Navi Voice (Debate)",
-        category: "Non-Technical",
+        category: "Technical",
         description: "Think, Speak, Lead - A premier communication platform designed to challenge students' intellectual boundaries. Engage in structured battles tackling contemporary social, ethical, and global issues.",
         prizePool: "₹10,000",
         entryFee: "₹100",
@@ -411,7 +412,7 @@ export const gamingEvents: Event[] = [
     ]
   },
   {
-    title: "FIFA eFootball Championship",
+    title: "FIFA E-Football Championship",
     category: "Gaming" as const,
     description: "Console football championship featuring international teams and realistic gameplay",
     prizePool: "₹12,000",
@@ -457,11 +458,23 @@ export const gamingEvents: Event[] = [
     duration: "4 Hours",
     venue: "Gaming Zone",
     rules: [
-      "Squads of 4 players",
-      "Classic Free Fire battle royale mode",
-      "Multiple drops and qualifier rounds",
-      "No auto-clickers or macros",
-      "Tournament server provided"
+      "Team of 4 members (1 squad)",
+          "Matches held on Bermuda map (25-minute match)",
+          "Skill Level: Open to all ranks (Bronze to Grandmaster)",
+          "Map Pool: Bermuda, Kalahari, Purgatory, or Alpine",
+          "Lobby Settings: Gun Attributes and Character Skills may be disabled",
+          "Punctuality: Teams must join within 5-10 minutes of receiving ID and password",
+          "Technical Issues: Players responsible for own internet and battery. No match restarts for disconnections",
+          "Each team must have 4 players present in the hall before match starts",
+          "Unlimited gloo walls are not allowed",
+          "No third-party applications (hacks/mods) - immediate disqualification",
+          "Participants must bring their game ID (Free Fire ID)",
+          "Smartphone fully charged with latest Free Fire version",
+          "Stable internet connection (4G/5G backup recommended)",
+          "Earphones/Headsets essential for communication",
+          "Power bank recommended",
+          "Follow fair play and respect all players and organizers",
+          "The organizer's decision will be final"
     ]
   },
   {
