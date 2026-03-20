@@ -259,62 +259,127 @@ export const branches: Branch[] = [
       {
         title: "Eva Intellect (Quiz)",
         category: "Technical",
-        description: "Code Bloom clan IT & programming quiz – test your tech intellect",
+        description: "The Way of Wisdom - A knowledge battle designed to challenge your intelligence, speed, and teamwork. Compete in multiple rounds covering C programming, DBMS, Python, and Java.",
         prizePool: "₹8,000",
         entryFee: "₹100",
         formLink: "https://forms.google.com",
         posterUrl: "/assets/code-bloom-avatar.png",
         branch: "BCA",
-        teamSize: "2 members",
+        teamSize: "Team of two members",
         duration: "1.5 Hours",
         venue: "Seminar Hall",
-        rules: ["Duo teams", "Multiple rounds: written, buzzer", "Topics: programming, OS, networking", "No aids allowed"]
+        rules: [
+          "Student ID card is mandatory",
+          "Team of two members",
+          "No use of mobile phones or electronic devices",
+          "Students caught cheating will be eliminated",
+          "Judges' decision will be final",
+          "Topics: C programming, DBMS, Python, Java",
+          "Test your brainpower, boost your confidence"
+        ]
       },
       {
         title: "Navi Voice (Debate)",
-        category: "Technical",
-        description: "Debate emerging tech topics – voice your vision for computing future",
+        category: "Non-Technical",
+        description: "Think, Speak, Lead - A premier communication platform designed to challenge students' intellectual boundaries. Engage in structured battles tackling contemporary social, ethical, and global issues.",
         prizePool: "₹10,000",
         entryFee: "₹100",
         formLink: "https://forms.google.com",
         posterUrl: "/assets/code-bloom-avatar.png",
         branch: "BCA",
-        teamSize: "2 members",
+        teamSize: "Individual",
         duration: "2 Hours",
         venue: "Main Auditorium",
-        rules: ["Duo teams", "5-min opening + rebuttals", "Topics revealed on spot", "Judged on logic, delivery"]
+        rules: [
+          "Individual participation",
+          "Student ID card is mandatory",
+          "Formal attire required",
+          "No use of mobile phones or electronic devices",
+          "No offensive language, Racism, Casteism and gender discrimination",
+          "Participants must stick to the given point/topic",
+          "Judges' decision will be final",
+          "Focus on critical thinking and public speaking"
+        ]
       },
       {
-        title: "Jake's Tribal Art (Face Painting)",
+        title: "Jack's Tribal Art (Face Painting)",
         category: "Non-Technical",
-        description: "Tribal face painting – unleash Code Bloom artistic creativity",
+        description: "Turn your face into an Avatar masterpiece - A fun activity inspired by the movie Avatar. Paint faces using colors and patterns related to Na'vi culture and the world of Pandora.",
         prizePool: "₹5,000",
         entryFee: "₹50",
         formLink: "https://forms.google.com",
         posterUrl: "/assets/code-bloom-avatar.png",
         branch: "BCA",
-        teamSize: "Individual",
+        teamSize: "Team of two members (artist and assistant)",
         duration: "1.5 Hours",
         venue: "Art Zone",
-        rules: ["Individual", "Non-toxic paints", "Theme: Code Bloom warriors", "Judged on creativity"]
+        rules: [
+          "Team of two members (art and artist)",
+          "Participants should bring their own materials (colors, brushes, paint, etc.)",
+          "Face painting must be based on Avatar/Na'vi/Pandora theme",
+          "Only the two participants are allowed to coordinate. Outside help is not permitted",
+          "Judging based on: creativity, neatness, relevance to Avatar theme, color combination, overall presentation",
+          "Judges' decision will be final"
+        ]
       },
       {
         title: "Avatar Reelverse (Reel Making)",
         category: "Non-Technical",
-        description: "Create viral reels showcasing coding passion",
+        description: "Create, Edit, Engage - Avatar themed reel making competition showcasing creativity, originality and the spirit of adventure. Blend fantasy with meaningful message exploration.",
         prizePool: "₹6,000",
         entryFee: "₹50",
         formLink: "https://forms.google.com",
         posterUrl: "/assets/code-bloom-avatar.png",
         branch: "BCA",
-        teamSize: "1-2 members",
+        teamSize: "Team of three to five members",
         duration: "2 Hours",
         venue: "Media Lab",
-        rules: ["1-2 members", "30-60 sec reels", "Theme: Coding life", "Editing OK"]
+        rules: [
+          "Team of 3-5 members",
+          "Make the reel based on Avatar theme",
+          "Create original video content - do not copy from anywhere else",
+          "No stunts allowed",
+          "Reel resolution: 1080p minimum",
+          "Requires: Smartphone/Camera, Tripod, Editing apps, Props or costumes (optional)",
+          "Judges' decision will be final"
+        ]
       }
     ],
     culturalEvents: [],
-    gamingEvents: [],
+    gamingEvents: [
+      {
+        title: "Pandora Warriors (Mobile Gaming - Free Fire)",
+        category: "Gaming",
+        description: "Show Your Skill, Claim the Throne - An adrenaline-pumping Battle Royale showdown. Test your tactical thinking, precision aiming, and team coordination.",
+        prizePool: "₹15,000",
+        entryFee: "₹150",
+        formLink: "https://forms.google.com",
+        posterUrl: "/assets/energy-storm-avatar.png",
+        branch: "BCA",
+        teamSize: "Team of four members",
+        duration: "Varies by rounds",
+        venue: "Gaming Arena",
+        rules: [
+          "Team of 4 members (1 squad)",
+          "Matches held on Bermuda map (25-minute match)",
+          "Skill Level: Open to all ranks (Bronze to Grandmaster)",
+          "Map Pool: Bermuda, Kalahari, Purgatory, or Alpine",
+          "Lobby Settings: Gun Attributes and Character Skills may be disabled",
+          "Punctuality: Teams must join within 5-10 minutes of receiving ID and password",
+          "Technical Issues: Players responsible for own internet and battery. No match restarts for disconnections",
+          "Each team must have 4 players present in the hall before match starts",
+          "Unlimited gloo walls are not allowed",
+          "No third-party applications (hacks/mods) - immediate disqualification",
+          "Participants must bring their game ID (Free Fire ID)",
+          "Smartphone fully charged with latest Free Fire version",
+          "Stable internet connection (4G/5G backup recommended)",
+          "Earphones/Headsets essential for communication",
+          "Power bank recommended",
+          "Follow fair play and respect all players and organizers",
+          "The organizer's decision will be final"
+        ]
+      }
+    ],
   },
 ];
 
