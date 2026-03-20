@@ -77,8 +77,8 @@ const DeveloperCard = ({ dev }: { dev: Developer }) => {
 
 const Developers = () => {
   return (
-    <section className="relative py-24 pt-32 min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background via-slate-950/30 to-background overflow-hidden">
-      <div className="container px-4 max-w-7xl">
+    <section className="relative py-24 pt-32 min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background via-slate-950/30 to-background overflow-y-auto overflow-x-hidden">
+      <div className="container px-4 max-w-7xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -97,9 +97,11 @@ const Developers = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto w-full">
+        <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto w-full">
           {developers.map((dev) => (
-            <DeveloperCard key={dev.name} dev={dev} />
+            <div key={dev.name} className="w-full sm:w-1/2 lg:w-1/2 flex justify-center">
+              <DeveloperCard dev={dev} />
+            </div>
           ))}
         </div>
       </div>
