@@ -549,7 +549,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                       bottom: 'var(--ui-inset)',
                       left: 'var(--ui-inset)',
                       right: 'var(--ui-inset)',
-                      background: 'linear-gradient(135deg, rgba(228, 64, 95, 0.7) 0%, rgba(10, 102, 194, 0.7) 50%, rgba(24, 23, 23, 0.7) 100%)',
+                      background: 'rgba(20, 20, 30, 1)',
                       borderRadius: 'calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)))',
                       padding: '12px 14px'
                     } as React.CSSProperties
@@ -584,10 +584,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         href={instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center rounded-lg border border-[#E4405F]/30 hover:border-[#E4405F] hover:bg-[#E4405F]/10 transition-all duration-200"
+                        className="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-[#E4405F] bg-[#E4405F]/20 hover:bg-[#E4405F]/30 transition-all duration-200 shadow-lg"
                         aria-label="Instagram"
                       >
-                        <Instagram size={20} className="text-[#E4405F]" />
+                        <Instagram size={24} className="text-[#E4405F]" />
                       </a>
                     )}
                     {linkedinUrl && (
@@ -595,10 +595,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         href={linkedinUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center rounded-lg border border-[#0A66C2]/30 hover:border-[#0A66C2] hover:bg-[#0A66C2]/10 transition-all duration-200"
+                        className="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-[#0A66C2] bg-[#0A66C2]/20 hover:bg-[#0A66C2]/30 transition-all duration-200 shadow-lg"
                         aria-label="LinkedIn"
                       >
-                        <Linkedin size={20} className="text-[#0A66C2]" />
+                        <Linkedin size={24} className="text-[#0A66C2]" />
                       </a>
                     )}
                     {githubUrl && (
@@ -606,10 +606,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         href={githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center rounded-lg border border-[#181717]/30 hover:border-[#181717] hover:bg-[#181717]/10 transition-all duration-200"
+                        className="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-white bg-white/10 hover:bg-white/20 transition-all duration-200 shadow-lg"
                         aria-label="GitHub"
                       >
-                        <Github size={20} className="text-[#181717]" />
+                        <Github size={24} className="text-white" />
                       </a>
                     )}
                   </div>
