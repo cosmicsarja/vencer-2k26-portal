@@ -12,9 +12,8 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com", label: "GitHub" },
+  { icon: Instagram, href: "https://www.instagram.com/aitm_belagavi_/", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/angadi-institute-of-technology-and-management-belagavi-488231275/", label: "LinkedIn" },
 ];
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
