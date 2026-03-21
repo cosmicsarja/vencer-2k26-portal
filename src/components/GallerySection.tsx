@@ -1,8 +1,24 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const GallerySection = () => {
   // 24 placeholder cards
   const cards = Array.from({ length: 24 }, (_, i) => i);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const openImage = (index: number) => setSelectedImage(index);
+  const closeImage = () => setSelectedImage(null);
+  const nextImage = () => {
+    if (selectedImage !== null && selectedImage < cards.length - 1) {
+      setSelectedImage(selectedImage + 1);
+    }
+  };
+  const prevImage = () => {
+    if (selectedImage !== null && selectedImage > 0) {
+      setSelectedImage(selectedImage - 1);
+    }
+  };
 
   return (
     <section id="gallery" className="relative py-24 bg-gradient-to-b from-background/50 to-muted/80">
@@ -35,6 +51,7 @@ const GallerySection = () => {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -10 }}
               transition={{ duration: 0.3 }}
+              onClick={() => openImage(i)}
               className="group relative overflow-hidden rounded-2xl glass-border hover:glass-border-strong shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer bg-background/30 backdrop-blur-xl hover:bg-background/50 border border-border/50 hover:border-primary/50"
             >
               {/* Placeholder Image */}
@@ -89,6 +106,95 @@ const GallerySection = () => {
           </a>
         </motion.div>
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeImage}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full h-full max-w-4xl max-h-[90vh] flex flex-col"
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeImage}
+                className="absolute -top-12 right-0 sm:-top-10 sm:right-0 p-2 text-white hover:text-primary transition-colors z-10"
+              >
+                <X className="w-8 h-8 sm:w-10 sm:h-10" />
+              </button>
+
+              {/* Main Image Container */}
+              <div className="flex-1 flex items-center justify-center overflow-hidden rounded-xl bg-black/40">
+                <img
+                  src={`/moments/123.png`}
+                  alt={`Gallery image ${selectedImage + 1}`}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+
+              {/* Image Info */}
+              <div className="mt-4 text-center text-white">
+                <h3 className="font-display text-xl sm:text-2xl font-semibold mb-2">
+                  Vencer Moment {selectedImage + 1}
+                </h3>
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  {selectedImage + 1} of {cards.length} · Event highlight · 2025
+                </p>
+              </div>
+
+              {/* Navigation Buttons */}
+              <div className="flex justify-between items-center mt-6 gap-4">
+                <button
+                  onClick={prevImage}
+                  disabled={selectedImage === 0}
+                  className="p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed text-white transition-all duration-300 flex-shrink-0"
+                >
+                  <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
+                </button>
+
+                {/* Thumbnail Strip */}
+                <div className="flex gap-2 overflow-x-auto flex-1 px-4 py-2">
+                  {cards.map((i) => (
+                    <button
+                      key={i}
+                      onClick={() => setSelectedImage(i)}
+                      className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                        selectedImage === i
+                          ? 'border-primary scale-105'
+                          : 'border-white/20 hover:border-white/40 opacity-70 hover:opacity-100'
+                      }`}
+                    >
+                      <img
+                        src={`/moments/123.png`}
+                        alt={`Thumbnail ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  onClick={nextImage}
+                  disabled={selectedImage === cards.length - 1}
+                  className="p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed text-white transition-all duration-300 flex-shrink-0"
+                >
+                  <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
