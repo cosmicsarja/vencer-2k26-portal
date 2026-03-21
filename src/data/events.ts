@@ -463,6 +463,28 @@ export const gamingEvents: Event[] = [
       "Fair play mandatory"
     ]
   },
+  {
+    title: "Ping Pong (Table Tennis)",
+    category: "Gaming" as const,
+    description: "Fast-paced table tennis competition with exciting rallies and matches",
+    prizePool: "₹6,000",
+    entryFee: "₹100",
+    formLink: "https://forms.google.com",
+    teamSize: "Individual or Pair",
+    duration: "3 Hours",
+    venue: "Sports Hall",
+    rules: [
+      "Individual or pair (doubles) format",
+      "Standard table tennis rules apply",
+      "Best of 3 matches format",
+      "Modern ping pong tables and paddles provided",
+      "Official tournament-grade balls",
+      "Fair play and sportsmanship mandatory",
+      "No coaching allowed during matches",
+      "Round-robin or knockout format based on entries",
+      "Judges' decision is final"
+    ]
+  },
 ];
 
 
