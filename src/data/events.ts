@@ -249,7 +249,7 @@ export const branches: Branch[] = [
       },
       {
         title: "Volley Ball",
-        category: "Sports",
+        category: "gaming",
         description: "Competitive volleyball tournament for team sports enthusiasts",
         prizePool: "₹9,000",
         entryFee: "₹500",
@@ -476,6 +476,20 @@ export const gamingEvents: Event[] = [
       "Boundary and wicket rules apply",
       "Fair play mandatory"
     ]
+  },
+  {
+    title: "Volley Ball",
+    category: "gaming" as const,
+    description: "Competitive volleyball tournament for team sports enthusiasts",
+    prizePool: "₹9,000",
+    entryFee: "₹500",
+    formLink: "#",
+    posterUrl: "/assets/steel-sentinel-avatar.png",
+    branch: "ROBO",
+    teamSize: "6+3 members",
+    duration: "5 Hours",
+    venue: "Sports Ground",
+    rules: ["Team of 6 players on court + 3 substitutes", "Standard volleyball rules apply", "Best of 3 sets match format", "First to 25 points per set wins", "2 points lead required to win", "No spiking below net level", "Substitutions allowed", "Fair play and sportsmanship mandatory"]
   },
   {
     title: "Ping Pong (Table Tennis)",
