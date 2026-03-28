@@ -226,7 +226,7 @@ export const branches: Branch[] = [
         prizePool: "₹12,000",
         entryFee: "₹150",
         formLink: "#",
-        posterUrl: "/assets/steel-sentinel-avatar.png",
+        posterUrl: "/posters/Gemini_Generated_Image_s40dkhs40dkhs40d-2.png",
         branch: "ROBO",
         teamSize: "1-2 members",
         duration: "3 Hours",
