@@ -217,7 +217,7 @@ export const branches: Branch[] = [
   {
     name: "Robotics Engineering",
     shortName: "ROBO",
-    color: "fest-cyan",
+    color: "fest-ember",
     events: [
       {
         title: "Robo race",
@@ -246,6 +246,20 @@ export const branches: Branch[] = [
         duration: "4 Hours",
         venue: "Battle Arena",
         rules: ["Team of 1-2", "Free-for-all battle format", "Elimination rounds", "Most damage dealt + survival time", "No weapons that cause permanent damage", "Judges decision final"]
+      },
+      {
+        title: "Volley Ball",
+        category: "Sports",
+        description: "Competitive volleyball tournament for team sports enthusiasts",
+        prizePool: "₹9,000",
+        entryFee: "₹500",
+        formLink: "#",
+        posterUrl: "/assets/steel-sentinel-avatar.png",
+        branch: "ROBO",
+        teamSize: "6+3 members",
+        duration: "5 Hours",
+        venue: "Sports Ground",
+        rules: ["Team of 6 players on court + 3 substitutes", "Standard volleyball rules apply", "Best of 3 sets match format", "First to 25 points per set wins", "2 points lead required to win", "No spiking below net level", "Substitutions allowed", "Fair play and sportsmanship mandatory"]
       }
     ],
     culturalEvents: [],
