@@ -56,7 +56,7 @@ export const branches: Branch[] = [
         coordinators: [{name: "Shivalingsarj Desai", contact: "9513804776"}, {name: "Nivedita Akkimaradi", contact: "8296663125"}]
       },
       {
-        title: " (Project Competition)",
+        title: "TechXhibit",
         category: "Technical" as const,
         description: "Showcase your innovative projects and compete for top prizes",
         prizePool: "Grand prizes",
@@ -105,7 +105,7 @@ export const branches: Branch[] = [
         coordinators: [{name: "Siddhant Sharma", contact: "9876543216"}, {name: "Divya Nair", contact: "9876543217"}]
       },
       {
-        title: "Cooking Without Fire",
+        title: "Edible Art Arena",
         category: "Non-Technical" as const,
         description: "Creative no-fire cooking competition using innovative ingredients",
         prizePool: "Grand prizes",
@@ -121,7 +121,7 @@ export const branches: Branch[] = [
         coordinators: [{name: "Rohan Iyer", contact: "9876543218"}, {name: "Shreya Desai", contact: "9876543219"}]
       },
       {
-        title: "One Minute Ad Challenge",
+        title: "Brand Baazi - Sell It If U Can ",
         category: "Non-Technical" as const,
         description: "Create compelling 60-second product advertisements",
         prizePool: "Grand prizes",
@@ -944,8 +944,8 @@ export const culturalEvents: Event[] = [
     prizePool: "Grand prizes",
     entryFee: "₹150",
     formLink: "#",
-    formLinkSolo: "https://forms.google.com/solo-fashion-show",
-    formLinkGroup: "https://forms.google.com/group-fashion-show",
+    formLinkSolo: "https://forms.google.com/solo-fashion-show?embedded=true",
+    formLinkGroup: "https://forms.google.com/group-fashion-show?embedded=true",
     date: "April 10, 2026",
     teamSize: "Group (6-12)",
     duration: "Full Day",

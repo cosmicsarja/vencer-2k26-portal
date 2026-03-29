@@ -19,11 +19,13 @@ const RegistrationModal = forwardRef<HTMLDivElement, RegistrationModalProps>(({ 
     });
   }, []);
 
-  const embedUrl = formLink.includes("/viewform")
+  const embedUrl = formLink.includes("?embedded=true")
     ? formLink
-    : formLink.endsWith("/")
-      ? formLink + "viewform?embedded=true"
-      : formLink + "/viewform?embedded=true";
+    : formLink.includes("/viewform")
+      ? formLink + "?embedded=true"
+      : formLink.endsWith("/")
+        ? formLink + "viewform?embedded=true"
+        : formLink + "/viewform?embedded=true";
 
   return (
     <AnimatePresence>
@@ -59,7 +61,7 @@ const RegistrationModal = forwardRef<HTMLDivElement, RegistrationModalProps>(({ 
             src={embedUrl}
             className="w-full h-[calc(100%-52px)] border-0"
             title="Registration Form"
-            allowFullScreen
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox"
           />
         </motion.div>
       </motion.div>
