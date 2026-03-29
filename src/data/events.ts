@@ -10,7 +10,6 @@ export interface Event {
   prizePool: string;
   entryFee: string;
   formLink: string;
-  date: "April 10, 2026",
   date?: string;
   posterUrl?: string;
   branch?: string;
