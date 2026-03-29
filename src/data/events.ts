@@ -50,7 +50,7 @@ export const branches: Branch[] = [
         duration: "12PM to 4:30PM",
         venue: "Seminar Hall 1st Floor",
         rulebook: "/rulebooks/Pandora Logic War.pdf",
-        rules: ["Team size: 2-4 members", "Participants must bring their own laptops", "Pre-built models are not allowed", "Internet access will be provided", "Judging based on innovation, feasibility, and presentation", "Decision of judges is final"],
+        rules: ["Team size: 1–4 members","Each team must bring minimum 2 laptops","Teams must arrange their own internet connection","Participants must strictly follow event timings","Any malpractice or unfair means leads to disqualification","Judges' decision is final","Round 1A: 25 MCQs (25 marks, 25 min)","Round 1B: 5 coding questions (25 marks, 25 min)","10% teams eliminated after Round 1","Round 2: Debug 3 code snippets (30 marks, 25 min)","20% teams eliminated after Round 2","Final: QR scan → password → unlock zip → solve problem","Only first 10 teams qualify for final round","Winners based on total score across all rounds","Final round on 10/04/2026"],
         coordinators: [{name: "Shivalingsarj Desai", contact: "9513804776"}, {name: "Nivedita Akkimaradi", contact: "8296663125"}]
       },
       {
