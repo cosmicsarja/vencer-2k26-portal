@@ -671,11 +671,11 @@ export const branches: Branch[] = [
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLScR-7cufQQqlvmSoFNNPML7QdnmBYo-3SV-SHDty5Be96lXyg/viewform?embedded=true",
         posterUrl: "/posters/Gemini_Generated_Image_s40dkhs40dkhs40d-2.png",
         branch: "ROBO",
-        teamSize: "1-2 members",
-        duration: "",
-        venue: "Robo Track",
+        teamSize: "3-4 members",
+        duration: "12PM to 5PM",
+        venue: "IN CLG Ground",
         rulebook: "/rulebooks/Robo Race Event.pdf",
-        rules: ["Team of 1-2 members", "Standard robot chassis provided", "Navigate obstacle course", "Fastest time wins", "Multiple rounds", "Safety gear mandatory",],
+        rules: ["Team of 3-4 members", "Standard robot chassis", "Navigate obstacle course", "Fastest time wins", "Multiple rounds", "Safety gear mandatory",],
         coordinators: [{name: "Varun Sharma", contact: "9876543284"}, {name: "Priyanka Singh", contact: "9876543285"}]
       },
       {
@@ -703,6 +703,33 @@ export const branches: Branch[] = [
             "Judges decision final"
         ],
         coordinators: [{name: "Anirud Reddy", contact: "9876543286"}, {name: "Srishti Kapoor", contact: "9876543287"}]
+      },
+      {
+        title: "Volley Ball",
+        category: "Non-Technical" as const,
+        description: "Competitive volleyball tournament for team sports enthusiasts",
+        prizePool: "₹9,000",
+        entryFee: "₹500",
+        formLink: "#",
+        posterUrl: "/assets/steel-sentinel-avatar.png",
+        branch: "ROBO",
+        teamSize: "6+3 members",
+        duration: "5 Hours",
+        venue: "Sports Ground",
+        rulebook: "/rulebooks/Volleyball game.pdf",
+        rules: [
+          "Team of 6+3 players",
+          "3 sets knockout format",
+          "15 points per set",
+          "College ID compulsory",
+          "No passout students allowed",
+          "Substitute players allowed",
+          "Umpire decision final",
+          "No arguments with umpire",
+          "Misbehavior leads to disqualification",
+          "Registration online or on-spot"
+        ],
+        coordinators: [{name: "Srinivas Iyer", contact: "9876543316"}, {name: "Anaya Banerjee", contact: "9876543317"}]
       },
 
     ],
