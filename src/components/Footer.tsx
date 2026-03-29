@@ -1,7 +1,8 @@
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
-import { Instagram, Github, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, MapPin, Mail, Phone } from "lucide-react";
 import vencerLogo from "@/assets/vencer-logo.png";
+import "@/styles/sponsors-carousel.css";
 
 const footerLinks = [
   { label: "Home", href: "/" },
@@ -18,67 +19,245 @@ const socialLinks = [
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer ref={ref} className="border-t border-border/20 py-8 sm:py-12 relative">
+    <footer ref={ref} className="border-t border-border/20 relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(175_80%_40%_/_0.03)_0%,transparent_50%)]" />
       <div className="container px-4 relative">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
-          <div className="text-center sm:text-left">
-            <img src={vencerLogo} alt="VENCER 2K26" className="h-10 sm:h-12 w-auto mb-3 bioluminescent-glow mx-auto sm:mx-0" />
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Angadi Institute of Technology and Management<br />
-              Belagavi, Karnataka
-            </p>
-          </div>
-          <div className="text-center sm:text-left">
-            <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-foreground mb-2 sm:mb-3">Quick Links</p>
-            <div className="flex flex-wrap justify-center sm:justify-start sm:flex-col gap-2 sm:gap-2">
-              {footerLinks.map((l) => (
-                <Link key={l.href} to={l.href} className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
-                  {l.label}
-                </Link>
-              ))}
+        
+        {/* About AITM Section */}
+        <div className="py-12 sm:py-16 border-b border-border/20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
+            {/* Logo & Tagline */}
+            <div className="lg:col-span-1 text-center lg:text-left">
+              <img src={vencerLogo} alt="VENCER 2K26" className="h-12 sm:h-14 w-auto mb-4 bioluminescent-glow mx-auto lg:mx-0" />
+              <p className="text-sm font-heading tracking-widest text-fest-teal mb-4 font-bold italic">
+                Where Innovation Begins, and Leaders Rise.
+              </p>
+              <div className="flex justify-center lg:justify-start gap-3">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 sm:w-11 sm:h-11 glass-pandora rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-border-teal transition-all duration-300"
+                  >
+                    <s.icon size={18} />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* About AITM */}
+            <div className="lg:col-span-2">
+              <h3 className="font-heading text-sm sm:text-base uppercase tracking-widest text-foreground mb-4 font-bold">About AITM</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4">
+                Angadi Institute of Technology and Management (AITM), Belagavi, is a dynamic hub of innovation, excellence, and future-ready education. Known for shaping skilled engineers and leaders, AITM blends cutting-edge technology, industry-driven learning, and vibrant campus life to create an inspiring academic ecosystem.
+              </p>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4">
+                With world-class infrastructure, expert faculty, and a strong focus on creativity and real-world problem solving, the institute empowers students to think beyond boundaries. Events like VENCER reflect AITM's spirit—where talent meets opportunity, ideas turn into impact, and innovation takes center stage.
+              </p>
             </div>
           </div>
-          <div className="text-center sm:text-left">
-            <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-foreground mb-2 sm:mb-3">Follow Us</p>
-            <div className="flex gap-3 justify-center sm:justify-start">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 sm:w-10 sm:h-10 glass-pandora rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-border-teal transition-all duration-300"
-                >
-                  <s.icon size={16} />
-                </a>
-              ))}
+        </div>
+
+        {/* Main Footer Content */}
+        <div className="py-12 sm:py-16 border-b border-border/20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-8">
+            {/* Institute Info */}
+            <div>
+              <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-foreground mb-4 font-bold">Institute</p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <MapPin size={16} className="text-fest-teal mt-0.5 flex-shrink-0" />
+                  <div className="text-xs sm:text-sm text-muted-foreground">
+                    Angadi Institute of Technology & Management<br />
+                    <span className="text-muted-foreground/70">Belagavi, Karnataka</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone size={16} className="text-fest-teal flex-shrink-0" />
+                  <a href="tel:+919876543210" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
+                    +91 XXXX XXXX XX
+                  </a>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Mail size={16} className="text-fest-teal mt-0.5 flex-shrink-0" />
+                  <a href="mailto:info@aitm.edu.in" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
+                    info@aitm.edu.in
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-foreground mb-4 font-bold">Quick Links</p>
+              <div className="space-y-2">
+                {footerLinks.map((l) => (
+                  <Link 
+                    key={l.href} 
+                    to={l.href} 
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors block"
+                  >
+                    → {l.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* VENCER Info */}
+            <div>
+              <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-fest-teal mb-4 font-bold">VENCER 2K26</p>
+              <div className="space-y-2">
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  Annual Technical & Cultural Festival
+                </p>
+                <p className="text-xs sm:text-sm text-muted-foreground/70">
+                  Celebrating innovation, talent, and creativity across all engineering disciplines and cultural pursuits.
+                </p>
+              </div>
+            </div>
+
+            {/* Connect */}
+            <div>
+              <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-foreground mb-4 font-bold">Connect With Us</p>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-4">
+                Follow us on social media for updates, announcements, and highlights from VENCER.
+              </p>
+              <div className="flex gap-2">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 text-[10px] sm:text-xs rounded-md border border-primary/20 hover:border-primary hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-300"
+                  >
+                    {s.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Sponsors Section */}
-        <div className="border-t border-border/20 py-6 sm:py-8 mb-4 sm:mb-6">
-          <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-foreground mb-4 sm:mb-5 text-center">Our Sponsors</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div
-                key={i}
-                className="aspect-square bg-gradient-to-br from-fest-teal/10 to-fest-cyan/5 border-2 border-dashed border-border/40 rounded-lg flex items-center justify-center hover:border-fest-teal/50 hover:bg-fest-teal/5 transition-all duration-300 group cursor-pointer"
-              >
-                <div className="text-center">
-                  <div className="text-muted-foreground/40 group-hover:text-muted-foreground/60 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
-                    Sponsor Logo
+        <div className="py-12 sm:py-16 border-b border-border/20">
+          <h2 className="font-heading text-base sm:text-lg uppercase tracking-widest text-foreground mb-10 text-center font-bold">Our Proud Sponsors</h2>
+          
+          {/* Gold Sponsors */}
+          <div className="mb-10 sm:mb-14">
+            <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-fest-yellow mb-4 text-center font-semibold">Gold Sponsors</p>
+            <div className="overflow-hidden">
+              <div className="sponsors-carousel-gold">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div
+                    key={`gold-${i}`}
+                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-fest-yellow/15 to-fest-yellow/5 border-2 border-fest-yellow/40 rounded-lg flex items-center justify-center hover:border-fest-yellow/60 hover:bg-fest-yellow/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
+                  >
+                    <div className="text-center">
+                      <div className="text-fest-yellow/60 group-hover:text-fest-yellow transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                        Gold Sponsor
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div
+                    key={`gold-duplicate-${i}`}
+                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-fest-yellow/15 to-fest-yellow/5 border-2 border-fest-yellow/40 rounded-lg flex items-center justify-center hover:border-fest-yellow/60 hover:bg-fest-yellow/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
+                  >
+                    <div className="text-center">
+                      <div className="text-fest-yellow/60 group-hover:text-fest-yellow transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                        Gold Sponsor
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          </div>
+
+          {/* Silver Sponsors */}
+          <div className="mb-10 sm:mb-14">
+            <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-gray-400 mb-4 text-center font-semibold">Silver Sponsors</p>
+            <div className="overflow-hidden">
+              <div className="sponsors-carousel-silver">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div
+                    key={`silver-${i}`}
+                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-gray-400/15 to-gray-400/5 border-2 border-gray-400/40 rounded-lg flex items-center justify-center hover:border-gray-400/60 hover:bg-gray-400/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
+                  >
+                    <div className="text-center">
+                      <div className="text-gray-400/60 group-hover:text-gray-400 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                        Silver Sponsor
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div
+                    key={`silver-duplicate-${i}`}
+                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-gray-400/15 to-gray-400/5 border-2 border-gray-400/40 rounded-lg flex items-center justify-center hover:border-gray-400/60 hover:bg-gray-400/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
+                  >
+                    <div className="text-center">
+                      <div className="text-gray-400/60 group-hover:text-gray-400 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                        Silver Sponsor
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bronze Sponsors */}
+          <div>
+            <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-amber-700 mb-4 text-center font-semibold">Bronze Sponsors</p>
+            <div className="overflow-hidden">
+              <div className="sponsors-carousel-bronze">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div
+                    key={`bronze-${i}`}
+                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-amber-700/15 to-amber-700/5 border-2 border-amber-700/40 rounded-lg flex items-center justify-center hover:border-amber-700/60 hover:bg-amber-700/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
+                  >
+                    <div className="text-center">
+                      <div className="text-amber-700/60 group-hover:text-amber-700 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                        Bronze Sponsor
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div
+                    key={`bronze-duplicate-${i}`}
+                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-amber-700/15 to-amber-700/5 border-2 border-amber-700/40 rounded-lg flex items-center justify-center hover:border-amber-700/60 hover:bg-amber-700/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
+                  >
+                    <div className="text-center">
+                      <div className="text-amber-700/60 group-hover:text-amber-700 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                        Bronze Sponsor
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-border/20 pt-4 sm:pt-6 text-center">
-          <p className="text-[10px] sm:text-xs text-muted-foreground">
-            © 2026 VENCER. All rights reserved. | AITM, Belagavi
+        {/* Footer Bottom */}
+        <div className="py-6 sm:py-8">
+          <div className="text-center space-y-3 mb-4">
+            <p className="text-[10px] sm:text-xs text-muted-foreground font-semibold">
+              © 2026 VENCER. All Rights Reserved.
+            </p>
+            <p className="text-[10px] sm:text-xs text-muted-foreground/60">
+              AITM, Belagavi | Crafted with 💜 by the VENCER Team
+            </p>
+          </div>
+          <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent" />
+          <p className="text-[9px] sm:text-[10px] text-muted-foreground/50 text-center mt-4">
+            Innovation is our spirit. Excellence is our goal. VENCER is our platform.
           </p>
         </div>
       </div>

@@ -159,26 +159,31 @@
   .glow-border-teal {
     box-shadow: 0 0 20px hsl(var(--fest-teal) / 0.3), inset 0 0 20px hsl(var(--fest-teal) / 0.05);
     border-color: hsl(var(--fest-teal) / 0.5);
+    will-change: box-shadow;
   }
 
   .glow-border-orange {
     box-shadow: 0 0 15px hsl(var(--fest-orange) / 0.3), inset 0 0 15px hsl(var(--fest-orange) / 0.05);
     border-color: hsl(var(--fest-orange) / 0.4);
+    will-change: box-shadow;
   }
 
   .glow-border-cyan {
     box-shadow: 0 0 20px hsl(var(--fest-cyan) / 0.3), inset 0 0 15px hsl(var(--fest-cyan) / 0.05);
     border-color: hsl(var(--fest-cyan) / 0.4);
+    will-change: box-shadow;
   }
 
   .glass {
     background: hsl(var(--card) / 0.85);
     border: 2px solid hsl(var(--border) / 0.5);
+    backdrop-filter: blur(10px);
   }
 
   .glass-pandora {
     background: hsl(var(--card) / 0.85);
     border: 2px solid hsl(var(--fest-teal) / 0.25);
+    backdrop-filter: blur(10px);
   }
 
   .glass-hover:hover {
@@ -211,11 +216,13 @@
   .bioluminescent-glow {
     filter: drop-shadow(0 0 15px hsl(var(--fest-teal) / 0.6)) drop-shadow(0 0 45px hsl(var(--fest-cyan) / 0.3));
     animation: bio-pulse 3s ease-in-out infinite alternate;
+    will-change: filter;
   }
 
   .flame-glow {
     filter: drop-shadow(0 0 20px hsl(var(--fest-teal) / 0.5)) drop-shadow(0 0 60px hsl(var(--fest-cyan) / 0.3));
     animation: bio-pulse 3s ease-in-out infinite alternate;
+    will-change: filter;
   }
 
   @keyframes bio-pulse {
@@ -261,5 +268,19 @@
 
   .animate-float-slow {
     animation: float 8s ease-in-out infinite;
+  }
+
+  /* Performance optimization for mobile */
+  @media (max-width: 640px) {
+    .bioluminescent-glow,
+    .flame-glow {
+      animation: none;
+    }
+
+    .animate-float,
+    .animate-float-reverse,
+    .animate-float-slow {
+      animation: none;
+    }
   }
 }

@@ -2,7 +2,7 @@ import ProfileCard from "@/components/ProfileCard";
 import cosmicsarjaPhoto from "@/assets/cosmicsarja-photo.png";
 import sahilPhoto from "@/assets/sahil.png";
 import rohanPhoto from "@/assets/rhohan.png";
-import niveditaPhoto from "@/assets/nivedita.png";
+import chetanPhoto from "@/assets/vencer-logo.png";
 import { motion } from "framer-motion";
 
 interface Developer {
@@ -26,6 +26,15 @@ const developers: Developer[] = [
     linkedin: "https://linkedin.com/in/cosmicsarja",
   },
   {
+    name: "Chetan M",
+    role: "Backend Developer",
+    photo: chetanPhoto,
+    handle: "chetanm",
+    instagram: "https://instagram.com/chetanm",
+    github: "https://github.com/chetanm",
+    linkedin: "https://linkedin.com/in/chetanm",
+  },
+  {
     name: "Sahil Barbal",
     role: "Frontend Specialist",
     photo: sahilPhoto,
@@ -42,15 +51,6 @@ const developers: Developer[] = [
     instagram: "https://instagram.com/rohanpatel.dev",
     github: "https://github.com/rohanpatel",
     linkedin: "https://linkedin.com/in/rohanpatel",
-  },
-  {
-    name: "Nivedita A",
-    role: "Backend Developer",
-    photo: niveditaPhoto,
-    handle: "niveditaakkimaradi",
-    instagram: "https://instagram.com/niveditaakkimaradi",
-    github: "https://github.com/niveditaakkimaradi",
-    linkedin: "https://linkedin.com/in/niveditaakkimaradi",
   },
 ];
 
@@ -77,8 +77,8 @@ const DeveloperCard = ({ dev }: { dev: Developer }) => {
 
 const Developers = () => {
   return (
-    <section className="relative py-24 pt-32 min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background via-slate-950/30 to-background overflow-y-auto overflow-x-hidden">
-      <div className="container px-4 max-w-7xl w-full">
+    <section className="relative w-full min-h-screen py-24 pt-32 bg-gradient-to-b from-background via-slate-950/30 to-background">
+      <div className="container px-4 max-w-7xl w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -97,11 +97,18 @@ const Developers = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto w-full pb-12">
           {developers.map((dev) => (
-            <div key={dev.name} className="w-full sm:w-1/2 lg:w-1/2 flex justify-center">
+            <motion.div 
+              key={dev.name} 
+              className="flex justify-center items-start"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
               <DeveloperCard dev={dev} />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -27,8 +27,9 @@ const emberColors = [
 
 const ParticleBackground = memo(() => {
   const isMobile = useIsMobile();
-  const sporeCount = isMobile ? 8 : 20;
-  const emberCount = isMobile ? 3 : 8;
+  // Drastically reduce particles on mobile for better performance
+  const sporeCount = isMobile ? 4 : 20;
+  const emberCount = isMobile ? 1 : 8;
 
   const particles = useMemo<Particle[]>(() => {
     const spores = Array.from({ length: sporeCount }, (_, i) => ({
@@ -65,6 +66,8 @@ const ParticleBackground = memo(() => {
             backgroundColor: p.color,
             boxShadow: `0 0 ${p.size * 4}px ${p.color}`,
             animation: `${p.type === "spore" ? "spore-drift" : "ember-drift"} ${p.duration}s linear ${p.delay}s infinite`,
+            backfaceVisibility: "hidden",
+            perspective: 1000,
           }}
         />
       ))}

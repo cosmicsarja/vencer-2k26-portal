@@ -1,0 +1,134 @@
+/* Sponsors Carousel - Looping Slide Animation */
+
+.sponsors-carousel-gold,
+.sponsors-carousel-silver,
+.sponsors-carousel-bronze {
+  display: flex;
+  gap: 1rem;
+  animation: slideLeftInfinite 20s linear infinite;
+  will-change: transform;
+}
+
+/* Responsive gap */
+@media (min-width: 640px) {
+  .sponsors-carousel-gold,
+  .sponsors-carousel-silver,
+  .sponsors-carousel-bronze {
+    gap: 1.5rem;
+  }
+}
+
+/* Gold Sponsors */
+.sponsors-carousel-gold {
+  animation: slideLeftGold 20s linear infinite;
+}
+
+.sponsors-carousel-gold:hover {
+  animation-play-state: paused;
+}
+
+/* Silver Sponsors */
+.sponsors-carousel-silver {
+  animation: slideLeftSilver 20s linear infinite;
+}
+
+.sponsors-carousel-silver:hover {
+  animation-play-state: paused;
+}
+
+/* Bronze Sponsors */
+.sponsors-carousel-bronze {
+  animation: slideLeftBronze 20s linear infinite;
+}
+
+.sponsors-carousel-bronze:hover {
+  animation-play-state: paused;
+}
+
+/* Slide animation - Right to Left (looping) - SMOOTH & FAST */
+@keyframes slideLeftGold {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (100px + 1rem) * 5));
+  }
+}
+
+@keyframes slideLeftSilver {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (100px + 1rem) * 5));
+  }
+}
+
+@keyframes slideLeftBronze {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (100px + 1rem) * 5));
+  }
+}
+
+/* Responsive animations */
+@media (min-width: 640px) {
+  @keyframes slideLeftGold {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-1 * (120px + 1.5rem) * 5));
+    }
+  }
+
+  @keyframes slideLeftSilver {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-1 * (120px + 1.5rem) * 5));
+    }
+  }
+
+  @keyframes slideLeftBronze {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-1 * (120px + 1.5rem) * 5));
+    }
+  }
+}
+
+/* Sponsor logo item sizing */
+.sponsor-logo-item {
+  min-width: 100px;
+  min-height: 100px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .sponsor-logo-item {
+    min-width: 120px;
+    min-height: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sponsor-logo-item {
+    min-width: 140px;
+    min-height: 140px;
+  }
+}
+
+/* Smooth transitions */
+.sponsor-logo-item {
+  transition: all 0.2s ease-out;
+}
+
+.sponsor-logo-item:hover {
+  transform: scale(1.08);
+}
