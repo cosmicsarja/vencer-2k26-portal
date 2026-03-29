@@ -1003,7 +1003,18 @@ export const gamingEvents: Event[] = [
     duration: "5 Hours",
     venue: "Sports Ground",
     rulebook: "/rulebooks/Volleyball game.pdf",
-    rules: ["Team of 6 players on court + 3 substitutes", "Standard volleyball rules apply", "Best of 3 sets match format", "First to 25 points per set wins", "2 points lead required to win", "No spiking below net level", "Substitutions allowed", "Fair play and sportsmanship mandatory"],
+    rules: [
+      "Team of 6+3 players",
+      "3 sets knockout format",
+      "15 points per set",
+      "College ID compulsory",
+      "No passout students allowed",
+      "Substitute players allowed",
+      "Umpire decision final",
+      "No arguments with umpire",
+      "Misbehavior leads to disqualification",
+      "Registration online or on-spot"
+    ],
     coordinators: [{name: "Srinivas Iyer", contact: "9876543316"}, {name: "Anaya Banerjee", contact: "9876543317"}]
   },
   {
