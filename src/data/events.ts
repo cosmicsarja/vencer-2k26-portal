@@ -868,7 +868,7 @@ export const branches: Branch[] = [
         entryFee: "₹50",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 10, 2026",
-        posterUrl: "/public/posters/BCA/avatar reelverse.jpeg",
+        posterUrl: "/public/posters/BCA/avatar reelverse.png",
         branch: "BCA",
         teamSize: "Team of three to five members",
         duration: "2 Hours",
