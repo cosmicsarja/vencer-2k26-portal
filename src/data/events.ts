@@ -10,6 +10,8 @@ export interface Event {
   prizePool: string;
   entryFee: string;
   formLink: string;
+  formLinkSolo?: string;
+  formLinkGroup?: string;
   date?: string;
   posterUrl?: string;
   branch?: string;
@@ -708,7 +710,7 @@ export const branches: Branch[] = [
         entryFee: "₹400",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLScR-7cufQQqlvmSoFNNPML7QdnmBYo-3SV-SHDty5Be96lXyg/viewform?embedded=true",
         date: "April 10, 2026",
-        posterUrl: "/posters/Gemini_Generated_Image_s40dkhs40dkhs40d-2.png",
+        posterUrl: "/posters/ROBO/Gemini_Generated_Image_s40dkhs40dkhs40d-2.png",
         branch: "ROBO",
         teamSize: "3-4 members",
         duration: "12PM to 5PM",
@@ -725,7 +727,7 @@ export const branches: Branch[] = [
         entryFee: "₹250",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfX2MEENtqFV1lwzdYUD8fllv3sEQxc5MBviuQMiZlDApZ9pQ/viewform?embedded=true",
         date: "April 11, 2026",
-        posterUrl: "/posters/1774712695145.png",
+        posterUrl: "/posters/ROBO/1774712695145.png",
         branch: "ROBO",
         teamSize: "1-2 members",
         duration: "4 Hours",
@@ -752,7 +754,7 @@ export const branches: Branch[] = [
         entryFee: "₹500",
         formLink: "#",
         date: "April 10, 2026",
-        posterUrl: "/assets/steel-sentinel-avatar.png",
+        posterUrl: "/posters/ROBO/1774712697590.png",
         branch: "ROBO",
         teamSize: "6+3 members",
         duration: "5 Hours",
@@ -942,6 +944,8 @@ export const culturalEvents: Event[] = [
     prizePool: "Grand prizes",
     entryFee: "₹150",
     formLink: "#",
+    formLinkSolo: "https://forms.google.com/solo-fashion-show",
+    formLinkGroup: "https://forms.google.com/group-fashion-show",
     date: "April 10, 2026",
     teamSize: "Group (6-12)",
     duration: "Full Day",

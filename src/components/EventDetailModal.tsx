@@ -164,12 +164,29 @@ const EventDetailModal = forwardRef<HTMLDivElement, EventDetailModalProps>(({ ev
                 Download Event Rulebook (PDF)
               </a>
             )}
-            <button
-              onClick={() => onRegister?.(event.formLink)}
-              className="flex items-center justify-center gap-2 w-full font-display text-xs sm:text-sm tracking-wider px-6 py-3 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground font-bold hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-[1.02]"
-            >
-              Register Now
-            </button>
+            {event.formLinkSolo && event.formLinkGroup ? (
+              <div className="flex gap-3">
+                <button
+                  onClick={() => onRegister?.(event.formLinkSolo)}
+                  className="flex-1 flex items-center justify-center gap-2 font-display text-xs sm:text-sm tracking-wider px-6 py-3 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground font-bold hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-[1.02]"
+                >
+                  Register - Solo
+                </button>
+                <button
+                  onClick={() => onRegister?.(event.formLinkGroup)}
+                  className="flex-1 flex items-center justify-center gap-2 font-display text-xs sm:text-sm tracking-wider px-6 py-3 rounded-xl bg-gradient-to-r from-fest-yellow via-fest-orange to-fest-purple text-primary-foreground font-bold hover:shadow-[0_0_30px_hsl(var(--fest-yellow)_/_0.4)] transition-all duration-300 hover:scale-[1.02]"
+                >
+                  Register - Group
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => onRegister?.(event.formLink)}
+                className="flex items-center justify-center gap-2 w-full font-display text-xs sm:text-sm tracking-wider px-6 py-3 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground font-bold hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-[1.02]"
+              >
+                Register Now
+              </button>
+            )}
           </div>
         </motion.div>
       </motion.div>
