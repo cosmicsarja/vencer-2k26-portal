@@ -1,16 +1,18 @@
-# VENCER 2K26 Portal - Task Tracker
+# Git Push Cleanup - Progress Tracker
 
-## ✅ Completed
-- [x] s1.mp3 click sound verification & PR
-- [x] Developers page - perfect 2x2 grid, effects, image positioning fixed (face fully visible, no inner box)
-- [x] Push Developers page changes to GitHub PR `blackboxai/cool-dev-cards`
+## ✅ Completed Steps
+- [x] Created branch `blackboxai/git-push-cleanup`
+- [x] Added & committed `src/data/events.ts` updates (dates, rules, coordinators)
+- [x] Pushed branch to GitHub: https://github.com/cosmicsarja/vencer-2k26-portal/tree/blackboxai/git-push-cleanup
+- [x] Updated .gitignore to ignore `add_dates*.py` temp scripts
+- [x] Pushed .gitignore update
 
-## 🔄 In Progress
-- Test developers page at /developers (tilt/parallax/float/glow/sparks/s1.mp3)
-- Review/merge PR
+## ⏳ Pending / User Actions
+- Run `gh auth login --web` to authenticate GitHub CLI
+- Open & merge PR: https://github.com/cosmicsarja/vencer-2k26-portal/pull/new/blackboxai/git-push-cleanup
+- Optional: Clean untracked files `git clean -f add_dates*.py`
+- Push main's ahead commits: `git checkout main && git push origin main`
 
-## ⏳ Next
-- Footer.tsx improvements?
-- Additional pages (per TODO-cool-effects.md)
+## View Repo
+`open https://github.com/cosmicsarja/vencer-2k26-portal`
 
-**Live test:** http://localhost:8081/developers

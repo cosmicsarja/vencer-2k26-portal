@@ -22,3 +22,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+add_dates*.py
