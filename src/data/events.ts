@@ -279,7 +279,8 @@ export const branches: Branch[] = [
             "Tie breaker round in case of draw",
             "Combination of mental and physical tasks",
             "Judges decision final"
-        ]
+        ],
+        coordinators: [{name: "Anirud Reddy", contact: "9876543286"}, {name: "Srishti Kapoor", contact: "9876543287"}]
       },
       {
         title: "Volley Ball",
