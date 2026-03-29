@@ -1,6 +1,6 @@
 import { useEffect, useCallback, forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Trophy, IndianRupee, Clock, Users, MapPin, BookOpen, Download } from "lucide-react";
+import { X, Trophy, IndianRupee, Clock, Users, MapPin, BookOpen, Download, Phone } from "lucide-react";
 import type { Event } from "@/data/events";
 
 interface EventDetailModalProps {
@@ -128,6 +128,26 @@ const EventDetailModal = forwardRef<HTMLDivElement, EventDetailModalProps>(({ ev
                     <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-primary" />
                       {rule}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {event.coordinators && event.coordinators.length > 0 && (
+              <div>
+                <h3 className="font-heading text-base sm:text-lg font-bold text-foreground mb-2 sm:mb-3 flex items-center gap-2">
+                  <Users size={16} className={colors.accent} />
+                  Event Coordinators
+                </h3>
+                <ul className="space-y-1.5 sm:space-y-2">
+                  {event.coordinators.map((coordinator, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
+                      <Phone size={12} className="mt-1 shrink-0 text-primary" />
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-foreground">{coordinator.name}</span>
+                        <span className="text-muted-foreground">{coordinator.contact}</span>
+                      </div>
                     </li>
                   ))}
                 </ul>
