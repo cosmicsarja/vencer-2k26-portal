@@ -14,6 +14,7 @@ export interface Event {
   formLinkGroup?: string;
   date?: string;
   posterUrl?: string;
+  posterComingSoon?: boolean;
   branch?: string;
   rules?: string[];
   teamSize?: string;
@@ -793,6 +794,7 @@ export const branches: Branch[] = [
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/BCA/eva.png",
+        posterComingSoon: true,
         branch: "BCA",
         teamSize: "Team of two members",
         duration: "1.5 Hours",
@@ -819,6 +821,7 @@ export const branches: Branch[] = [
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 10, 2026",
         posterUrl: "/posters/BCA/navi.png",
+        posterComingSoon: true,
         branch: "BCA",
         teamSize: "Individual",
         duration: "2 Hours",
@@ -845,6 +848,7 @@ export const branches: Branch[] = [
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/BCA/jacks.png",
+        posterComingSoon: true,
         branch: "BCA",
         teamSize: "Team of two members (artist and assistant)",
         duration: "1.5 Hours",
@@ -869,6 +873,7 @@ export const branches: Branch[] = [
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 10, 2026",
         posterUrl: "/posters/BCA/avatar reelverse.png",
+        posterComingSoon: true,
         branch: "BCA",
         teamSize: "Team of three to five members",
         duration: "2 Hours",

@@ -56,7 +56,7 @@ const EventCardInner = forwardRef<HTMLDivElement, EventCardProps>(
         className={`rounded-2xl overflow-hidden transition-all duration-500 group flex flex-col border-2 cursor-pointer ${colors.border} ${colors.glow} bg-gradient-to-b ${colors.bg} bg-card/80`}
       >
         <div className="aspect-[4/3] bg-muted/10 flex items-center justify-center relative overflow-hidden">
-          {event.posterUrl ? (
+          {event.posterUrl && !event.posterComingSoon ? (
             <img
               src={event.posterUrl}
               alt={`${event.title} poster`}
