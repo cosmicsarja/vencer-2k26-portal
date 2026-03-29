@@ -304,7 +304,8 @@ export const branches: Branch[] = [
           "No touching robot during race",
           "Fastest time wins",
           "Judges decision final"
-       ]
+       ],
+        coordinators: [{name: "Vikrant Malik", contact: "9876543318"}, {name: "Pooja Deshmukh", contact: "9876543319"}]
       }
     ],
     culturalEvents: [],
