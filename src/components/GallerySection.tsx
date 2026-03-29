@@ -1,10 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { GALLERY_PHOTOS } from '../config/gallery';
 
 const GallerySection = () => {
-  // 24 placeholder cards
-  const cards = Array.from({ length: 24 }, (_, i) => i);
+  const cards = GALLERY_PHOTOS;
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const openImage = (index: number) => setSelectedImage(index);
@@ -43,24 +43,26 @@ const GallerySection = () => {
 
         {/* Card Grid - Responsive: 6 cols lg+, 4 md, 2 sm, 1 xs */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
-          {cards.map((i) => (
+          {cards.map((card, index) => (
             <motion.div
-              key={i}
+              key={card.id}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -10 }}
               transition={{ duration: 0.3 }}
-              onClick={() => openImage(i)}
+              onClick={() => openImage(index)}
               className="group relative overflow-hidden rounded-2xl glass-border hover:glass-border-strong shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer bg-background/30 backdrop-blur-xl hover:bg-background/50 border border-border/50 hover:border-primary/50"
             >
               {/* Placeholder Image */}
               <div className="w-full h-48 md:h-56 lg:h-52 xl:h-40 2xl:h-44 aspect-video overflow-hidden bg-gradient-to-br from-muted to-muted-foreground/20 group-hover:from-primary/10 group-hover:to-primary/5 transition-all duration-500">
                 <img
-                  src={`/moments/123.png`}
-                  alt={`Gallery image ${i + 1}`}
+                  src={`/moments/${card.filename}`}
+                  alt={card.title}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-50 group-hover:opacity-100"
                   loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 25vw, 15vw"
                 />
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -70,10 +72,10 @@ const GallerySection = () => {
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
                   <h3 className="font-display text-lg font-semibold text-white mb-1 truncate">
-                    Vencer Moment {i + 1}
+                    {card.title}
                   </h3>
                   <p className="text-muted-foreground/90 text-sm">
-                    Event highlight · 2025
+                    {card.date} · Event highlight
                   </p>
                 </div>
               </div>
@@ -136,19 +138,21 @@ const GallerySection = () => {
               {/* Main Image Container */}
               <div className="flex-1 flex items-center justify-center overflow-hidden rounded-xl bg-black/40">
                 <img
-                  src={`/moments/123.png`}
-                  alt={`Gallery image ${selectedImage + 1}`}
+                  src={`/moments/${cards[selectedImage].filename}`}
+                  alt={cards[selectedImage].title}
                   className="max-w-full max-h-full object-contain"
+                  decoding="async"
+                  loading="eager"
                 />
               </div>
 
               {/* Image Info */}
               <div className="mt-4 text-center text-white">
                 <h3 className="font-display text-xl sm:text-2xl font-semibold mb-2">
-                  Vencer Moment {selectedImage + 1}
+                  {cards[selectedImage].title}
                 </h3>
                 <p className="text-muted-foreground text-sm sm:text-base">
-                  {selectedImage + 1} of {cards.length} · Event highlight · 2025
+                  {selectedImage + 1} of {cards.length} · {cards[selectedImage].date} · Event highlight
                 </p>
               </div>
 
@@ -164,20 +168,22 @@ const GallerySection = () => {
 
                 {/* Thumbnail Strip */}
                 <div className="flex gap-2 overflow-x-auto flex-1 px-4 py-2">
-                  {cards.map((i) => (
+                  {cards.map((card, index) => (
                     <button
-                      key={i}
-                      onClick={() => setSelectedImage(i)}
+                      key={card.id}
+                      onClick={() => setSelectedImage(index)}
                       className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                        selectedImage === i
+                        selectedImage === index
                           ? 'border-primary scale-105'
                           : 'border-white/20 hover:border-white/40 opacity-70 hover:opacity-100'
                       }`}
                     >
                       <img
-                        src={`/moments/123.png`}
-                        alt={`Thumbnail ${i + 1}`}
+                        src={`/moments/${card.filename}`}
+                        alt={card.title}
                         className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </button>
                   ))}
@@ -200,4 +206,3 @@ const GallerySection = () => {
 };
 
 export default GallerySection;
-
