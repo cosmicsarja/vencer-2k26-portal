@@ -29,7 +29,7 @@ const developers: Developer[] = [
     name: "Chetan M",
     role: "Backend Developer",
     photo: chetanPhoto,
-    handle: "Kalki__33_",
+    handle: " Kalki__33_",
     instagram: "https://www.instagram.com/kalki__33_?igsh=cnhxbHEzcXpib2dh",
     github: "https://github.com/chetanmatapati33",
     linkedin: "https://linkedin.com/in/chetanm",
