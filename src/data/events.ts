@@ -44,7 +44,7 @@ export const branches: Branch[] = [
         entryFee: "₹200",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfTe8SBuBpVnG2-jnzSEwUgJfCmDIdJh6YU9nHBNOKM9gsVKA/viewform?embedded=true",
         date: "April 11, 2026",
-        posterUrl: "/posters/pandora-logic-wars.png",
+        posterUrl: "/posters/AIDS/pandora-logic-wars.png",
         branch: "AI & DS",
         teamSize: "2-4 members",
         duration: "24 Hours",
