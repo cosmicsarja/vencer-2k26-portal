@@ -1,18 +1,14 @@
-# Git Push Cleanup - Progress Tracker
+# Task: Fix errors in src/data/events.ts
 
-## ✅ Completed Steps
-- [x] Created branch `blackboxai/git-push-cleanup`
-- [x] Added & committed `src/data/events.ts` updates (dates, rules, coordinators)
-- [x] Pushed branch to GitHub: https://github.com/cosmicsarja/vencer-2k26-portal/tree/blackboxai/git-push-cleanup
-- [x] Updated .gitignore to ignore `add_dates*.py` temp scripts
-- [x] Pushed .gitignore update
+## Plan Steps:
+1. [x] Fix Event interface: Remove duplicate `date` declarations.
+ 2. [x] Add `as const` to all category literals consistently.
+ 3. [ ] Ensure all events have required fields like `date`, add missing optionals (branch for top-level events).
+ 4. [ ] Clean up arrays (remove trailing commas, fill missing data).
+ 5. [ ] Edit src/data/events.ts with all changes.
+ 6. [ ] Verify: Run TypeScript compiler/linter.
+ 7. [ ] Test: Check /events and /branches pages.
+ 8. [ ] Mark complete.
 
-## ⏳ Pending / User Actions
-- Run `gh auth login --web` to authenticate GitHub CLI
-- Open & merge PR: https://github.com/cosmicsarja/vencer-2k26-portal/pull/new/blackboxai/git-push-cleanup
-- Optional: Clean untracked files `git clean -f add_dates*.py`
-- Push main's ahead commits: `git checkout main && git push origin main`
-
-## View Repo
-`open https://github.com/cosmicsarja/vencer-2k26-portal`
+Current progress: Categories fixed in CSE branch. Continuing with remaining categories, top-level events, cleanups.
 

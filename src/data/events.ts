@@ -10,7 +10,6 @@ export interface Event {
   prizePool: string;
   entryFee: string;
   formLink: string;
-  date: "April 10, 2026",
   date?: string;
   posterUrl?: string;
   branch?: string;
@@ -146,7 +145,7 @@ export const branches: Branch[] = [
     events: [
       {
         title: "Bug Crush",
-        category: "Technical",
+        category: "Technical" as const,
         description: "(Code Debugging)",
         prizePool: "₹12,000",
         entryFee: "₹100",
@@ -162,7 +161,7 @@ export const branches: Branch[] = [
       },
       {
         title: "Code Meme",
-        category: "Technical",
+        category: "Technical" as const,
         description: "(Meme Coding)",
         prizePool: "₹8,000",
         entryFee: "₹100",
@@ -178,7 +177,7 @@ export const branches: Branch[] = [
       },
       {
         title: "Hack The Hunt",
-        category: "Technical",
+        category: "Technical" as const,
         description: "(Escape Room)",
         prizePool: "₹15,000",
         entryFee: "₹150",
@@ -194,7 +193,7 @@ export const branches: Branch[] = [
       },
       {
         title: "Idea Canvas",
-        category: "Technical",
+        category: "Technical" as const,
         description: "(Poster Presentation)",
         prizePool: "₹10,000",
         entryFee: "₹50",
@@ -210,7 +209,7 @@ export const branches: Branch[] = [
       },
       {
         title: "Box Cricket",
-        category: "Non-Technical",
+        category: "Non-Technical" as const,
         description: "",
         prizePool: "₹8,000",
         entryFee: "₹100",
@@ -301,7 +300,7 @@ export const branches: Branch[] = [
     events: [
       {
         title: "Bridge Making Challenge",
-        category: "Technical",
+        category: "Technical" as const,
         description: "Design and build the strongest bridge using provided materials",
         prizePool: "₹10,000",
         entryFee: "₹100",
