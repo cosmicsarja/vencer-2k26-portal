@@ -11,6 +11,7 @@ export interface Event {
   teamSize?: string;
   duration?: string;
   venue?: string;
+  rulebook?: string;
 }
 
 export interface Branch {
@@ -28,12 +29,12 @@ export const branches: Branch[] = [
     shortName: "AI & DS",
     color: "fest-orange",
     events: [
-      { title: "Pandora Logic War", category: "Technical" as const, description: "Only the sharpest minds survive — a fierce AI & logic battle", prizePool: "exciting prices", entryFee: "₹200", formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfTe8SBuBpVnG2-jnzSEwUgJfCmDIdJh6YU9nHBNOKM9gsVKA/viewform?embedded=true", posterUrl: "/posters/pandora-logic-wars.png", branch: "AI & DS", teamSize: "2-4 members", duration: "24 Hours", venue: "CS Lab 1", rules: ["Team size: 2-4 members", "Participants must bring their own laptops", "Pre-built models are not allowed", "Internet access will be provided", "Judging based on innovation, feasibility, and presentation", "Decision of judges is final"] },
-      { title: "Project Expo (Project Competition)", category: "Technical" as const, description: "Showcase your innovative projects and compete for top prizes", prizePool: "₹20,000", entryFee: "₹200", formLink: "https://forms.gle/example-project-expo", posterUrl: "", branch: "AI & DS", teamSize: "2-4 members", duration: "24 Hours", venue: "CS Lab 1", rules: ["Team size: 2-4 members", "Original projects only", "Bring laptops and prototypes", "Judging: innovation, implementation, presentation", "Demo required"] },
-      { title: "AI Prompt Battle", category: "Technical" as const, description: "Compete in crafting the perfect AI prompts for complex challenges", prizePool: "₹12,000", entryFee: "₹100", formLink: "https://forms.gle/example-ai-prompt-battle", branch: "AI & DS", teamSize: "Individual", duration: "2 Hours", venue: "CS Lab 3", rules: ["Individual participation", "Multiple rounds with AI models", "Judged on creativity, accuracy, efficiency", "Internet for AI tools only"] },
-      { title: "AI Shark Tank", category: "Technical" as const, description: "Pitch your AI startup idea to judges for investment and prizes", prizePool: "₹15,000", entryFee: "₹150", formLink: "https://forms.gle/example-ai-shark-tank", branch: "AI & DS", teamSize: "2-3 members", duration: "3 Hours", venue: "Seminar Hall", rules: ["Team of 2-3", "3-min pitch + Q&A", "Viable AI business ideas", "Judged on market potential, innovation, presentation"] },
-      { title: "Cooking Without Fire", category: "Non-Technical" as const, description: "Creative no-fire cooking competition using innovative ingredients", prizePool: "₹8,000", entryFee: "₹100", formLink: "https://forms.gle/example-cooking-without-fire", branch: "AI & DS", teamSize: "2-3 members", duration: "1.5 Hours", venue: "Food Zone", rules: ["Team of 2-3", "No cooking appliances or fire", "Ingredients provided", "Judged on taste, creativity, presentation"] },
-      { title: "One Minute Ad Challenge", category: "Non-Technical" as const, description: "Create compelling 60-second product advertisements", prizePool: "₹6,000", entryFee: "₹50", formLink: "https://forms.gle/example-one-minute-ad", branch: "AI & DS", teamSize: "1-2 members", duration: "1 Hour", venue: "Media Lab", rules: ["1-2 members", "60 seconds max", "Product revealed on spot", "Props and creativity encouraged"] },
+      { title: "Pandora Logic War", category: "Technical" as const, description: "Only the sharpest minds survive — a fierce AI & logic battle", prizePool: "exciting prices", entryFee: "₹200", formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfTe8SBuBpVnG2-jnzSEwUgJfCmDIdJh6YU9nHBNOKM9gsVKA/viewform?embedded=true", posterUrl: "/posters/pandora-logic-wars.png", branch: "AI & DS", teamSize: "2-4 members", duration: "24 Hours", venue: "CS Lab 1", rulebook: "/rulebooks/Pandora Logic War.pdf", rules: ["Team size: 2-4 members", "Participants must bring their own laptops", "Pre-built models are not allowed", "Internet access will be provided", "Judging based on innovation, feasibility, and presentation", "Decision of judges is final"] },
+      { title: "Project Expo (Project Competition)", category: "Technical" as const, description: "Showcase your innovative projects and compete for top prizes", prizePool: "₹20,000", entryFee: "₹200", formLink: "https://forms.gle/example-project-expo", posterUrl: "", branch: "AI & DS", teamSize: "2-4 members", duration: "24 Hours", venue: "CS Lab 1", rulebook: "/rulebooks/Project Expo.pdf", rules: ["Team size: 2-4 members", "Original projects only", "Bring laptops and prototypes", "Judging: innovation, implementation, presentation", "Demo required"] },
+      { title: "AI Prompt Battle", category: "Technical" as const, description: "Compete in crafting the perfect AI prompts for complex challenges", prizePool: "₹12,000", entryFee: "₹100", formLink: "https://forms.gle/example-ai-prompt-battle", branch: "AI & DS", teamSize: "Individual", duration: "2 Hours", venue: "CS Lab 3", rulebook: "/rulebooks/AI Prompt Battle.pdf", rules: ["Individual participation", "Multiple rounds with AI models", "Judged on creativity, accuracy, efficiency", "Internet for AI tools only"] },
+      { title: "AI Shark Tank", category: "Technical" as const, description: "Pitch your AI startup idea to judges for investment and prizes", prizePool: "₹15,000", entryFee: "₹150", formLink: "https://forms.gle/example-ai-shark-tank", branch: "AI & DS", teamSize: "2-3 members", duration: "3 Hours", venue: "Seminar Hall", rulebook: "/rulebooks/AI Shark Tank.pdf", rules: ["Team of 2-3", "3-min pitch + Q&A", "Viable AI business ideas", "Judged on market potential, innovation, presentation"] },
+      { title: "Cooking Without Fire", category: "Non-Technical" as const, description: "Creative no-fire cooking competition using innovative ingredients", prizePool: "₹8,000", entryFee: "₹100", formLink: "https://forms.gle/example-cooking-without-fire", branch: "AI & DS", teamSize: "2-3 members", duration: "1.5 Hours", venue: "Food Zone", rulebook: "/rulebooks/Cooking Without Fire.pdf", rules: ["Team of 2-3", "No cooking appliances or fire", "Ingredients provided", "Judged on taste, creativity, presentation"] },
+      { title: "One Minute Ad Challenge", category: "Non-Technical" as const, description: "Create compelling 60-second product advertisements", prizePool: "₹6,000", entryFee: "₹50", formLink: "https://forms.gle/example-one-minute-ad", branch: "AI & DS", teamSize: "1-2 members", duration: "1 Hour", venue: "Media Lab", rulebook: "/rulebooks/One Minute Ad Challenge.pdf", rules: ["1-2 members", "60 seconds max", "Product revealed on spot", "Props and creativity encouraged"] },
     ],
     culturalEvents: [],
     gamingEvents: [],
@@ -43,15 +44,15 @@ export const branches: Branch[] = [
     shortName: "CSE",
     color: "fest-teal",
     events: [
-      { title: "Bug Crush", category: "Technical", description: "(Code Debugging)", prizePool: "₹12,000", entryFee: "₹100", formLink: "#", branch: "CSE", teamSize: "Individual", duration: "2 Hours", venue: "CS Lab 1", rules: ["Individual participation", "Debug provided buggy code", "Fastest correct fix wins", "Multiple rounds", "No internet access"] },
-      { title: "Code Meme", category: "Technical", description: "(Meme Coding)", prizePool: "₹8,000", entryFee: "₹100", formLink: "#", branch: "CSE", teamSize: "1-2 members", duration: "2 Hours", venue: "CS Lab 2", rules: ["Team of 1-2", "Create working code + memes", "Judged on humor & functionality", "Any language allowed"] },
-      { title: "Hack The Hunt", category: "Technical", description: "(Escape Room)", prizePool: "₹15,000", entryFee: "₹150", formLink: "#", branch: "CSE", teamSize: "2-4 members", duration: "3 Hours", venue: "Workshop", rules: ["Team of 2-4", "Solve coding puzzles to escape", "Time-based scoring", "No external help"] },
-      { title: "Idea Canvas", category: "Technical", description: "(Poster Presentation)", prizePool: "₹10,000", entryFee: "₹50", formLink: "#", branch: "CSE", teamSize: "Individual", duration: "3 Hours", venue: "Seminar Hall", rules: ["Individual", "Design tech poster", "A2 size", "Judged on clarity & creativity"] },
-      { title: "Box Cricket", category: "Non-Technical", description: "", prizePool: "₹8,000", entryFee: "₹100", formLink: "#", branch: "CSE", teamSize: "8-10 members", duration: "2 Hours", venue: "Sports Ground", rules: ["Team of 8-10", "Box cricket format", "20 overs per innings", "Standard rules apply"] },
-      { title: "Lagori", category: "Non-Technical", description: "", prizePool: "₹6,000", entryFee: "₹50", formLink: "#", branch: "CSE", teamSize: "8-10 members", duration: "2 Hours", venue: "Sports Ground", rules: ["Team of 8-10", "Lagori/7 Stones game", "Hit stones to win points", "Best of 3 sets"] },
-      { title: "Slow Bike Race", category: "Non-Technical", description: "", prizePool: "₹5,000", entryFee: "₹50", formLink: "#", branch: "CSE", teamSize: "Individual", duration: "1 Hour", venue: "Main Ground", rules: ["Individual", "Slowest to finish without stopping", "Balance challenge", "Non-motorized bicycles"] },
-      { title: "Photography", category: "Non-Technical", description: "", prizePool: "₹10,000", entryFee: "₹100", formLink: "#", branch: "CSE", teamSize: "Individual", duration: "Full Day", venue: "Campus", rules: ["Individual", "Theme: Vencer 2K26", "Submit 5 best shots", "Judged by panel"] },
-      { title: "Videography", category: "Non-Technical", description: "", prizePool: "₹12,000", entryFee: "₹150", formLink: "#", branch: "CSE", teamSize: "1-2 members", duration: "Full Day", venue: "Campus", rules: ["1-2 members", "Short film 3-5 mins", "Theme: Vencer Spirit", "Editing allowed"] },
+      { title: "Bug Crush", category: "Technical", description: "(Code Debugging)", prizePool: "₹12,000", entryFee: "₹100", formLink: "#", branch: "CSE", teamSize: "Individual", duration: "2 Hours", venue: "CS Lab 1", rulebook: "/rulebooks/Bug Crush.pdf", rules: ["Individual participation", "Debug provided buggy code", "Fastest correct fix wins", "Multiple rounds", "No internet access"] },
+      { title: "Code Meme", category: "Technical", description: "(Meme Coding)", prizePool: "₹8,000", entryFee: "₹100", formLink: "#", branch: "CSE", teamSize: "1-2 members", duration: "2 Hours", venue: "CS Lab 2", rulebook: "/rulebooks/Code Meme.pdf", rules: ["Team of 1-2", "Create working code + memes", "Judged on humor & functionality", "Any language allowed"] },
+      { title: "Hack The Hunt", category: "Technical", description: "(Escape Room)", prizePool: "₹15,000", entryFee: "₹150", formLink: "#", branch: "CSE", teamSize: "2-4 members", duration: "3 Hours", venue: "Workshop", rulebook: "/rulebooks/Hack The Hunt.pdf", rules: ["Team of 2-4", "Solve coding puzzles to escape", "Time-based scoring", "No external help"] },
+      { title: "Idea Canvas", category: "Technical", description: "(Poster Presentation)", prizePool: "₹10,000", entryFee: "₹50", formLink: "#", branch: "CSE", teamSize: "Individual", duration: "3 Hours", venue: "Seminar Hall", rulebook: "/rulebooks/Idea Canvas.pdf", rules: ["Individual", "Design tech poster", "A2 size", "Judged on clarity & creativity"] },
+      { title: "Box Cricket", category: "Non-Technical", description: "", prizePool: "₹8,000", entryFee: "₹100", formLink: "#", branch: "CSE", teamSize: "8-10 members", duration: "2 Hours", venue: "Sports Ground", rulebook: "/rulebooks/Box Cricket.pdf", rules: ["Team of 8-10", "Box cricket format", "20 overs per innings", "Standard rules apply"] },
+      { title: "Lagori", category: "Non-Technical", description: "", prizePool: "₹6,000", entryFee: "₹50", formLink: "#", branch: "CSE", teamSize: "8-10 members", duration: "2 Hours", venue: "Sports Ground", rulebook: "/rulebooks/Lagori.pdf", rules: ["Team of 8-10", "Lagori/7 Stones game", "Hit stones to win points", "Best of 3 sets"] },
+      { title: "Slow Bike Race", category: "Non-Technical", description: "", prizePool: "₹5,000", entryFee: "₹50", formLink: "#", branch: "CSE", teamSize: "Individual", duration: "1 Hour", venue: "Main Ground", rulebook: "/rulebooks/Slow Bike Race.pdf", rules: ["Individual", "Slowest to finish without stopping", "Balance challenge", "Non-motorized bicycles"] },
+      { title: "Photography", category: "Non-Technical", description: "", prizePool: "₹10,000", entryFee: "₹100", formLink: "#", branch: "CSE", teamSize: "Individual", duration: "Full Day", venue: "Campus", rulebook: "/rulebooks/Photography.pdf", rules: ["Individual", "Theme: Vencer 2K26", "Submit 5 best shots", "Judged by panel"] },
+      { title: "Videography", category: "Non-Technical", description: "", prizePool: "₹12,000", entryFee: "₹150", formLink: "#", branch: "CSE", teamSize: "1-2 members", duration: "Full Day", venue: "Campus", rulebook: "/rulebooks/Videography.pdf", rules: ["1-2 members", "Short film 3-5 mins", "Theme: Vencer Spirit", "Editing allowed"] },
     ],
     culturalEvents: [],
     gamingEvents: [],
@@ -74,6 +75,7 @@ export const branches: Branch[] = [
         teamSize: "2-3 members",
         duration: "4 Hours",
         venue: "Workshop",
+        rulebook: "/rulebooks/Bridge Making Challenge.pdf",
         rules: ["Team of 2-3 members", "Materials: ice cream sticks and glue (provided)", "Span 30cm min", "Load test at center", "Best load-to-weight ratio wins"]
       },
       {
@@ -87,6 +89,7 @@ export const branches: Branch[] = [
         teamSize: "Individual",
         duration: "2 Hours",
         venue: "Seminar Hall",
+        rulebook: "/rulebooks/The Auto Expert.pdf",
         rules: ["Individual participation", "Multiple rounds: parts ID, logos, quiz", "No aids allowed", "Fastest accurate answers"]
       },
       {
@@ -101,6 +104,7 @@ export const branches: Branch[] = [
         teamSize: "Individual",
         duration: "1.5 Hours",
         venue: "Seminar Hall",
+        rulebook: "/rulebooks/Stand-up Comedy.pdf",
         rules: [
           "Individual participation only",
           "5-minute performance max",
@@ -119,15 +123,15 @@ export const branches: Branch[] = [
     shortName: "CIVIL",
     color: "fest-blue",
     events: [
-      { title: "Design Doodle Studio", category: "Technical", description: "(Logo Design)", prizePool: "₹10,000", entryFee: "₹100", formLink: "#", branch: "CIVIL", teamSize: "Individual", duration: "3 Hours", venue: "Drawing Hall", rules: ["Individual participation", "Create logos for given themes", "Digital or hand-drawn", "Judged on creativity and branding"] },
-      { title: "Pictogram X", category: "Technical", description: "(Picture Puzzle)", prizePool: "₹8,000", entryFee: "₹50", formLink: "#", branch: "CIVIL", teamSize: "1-2 members", duration: "2 Hours", venue: "Seminar Hall", rules: ["1-2 members", "Solve visual design puzzles", "Multiple rounds", "Speed and accuracy"] },
-      { title: "The Messy Masterpiece", category: "Non-Technical", description: "(Brushless Painting)", prizePool: "₹8,000", entryFee: "₹100", formLink: "#", branch: "CIVIL", teamSize: "Individual", duration: "3 Hours", venue: "Drawing Hall", rules: ["Individual", "No brushes - use fingers/sponges", "Theme revealed on spot", "Judged on creativity"] },
-      { title: "Battle of Legends", category: "Non-Technical", description: "(Crown Conquest)", prizePool: "₹12,000", entryFee: "₹150", formLink: "#", branch: "CIVIL", teamSize: "Individual", duration: "2 Hours", venue: "Main Stage", rules: ["Individual", "Quiz + talent showdown", "Legendary figures theme", "Audience vote + judges"] },
+      { title: "Design Doodle Studio", category: "Technical", description: "(Logo Design)", prizePool: "₹10,000", entryFee: "₹100", formLink: "#", branch: "CIVIL", teamSize: "Individual", duration: "3 Hours", venue: "Drawing Hall", rulebook: "/rulebooks/Design Doodle Studio.pdf", rules: ["Individual participation", "Create logos for given themes", "Digital or hand-drawn", "Judged on creativity and branding"] },
+      { title: "Pictogram X", category: "Technical", description: "(Picture Puzzle)", prizePool: "₹8,000", entryFee: "₹50", formLink: "#", branch: "CIVIL", teamSize: "1-2 members", duration: "2 Hours", venue: "Seminar Hall", rulebook: "/rulebooks/Pictogram X.pdf", rules: ["1-2 members", "Solve visual design puzzles", "Multiple rounds", "Speed and accuracy"] },
+      { title: "The Messy Masterpiece", category: "Non-Technical", description: "(Brushless Painting)", prizePool: "₹8,000", entryFee: "₹100", formLink: "#", branch: "CIVIL", teamSize: "Individual", duration: "3 Hours", venue: "Drawing Hall", rulebook: "/rulebooks/The Messy Masterpiece.pdf", rules: ["Individual", "No brushes - use fingers/sponges", "Theme revealed on spot", "Judged on creativity"] },
+      { title: "Battle of Legends", category: "Non-Technical", description: "(Crown Conquest)", prizePool: "₹12,000", entryFee: "₹150", formLink: "#", branch: "CIVIL", teamSize: "Individual", duration: "2 Hours", venue: "Main Stage", rulebook: "/rulebooks/Battle of Legends.pdf", rules: ["Individual", "Quiz + talent showdown", "Legendary figures theme", "Audience vote + judges"] },
     ],
     culturalEvents: [],
     gamingEvents: [
-      { title: "Tower Stack", category: "Gaming", description: "Stack blocks to build the tallest tower", prizePool: "₹3,000", entryFee: "₹50", formLink: "https://forms.google.com", branch: "CIVIL", teamSize: "Individual", duration: "1 Hour", venue: "Civil Lab", rules: ["Individual participation", "Wooden blocks provided", "Tower must stand for 10 seconds", "Tallest standing tower wins"] },
-      { title: "Estimation Game", category: "Gaming", description: "Estimate dimensions, weights, and quantities of objects", prizePool: "₹3,000", entryFee: "₹50", formLink: "https://forms.google.com", branch: "CIVIL", teamSize: "Individual", duration: "1 Hour", venue: "Civil Lab", rules: ["Individual participation", "Multiple rounds of estimation", "Closest estimates score highest", "No measuring tools allowed"] },
+      { title: "Tower Stack", category: "Gaming", description: "Stack blocks to build the tallest tower", prizePool: "₹3,000", entryFee: "₹50", formLink: "https://forms.google.com", branch: "CIVIL", teamSize: "Individual", duration: "1 Hour", venue: "Civil Lab", rulebook: "/rulebooks/Tower Stack.pdf", rules: ["Individual participation", "Wooden blocks provided", "Tower must stand for 10 seconds", "Tallest standing tower wins"] },
+      { title: "Estimation Game", category: "Gaming", description: "Estimate dimensions, weights, and quantities of objects", prizePool: "₹3,000", entryFee: "₹50", formLink: "https://forms.google.com", branch: "CIVIL", teamSize: "Individual", duration: "1 Hour", venue: "Civil Lab", rulebook: "/rulebooks/Estimation Game.pdf", rules: ["Individual participation", "Multiple rounds of estimation", "Closest estimates score highest", "No measuring tools allowed"] },
     ],
   },
   {
@@ -135,18 +139,18 @@ export const branches: Branch[] = [
     shortName: "ECE",
     color: "fest-purple",
     events: [
-      { title: "Thinker CAD", category: "Technical", description: "", prizePool: "₹12,000", entryFee: "₹150", formLink: "#", branch: "ECE", teamSize: "1-2 members", duration: "4 Hours", venue: "Electronics Lab", rules: ["1-2 members", "CAD modeling challenge", "3D design competition", "Innovation judged"] },
-      { title: "Treasure Hunt", category: "Non-Technical", description: "", prizePool: "₹8,000", entryFee: "₹100", formLink: "#", branch: "ECE", teamSize: "2-4 members", duration: "3 Hours", venue: "Campus", rules: ["Team of 2-4", "Solve clues around campus", "Tech-themed puzzles", "First team to finish wins"] },
-      { title: "One Minute Games", category: "Non-Technical", description: "", prizePool: "₹6,000", entryFee: "₹50", formLink: "#", branch: "ECE", teamSize: "Individual", duration: "2 Hours", venue: "Main Hall", rules: ["Individual", "60-sec challenges", "Multiple mini-games", "Points based"] },
-      { title: "Meme Making", category: "Non-Technical", description: "", prizePool: "₹5,000", entryFee: "₹50", formLink: "#", branch: "ECE", teamSize: "Individual", duration: "1.5 Hours", venue: "Lab", rules: ["Individual", "Create tech memes", "Audience vote", "Original content"] },
-      { title: "Tug of War", category: "Non-Technical", description: "", prizePool: "₹7,000", entryFee: "₹100", formLink: "#", branch: "ECE", teamSize: "10-12 members", duration: "1 Hour", venue: "Sports Ground", rules: ["Team 10-12", "Standard tug of war", "Best of 3 pulls"] },
-      { title: "Pani Puri", category: "Non-Technical", description: "", prizePool: "₹4,000", entryFee: "₹50", formLink: "#", branch: "ECE", teamSize: "Individual", duration: "1 Hour", venue: "Food Zone", rules: ["Individual", "Eating contest", "Spiciest pani puri", "Fastest eater"] },
-      { title: "Fun Junction", category: "Non-Technical", description: "", prizePool: "₹10,000", entryFee: "₹100", formLink: "#", branch: "ECE", teamSize: "Teams/Varies", duration: "3 Hours", venue: "Main Area", rules: ["Multiple fun games", "Varied team sizes", "Cumulative scoring", "Entertainment focus"] },
+      { title: "Thinker CAD", category: "Technical", description: "", prizePool: "₹12,000", entryFee: "₹150", formLink: "#", branch: "ECE", teamSize: "1-2 members", duration: "4 Hours", venue: "Electronics Lab", rulebook: "/rulebooks/Thinker CAD.pdf", rules: ["1-2 members", "CAD modeling challenge", "3D design competition", "Innovation judged"] },
+      { title: "Treasure Hunt", category: "Non-Technical", description: "", prizePool: "₹8,000", entryFee: "₹100", formLink: "#", branch: "ECE", teamSize: "2-4 members", duration: "3 Hours", venue: "Campus", rulebook: "/rulebooks/Treasure Hunt.pdf", rules: ["Team of 2-4", "Solve clues around campus", "Tech-themed puzzles", "First team to finish wins"] },
+      { title: "One Minute Games", category: "Non-Technical", description: "", prizePool: "₹6,000", entryFee: "₹50", formLink: "#", branch: "ECE", teamSize: "Individual", duration: "2 Hours", venue: "Main Hall", rulebook: "/rulebooks/One Minute Games.pdf", rules: ["Individual", "60-sec challenges", "Multiple mini-games", "Points based"] },
+      { title: "Meme Making", category: "Non-Technical", description: "", prizePool: "₹5,000", entryFee: "₹50", formLink: "#", branch: "ECE", teamSize: "Individual", duration: "1.5 Hours", venue: "Lab", rulebook: "/rulebooks/Meme Making.pdf", rules: ["Individual", "Create tech memes", "Audience vote", "Original content"] },
+      { title: "Tug of War", category: "Non-Technical", description: "", prizePool: "₹7,000", entryFee: "₹100", formLink: "#", branch: "ECE", teamSize: "10-12 members", duration: "1 Hour", venue: "Sports Ground", rulebook: "/rulebooks/Tug of War.pdf", rules: ["Team 10-12", "Standard tug of war", "Best of 3 pulls"] },
+      { title: "Pani Puri", category: "Non-Technical", description: "", prizePool: "₹4,000", entryFee: "₹50", formLink: "#", branch: "ECE", teamSize: "Individual", duration: "1 Hour", venue: "Food Zone", rulebook: "/rulebooks/Pani Puri.pdf", rules: ["Individual", "Eating contest", "Spiciest pani puri", "Fastest eater"] },
+      { title: "Fun Junction", category: "Non-Technical", description: "", prizePool: "₹10,000", entryFee: "₹100", formLink: "#", branch: "ECE", teamSize: "Teams/Varies", duration: "3 Hours", venue: "Main Area", rulebook: "/rulebooks/Fun Junction.pdf", rules: ["Multiple fun games", "Varied team sizes", "Cumulative scoring", "Entertainment focus"] },
     ],
     culturalEvents: [],
     gamingEvents: [
-      { title: "Drone Racing", category: "Gaming", description: "Navigate drones through obstacle course", prizePool: "₹10,000", entryFee: "₹200", formLink: "https://forms.google.com", branch: "ECE", teamSize: "1-2 members", duration: "Half Day", venue: "Main Ground", rules: ["Individual or duo", "Drones provided by organizers", "Navigate through checkpoints", "Fastest time wins", "Crashing leads to time penalty"] },
-      { title: "Arduino Obstacle Bot", category: "Gaming", description: "Program Arduino bots to navigate an obstacle course", prizePool: "₹5,000", entryFee: "₹100", formLink: "https://forms.google.com", branch: "ECE", teamSize: "1-2 members", duration: "3 Hours", venue: "Electronics Lab", rules: ["Individual or duo", "Arduino kit provided", "Program bot to navigate course autonomously", "Fastest completion wins"] },
+      { title: "Drone Racing", category: "Gaming", description: "Navigate drones through obstacle course", prizePool: "₹10,000", entryFee: "₹200", formLink: "https://forms.google.com", branch: "ECE", teamSize: "1-2 members", duration: "Half Day", venue: "Main Ground", rulebook: "/rulebooks/Drone Racing.pdf", rules: ["Individual or duo", "Drones provided by organizers", "Navigate through checkpoints", "Fastest time wins", "Crashing leads to time penalty"] },
+      { title: "Arduino Obstacle Bot", category: "Gaming", description: "Program Arduino bots to navigate an obstacle course", prizePool: "₹5,000", entryFee: "₹100", formLink: "https://forms.google.com", branch: "ECE", teamSize: "1-2 members", duration: "3 Hours", venue: "Electronics Lab", rulebook: "/rulebooks/Arduino Obstacle Bot.pdf", rules: ["Individual or duo", "Arduino kit provided", "Program bot to navigate course autonomously", "Fastest completion wins"] },
     ],
   },
   {
@@ -166,6 +170,7 @@ export const branches: Branch[] = [
         teamSize: "1-2 members",
         duration: "3 Hours (presentation)",
         venue: "Seminar Hall",
+        rulebook: "/rulebooks/Technical Paper Presentation.pdf",
         rules: ["1-2 members", "Paper submission required", "10-min presentation + Q&A", "Topics: Power systems, electronics, renewable energy", "Original research preferred"]
       },
       {
@@ -180,6 +185,7 @@ export const branches: Branch[] = [
         teamSize: "2 members",
         duration: "2 Hours",
         venue: "Recreation Hall",
+        rulebook: "/rulebooks/Carrom.pdf",
         rules: ["Duo teams", "Standard carrom rules", "Best of 3 boards", "No coin manipulation"]
       },
       {
@@ -194,6 +200,7 @@ export const branches: Branch[] = [
         teamSize: "1-3 members",
         duration: "2 Hours",
         venue: "Open Courtyard",
+        rulebook: "/rulebooks/Rangoli.pdf",
         rules: ["1-3 members", "Traditional materials only", "Theme: Energy Storm Clan", "Judged on creativity, symmetry, theme relevance"]
       },
       {
@@ -208,6 +215,7 @@ export const branches: Branch[] = [
         teamSize: "Individual",
         duration: "1 Hour",
         venue: "Lab Foyer",
+        rulebook: "/rulebooks/Metal Wire Game.pdf",
         rules: ["Individual", "Multiple increasingly complex shapes", "Fastest completion without buzz wins", "3 attempts per shape"]
       }
     ],
@@ -223,42 +231,45 @@ export const branches: Branch[] = [
         title: "Robo race",
         category: "Technical",
         description: "High-speed robot racing competition through obstacle course",
-        prizePool: "₹12,000",
-        entryFee: "₹150",
-        formLink: "#",
+        prizePool: "Grand prizes",
+        entryFee: "₹400",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLScR-7cufQQqlvmSoFNNPML7QdnmBYo-3SV-SHDty5Be96lXyg/viewform?embedded=true",
         posterUrl: "/posters/Gemini_Generated_Image_s40dkhs40dkhs40d-2.png",
         branch: "ROBO",
         teamSize: "1-2 members",
-        duration: "3 Hours",
+        duration: "",
         venue: "Robo Track",
-        rules: ["Team of 1-2 members", "Standard robot chassis provided", "Navigate obstacle course", "Fastest time wins", "Multiple rounds", "Safety gear mandatory"]
+        rulebook: "/rulebooks/Robo Race Event.pdf",
+        rules: ["Team of 1-2 members", "Standard robot chassis provided", "Navigate obstacle course", "Fastest time wins", "Multiple rounds", "Safety gear mandatory",]
       },
       {
         title: "do or die arena",
         category: "Non-Technical",
         description: "Intense survival robot battle arena - last bot standing wins",
-        prizePool: "₹15,000",
-        entryFee: "₹200",
-        formLink: "#",
-        posterUrl: "/assets/steel-sentinel-avatar.png",
+        prizePool: "Grand prizes",
+        entryFee: "₹250",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfX2MEENtqFV1lwzdYUD8fllv3sEQxc5MBviuQMiZlDApZ9pQ/viewform?embedded=true",
+        posterUrl: "public/posters/1774712695145.png",
         branch: "ROBO",
         teamSize: "1-2 members",
         duration: "4 Hours",
         venue: "Battle Arena",
+        rulebook: "/rulebooks/Do or die arena r&r (1).pdf",
         rules: ["Team of 1-2", "Free-for-all battle format", "Elimination rounds", "Most damage dealt + survival time", "No weapons that cause permanent damage", "Judges decision final"]
       },
       {
         title: "Volley Ball",
         category: "gaming",
         description: "Competitive volleyball tournament for team sports enthusiasts",
-        prizePool: "₹9,000",
+        prizePool: "Grand prizes",
         entryFee: "₹500",
-        formLink: "#",
-        posterUrl: "/assets/steel-sentinel-avatar.png",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLScR-7cufQQqlvmSoFNNPML7QdnmBYo-3SV-SHDty5Be96lXyg/viewform?embedded=true",
+        posterUrl: "public/posters/1774712697590.png",
         branch: "ROBO",
         teamSize: "6+3 members",
         duration: "5 Hours",
         venue: "Sports Ground",
+        rulebook: "/rulebooks/Volleyball game.pdf",
         rules: ["Team of 6 players on court + 3 substitutes", "Standard volleyball rules apply", "Best of 3 sets match format", "First to 25 points per set wins", "2 points lead required to win", "No spiking below net level", "Substitutions allowed", "Fair play and sportsmanship mandatory"]
       }
     ],
@@ -282,6 +293,7 @@ export const branches: Branch[] = [
         teamSize: "Team of two members",
         duration: "1.5 Hours",
         venue: "Seminar Hall",
+        rulebook: "/rulebooks/Eva Intellect.pdf",
         rules: [
           "Student ID card is mandatory",
           "Team of two members",
@@ -305,6 +317,7 @@ export const branches: Branch[] = [
         teamSize: "Individual",
         duration: "2 Hours",
         venue: "Main Auditorium",
+        rulebook: "/rulebooks/Navi Voice.pdf",
         rules: [
           "Individual participation",
           "Student ID card is mandatory",
@@ -328,6 +341,7 @@ export const branches: Branch[] = [
         teamSize: "Team of two members (artist and assistant)",
         duration: "1.5 Hours",
         venue: "Art Zone",
+        rulebook: "/rulebooks/Jack's Tribal Art.pdf",
         rules: [
           "Team of two members (art and artist)",
           "Participants should bring their own materials (colors, brushes, paint, etc.)",
@@ -349,6 +363,7 @@ export const branches: Branch[] = [
         teamSize: "Team of three to five members",
         duration: "2 Hours",
         venue: "Media Lab",
+        rulebook: "/rulebooks/Avatar Reelverse.pdf",
         rules: [
           "Team of 3-5 members",
           "Make the reel based on Avatar theme",
@@ -366,10 +381,10 @@ export const branches: Branch[] = [
 ];
 
 export const culturalEvents: Event[] = [
-  { title: "Singing", category: "Cultural", description: "Showcase your vocal talent with any genre", prizePool: "₹15,000", entryFee: "₹200", formLink: "#", teamSize: "Individual", duration: "Full Day", venue: "Main Stage", rules: ["Individual participation", "Any genre accepted", "5-minute performance", "Live singing only", "Accompaniment allowed"] },
-  { title: "Dance", category: "Cultural", description: "Express through any dance form solo or group", prizePool: "₹15,000", entryFee: "₹200", formLink: "#", teamSize: "Solo or Group (5-12)", duration: "Full Day", venue: "Main Stage", rules: ["Solo or group", "3-8 minute performance", "Any dance form", "Props allowed (no fire)", "Music submitted beforehand"] },
-  { title: "Mr & Miss Vencer", category: "Cultural", description: "Pageant with ramp walk and personality test", prizePool: "₹10,000", entryFee: "₹300", formLink: "#", teamSize: "Individual", duration: "Full Day", venue: "Main Stage", rules: ["Individual (Male/Female categories)", "Theme-based ramp walk", "Q&A round", "Confidence & personality judged"] },
-  { title: "Fashion show", category: "Cultural", description: "Stage play showcasing storytelling and acting", prizePool: "₹12,000", entryFee: "₹150", formLink: "#", teamSize: "Group (6-12)", duration: "Full Day", venue: "Auditorium", rules: ["Group 6-12 members", "10-15 minute skit", "Original or famous play", "Props and costumes allowed", "No offensive content"] },
+  { title: "Singing", category: "Cultural", description: "Showcase your vocal talent with any genre", prizePool: "₹15,000", entryFee: "₹200", formLink: "#", teamSize: "Individual", duration: "Full Day", venue: "Main Stage", rulebook: "/rulebooks/Singing.pdf", rules: ["Individual participation", "Any genre accepted", "5-minute performance", "Live singing only", "Accompaniment allowed"] },
+  { title: "Dance", category: "Cultural", description: "Express through any dance form solo or group", prizePool: "₹15,000", entryFee: "₹200", formLink: "#", teamSize: "Solo or Group (5-12)", duration: "Full Day", venue: "Main Stage", rulebook: "/rulebooks/Dance.pdf", rules: ["Solo or group", "3-8 minute performance", "Any dance form", "Props allowed (no fire)", "Music submitted beforehand"] },
+  { title: "Mr & Miss Vencer", category: "Cultural", description: "Pageant with ramp walk and personality test", prizePool: "₹10,000", entryFee: "₹300", formLink: "#", teamSize: "Individual", duration: "Full Day", venue: "Main Stage", rulebook: "/rulebooks/Mr and Miss Vencer.pdf", rules: ["Individual (Male/Female categories)", "Theme-based ramp walk", "Q&A round", "Confidence & personality judged"] },
+  { title: "Fashion show", category: "Cultural", description: "Stage play showcasing storytelling and acting", prizePool: "₹12,000", entryFee: "₹150", formLink: "#", teamSize: "Group (6-12)", duration: "Full Day", venue: "Auditorium", rulebook: "/rulebooks/Fashion show.pdf", rules: ["Group 6-12 members", "10-15 minute skit", "Original or famous play", "Props and costumes allowed", "No offensive content"] },
 ];
 
 
@@ -384,6 +399,7 @@ export const gamingEvents: Event[] = [
     teamSize: "4 members",
     duration: "Full Day",
     venue: "Gaming Zone",
+    rulebook: "/rulebooks/BGMI Tournament.pdf",
     rules: [
       "Squads of exactly 4 members",
       "Standard BGMI tournament rules apply",
@@ -402,6 +418,7 @@ export const gamingEvents: Event[] = [
     teamSize: "Individual",
     duration: "3 Hours",
     venue: "Gaming Lounge",
+    rulebook: "/rulebooks/FIFA E-Football Championship.pdf",
     rules: [
       "1v1 knockout tournament format",
       "Console controllers provided",
@@ -420,6 +437,7 @@ export const gamingEvents: Event[] = [
     teamSize: "5 members",
     duration: "Full Day",
     venue: "LAN Zone",
+    rulebook: "/rulebooks/Valorant Clash.pdf",
     rules: [
       "Fixed 5-player teams",
       "LAN tournament - no online play",
@@ -439,6 +457,7 @@ export const gamingEvents: Event[] = [
     teamSize: "Team of four members",
     duration: "Varies by rounds",
     venue: "Gaming Arena",
+    rulebook: "/rulebooks/Pandora Warriors.pdf",
     rules: [
       "Team of 4 members (1 squad)",
       "Matches held on Bermuda map (25-minute match)",
@@ -469,6 +488,7 @@ export const gamingEvents: Event[] = [
     teamSize: "6 members",
     duration: "2 Hours",
     venue: "Sports Arena",
+    rulebook: "/rulebooks/Number Circle Cricket.pdf",
     rules: [
       "Teams of 6 players each",
       "Special number circle scoring system",
@@ -489,6 +509,7 @@ export const gamingEvents: Event[] = [
     teamSize: "6+3 members",
     duration: "5 Hours",
     venue: "Sports Ground",
+    rulebook: "/rulebooks/Volleyball game.pdf",
     rules: ["Team of 6 players on court + 3 substitutes", "Standard volleyball rules apply", "Best of 3 sets match format", "First to 25 points per set wins", "2 points lead required to win", "No spiking below net level", "Substitutions allowed", "Fair play and sportsmanship mandatory"]
   },
   {
@@ -501,6 +522,7 @@ export const gamingEvents: Event[] = [
     teamSize: "Individual or Pair",
     duration: "3 Hours",
     venue: "Sports Hall",
+    rulebook: "/rulebooks/Ping Pong.pdf",
     rules: [
       "Individual or pair (doubles) format",
       "Standard table tennis rules apply",
