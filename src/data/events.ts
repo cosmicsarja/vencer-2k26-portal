@@ -53,8 +53,8 @@ export const branches: Branch[] = [
         duration: "12PM to 4:30PM",
         venue: "Seminar Hall 1st Floor",
         rulebook: "/rulebooks/Pandora Logic War.pdf",
-        rules: ["Team size: 1–4 members","Each team must bring minimum 2 laptops","Teams must arrange their own internet connection","Participants must strictly follow event timings","Any malpractice or unfair means leads to disqualification","Judges' decision is final","Round 1A: 25 MCQs (25 marks, 25 min)","Round 1B: 5 coding questions (25 marks, 25 min)","10% teams eliminated after Round 1","Round 2: Debug 3 code snippets (30 marks, 25 min)","20% teams eliminated after Round 2","Final: QR scan → password → unlock zip → solve problem","Only first 10 teams qualify for final round","Winners based on total score across all rounds","Final round on same day"],
-        coordinators: [{name: "Shivalingsarj Desai", contact: "9513804776"}, {name: "Nivedita Akkimaradi", contact: "8296663125"}]
+        rules: ["Team size: 1–4 members", "Each team must bring minimum 2 laptops", "Teams must arrange their own internet connection", "Participants must strictly follow event timings", "Any malpractice or unfair means leads to disqualification", "Judges' decision is final", "Round 1A: 25 MCQs (25 marks, 25 min)", "Round 1B: 5 coding questions (25 marks, 25 min)", "10% teams eliminated after Round 1", "Round 2: Debug 3 code snippets (30 marks, 25 min)", "20% teams eliminated after Round 2", "Final: QR scan → password → unlock zip → solve problem", "Only first 10 teams qualify for final round", "Winners based on total score across all rounds", "Final round on same day"],
+        coordinators: [{ name: "Shivalingsarj Desai", contact: "9513804776" }, { name: "Nivedita Akkimaradi", contact: "8296663125" }]
       },
       {
         title: "TechXhibit",
@@ -71,7 +71,7 @@ export const branches: Branch[] = [
         venue: "CS Lab 1",
         rulebook: "/rulebooks/Project Expo.pdf",
         rules: ["Team size: 2-4 members", "Original projects only", "Bring laptops and prototypes", "Judging: innovation, implementation, presentation", "Demo required"],
-        coordinators: [{name: "Amit Patel", contact: "9876543212"}, {name: "Neha Gupta", contact: "9876543213"}]
+        coordinators: [{ name: "Amit Patel", contact: "9876543212" }, { name: "Neha Gupta", contact: "9876543213" }]
       },
       {
         title: "AI Prompt Battle",
@@ -88,7 +88,7 @@ export const branches: Branch[] = [
         venue: "CS Lab 3",
         rulebook: "/rulebooks/AI Prompt Battle.pdf",
         rules: ["Individual participation", "Multiple rounds with AI models", "Judged on creativity, accuracy, efficiency", "Internet for AI tools only"],
-        coordinators: [{name: "Vikram Reddy", contact: "9876543214"}, {name: "Anjali Verma", contact: "9876543215"}]
+        coordinators: [{ name: "Vikram Reddy", contact: "9876543214" }, { name: "Anjali Verma", contact: "9876543215" }]
       },
       {
         title: "AI Shark Tank",
@@ -104,7 +104,7 @@ export const branches: Branch[] = [
         venue: "Seminar Hall",
         rulebook: "/rulebooks/AI Shark Tank.pdf",
         rules: ["Team of 2-3", "3-min pitch + Q&A", "Viable AI business ideas", "Judged on market potential, innovation, presentation"],
-        coordinators: [{name: "Siddhant Sharma", contact: "9876543216"}, {name: "Divya Nair", contact: "9876543217"}]
+        coordinators: [{ name: "Siddhant Sharma", contact: "9876543216" }, { name: "Divya Nair", contact: "9876543217" }]
       },
       {
         title: "Edible Art Arena",
@@ -121,7 +121,7 @@ export const branches: Branch[] = [
         venue: "Food Zone",
         rulebook: "/rulebooks/Cooking Without Fire.pdf",
         rules: ["Team of 2-3", "No cooking appliances or fire", "Ingredients provided", "Judged on taste, creativity, presentation"],
-        coordinators: [{name: "Rohan Iyer", contact: "9876543218"}, {name: "Shreya Desai", contact: "9876543219"}]
+        coordinators: [{ name: "Rohan Iyer", contact: "9876543218" }, { name: "Shreya Desai", contact: "9876543219" }]
       },
       {
         title: "Brand Baazi - Sell It If U Can ",
@@ -138,7 +138,7 @@ export const branches: Branch[] = [
         venue: "Media Lab",
         rulebook: "/rulebooks/One Minute Ad Challenge.pdf",
         rules: ["1-2 members", "60 seconds max", "Product revealed on spot", "Props and creativity encouraged"],
-        coordinators: [{name: "Arjun Kapoor", contact: "9876543220"}, {name: "Megha Saxena", contact: "9876543221"}]
+        coordinators: [{ name: "Arjun Kapoor", contact: "9876543220" }, { name: "Megha Saxena", contact: "9876543221" }]
       },
     ],
     culturalEvents: [],
@@ -163,7 +163,7 @@ export const branches: Branch[] = [
         venue: "CS Lab 1",
         rulebook: "/rulebooks/Bug Crush.pdf",
         rules: ["Individual participation", "Debug provided buggy code", "Fastest correct fix wins", "Multiple rounds", "No internet access"],
-        coordinators: [{name: "Vikram Singh", contact: "9876543222"}, {name: "Neha Kapoor", contact: "9876543223"}]
+        coordinators: [{ name: "Vikram Singh", contact: "9876543222" }, { name: "Neha Kapoor", contact: "9876543223" }]
       },
       {
         title: "Code Meme",
@@ -179,7 +179,7 @@ export const branches: Branch[] = [
         venue: "CS Lab 2",
         rulebook: "/rulebooks/Code Meme.pdf",
         rules: ["Team of 1-2", "Create working code + memes", "Judged on humor & functionality", "Any language allowed"],
-        coordinators: [{name: "Arjun Patel", contact: "9876543224"}, {name: "Divya Sharma", contact: "9876543225"}]
+        coordinators: [{ name: "Arjun Patel", contact: "9876543224" }, { name: "Divya Sharma", contact: "9876543225" }]
       },
       {
         title: "Hack The Hunt",
@@ -195,7 +195,7 @@ export const branches: Branch[] = [
         venue: "Workshop",
         rulebook: "/rulebooks/Hack The Hunt.pdf",
         rules: ["Team of 2-4", "Solve coding puzzles to escape", "Time-based scoring", "No external help"],
-        coordinators: [{name: "Rohan Kumar", contact: "9876543226"}, {name: "Aisha Khan", contact: "9876543227"}]
+        coordinators: [{ name: "Rohan Kumar", contact: "9876543226" }, { name: "Aisha Khan", contact: "9876543227" }]
       },
       {
         title: "Idea Canvas",
@@ -211,7 +211,7 @@ export const branches: Branch[] = [
         venue: "Seminar Hall",
         rulebook: "/rulebooks/Idea Canvas.pdf",
         rules: ["Individual", "Design tech poster", "A2 size", "Judged on clarity & creativity"],
-        coordinators: [{name: "Sanjay Nair", contact: "9876543228"}, {name: "Pooja Verma", contact: "9876543229"}]
+        coordinators: [{ name: "Sanjay Nair", contact: "9876543228" }, { name: "Pooja Verma", contact: "9876543229" }]
       },
       {
         title: "Box Cricket",
@@ -227,7 +227,7 @@ export const branches: Branch[] = [
         venue: "Sports Ground",
         rulebook: "/rulebooks/Box Cricket.pdf",
         rules: ["Team of 8-10", "Box cricket format", "20 overs per innings", "Standard rules apply"],
-        coordinators: [{name: "Aman Singh", contact: "9876543230"}, {name: "Sneha Gupta", contact: "9876543231"}]
+        coordinators: [{ name: "Aman Singh", contact: "9876543230" }, { name: "Sneha Gupta", contact: "9876543231" }]
       },
       {
         title: "Lagori",
@@ -243,7 +243,7 @@ export const branches: Branch[] = [
         venue: "Sports Ground",
         rulebook: "/rulebooks/Lagori.pdf",
         rules: ["Team of 8-10", "Lagori/7 Stones game", "Hit stones to win points", "Best of 3 sets"],
-        coordinators: [{name: "Ravi Desai", contact: "9876543232"}, {name: "Zara Ali", contact: "9876543233"}]
+        coordinators: [{ name: "Ravi Desai", contact: "9876543232" }, { name: "Zara Ali", contact: "9876543233" }]
       },
       {
         title: "Slow Bike Race",
@@ -259,7 +259,7 @@ export const branches: Branch[] = [
         venue: "Main Ground",
         rulebook: "/rulebooks/Slow Bike Race.pdf",
         rules: ["Individual", "Slowest to finish without stopping", "Balance challenge", "Non-motorized bicycles"],
-        coordinators: [{name: "Karan Malhotra", contact: "9876543234"}, {name: "Tanvi Iyer", contact: "9876543235"}]
+        coordinators: [{ name: "Karan Malhotra", contact: "9876543234" }, { name: "Tanvi Iyer", contact: "9876543235" }]
       },
       {
         title: "Photography",
@@ -275,7 +275,7 @@ export const branches: Branch[] = [
         venue: "Campus",
         rulebook: "/rulebooks/Photography.pdf",
         rules: ["Individual", "Theme: Vencer 2K26", "Submit 5 best shots", "Judged by panel"],
-        coordinators: [{name: "Nikhil Rao", contact: "9876543236"}, {name: "Meera Joshi", contact: "9876543237"}]
+        coordinators: [{ name: "Nikhil Rao", contact: "9876543236" }, { name: "Meera Joshi", contact: "9876543237" }]
       },
       {
         title: "Videography",
@@ -291,7 +291,7 @@ export const branches: Branch[] = [
         venue: "Campus",
         rulebook: "/rulebooks/Videography.pdf",
         rules: ["1-2 members", "Short film 3-5 mins", "Theme: Vencer Spirit", "Editing allowed"],
-        coordinators: [{name: "Ashok Pandey", contact: "9876543238"}, {name: "Richa Yadav", contact: "9876543239"}]
+        coordinators: [{ name: "Ashok Pandey", contact: "9876543238" }, { name: "Richa Yadav", contact: "9876543239" }]
       },
     ],
     culturalEvents: [],
@@ -318,7 +318,7 @@ export const branches: Branch[] = [
         venue: "Workshop",
         rulebook: "/rulebooks/Bridge Making Challenge.pdf",
         rules: ["Team of 2-3 members", "Materials: ice cream sticks and glue (provided)", "Span 30cm min", "Load test at center", "Best load-to-weight ratio wins"],
-        coordinators: [{name: "Rajendra Sharma", contact: "9876543240"}, {name: "Samiya Khan", contact: "9876543241"}]
+        coordinators: [{ name: "Rajendra Sharma", contact: "9876543240" }, { name: "Samiya Khan", contact: "9876543241" }]
       },
       {
         title: "The Auto Expert",
@@ -334,7 +334,7 @@ export const branches: Branch[] = [
         venue: "Seminar Hall",
         rulebook: "/rulebooks/The Auto Expert.pdf",
         rules: ["Individual participation", "Multiple rounds: parts ID, logos, quiz", "No aids allowed", "Fastest accurate answers"],
-        coordinators: [{name: "Harshit Verma", contact: "9876543242"}, {name: "Priya Nair", contact: "9876543243"}]
+        coordinators: [{ name: "Harshit Verma", contact: "9876543242" }, { name: "Priya Nair", contact: "9876543243" }]
       },
       {
         title: "Stand-up Comedy",
@@ -358,7 +358,7 @@ export const branches: Branch[] = [
           "Judged on originality, delivery, and audience reaction",
           "Props allowed (keep it simple)"
         ],
-        coordinators: [{name: "Deepak Chawla", contact: "9876543244"}, {name: "Shruti Singh", contact: "9876543245"}]
+        coordinators: [{ name: "Deepak Chawla", contact: "9876543244" }, { name: "Shruti Singh", contact: "9876543245" }]
       }
     ],
     culturalEvents: [],
@@ -383,7 +383,7 @@ export const branches: Branch[] = [
         venue: "Drawing Hall",
         rulebook: "/rulebooks/Design Doodle Studio.pdf",
         rules: ["Individual participation", "Create logos for given themes", "Digital or hand-drawn", "Judged on creativity and branding"],
-        coordinators: [{name: "Varun Pillai", contact: "9876543246"}, {name: "Isha Saxena", contact: "9876543247"}]
+        coordinators: [{ name: "Varun Pillai", contact: "9876543246" }, { name: "Isha Saxena", contact: "9876543247" }]
       },
       {
         title: "Pictogram X",
@@ -399,7 +399,7 @@ export const branches: Branch[] = [
         venue: "Seminar Hall",
         rulebook: "/rulebooks/Pictogram X.pdf",
         rules: ["1-2 members", "Solve visual design puzzles", "Multiple rounds", "Speed and accuracy"],
-        coordinators: [{name: "Rathod Rao", contact: "9876543248"}, {name: "Ananya Mishra", contact: "9876543249"}]
+        coordinators: [{ name: "Rathod Rao", contact: "9876543248" }, { name: "Ananya Mishra", contact: "9876543249" }]
       },
       {
         title: "The Messy Masterpiece",
@@ -415,7 +415,7 @@ export const branches: Branch[] = [
         venue: "Drawing Hall",
         rulebook: "/rulebooks/The Messy Masterpiece.pdf",
         rules: ["Individual", "No brushes - use fingers/sponges", "Theme revealed on spot", "Judged on creativity"],
-        coordinators: [{name: "Suresh Reddy", contact: "9876543250"}, {name: "Kavya Bandhan", contact: "9876543251"}]
+        coordinators: [{ name: "Suresh Reddy", contact: "9876543250" }, { name: "Kavya Bandhan", contact: "9876543251" }]
       },
       {
         title: "Battle of Legends",
@@ -431,7 +431,7 @@ export const branches: Branch[] = [
         venue: "Main Stage",
         rulebook: "/rulebooks/Battle of Legends.pdf",
         rules: ["Individual", "Quiz + talent showdown", "Legendary figures theme", "Audience vote + judges"],
-        coordinators: [{name: "Karthik Thakur", contact: "9876543252"}, {name: "Naya Sharma", contact: "9876543253"}]
+        coordinators: [{ name: "Karthik Thakur", contact: "9876543252" }, { name: "Naya Sharma", contact: "9876543253" }]
       },
     ],
     culturalEvents: [],
@@ -450,7 +450,7 @@ export const branches: Branch[] = [
         venue: "Civil Lab",
         rulebook: "/rulebooks/Tower Stack.pdf",
         rules: ["Individual participation", "Wooden blocks provided", "Tower must stand for 10 seconds", "Tallest standing tower wins"],
-        coordinators: [{name: "Rajesh Iyer", contact: "9876543254"}, {name: "Divya Kulkarni", contact: "9876543255"}]
+        coordinators: [{ name: "Rajesh Iyer", contact: "9876543254" }, { name: "Divya Kulkarni", contact: "9876543255" }]
       },
       {
         title: "Estimation Game",
@@ -466,7 +466,7 @@ export const branches: Branch[] = [
         venue: "Civil Lab",
         rulebook: "/rulebooks/Estimation Game.pdf",
         rules: ["Individual participation", "Multiple rounds of estimation", "Closest estimates score highest", "No measuring tools allowed"],
-        coordinators: [{name: "Garvit Singh", contact: "9876543256"}, {name: "Neetu Verma", contact: "9876543257"}]
+        coordinators: [{ name: "Garvit Singh", contact: "9876543256" }, { name: "Neetu Verma", contact: "9876543257" }]
       },
     ],
   },
@@ -489,7 +489,7 @@ export const branches: Branch[] = [
         venue: "Electronics Lab",
         rulebook: "/rulebooks/Thinker CAD.pdf",
         rules: ["1-2 members", "CAD modeling challenge", "3D design competition", "Innovation judged"],
-        coordinators: [{name: "Santosh Kumar", contact: "9876543258"}, {name: "Pratima Roy", contact: "9876543259"}]
+        coordinators: [{ name: "Santosh Kumar", contact: "9876543258" }, { name: "Pratima Roy", contact: "9876543259" }]
       },
       {
         title: "Treasure Hunt",
@@ -505,7 +505,7 @@ export const branches: Branch[] = [
         venue: "Campus",
         rulebook: "/rulebooks/Treasure Hunt.pdf",
         rules: ["Team of 2-4", "Solve clues around campus", "Tech-themed puzzles", "First team to finish wins"],
-        coordinators: [{name: "Manas Dutta", contact: "9876543260"}, {name: "Elena Fernandes", contact: "9876543261"}]
+        coordinators: [{ name: "Manas Dutta", contact: "9876543260" }, { name: "Elena Fernandes", contact: "9876543261" }]
       },
       {
         title: "One Minute Games",
@@ -521,7 +521,7 @@ export const branches: Branch[] = [
         venue: "Main Hall",
         rulebook: "/rulebooks/One Minute Games.pdf",
         rules: ["Individual", "60-sec challenges", "Multiple mini-games", "Points based"],
-        coordinators: [{name: "Siddharth Jain", contact: "9876543262"}, {name: "Richa Modi", contact: "9876543263"}]
+        coordinators: [{ name: "Siddharth Jain", contact: "9876543262" }, { name: "Richa Modi", contact: "9876543263" }]
       },
       {
         title: "Meme Making",
@@ -537,7 +537,7 @@ export const branches: Branch[] = [
         venue: "Lab",
         rulebook: "/rulebooks/Meme Making.pdf",
         rules: ["Individual", "Create tech memes", "Audience vote", "Original content"],
-        coordinators: [{name: "Avinash Dubey", contact: "9876543264"}, {name: "Priya Choudhury", contact: "9876543265"}]
+        coordinators: [{ name: "Avinash Dubey", contact: "9876543264" }, { name: "Priya Choudhury", contact: "9876543265" }]
       },
       {
         title: "Tug of War",
@@ -553,7 +553,7 @@ export const branches: Branch[] = [
         venue: "Sports Ground",
         rulebook: "/rulebooks/Tug of War.pdf",
         rules: ["Team 10-12", "Standard tug of war", "Best of 3 pulls"],
-        coordinators: [{name: "Vikram Singh", contact: "9876543266"}, {name: "Neha Gupta", contact: "9876543267"}]
+        coordinators: [{ name: "Vikram Singh", contact: "9876543266" }, { name: "Neha Gupta", contact: "9876543267" }]
       },
       {
         title: "Pani Puri",
@@ -569,7 +569,7 @@ export const branches: Branch[] = [
         venue: "Food Zone",
         rulebook: "/rulebooks/Pani Puri.pdf",
         rules: ["Individual", "Eating contest", "Spiciest pani puri", "Fastest eater"],
-        coordinators: [{name: "Rishi Narayanan", contact: "9876543268"}, {name: "Trishna Sinha", contact: "9876543269"}]
+        coordinators: [{ name: "Rishi Narayanan", contact: "9876543268" }, { name: "Trishna Sinha", contact: "9876543269" }]
       },
       {
         title: "Fun Junction",
@@ -585,7 +585,7 @@ export const branches: Branch[] = [
         venue: "Main Area",
         rulebook: "/rulebooks/Fun Junction.pdf",
         rules: ["Multiple fun games", "Varied team sizes", "Cumulative scoring", "Entertainment focus"],
-        coordinators: [{name: "Chirag Mehta", contact: "9876543270"}, {name: "Nidhi Singh", contact: "9876543271"}]
+        coordinators: [{ name: "Chirag Mehta", contact: "9876543270" }, { name: "Nidhi Singh", contact: "9876543271" }]
       },
     ],
     culturalEvents: [],
@@ -604,7 +604,7 @@ export const branches: Branch[] = [
         venue: "Main Ground",
         rulebook: "/rulebooks/Drone Racing.pdf",
         rules: ["Individual or duo", "Drones provided by organizers", "Navigate through checkpoints", "Fastest time wins", "Crashing leads to time penalty"],
-        coordinators: [{name: "Aryan Sharma", contact: "9876543272"}, {name: "Samika Bhat", contact: "9876543273"}]
+        coordinators: [{ name: "Aryan Sharma", contact: "9876543272" }, { name: "Samika Bhat", contact: "9876543273" }]
       },
       {
         title: "Arduino Obstacle Bot",
@@ -620,7 +620,7 @@ export const branches: Branch[] = [
         venue: "Electronics Lab",
         rulebook: "/rulebooks/Arduino Obstacle Bot.pdf",
         rules: ["Individual or duo", "Arduino kit provided", "Program bot to navigate course autonomously", "Fastest completion wins"],
-        coordinators: [{name: "Vaibhav Saxena", contact: "9876543274"}, {name: "Riya Kapoor", contact: "9876543275"}]
+        coordinators: [{ name: "Vaibhav Saxena", contact: "9876543274" }, { name: "Riya Kapoor", contact: "9876543275" }]
       },
     ],
   },
@@ -644,7 +644,7 @@ export const branches: Branch[] = [
         venue: "Seminar Hall",
         rulebook: "/rulebooks/Technical Paper Presentation.pdf",
         rules: ["1-2 members", "Paper submission required", "10-min presentation + Q&A", "Topics: Power systems, electronics, renewable energy", "Original research preferred"],
-        coordinators: [{name: "Santosh Kumar", contact: "9876543276"}, {name: "Aparna Singh", contact: "9876543277"}]
+        coordinators: [{ name: "Santosh Kumar", contact: "9876543276" }, { name: "Aparna Singh", contact: "9876543277" }]
       },
       {
         title: "Carrom (Finger Billiards)",
@@ -661,7 +661,7 @@ export const branches: Branch[] = [
         venue: "Recreation Hall",
         rulebook: "/rulebooks/Carrom.pdf",
         rules: ["Duo teams", "Standard carrom rules", "Best of 3 boards", "No coin manipulation"],
-        coordinators: [{name: "Rajiv Mishra", contact: "9876543278"}, {name: "Suhasini Rai", contact: "9876543279"}]
+        coordinators: [{ name: "Rajiv Mishra", contact: "9876543278" }, { name: "Suhasini Rai", contact: "9876543279" }]
       },
       {
         title: "Rangoli (Artistic Expression)",
@@ -678,7 +678,7 @@ export const branches: Branch[] = [
         venue: "Open Courtyard",
         rulebook: "/rulebooks/Rangoli.pdf",
         rules: ["1-3 members", "Traditional materials only", "Theme: Energy Storm Clan", "Judged on creativity, symmetry, theme relevance"],
-        coordinators: [{name: "Alok Sharma", contact: "9876543280"}, {name: "Madhuri Singh", contact: "9876543281"}]
+        coordinators: [{ name: "Alok Sharma", contact: "9876543280" }, { name: "Madhuri Singh", contact: "9876543281" }]
       },
       {
         title: "Metal Wire Game (Surgical Precision Challenge)",
@@ -695,7 +695,7 @@ export const branches: Branch[] = [
         venue: "Lab Foyer",
         rulebook: "/rulebooks/Metal Wire Game.pdf",
         rules: ["Individual", "Multiple increasingly complex shapes", "Fastest completion without buzz wins", "3 attempts per shape"],
-        coordinators: [{name: "Vinit Kumar", contact: "9876543282"}, {name: "Hema Reddy", contact: "9876543283"}]
+        coordinators: [{ name: "Vinit Kumar", contact: "9876543282" }, { name: "Hema Reddy", contact: "9876543283" }]
       }
     ],
     culturalEvents: [],
@@ -721,7 +721,7 @@ export const branches: Branch[] = [
         venue: "IN CLG Ground",
         rulebook: "/rulebooks/Robo Race Event.pdf",
         rules: ["Team of 3-4 members", "Standard robot chassis", "Navigate obstacle course", "Fastest time wins", "Multiple rounds", "Safety gear mandatory",],
-        coordinators: [{name: "Varun Sharma", contact: "9876543284"}, {name: "Priyanka Singh", contact: "9876543285"}]
+        coordinators: [{ name: "Varun Sharma", contact: "9876543284" }, { name: "Priyanka Singh", contact: "9876543285" }]
       },
       {
         title: "do or die arena",
@@ -738,17 +738,17 @@ export const branches: Branch[] = [
         venue: "Battle Arena",
         rulebook: "/rulebooks/Do or die arena r&r (1).pdf",
         rules: ["Team of 4 members",
-            "Team must register together",
-            "No member changes after deadline",
-            "4 surprise levels in event",
-            "Each round has unique rules",
-            "Follow instructions before each game",
-            "Points-based progression system",
-            "Tie breaker round in case of draw",
-            "Combination of mental and physical tasks",
-            "Judges decision final"
+          "Team must register together",
+          "No member changes after deadline",
+          "4 surprise levels in event",
+          "Each round has unique rules",
+          "Follow instructions before each game",
+          "Points-based progression system",
+          "Tie breaker round in case of draw",
+          "Combination of mental and physical tasks",
+          "Judges decision final"
         ],
-        coordinators: [{name: "Anirud Reddy", contact: "9876543286"}, {name: "Srishti Kapoor", contact: "9876543287"}]
+        coordinators: [{ name: "Anirud Reddy", contact: "9876543286" }, { name: "Srishti Kapoor", contact: "9876543287" }]
       },
       {
         title: "Volley Ball",
@@ -776,7 +776,7 @@ export const branches: Branch[] = [
           "Misbehavior leads to disqualification",
           "Registration online or on-spot"
         ],
-        coordinators: [{name: "Srinivas Iyer", contact: "9876543316"}, {name: "Anaya Banerjee", contact: "9876543317"}]
+        coordinators: [{ name: "Srinivas Iyer", contact: "9876543316" }, { name: "Anaya Banerjee", contact: "9876543317" }]
       },
 
     ],
@@ -797,7 +797,6 @@ export const branches: Branch[] = [
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/BCA/eva.png",
-        posterComingSoon: true,
         branch: "BCA",
         teamSize: "Team of two members",
         duration: "1.5 Hours",
@@ -813,7 +812,7 @@ export const branches: Branch[] = [
           "Test your brainpower, boost your confidence",
           "Event coordinators:- Tanuja k:-9775741066, Sushil s:-9353362031",
         ],
-        coordinators: [{name: "Manoj Singh", contact: "9876543290"}, {name: "Ritu Verma", contact: "9876543291"}]
+        coordinators: [{ name: "Manoj Singh", contact: "9876543290" }, { name: "Ritu Verma", contact: "9876543291" }]
       },
       {
         title: "Navi Voice (Debate)",
@@ -824,7 +823,6 @@ export const branches: Branch[] = [
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 10, 2026",
         posterUrl: "/posters/BCA/navi.png",
-        posterComingSoon: true,
         branch: "BCA",
         teamSize: "Individual",
         duration: "2 Hours",
@@ -840,7 +838,7 @@ export const branches: Branch[] = [
           "Judges' decision will be final",
           "Focus on critical thinking and public speaking"
         ],
-        coordinators: [{name: "Sarvesh Kumar", contact: "9876543292"}, {name: "Swati Pandey", contact: "9876543293"}]
+        coordinators: [{ name: "Sarvesh Kumar", contact: "9876543292" }, { name: "Swati Pandey", contact: "9876543293" }]
       },
       {
         title: "Jack's Tribal Art (Face Painting)",
@@ -851,7 +849,6 @@ export const branches: Branch[] = [
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/BCA/jacks.png",
-        posterComingSoon: true,
         branch: "BCA",
         teamSize: "Team of two members (artist and assistant)",
         duration: "1.5 Hours",
@@ -865,7 +862,7 @@ export const branches: Branch[] = [
           "Judging based on: creativity, neatness, relevance to Avatar theme, color combination, overall presentation",
           "Judges' decision will be final"
         ],
-        coordinators: [{name: "Aman Verma", contact: "9876543294"}, {name: "Nikita Sharma", contact: "9876543295"}]
+        coordinators: [{ name: "Aman Verma", contact: "9876543294" }, { name: "Nikita Sharma", contact: "9876543295" }]
       },
       {
         title: "Avatar Reelverse (Reel Making)",
@@ -876,7 +873,6 @@ export const branches: Branch[] = [
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 10, 2026",
         posterUrl: "/posters/BCA/avatar reelverse.png",
-        posterComingSoon: true,
         branch: "BCA",
         teamSize: "Team of three to five members",
         duration: "2 Hours",
@@ -891,7 +887,7 @@ export const branches: Branch[] = [
           "Requires: Smartphone/Camera, Tripod, Editing apps, Props or costumes (optional)",
           "Judges' decision will be final"
         ],
-        coordinators: [{name: "Harsh Singh", contact: "9876543296"}, {name: "Arijit Sengupta", contact: "9876543297"}]
+        coordinators: [{ name: "Harsh Singh", contact: "9876543296" }, { name: "Arijit Sengupta", contact: "9876543297" }]
       }
     ],
     culturalEvents: [],
@@ -913,7 +909,7 @@ export const culturalEvents: Event[] = [
     venue: "Main Stage",
     rulebook: "/rulebooks/Singing.pdf",
     rules: ["Individual participation", "Any genre accepted", "5-minute performance", "Live singing only", "Accompaniment allowed"],
-    coordinators: [{name: "Rajesh Iyer", contact: "9876543298"}, {name: "Priya Singh", contact: "9876543299"}]
+    coordinators: [{ name: "Rajesh Iyer", contact: "9876543298" }, { name: "Priya Singh", contact: "9876543299" }]
   },
   {
     title: "Dance",
@@ -928,7 +924,7 @@ export const culturalEvents: Event[] = [
     venue: "Main Stage",
     rulebook: "/rulebooks/Dance.pdf",
     rules: ["Solo or group", "3-8 minute performance", "Any dance form", "Props allowed (no fire)", "Music submitted beforehand"],
-    coordinators: [{name: "Nitin Kumar", contact: "9876543300"}, {name: "Anjali Verma", contact: "9876543301"}]
+    coordinators: [{ name: "Nitin Kumar", contact: "9876543300" }, { name: "Anjali Verma", contact: "9876543301" }]
   },
   {
     title: "Mr & Miss Vencer",
@@ -943,7 +939,7 @@ export const culturalEvents: Event[] = [
     venue: "Main Stage",
     rulebook: "/rulebooks/Mr and Miss Vencer.pdf",
     rules: ["Individual (Male/Female categories)", "Theme-based ramp walk", "Q&A round", "Confidence & personality judged"],
-    coordinators: [{name: "Akshay Sharma", contact: "9876543302"}, {name: "Diya Kapoor", contact: "9876543303"}]
+    coordinators: [{ name: "Akshay Sharma", contact: "9876543302" }, { name: "Diya Kapoor", contact: "9876543303" }]
   },
   {
     title: "Cosmos Crown (Fashion show)",
@@ -961,7 +957,7 @@ export const culturalEvents: Event[] = [
     venue: "Auditorium",
     rulebook: "/rulebooks/Fashion show.pdf",
     rules: ["Group 6-12 members", "10-15 minute skit", "Original or famous play", "Props and costumes allowed", "No offensive content"],
-    coordinators: [{name: "Rohan Singh", contact: "9876543304"}, {name: "Meera Gupta", contact: "9876543305"}]
+    coordinators: [{ name: "Rohan Singh", contact: "9876543304" }, { name: "Meera Gupta", contact: "9876543305" }]
   },
 ];
 
@@ -986,7 +982,7 @@ export const gamingEvents: Event[] = [
       "No cheating or hacks allowed - strict monitoring",
       "Devices must meet minimum specs"
     ],
-    coordinators: [{name: "Karan Sharma", contact: "9876543306"}, {name: "Misha Patel", contact: "9876543307"}]
+    coordinators: [{ name: "Karan Sharma", contact: "9876543306" }, { name: "Misha Patel", contact: "9876543307" }]
   },
   {
     title: "FIFA E-Football Championship",
@@ -1007,7 +1003,7 @@ export const gamingEvents: Event[] = [
       "No custom teams or edits",
       "Best of 3 matches in finals"
     ],
-    coordinators: [{name: "Dharun Kumar", contact: "9876543308"}, {name: "Vedica Singh", contact: "9876543309"}]
+    coordinators: [{ name: "Dharun Kumar", contact: "9876543308" }, { name: "Vedica Singh", contact: "9876543309" }]
   },
   {
     title: "Valorant Clash",
@@ -1028,7 +1024,7 @@ export const gamingEvents: Event[] = [
       "Standard Valorant competitive rules",
       "Multiple maps and agents allowed"
     ],
-    coordinators: [{name: "Saurav Singh", contact: "9876543310"}, {name: "Sneha Kumar", contact: "9876543311"}]
+    coordinators: [{ name: "Saurav Singh", contact: "9876543310" }, { name: "Sneha Kumar", contact: "9876543311" }]
   },
   {
     title: "Pandora Warriors (Mobile Gaming - Free Fire)",
@@ -1062,7 +1058,7 @@ export const gamingEvents: Event[] = [
       "Follow fair play and respect all players and organizers",
       "The organizer's decision will be final"
     ],
-    coordinators: [{name: "Arjun Singh", contact: "9876543312"}, {name: "Poornima Rao", contact: "9876543313"}]
+    coordinators: [{ name: "Arjun Singh", contact: "9876543312" }, { name: "Poornima Rao", contact: "9876543313" }]
   },
   {
     title: "Number Circle Cricket",
@@ -1083,7 +1079,7 @@ export const gamingEvents: Event[] = [
       "Boundary and wicket rules apply",
       "Fair play mandatory"
     ],
-    coordinators: [{name: "Rajesh Kumar", contact: "9876543314"}, {name: "Naina Singh", contact: "9876543315"}]
+    coordinators: [{ name: "Rajesh Kumar", contact: "9876543314" }, { name: "Naina Singh", contact: "9876543315" }]
   },
   {
     title: "Ping Pong (Table Tennis)",
@@ -1108,7 +1104,7 @@ export const gamingEvents: Event[] = [
       "Round-robin or knockout format based on entries",
       "Judges' decision is final"
     ],
-    coordinators: [{name: "Srinivas Iyer", contact: "9876543318"}, {name: "Anaya Kumari", contact: "9876543319"}]
+    coordinators: [{ name: "Srinivas Iyer", contact: "9876543318" }, { name: "Anaya Kumari", contact: "9876543319" }]
   },
 ];
 
