@@ -704,32 +704,7 @@ export const branches: Branch[] = [
         ],
         coordinators: [{name: "Anirud Reddy", contact: "9876543286"}, {name: "Srishti Kapoor", contact: "9876543287"}]
       },
-      {
-        title: "Volley Ball",
-        category: "gaming",
-        description: "Competitive volleyball tournament for team sports enthusiasts",
-        prizePool: "Grand prizes",
-        entryFee: "₹500",
-        formLink: "https://docs.google.com/forms/d/e/1FAIpQLScR-7cufQQqlvmSoFNNPML7QdnmBYo-3SV-SHDty5Be96lXyg/viewform?embedded=true",
-        posterUrl: "/posters/1774712697590.png",
-        branch: "ROBO",
-        teamSize: "6+3 members",
-        duration: "5 Hours",
-        venue: "Sports Ground",
-        rulebook: "/rulebooks/Volleyball game.pdf",
-        rules: ["Team of 2-4 members",
-          "Only manual controlled robot allowed",
-          "Robot size within 30×30×30 cm",
-          "Robot must stay within track",
-          "Two attempts per team",
-          "Best time will be considered",
-          "Penalty for going off track",
-          "No touching robot during race",
-          "Fastest time wins",
-          "Judges decision final"
-       ],
-        coordinators: [{name: "Vikrant Malik", contact: "9876543318"}, {name: "Pooja Deshmukh", contact: "9876543319"}]
-      }
+
     ],
     culturalEvents: [],
     gamingEvents: [],
@@ -843,10 +818,62 @@ export const branches: Branch[] = [
 ];
 
 export const culturalEvents: Event[] = [
-  { title: "Singing", category: "Cultural", description: "Showcase your vocal talent with any genre", prizePool: "₹15,000", entryFee: "₹200", formLink: "#", teamSize: "Individual", duration: "Full Day", venue: "Main Stage", rulebook: "/rulebooks/Singing.pdf", rules: ["Individual participation", "Any genre accepted", "5-minute performance", "Live singing only", "Accompaniment allowed"], coordinators: [{name: "Rajesh Iyer", contact: "9876543298"}, {name: "Priya Singh", contact: "9876543299"}] },
-  { title: "Dance", category: "Cultural", description: "Express through any dance form solo or group", prizePool: "₹15,000", entryFee: "₹200", formLink: "#", teamSize: "Solo or Group (5-12)", duration: "Full Day", venue: "Main Stage", rulebook: "/rulebooks/Dance.pdf", rules: ["Solo or group", "3-8 minute performance", "Any dance form", "Props allowed (no fire)", "Music submitted beforehand"], coordinators: [{name: "Nitin Kumar", contact: "9876543300"}, {name: "Anjali Verma", contact: "9876543301"}] },
-  { title: "Mr & Miss Vencer", category: "Cultural", description: "Pageant with ramp walk and personality test", prizePool: "₹10,000", entryFee: "₹300", formLink: "#", teamSize: "Individual", duration: "Full Day", venue: "Main Stage", rulebook: "/rulebooks/Mr and Miss Vencer.pdf", rules: ["Individual (Male/Female categories)", "Theme-based ramp walk", "Q&A round", "Confidence & personality judged"], coordinators: [{name: "Akshay Sharma", contact: "9876543302"}, {name: "Diya Kapoor", contact: "9876543303"}] },
-  { title: "Fashion show", category: "Cultural", description: "Stage play showcasing storytelling and acting", prizePool: "₹12,000", entryFee: "₹150", formLink: "#", teamSize: "Group (6-12)", duration: "Full Day", venue: "Auditorium", rulebook: "/rulebooks/Fashion show.pdf", rules: ["Group 6-12 members", "10-15 minute skit", "Original or famous play", "Props and costumes allowed", "No offensive content"], coordinators: [{name: "Rohan Singh", contact: "9876543304"}, {name: "Meera Gupta", contact: "9876543305"}] },
+  {
+    title: "Singing",
+    category: "Cultural",
+    description: "Showcase your vocal talent with any genre",
+    prizePool: "₹15,000",
+    entryFee: "₹200",
+    formLink: "#",
+    teamSize: "Individual",
+    duration: "Full Day",
+    venue: "Main Stage",
+    rulebook: "/rulebooks/Singing.pdf",
+    rules: ["Individual participation", "Any genre accepted", "5-minute performance", "Live singing only", "Accompaniment allowed"],
+    coordinators: [{name: "Rajesh Iyer", contact: "9876543298"}, {name: "Priya Singh", contact: "9876543299"}]
+  },
+  {
+    title: "Dance",
+    category: "Cultural",
+    description: "Express through any dance form solo or group",
+    prizePool: "₹15,000",
+    entryFee: "₹200",
+    formLink: "#",
+    teamSize: "Solo or Group (5-12)",
+    duration: "Full Day",
+    venue: "Main Stage",
+    rulebook: "/rulebooks/Dance.pdf",
+    rules: ["Solo or group", "3-8 minute performance", "Any dance form", "Props allowed (no fire)", "Music submitted beforehand"],
+    coordinators: [{name: "Nitin Kumar", contact: "9876543300"}, {name: "Anjali Verma", contact: "9876543301"}]
+  },
+  {
+    title: "Mr & Miss Vencer",
+    category: "Cultural",
+    description: "Pageant with ramp walk and personality test",
+    prizePool: "₹10,000",
+    entryFee: "₹300",
+    formLink: "#",
+    teamSize: "Individual",
+    duration: "Full Day",
+    venue: "Main Stage",
+    rulebook: "/rulebooks/Mr and Miss Vencer.pdf",
+    rules: ["Individual (Male/Female categories)", "Theme-based ramp walk", "Q&A round", "Confidence & personality judged"],
+    coordinators: [{name: "Akshay Sharma", contact: "9876543302"}, {name: "Diya Kapoor", contact: "9876543303"}]
+  },
+  {
+    title: "Fashion show",
+    category: "Cultural",
+    description: "Stage play showcasing storytelling and acting",
+    prizePool: "₹12,000",
+    entryFee: "₹150",
+    formLink: "#",
+    teamSize: "Group (6-12)",
+    duration: "Full Day",
+    venue: "Auditorium",
+    rulebook: "/rulebooks/Fashion show.pdf",
+    rules: ["Group 6-12 members", "10-15 minute skit", "Original or famous play", "Props and costumes allowed", "No offensive content"],
+    coordinators: [{name: "Rohan Singh", contact: "9876543304"}, {name: "Meera Gupta", contact: "9876543305"}]
+  },
 ];
 
 
@@ -966,13 +993,12 @@ export const gamingEvents: Event[] = [
   },
   {
     title: "Volley Ball",
-    category: "gaming" as const,
+    category: "Gaming" as const,
     description: "Competitive volleyball tournament for team sports enthusiasts",
     prizePool: "₹9,000",
     entryFee: "₹500",
     formLink: "#",
     posterUrl: "/assets/steel-sentinel-avatar.png",
-    branch: "ROBO",
     teamSize: "6+3 members",
     duration: "5 Hours",
     venue: "Sports Ground",
@@ -1005,5 +1031,6 @@ export const gamingEvents: Event[] = [
     coordinators: [{name: "Srinivas Iyer", contact: "9876543318"}, {name: "Anaya Kumari", contact: "9876543319"}]
   },
 ];
+
 
 
