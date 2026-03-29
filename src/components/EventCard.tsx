@@ -1,6 +1,6 @@
 import { memo, forwardRef } from "react";
 import { motion } from "framer-motion";
-import { Trophy, IndianRupee, ImageIcon } from "lucide-react";
+import { Trophy, IndianRupee, ImageIcon, Calendar } from "lucide-react";
 import type { Event } from "@/data/events";
 
 const categoryCardColors: Record<string, { bg: string; border: string; badge: string; glow: string }> = {
@@ -88,15 +88,23 @@ const EventCardInner = forwardRef<HTMLDivElement, EventCardProps>(
           )}
           <h4 className="font-heading text-base sm:text-xl font-bold text-foreground mb-1 sm:mb-2">{event.title}</h4>
           <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 flex-1 leading-relaxed line-clamp-2">{event.description}</p>
-          <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-foreground/90 font-bold">
-            <span className="flex items-center gap-1">
+          {event.date && (
+            <p className="text-xs sm:text-sm text-fest-teal font-semibold mb-3 flex items-center gap-1.5">
+              <Calendar size={14} className="text-fest-teal" />
+              {event.date}
+            </p>
+          )}
+          <div className="flex items-center justify-between gap-3 sm:gap-4">
+            <div className="flex items-center gap-1.5">
               <Trophy size={14} className="text-fest-yellow" />
-              {event.prizePool}
-            </span>
-            <span className="flex items-center gap-1">
-              <IndianRupee size={14} className="text-fest-teal" />
-              {event.entryFee}
-            </span>
+              <span className="text-xs sm:text-sm text-foreground/90 font-bold">{event.prizePool}</span>
+            </div>
+            <div className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg border-2 border-fest-teal/60 bg-fest-teal/10 shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]">
+              <span className="flex items-center gap-1 text-sm sm:text-base font-bold text-fest-teal">
+                <IndianRupee size={16} className="text-fest-teal" />
+                {event.entryFee}
+              </span>
+            </div>
           </div>
         </div>
       </motion.div>

@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -9,6 +9,15 @@ interface RegistrationModalProps {
 
 const RegistrationModal = forwardRef<HTMLDivElement, RegistrationModalProps>(({ formLink, onClose }, ref) => {
   if (!formLink) return null;
+
+  const currentDate = useMemo(() => {
+    return new Date().toLocaleDateString("en-US", {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  }, []);
 
   const embedUrl = formLink.includes("/viewform")
     ? formLink
@@ -35,7 +44,10 @@ const RegistrationModal = forwardRef<HTMLDivElement, RegistrationModalProps>(({ 
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center justify-between px-5 py-3 border-b-2 border-primary/20 bg-card">
-            <h3 className="font-display text-sm tracking-wider text-primary font-bold">REGISTRATION FORM</h3>
+            <div className="flex flex-col gap-1">
+              <h3 className="font-display text-sm tracking-wider text-primary font-bold">REGISTRATION FORM</h3>
+              <p className="text-xs text-muted-foreground">{currentDate}</p>
+            </div>
             <button
               onClick={onClose}
               className="w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center text-destructive hover:bg-destructive/30 transition-colors"
