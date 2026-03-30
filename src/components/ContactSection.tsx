@@ -59,36 +59,36 @@ const ContactSection = () => {
               branch: "Artificial Intelligence & Data Science", 
               coord1: "Miss. Neki Jain", 
               phone1: "+91 7568676897",
-              coord2: "Rahul Sharma",
-              phone2: "+91 98765 43220"
+              coord2: "Ramesh Jain",
+              phone2: "+91  7353204108",
             },
             { 
               branch: "Computer Science", 
-              coord1: "Priya Patel", 
-              phone1: "+91 98765 43211",
-              coord2: "Amit Kumar",
-              phone2: "+91 98765 43221"
+              coord1: "Shireedhar Suji",
+              phone1: "+91 8884608943",
+              coord2: "Srushti B",
+              phone2: "+91 8431976442",
             },
             { 
               branch: "Mechanical Engineering", 
-              coord1: "Rohit Singh", 
+              coord1: "", 
               phone1: "+91 98765 43212",
               coord2: "Sneha Reddy",
               phone2: "+91 98765 43222"
             },
             { 
               branch: "Civil Engineering", 
-              coord1: "Vikram Joshi", 
-              phone1: "+91 98765 43213",
-              coord2: "Anita Desai",
-              phone2: "+91 98765 43223"
+              coord1: "Ritesh Y. Sutar",
+              phone1: "+91 9164848342",
+              coord2: "Parth R. Patil",
+              phone2: "+91 7026611587",
             },
             { 
               branch: "Electronics & Communication Engg.", 
-              coord1: "Kiran Gupta", 
-              phone1: "+91 98765 43214",
-              coord2: "Meera Nair",
-              phone2: "+91 98765 43224"
+              coord1: "Chetan Hanamannavar",
+              phone1: "+91 8867472005",
+              coord2: "Megha Biradar",
+              phone2: "+91 6363767116",
             },
             { 
               branch: "Electrical & Electronics Engg.", 
