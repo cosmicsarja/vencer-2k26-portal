@@ -27,7 +27,7 @@ const developers: Developer[] = [
   },
   {
     name: "Chetan M",
-    role: "Backend Developer",
+    role: " Developer",
     photo: chetanPhoto,
     handle: " Kalki__33_",
     instagram: "https://www.instagram.com/kalki__33_?igsh=cnhxbHEzcXpib2dh",

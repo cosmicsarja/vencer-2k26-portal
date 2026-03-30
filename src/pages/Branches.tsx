@@ -47,7 +47,7 @@ const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branc
         <motion.img
           src={avatar}
           alt={`${tribe.clanName} Avatar`}
-          className="absolute right-[-5px] bottom-0 w-[70px] xs:w-[85px] sm:w-[100px] md:w-[140px] opacity-60 sm:opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
+          className="absolute right-[-15px] bottom-0 w-[90px] sm:w-[110px] md:w-[160px] opacity-60 sm:opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
           loading="lazy"
           decoding="async"
           style={{
@@ -59,24 +59,24 @@ const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branc
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        <div className="relative p-3 xs:p-4 sm:p-6 pr-[70px] xs:pr-[85px] sm:pr-[100px] md:pr-[120px]">
-          <span className={`font-display text-[10px] tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
+        <div className="relative p-3 sm:p-5 md:p-6 pr-[90px] sm:pr-[115px] md:pr-[165px]">
+          <span className={`font-display text-[8px] sm:text-[10px] md:text-xs tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
             {tribe.biome}
           </span>
 
-          <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-${tribe.accent}/15 flex items-center justify-center my-2 sm:my-3 transition-all group-hover:bg-${tribe.accent}/25 group-hover:shadow-[0_0_20px_hsl(var(${tribe.glowVar})_/_0.3)]`}>
-            <Icon size={20} className={`text-${tribe.accent}`} />
+          <div className={`w-7 sm:w-9 md:w-10 h-7 sm:h-9 md:h-10 md:w-12 md:h-12 rounded-xl bg-${tribe.accent}/15 flex items-center justify-center my-2 sm:my-3 transition-all group-hover:bg-${tribe.accent}/25 group-hover:shadow-[0_0_20px_hsl(var(${tribe.glowVar})_/_0.3)]`}>
+            <Icon size={16} className={`text-${tribe.accent}`} />
           </div>
 
-          <h3 className="font-heading text-sm sm:text-base font-bold text-foreground mb-1">{tribe.clanName}</h3>
-          <p className={`font-heading text-xs font-bold text-${tribe.accent} mb-1`}>{branch.name}</p>
-          <p className="text-[11px] sm:text-xs text-muted-foreground/80 mb-3 sm:mb-4 leading-relaxed line-clamp-2">{tribe.desc}</p>
+          <h3 className="font-heading text-[11px] sm:text-sm md:text-base font-bold text-foreground mb-1">{tribe.clanName}</h3>
+          <p className={`font-heading text-[9px] sm:text-[10px] md:text-xs font-bold text-${tribe.accent} mb-1`}>{branch.name}</p>
+          <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground/80 mb-2 sm:mb-3 md:mb-4 leading-snug md:leading-relaxed line-clamp-2">{tribe.desc}</p>
 
-          <div className="flex items-center justify-between">
-            <span className="text-[10px] sm:text-xs text-muted-foreground font-heading font-bold">
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-[8px] sm:text-[9px] md:text-xs text-muted-foreground font-heading font-bold">
               {totalEvents} Events
             </span>
-            <span className={`text-[10px] sm:text-xs font-display tracking-wider text-${tribe.accent} font-bold`}>
+            <span className={`text-[8px] sm:text-[9px] md:text-xs font-display tracking-wider text-${tribe.accent} font-bold`}>
               View Events →
             </span>
           </div>
@@ -90,23 +90,23 @@ TribeCard.displayName = "TribeCard";
 
 const Branches = () => {
   return (
-    <section className="relative py-20 pt-24 sm:py-24 sm:pt-28 min-h-screen">
+    <section className="relative py-16 sm:py-20 md:py-24 pt-20 sm:pt-24 md:pt-28 min-h-screen">
       <div className="container px-3 sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-wider pandora-gradient-text mb-3 sm:mb-4">
+          <h1 className="font-display text-lg sm:text-2xl md:text-4xl tracking-wider pandora-gradient-text mb-2 sm:mb-3 md:mb-4">
             The Tribes of VENCER
           </h1>
-          <p className="font-body text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-body text-xs sm:text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-1">
             Eight clans, one world. Each tribe commands a unique biome of knowledge and innovation.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {branches.map((branch, i) => {
             const tribe = tribes[i] || tribes[0];
             return (
