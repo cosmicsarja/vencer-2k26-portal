@@ -391,6 +391,7 @@ export const branches: Branch[] = [
         entryFee: "₹100",
         formLink: "https://forms.google.com",
         date: "April 10, 2026",
+        posterUrl: "public/posters/mech/1774851567356.png",
         branch: "MECH",
         teamSize: "2-3 members",
         duration: "4 Hours",
@@ -407,6 +408,7 @@ export const branches: Branch[] = [
         entryFee: "₹100",
         formLink: "https://forms.google.com",
         date: "April 11, 2026",
+        posterUrl: "public/posters/mech/1774850972901.png",
         branch: "MECH",
         teamSize: "Individual",
         duration: "2 Hours",
@@ -416,6 +418,28 @@ export const branches: Branch[] = [
         coordinators: [{ name: "Harshit Verma", contact: "9876543242" }, { name: "Priya Nair", contact: "9876543243" }]
       },
       {
+    title: "Number Circle Cricket",
+    category: "Non-Technical",
+    description: "Unique cricket variant with number scoring circle mechanics",
+    prizePool: "Grand prizes",
+    entryFee: "₹100",
+    formLink: "https://forms.google.com",
+    date: "April 11, 2026",
+    posterUrl: "public/posters/mech/1774851413605.png",
+    teamSize: "6 members",
+    duration: "2 Hours",
+    venue: "Sports Arena",
+    rulebook: "/rulebooks/Number Circle Cricket.pdf",
+    rules: [
+      "Teams of 6 players each",
+      "Special number circle scoring system",
+      "6-over match format",
+      "Boundary and wicket rules apply",
+      "Fair play mandatory"
+    ],
+    coordinators: [{ name: "Rajesh Kumar", contact: "9876543314" }, { name: "Naina Singh", contact: "9876543315" }]
+  },
+      {
         title: "Stand-up Comedy",
         category: "Non-Technical",
         description: "Unleash your inner comedian in the Iron Mountain Clan showdown – roast, joke, and conquer the stage with mechanical-themed humor!",
@@ -423,7 +447,7 @@ export const branches: Branch[] = [
         entryFee: "₹50",
         formLink: "https://forms.google.com",
         date: "April 10, 2026",
-        posterComingSoon: true,
+        posterUrl: "public/posters/mech/1774851688554.png",
         branch: "MECH",
         teamSize: "Individual",
         duration: "1.5 Hours",
@@ -438,7 +462,34 @@ export const branches: Branch[] = [
           "Props allowed (keep it simple)"
         ],
         coordinators: [{ name: "Deepak Chawla", contact: "9876543244" }, { name: "Shruti Singh", contact: "9876543245" }]
-      }
+      },
+      {
+    title: "Ping Pong (Table Tennis)",
+    category: "Gaming" as const,
+    description: "Fast-paced table tennis competition with exciting rallies and matches",
+    prizePool: "Grand prizes",
+    entryFee: "₹100",
+    formLink: "https://forms.google.com",
+    date: "April 11, 2026",
+    posterUrl: "public/posters/mech/1774852350510.png",
+    teamSize: "Individual or Pair",
+    duration: "3 Hours",
+    venue: "Sports Hall",
+    rulebook: "/rulebooks/Ping Pong.pdf",
+    rules: [
+      "Individual or pair (doubles) format",
+      "Standard table tennis rules apply",
+      "Best of 3 matches format",
+      "Modern ping pong tables and paddles provided",
+      "Official tournament-grade balls",
+      "Fair play and sportsmanship mandatory",
+      "No coaching allowed during matches",
+      "Round-robin or knockout format based on entries",
+      "Judges' decision is final"
+    ],
+    coordinators: [{ name: "Srinivas Iyer", contact: "9876543318" }, { name: "Anaya Kumari", contact: "9876543319" }]
+  }
+  
     ],
     culturalEvents: [],
     gamingEvents: [],
@@ -1138,53 +1189,7 @@ export const gamingEvents: Event[] = [
     ],
     coordinators: [{ name: "Arjun Singh", contact: "9876543312" }, { name: "Poornima Rao", contact: "9876543313" }]
   },
-  {
-    title: "Number Circle Cricket",
-    category: "Gaming" as const,
-    description: "Unique cricket variant with number scoring circle mechanics",
-    prizePool: "Grand prizes",
-    entryFee: "₹100",
-    formLink: "https://forms.google.com",
-    date: "April 11, 2026",
-    teamSize: "6 members",
-    duration: "2 Hours",
-    venue: "Sports Arena",
-    rulebook: "/rulebooks/Number Circle Cricket.pdf",
-    rules: [
-      "Teams of 6 players each",
-      "Special number circle scoring system",
-      "6-over match format",
-      "Boundary and wicket rules apply",
-      "Fair play mandatory"
-    ],
-    coordinators: [{ name: "Rajesh Kumar", contact: "9876543314" }, { name: "Naina Singh", contact: "9876543315" }]
-  },
-  {
-    title: "Ping Pong (Table Tennis)",
-    category: "Gaming" as const,
-    description: "Fast-paced table tennis competition with exciting rallies and matches",
-    prizePool: "Grand prizes",
-    entryFee: "₹100",
-    formLink: "https://forms.google.com",
-    date: "April 11, 2026",
-    teamSize: "Individual or Pair",
-    duration: "3 Hours",
-    venue: "Sports Hall",
-    rulebook: "/rulebooks/Ping Pong.pdf",
-    rules: [
-      "Individual or pair (doubles) format",
-      "Standard table tennis rules apply",
-      "Best of 3 matches format",
-      "Modern ping pong tables and paddles provided",
-      "Official tournament-grade balls",
-      "Fair play and sportsmanship mandatory",
-      "No coaching allowed during matches",
-      "Round-robin or knockout format based on entries",
-      "Judges' decision is final"
-    ],
-    coordinators: [{ name: "Srinivas Iyer", contact: "9876543318" }, { name: "Anaya Kumari", contact: "9876543319" }]
-  },
-  
+
 ];
 
 
