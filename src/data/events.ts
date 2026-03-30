@@ -49,29 +49,37 @@ export const branches: Branch[] = [
         date: "April 10, 2026",
         posterUrl: "/posters/AIDS/pandora-logic-wars.png",
         branch: "AI & DS",
-        teamSize: "1-4 members",
-        duration: "12PM to 4:30PM",
-        venue: "Seminar Hall 1st Floor",
+        teamSize: "1-4 participants",
+        duration: "12PM to 4:45PM",
+        venue: "Seminar Hall 1 AI dept 1st Floor",
         rulebook: "/rulebooks/Pandora Logic War.pdf",
         rules: ["Team size: 1 to 4 members", "Each team must bring minimum 2 laptops", "Teams must arrange their own internet connection", "Participants must strictly follow event timings", "Any malpractice or unfair means leads to disqualification", "Judges' decision is final", "Round 1A: 25 MCQs (25 marks, 25 min)", "Round 1B: 5 coding questions (25 marks, 25 min)", "10% teams eliminated after Round 1", "Round 2: Debug 3 code snippets (30 marks, 25 min)", "20% teams eliminated after Round 2", "Final: QR scan → password → unlock zip → solve problem", "Only first 10 teams qualify for final round", "Winners based on total score across all rounds", "Final round on same day"],
         coordinators: [{ name: "Shivalingsarj Desai", contact: "9513804776" }, { name: "Nivedita Akkimaradi", contact: "8296663125" }]
       },
       {
-        title: "TechXhibit",
+        title: "TechXhibit(project expo)",
         category: "Technical" as const,
         description: "Showcase your innovative projects and compete for top prizes",
         prizePool: "Grand prizes",
         entryFee: "₹200",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeq1uLDFZfuJWD9V-2c52VAECFsOaPcsZhYo-CEtht7cd1lfA/viewform?embedded=true",
-        date: "April 10, 2026",
+        date: "April 11, 2026",
         posterUrl: "/posters/AIDS/techxhibit.jpeg",
         branch: "AI & DS",
-        teamSize: "2-4 members",
-        duration: "24 Hours",
-        venue: "CS Lab 1",
+        teamSize: "1-4 members",
+        duration: "10 am. to 1 pm",
+        venue: "seminar hall 1 AI dept 1st Floor",
         rulebook: "/rulebooks/Project Expo.pdf",
-        rules: ["Team size: 2-4 members", "Original projects only", "Bring laptops and prototypes", "Judging: innovation, implementation, presentation", "Demo required"],
-        coordinators: [{ name: "Amit Patel", contact: "9876543212" }, { name: "Neha Gupta", contact: "9876543213" }]
+        rules: [
+"Participants must take part in a team",
+"Each team should have a minimum of 2 members and a maximum of 4 members",
+"Each team must present one unique project",
+"Projects can be from any technical domain such as AI-ML, IoT, Software Development, Robotics, etc.",
+"Participants must bring their own laptop, hardware, and required materials",
+"Each team will be given 15 minutes to present their project to the judges, followed by a short Q&A session",
+"Every team must prepare a presentation (PPT), and live demonstration"
+],
+        coordinators: [{ name: "NIKITA LADU DESAI", contact: "8296730926" }, { name: "KHUSHIYABEGAM HANAGI", contact: "8867284486" }]
       },
       {
         title: "AI Prompt Battle",
@@ -83,11 +91,28 @@ export const branches: Branch[] = [
         date: "April 11, 2026",
         posterUrl: "/posters/AIDS/ai prompt batel.jpeg",
         branch: "AI & DS",
-        teamSize: "1 or 2 members",
-        duration: "10 am to 1 pm",
+        teamSize: "1 or 4 participants",
+        duration: "10 am to 2 pm",
         venue: "AI dept classroom no 1",
         rulebook: "/rulebooks/AI Prompt Battle.pdf",
-        rules: ["Individual participation", "Multiple rounds with AI models", "Judged on creativity, accuracy, efficiency", "Internet for AI tools only"],
+        rules: [
+"Participation: Individual or Team (1–2 members)",
+"Each team must bring their own laptop/mobile device",
+"Participants must arrange their own internet connection",
+"Internet usage is allowed only for AI tools (ChatGPT, Gemini, etc.)",
+"Participants must create original prompts during the event",
+"Any form of copying or unfair practice leads to disqualification",
+"Participants must strictly follow event timings and instructions",
+"Judges’ decision will be final and binding",
+"Round 1: Basic Prompt Challenge (understanding AI responses)",
+"Round 2: Constraint-Based Prompting (limits on words, tone, etc.)",
+"Round 3: Creative Prompt Challenge (problem-solving using AI)",
+"Top participants will qualify for the Final Round",
+"Final Round: Advanced prompt design + explanation of logic and output",
+"Evaluation based on Creativity, Accuracy, and Efficiency",
+"Winners will be decided based on overall performance across all rounds",
+"All rounds will be conducted on the same day"
+],
         coordinators: [{ name: "Mahesh Chandagadkar", contact: "9108427250" }, { name: "Sneha Mirashi", contact: "7406533952" }]
       },
       {
@@ -100,9 +125,9 @@ export const branches: Branch[] = [
         date: "April 10, 2026",
         posterUrl: "/posters/AIDS/Final_with_QR-Picsart-AiImageEnhancer.png",
         branch: "AI & DS",
-        teamSize: "2-3 members",
-        duration: "3 Hours",
-        venue: "Seminar Hall",
+        teamSize: "1-3 members",
+        duration: "12 pm to 3 pm",
+        venue: "Seminar Hall 2 AI dept ground Floor",
         rulebook: "/rulebooks/AI Shark Tank.pdf",
         rules: [
 "Participation is allowed individually or in teams of up to 4 members",
@@ -117,10 +142,10 @@ export const branches: Branch[] = [
 "Round 2: Final Pitch – 5 minutes for presentation and 2 minutes for Q&A with judges",
 "Participants must clearly explain their idea, implementation, and feasibility"
 ],
-        coordinators: [{ name: "Siddhant Sharma", contact: "9876543216" }, { name: "Divya Nair", contact: "9876543217" }]
+        coordinators: [{ name: "Arzaan Khan", contact: "7338462010" }, { name: "Aishwarya Byati", contact: "8660973548" }]
       },
       {
-        title: "Edible Art Arena",
+        title: "Edible Art Arena(cooking without fire N frutit Carving)",
         category: "Non-Technical" as const,
         description: "Creative no-fire cooking competition using innovative ingredients",
         prizePool: "Grand prizes",
@@ -129,12 +154,22 @@ export const branches: Branch[] = [
         date: "April 11, 2026",
         posterUrl: "/posters/AIDS/EDIBLE ART ARENA (1).jpg",
         branch: "AI & DS",
-        teamSize: "2-3 members",
-        duration: "1.5 Hours",
-        venue: "Food Zone",
+        teamSize: "1-4 members",
+        duration: "10am to 1 pm",
+        venue: "seminar hall 2 AI dept ground Floor",
         rulebook: "/rulebooks/Cooking Without Fire.pdf",
-        rules: ["Team of 2-3", "No cooking appliances or fire", "Ingredients provided", "Judged on taste, creativity, presentation"],
-        coordinators: [{ name: "Rohan Iyer ", contact: "9876543218" }, { name: "Shreya Desai", contact: "9876543219" }]
+        rules: [
+"Each team must consist of 4 members, and all participants must carry their college ID cards",
+"All dishes must be prepared without using fire, induction, or any heating equipment",
+"Participants must bring all required raw materials (bread, fruits, vegetables, sauces, etc.) and basic tools (knives, peelers, plates, etc.)",
+"Use of pre-cooked or ready-made food items is strictly prohibited",
+"Total time allotted: 45–60 minutes",
+"Final presentation must include no-fire food preparation and fruit carving",
+"Each team must bring one special ingredient compulsorily",
+"A mystery ingredient will be provided during the event and must be used",
+"Surprise tasks will be given during the event"
+],
+        coordinators: [{ name: "Anupreksha Patil", contact: "7019993207" }, { name: "Sagarika", contact: "9591448042" }]
       },
       {
         title: "Brand Baazi - Sell It If U Can ",
@@ -146,12 +181,23 @@ export const branches: Branch[] = [
         date: "April 10, 2026",
         posterUrl: "/posters/AIDS/brand bazi.jpeg",
         branch: "AI & DS",
-        teamSize: "1-2 members",
-        duration: "1 Hour",
-        venue: "Media Lab",
+        teamSize: "1-4 members",
+        duration: "12:30 pm to 4:30 pm",
+        venue: "classroom no 1 AI dept 1st Floor",
         rulebook: "/rulebooks/One Minute Ad Challenge.pdf",
-        rules: ["1-2 members", "60 seconds max", "Product revealed on spot", "Props and creativity encouraged"],
-        coordinators: [{ name: "Arjun Kapoor", contact: "9876543220" }, { name: "Megha Saxena", contact: "9876543221" }]
+        rules: [
+"Open to all field students (inter-college participation allowed)",
+"Each team will be given a random product/object (e.g., beverage can, daily-use item, etc.)",
+"Preparation time: 1 hour",
+"Teams must bring their own laptops or necessary requirements",
+"Participants must arrange their own internet facilities",
+"Teams must create at least one: poster (Canva), basic website, or AI-generated advertisement/video",
+"Each team must present their product on stage",
+"All 4 members should participate in the pitch",
+"Teams must market and sell their product creatively",
+"Pitch time: 3–5 minutes per team"
+],
+        coordinators: [{ name: "Ganesh M Habib", contact: "8152032541" }, { name: "Akshata Hanamapure", contact: "7899674274" }]
       },
       {
         title: "Dodge Ball",
@@ -164,7 +210,7 @@ export const branches: Branch[] = [
         posterUrl: "/posters/AIDS/dodge ball.jpeg",
         branch: "AI & DS",
         teamSize: "6 members",
-        duration: "2 Hours",
+        duration: "10 am onwards",
         venue: "Sports Ground",
         rulebook: "/rulebooks/Dodge Ball.pdf",
         rules: [
@@ -1077,7 +1123,7 @@ export const culturalEvents: Event[] = [
     coordinators: [{ name: "Akshay Sharma", contact: "9876543302" }, { name: "Diya Kapoor", contact: "9876543303" }]
   },
   {
-    title: "Cosmos Crown (Fashion show)",
+    title: "Cosmos Crown(Fashion show)",
     category: "Cultural",
     description: "Stage play showcasing storytelling and acting",
     prizePool: "Grand prizes",
@@ -1085,13 +1131,37 @@ export const culturalEvents: Event[] = [
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSewbpKKf53Qh3hsYZ9I2BYWMaDuq0b_qDcLUjT9NKLCqOOFjA/viewform?usp=publish-editor&embedded=true",
     formLinkSolo: "https://docs.google.com/forms/d/e/1FAIpQLSdKITed6xbrCL5wem3TKjUU-zg70q_-tK7Lm2Ne2O41B0AIdQ/viewform?fbzx=-4828733262479895773&embedded=true",
     formLinkGroup: "https://docs.google.com/forms/d/e/1FAIpQLSewbpKKf53Qh3hsYZ9I2BYWMaDuq0b_qDcLUjT9NKLCqOOFjA/viewform?usp=publish-editor&embedded=true",
+    date: "April 10, 2026",
     posterUrl: "/posters/AIDS/cosmoscron.jpeg",
-    teamSize: "Group (6-12)",
-    duration: "Full Day",
+    teamSize: "Group (8-10) or Solo",
+    duration: "12pm onwards",
     venue: "Auditorium",
     rulebook: "/rulebooks/Fashion show.pdf",
-    rules: ["Group 6-12 members", "10-15 minute skit", "Original or famous play", "Props and costumes allowed", "No offensive content"],
-    coordinators: [{ name: "Rohan Singh", contact: "9876543304" }, { name: "Meera Gupta", contact: "9876543305" }]
+    rules: [
+      "for solo",
+"The event has 2 rounds, including an elimination round",
+"Music must be submitted 2 days before the event in MP3 format",
+"Performance time limit: 3–4 minutes",
+"Any kind of vulgarity may lead to disqualification",
+"Green room will be provided for participants",
+"Outfit, makeup, and textures must match the given theme",
+"Participants must maintain proper behavior on stage",
+"Carrying a valid ID is compulsory",
+"No extra time will be provided for the performance",
+"Judges’ decision will be final",
+"for group",
+"The event has 2 rounds: elimination round and final round",
+"Teams must be ready before the given time",
+"Green room will be provided for team members",
+"Music must be submitted 2 days before the event in MP3 format",
+"Dressing must be decent (not revealing)",
+"Performance time limit: 6–8 minutes",
+"At least 2 props are compulsory",
+"Participants must maintain proper behavior during the event",
+"No extra time will be provided for the performance",
+"Judges’ decision will be final"
+],
+    coordinators: [{ name: "Suprim Roy", contact: "6362820636" }, { name: "Shilpa Malai", contact: "7204627271" }]
   },
 ];
 
