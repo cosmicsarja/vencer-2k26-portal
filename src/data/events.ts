@@ -91,8 +91,8 @@ export const branches: Branch[] = [
         date: "April 11, 2026",
         posterUrl: "/posters/AIDS/ai prompt batel.jpeg",
         branch: "AI & DS",
-        teamSize: "1 or 4 participants",
-        duration: "10 am to 2 pm",
+        teamSize: "1 or 2 participants",
+        duration: "10 am to 3 pm",
         venue: "AI dept classroom no 1",
         rulebook: "/rulebooks/AI Prompt Battle.pdf",
         rules: [
