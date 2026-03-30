@@ -5,16 +5,16 @@ import type { Event } from "@/data/events";
 
 const categoryCardColors: Record<string, { bg: string; border: string; badge: string; glow: string }> = {
   Technical: {
-    bg: "from-fest-teal/15 to-transparent",
-    border: "border-fest-teal/40 hover:border-fest-teal/70",
-    badge: "bg-gradient-to-r from-fest-teal/80 to-fest-teal/60 text-white border-fest-teal/60 font-bold shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.4)] hover:shadow-[0_0_20px_hsl(var(--fest-teal)_/_0.6)]",
-    glow: "hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.2)]",
-  },
-  "Non-Technical": {
     bg: "from-fest-purple/15 to-transparent",
     border: "border-fest-purple/40 hover:border-fest-purple/70",
     badge: "bg-gradient-to-r from-fest-purple/80 to-fest-purple/60 text-white border-fest-purple/60 font-bold shadow-[0_0_15px_hsl(var(--fest-purple)_/_0.4)] hover:shadow-[0_0_20px_hsl(var(--fest-purple)_/_0.6)]",
     glow: "hover:shadow-[0_0_30px_hsl(var(--fest-purple)_/_0.2)]",
+  },
+  "Non-Technical": {
+    bg: "from-fest-teal/15 to-transparent",
+    border: "border-fest-teal/40 hover:border-fest-teal/70",
+    badge: "bg-gradient-to-r from-fest-teal/80 to-fest-teal/60 text-white border-fest-teal/60 font-bold shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.4)] hover:shadow-[0_0_20px_hsl(var(--fest-teal)_/_0.6)]",
+    glow: "hover:shadow-[0_0_30px_hsl(var(--fest-teal)_/_0.2)]",
   },
   Cultural: {
     bg: "from-fest-yellow/15 to-transparent",
@@ -22,6 +22,7 @@ const categoryCardColors: Record<string, { bg: string; border: string; badge: st
     badge: "bg-gradient-to-r from-fest-yellow/80 to-fest-yellow/60 text-white border-fest-yellow/60 font-bold shadow-[0_0_15px_hsl(var(--fest-yellow)_/_0.4)] hover:shadow-[0_0_20px_hsl(var(--fest-yellow)_/_0.6)]",
     glow: "hover:shadow-[0_0_30px_hsl(var(--fest-yellow)_/_0.2)]",
   },
+
   Gaming: {
     bg: "from-fest-blue/15 to-transparent",
     border: "border-fest-blue/40 hover:border-fest-blue/70",
@@ -70,8 +71,9 @@ const EventCardInner = forwardRef<HTMLDivElement, EventCardProps>(
               <span className="font-heading text-xs tracking-wider font-bold">Poster Coming Soon</span>
             </div>
           )}
-          <div className="absolute top-3 right-3">
-            <span className={`inline-flex px-3 py-1.5 rounded-full text-[11px] font-display tracking-widest border uppercase font-extrabold transition-all duration-300 ${colors.badge}`}>
+
+          <div className="absolute bottom-3 left-3">
+            <span className={`inline-flex px-2.5 py-1 rounded-full text-[10px] font-display tracking-widest border uppercase font-extrabold transition-all duration-300 ${colors.badge}`}>
               {event.category}
             </span>
           </div>
@@ -97,7 +99,7 @@ const EventCardInner = forwardRef<HTMLDivElement, EventCardProps>(
           <div className="flex items-center justify-between gap-3 sm:gap-4">
             <div className="flex items-center gap-1.5">
               <Trophy size={14} className="text-fest-yellow" />
-              <span className="text-xs sm:text-sm text-foreground/90 font-bold">{event.prizePool}</span>
+              <span className="text-xs sm:text-sm text-foreground/90 font-bold">Epic Prizes Await</span>
             </div>
             <div className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg border-2 border-fest-teal/60 bg-fest-teal/10 shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]">
               <span className="flex items-center gap-1 text-sm sm:text-base font-bold text-fest-teal">

@@ -10,8 +10,8 @@ interface EventDetailModalProps {
 }
 
 const categoryColors: Record<string, { accent: string; bg: string }> = {
-  Technical: { accent: "text-fest-teal", bg: "bg-fest-teal/15 border-fest-teal/30" },
-  "Non-Technical": { accent: "text-fest-purple", bg: "bg-fest-purple/15 border-fest-purple/30" },
+  Technical: { accent: "text-fest-purple", bg: "bg-fest-purple/15 border-fest-purple/30" },
+  "Non-Technical": { accent: "text-fest-teal", bg: "bg-fest-teal/15 border-fest-teal/30" },
   Cultural: { accent: "text-fest-yellow", bg: "bg-fest-yellow/15 border-fest-yellow/30" },
   Gaming: { accent: "text-fest-blue", bg: "bg-fest-blue/15 border-fest-blue/30" },
 };

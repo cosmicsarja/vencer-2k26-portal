@@ -76,14 +76,14 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone size={16} className="text-fest-teal flex-shrink-0" />
-                  <a href="tel:+919876543210" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
-                    +91 XXXX XXXX XX
+                  <a href="tel:+91831-2438100" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
+                    0831-2438100/123
                   </a>
                 </div>
                 <div className="flex items-start gap-2">
                   <Mail size={16} className="text-fest-teal mt-0.5 flex-shrink-0" />
                   <a href="mailto:info@aitm.edu.in" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
-                    info@aitm.edu.in
+                    cultural@aitmbgm.ac.in
                   </a>
                 </div>
               </div>

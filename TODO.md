@@ -1,14 +1,13 @@
-# Task: Fix errors in src/data/events.ts
+# Add Technical/Non-Technical/Gaming Indicators Below on Event Cards
 
-## Plan Steps:
-1. [x] Fix Event interface: Remove duplicate `date` declarations.
- 2. [x] Add `as const` to all category literals consistently.
- 3. [ ] Ensure all events have required fields like `date`, add missing optionals (branch for top-level events).
- 4. [ ] Clean up arrays (remove trailing commas, fill missing data).
- 5. [ ] Edit src/data/events.ts with all changes.
- 6. [ ] Verify: Run TypeScript compiler/linter.
- 7. [ ] Test: Check /events and /branches pages.
- 8. [ ] Mark complete.
+**Status:** In Progress
 
-Current progress: Categories fixed in CSE branch. Continuing with remaining categories, top-level events, cleanups.
+## Steps:
+1. [x] Create this TODO.md
+2. [x] Edit EventCard.tsx: Remove badge from image top-right
+3. [x] Edit EventCard.tsx: Add badge below title in content
+4. [x] Update TODO.md with progress
+5. [x] Added bottom-left poster badge
+6. [x] Removed below-title badge per feedback
+7. [x] Task complete
 
