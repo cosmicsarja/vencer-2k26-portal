@@ -1,7 +1,5 @@
 import ProfileCard from "@/components/ProfileCard";
 import cosmicsarjaPhoto from "@/assets/cosmicsarja-photo.png";
-import sahilPhoto from "@/assets/sahil.png";
-import rohanPhoto from "@/assets/rhohan.png";
 import chetanPhoto from "@/assets/chetan.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -36,24 +34,7 @@ const developers: Developer[] = [
     github: "https://github.com/chetanmatapati33",
     linkedin: "https://www.linkedin.com/in/chetan-mathapati-021092296?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
-  {
-    name: "Sahil Barbal",
-    role: "Frontend Specialist",
-    photo: sahilPhoto,
-    handle: "sahilbarbal",
-    instagram: "https://instagram.com/sahilbarbal",
-    github: "https://github.com/sahilbarbal",
-    linkedin: "https://linkedin.com/in/sahilbarbal",
-  },
-  {
-    name: "Rohan Patil",
-    role: "UI/UX Designer",
-    photo: rohanPhoto,
-    handle: "rohanpatel",
-    instagram: "https://instagram.com/rohanpatel.dev",
-    github: "https://github.com/rohanpatel",
-    linkedin: "https://linkedin.com/in/rohanpatel",
-  },
+
 ];
 
 const DeveloperCard = ({ dev }: { dev: Developer }) => {

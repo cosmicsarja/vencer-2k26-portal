@@ -52,9 +52,9 @@ const RegistrationModal = forwardRef<HTMLDivElement, RegistrationModalProps>(({ 
             </div>
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center text-destructive hover:bg-destructive/30 transition-colors"
+              className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:bg-gray-100 transition-colors font-bold"
             >
-              <X size={16} />
+              <X size={16} strokeWidth={3} />
             </button>
           </div>
           <iframe
