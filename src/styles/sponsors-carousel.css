@@ -5,7 +5,7 @@
 .sponsors-carousel-bronze {
   display: flex;
   gap: 1rem;
-  animation: slideLeftInfinite 20s linear infinite;
+  animation: slideLeftInfinite 12s linear infinite;
   will-change: transform;
 }
 
@@ -51,7 +51,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-1 * (100px + 1rem) * 5));
+    transform: translateX(calc(-1 * (100px + 1rem) * 10));
   }
 }
 
@@ -60,7 +60,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-1 * (100px + 1rem) * 5));
+    transform: translateX(calc(-1 * (100px + 1rem) * 10));
   }
 }
 

@@ -149,31 +149,35 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div className="mb-10 sm:mb-14">
             <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-fest-yellow mb-4 text-center font-semibold">Gold Sponsors</p>
             <div className="overflow-hidden">
-              <div className="sponsors-carousel-gold">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={`gold-${i}`}
-                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-fest-yellow/15 to-fest-yellow/5 border-2 border-fest-yellow/40 rounded-lg flex items-center justify-center hover:border-fest-yellow/60 hover:bg-fest-yellow/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
-                  >
-                    <div className="text-center">
-                      <div className="text-fest-yellow/60 group-hover:text-fest-yellow transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
-                        Gold Sponsor
-                      </div>
+<div className="flex gap-4 sm:gap-6 overflow-x-auto pb-2 scrollbar-hide">
+                <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-fest-yellow/15 to-fest-yellow/5 border-2 border-fest-yellow/40 rounded-lg flex items-center justify-center hover:border-fest-yellow/60 hover:bg-fest-yellow/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                  <div className="text-center p-2">
+                    <div className="text-fest-yellow/60 hover:text-fest-yellow transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                      Gold Sponsor 1
                     </div>
                   </div>
-                ))}
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={`gold-duplicate-${i}`}
-                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-fest-yellow/15 to-fest-yellow/5 border-2 border-fest-yellow/40 rounded-lg flex items-center justify-center hover:border-fest-yellow/60 hover:bg-fest-yellow/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
-                  >
-                    <div className="text-center">
-                      <div className="text-fest-yellow/60 group-hover:text-fest-yellow transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
-                        Gold Sponsor
-                      </div>
+                </div>
+                <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-fest-yellow/15 to-fest-yellow/5 border-2 border-fest-yellow/40 rounded-lg flex items-center justify-center hover:border-fest-yellow/60 hover:bg-fest-yellow/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                  <div className="text-center p-2">
+                    <div className="text-fest-yellow/60 hover:text-fest-yellow transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                      Gold Sponsor 2
                     </div>
                   </div>
-                ))}
+                </div>
+                <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-fest-yellow/15 to-fest-yellow/5 border-2 border-fest-yellow/40 rounded-lg flex items-center justify-center hover:border-fest-yellow/60 hover:bg-fest-yellow/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                  <div className="text-center p-2">
+                    <div className="text-fest-yellow/60 hover:text-fest-yellow transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                      Gold Sponsor 3
+                    </div>
+                  </div>
+                </div>
+                <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-fest-yellow/15 to-fest-yellow/5 border-2 border-fest-yellow/40 rounded-lg flex items-center justify-center hover:border-fest-yellow/60 hover:bg-fest-yellow/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                  <div className="text-center p-2">
+                    <div className="text-fest-yellow/60 hover:text-fest-yellow transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                      Add Sponsor
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -181,32 +185,34 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           {/* Silver Sponsors */}
           <div className="mb-10 sm:mb-14">
             <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-gray-400 mb-4 text-center font-semibold">Silver Sponsors</p>
-            <div className="overflow-hidden">
-              <div className="sponsors-carousel-silver">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={`silver-${i}`}
-                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-gray-400/15 to-gray-400/5 border-2 border-gray-400/40 rounded-lg flex items-center justify-center hover:border-gray-400/60 hover:bg-gray-400/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
-                  >
-                    <div className="text-center">
-                      <div className="text-gray-400/60 group-hover:text-gray-400 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
-                        Silver Sponsor
-                      </div>
-                    </div>
+            <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-2 scrollbar-hide">
+              <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-gray-400/15 to-gray-400/5 border-2 border-gray-400/40 rounded-lg flex items-center justify-center hover:border-gray-400/60 hover:bg-gray-400/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                <div className="text-center p-2">
+                  <div className="text-gray-400/60 hover:text-gray-400 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                    Silver Sponsor 1
                   </div>
-                ))}
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={`silver-duplicate-${i}`}
-                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-gray-400/15 to-gray-400/5 border-2 border-gray-400/40 rounded-lg flex items-center justify-center hover:border-gray-400/60 hover:bg-gray-400/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
-                  >
-                    <div className="text-center">
-                      <div className="text-gray-400/60 group-hover:text-gray-400 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
-                        Silver Sponsor
-                      </div>
-                    </div>
+                </div>
+              </div>
+              <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-gray-400/15 to-gray-400/5 border-2 border-gray-400/40 rounded-lg flex items-center justify-center hover:border-gray-400/60 hover:bg-gray-400/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                <div className="text-center p-2">
+                  <div className="text-gray-400/60 hover:text-gray-400 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                    Silver Sponsor 2
                   </div>
-                ))}
+                </div>
+              </div>
+              <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-gray-400/15 to-gray-400/5 border-2 border-gray-400/40 rounded-lg flex items-center justify-center hover:border-gray-400/60 hover:bg-gray-400/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                <div className="text-center p-2">
+                  <div className="text-gray-400/60 hover:text-gray-400 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                    Silver Sponsor 3
+                  </div>
+                </div>
+              </div>
+              <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-gray-400/15 to-gray-400/5 border-2 border-gray-400/40 rounded-lg flex items-center justify-center hover:border-gray-400/60 hover:bg-gray-400/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                <div className="text-center p-2">
+                  <div className="text-gray-400/60 hover:text-gray-400 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                    Add Sponsor
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -214,32 +220,34 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           {/* Bronze Sponsors */}
           <div>
             <p className="font-heading text-xs sm:text-sm uppercase tracking-widest text-amber-700 mb-4 text-center font-semibold">Bronze Sponsors</p>
-            <div className="overflow-hidden">
-              <div className="sponsors-carousel-bronze">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={`bronze-${i}`}
-                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-amber-700/15 to-amber-700/5 border-2 border-amber-700/40 rounded-lg flex items-center justify-center hover:border-amber-700/60 hover:bg-amber-700/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
-                  >
-                    <div className="text-center">
-                      <div className="text-amber-700/60 group-hover:text-amber-700 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
-                        Bronze Sponsor
-                      </div>
-                    </div>
+            <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-2 scrollbar-hide">
+              <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-amber-700/15 to-amber-700/5 border-2 border-amber-700/40 rounded-lg flex items-center justify-center hover:border-amber-700/60 hover:bg-amber-700/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                <div className="text-center p-2">
+                  <div className="text-amber-700/60 hover:text-amber-700 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                    Bronze Sponsor 1
                   </div>
-                ))}
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={`bronze-duplicate-${i}`}
-                    className="sponsor-logo-item aspect-square bg-gradient-to-br from-amber-700/15 to-amber-700/5 border-2 border-amber-700/40 rounded-lg flex items-center justify-center hover:border-amber-700/60 hover:bg-amber-700/10 transition-all duration-300 group cursor-pointer flex-shrink-0"
-                  >
-                    <div className="text-center">
-                      <div className="text-amber-700/60 group-hover:text-amber-700 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
-                        Bronze Sponsor
-                      </div>
-                    </div>
+                </div>
+              </div>
+              <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-amber-700/15 to-amber-700/5 border-2 border-amber-700/40 rounded-lg flex items-center justify-center hover:border-amber-700/60 hover:bg-amber-700/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                <div className="text-center p-2">
+                  <div className="text-amber-700/60 hover:text-amber-700 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                    Bronze Sponsor 2
                   </div>
-                ))}
+                </div>
+              </div>
+              <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-amber-700/15 to-amber-700/5 border-2 border-amber-700/40 rounded-lg flex items-center justify-center hover:border-amber-700/60 hover:bg-amber-700/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                <div className="text-center p-2">
+                  <div className="text-amber-700/60 hover:text-amber-700 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                    Bronze Sponsor 3
+                  </div>
+                </div>
+              </div>
+              <div className="sponsor-logo-item aspect-square bg-gradient-to-br from-amber-700/15 to-amber-700/5 border-2 border-amber-700/40 rounded-lg flex items-center justify-center hover:border-amber-700/60 hover:bg-amber-700/10 transition-all duration-300 cursor-pointer flex-shrink-0 min-w-[100px]">
+                <div className="text-center p-2">
+                  <div className="text-amber-700/60 hover:text-amber-700 transition-colors text-[10px] sm:text-xs font-heading uppercase tracking-wider">
+                    Add Sponsor
+                  </div>
+                </div>
               </div>
             </div>
           </div>
