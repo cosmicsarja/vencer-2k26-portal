@@ -522,7 +522,7 @@ export const branches: Branch[] = [
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeWo8EXwtD2vNV924UORO7HahJCfixEpihWaFFej5D1ASHV1A/viewform?embedded=true",
     date: "April 10, 2026",
     posterUrl: "/posters/mech/1774852350510.png",
-    posterComingSoon: true,
+    posterComingSoon: false,
     teamSize: "single or doubles",
     duration: "11 am onwards",
     venue: "sports room",
