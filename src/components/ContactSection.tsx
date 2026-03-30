@@ -57,9 +57,9 @@ const ContactSection = () => {
 {[
             { 
               branch: "Artificial Intelligence & Data Science", 
-              coord1: "Miss. Neki Jain", 
+              coord1: " Neki Jain", 
               phone1: "+91 7568676897",
-              coord2: "Ramesh Jain",
+              coord2: "Ramesh H",
               phone2: "+91  7353204108",
             },
             { 
@@ -71,10 +71,10 @@ const ContactSection = () => {
             },
             { 
               branch: "Mechanical Engineering", 
-              coord1: "", 
-              phone1: "+91 98765 43212",
-              coord2: "Sneha Reddy",
-              phone2: "+91 98765 43222"
+              coord1: "Prathamesh patil",
+              phone1: "+91 8904308926",
+              coord2: "Pradeep kulkarni ",
+              phone2: "+91 8197898550",
             },
             { 
               branch: "Civil Engineering", 
@@ -92,24 +92,24 @@ const ContactSection = () => {
             },
             { 
               branch: "Electrical & Electronics Engg.", 
-              coord1: "Suresh Babu", 
-              phone1: "+91 98765 43215",
-              coord2: "Lakshmi Menon",
-              phone2: "+91 98765 43225"
+              coord1: "Shubham R Biradar ",
+              phone1: "+91 8904308926",
+              coord2: "Shreedevi Baligar",
+              phone2: "+91 9353924390",
             },
             { 
               branch: "Robotics & Automation", 
-              coord1: "Arjun Rao", 
-              phone1: "+91 98765 43216",
-              coord2: "Pooja Iyer",
-              phone2: "+91 98765 43226"
+              coord1: "Yasirahmad Ron",
+              phone1: "+91 8951450068",
+              coord2: "Abhinandan",
+              phone2: "+91 866-0569165",
             },
             { 
               branch: "BCA", 
-              coord1: "Neha Verma", 
-              phone1: "+91 98765 43217",
-              coord2: "Rajesh Pillai",
-              phone2: "+91 98765 43227"
+              coord1: "Ruchita Nelagali",
+              phone1: "+91 7411481463",
+              coord2: "Sushil Sahadevache",
+              phone2: "+91 9353362031",
             },
           ].map((branchItem, i) => (
             <motion.div
