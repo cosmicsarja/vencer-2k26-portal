@@ -989,12 +989,12 @@ export const branches: Branch[] = [
         prizePool: "Grand prizes",
         entryFee: "₹100",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
-        date: "April 11, 2026",
+        date: "April 10, 2026",
         posterUrl: "/posters/BCA/eva.png",
         branch: "BCA",
-        teamSize: "Team of two members",
-        duration: "1.5 Hours",
-        venue: "Seminar Hall",
+        teamSize: "2 members",
+        duration: "12 PM to 2 PM",
+        venue: "BCA classroom",
         rulebook: "/rulebooks/Eva Intellect.pdf",
         rules: [
           "Student ID card is mandatory",
@@ -1004,23 +1004,22 @@ export const branches: Branch[] = [
           "Judges' decision will be final",
           "Topics: C programming, DBMS, Python, Java",
           "Test your brainpower, boost your confidence",
-          "Event coordinators:- Tanuja k:-9775741066, Sushil s:-9353362031",
         ],
-        coordinators: [{ name: "Manoj Singh", contact: "9876543290" }, { name: "Ritu Verma", contact: "9876543291" }]
+        coordinators: [{ name: "Tanuja k", contact: "7975741066" }, { name: "Sushil s", contact: "9353362031" }]
       },
       {
         title: "Navi Voice (Debate)",
         category: "Technical",
         description: "Think, Speak, Lead - A premier communication platform designed to challenge students' intellectual boundaries. Engage in structured battles tackling contemporary social, ethical, and global issues.",
         prizePool: "Grand prizes",
-        entryFee: "₹100",
+        entryFee: "₹150",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
         date: "April 10, 2026",
         posterUrl: "/posters/BCA/navi.png",
         branch: "BCA",
-        teamSize: "Individual",
-        duration: "2 Hours",
-        venue: "Main Auditorium",
+        teamSize: "idividual",
+        duration: "12 PM to 5 PM",
+        venue: "bca classroom",
         rulebook: "/rulebooks/Navi Voice.pdf",
         rules: [
           "Individual participation",
@@ -1032,21 +1031,21 @@ export const branches: Branch[] = [
           "Judges' decision will be final",
           "Focus on critical thinking and public speaking"
         ],
-        coordinators: [{ name: "Sarvesh Kumar", contact: "9876543292" }, { name: "Swati Pandey", contact: "9876543293" }]
+        coordinators: [{ name: "Abuzer S", contact: "9740332167" }, { name: "Manojgouda P", contact: "6361209856" }]
       },
       {
         title: "Jack's Tribal Art (Face Painting)",
         category: "Non-Technical",
         description: "Turn your face into an Avatar masterpiece - A fun activity inspired by the movie Avatar. Paint faces using colors and patterns related to Na'vi culture and the world of Pandora.",
         prizePool: "Grand prizes",
-        entryFee: "₹50",
+        entryFee: "₹150",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
-        date: "April 11, 2026",
+        date: "April 10, 2026",
         posterUrl: "/posters/BCA/jacks.png",
         branch: "BCA",
         teamSize: "Team of two members (artist and assistant)",
-        duration: "1.5 Hours",
-        venue: "Art Zone",
+        duration: "12 PM to 5 PM",
+        venue: "BCA seminar hall",
         rulebook: "/rulebooks/Jack's Tribal Art.pdf",
         rules: [
           "Team of two members (art and artist)",
@@ -1056,21 +1055,21 @@ export const branches: Branch[] = [
           "Judging based on: creativity, neatness, relevance to Avatar theme, color combination, overall presentation",
           "Judges' decision will be final"
         ],
-        coordinators: [{ name: "Aman Verma", contact: "9876543294" }, { name: "Nikita Sharma", contact: "9876543295" }]
+        coordinators: [{ name: "vaishnavi", contact: "8197718346" }, { name: "Amrut y", contact: "9482858458" }]
       },
       {
         title: "Avatar Reelverse (Reel Making)",
         category: "Non-Technical",
         description: "Create, Edit, Engage - Avatar themed reel making competition showcasing creativity, originality and the spirit of adventure. Blend fantasy with meaningful message exploration.",
         prizePool: "Grand prizes",
-        entryFee: "₹50",
+        entryFee: "₹150",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
-        date: "April 10, 2026",
+        date: "April 10, 2026 to April 11, 2026",
         posterUrl: "/posters/BCA/avatar reelverse.png",
         branch: "BCA",
         teamSize: "Team of three to five members",
-        duration: "2 Hours",
-        venue: "Media Lab",
+        duration: "12 PM to 5 PM",
+        venue: "BCA department and collage ground (for shooting)",
         rulebook: "/rulebooks/Avatar Reelverse.pdf",
         rules: [
           "Team of 3-5 members",
@@ -1081,7 +1080,7 @@ export const branches: Branch[] = [
           "Requires: Smartphone/Camera, Tripod, Editing apps, Props or costumes (optional)",
           "Judges' decision will be final"
         ],
-        coordinators: [{ name: "Harsh Singh", contact: "9876543296" }, { name: "Arijit Sengupta", contact: "9876543297" }]
+        coordinators: [{ name: "Ruchita N", contact: "7411487463" }, { name: "Subramanya M", contact: "7019624943" }]
       }
     ],
     culturalEvents: [],
@@ -1227,9 +1226,10 @@ export const gamingEvents: Event[] = [
     category: "Gaming" as const,
     description: "Show Your Skill, Claim the Throne - An adrenaline-pumping Battle Royale showdown. Test your tactical thinking, precision aiming, and team coordination.",
     prizePool: "Grand prizes",
-    entryFee: "₹150",
-    formLink: "https://forms.google.com",
-    date: "April 10, 2026",
+    branch: "BCA",
+    entryFee: "₹200",
+    formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdqfaFLyAISFwEVfGSfDP0huiU0gK8j56hhdEl_mUZ6B25bwg/viewform?embedded=true",
+    date: "April 10, 2026 to April 11, 2026",
     posterUrl: "/posters/BCA/pandora wrir.png",
     teamSize: "Team of four members",
     duration: "Varies by rounds",
@@ -1254,7 +1254,7 @@ export const gamingEvents: Event[] = [
       "Follow fair play and respect all players and organizers",
       "The organizer's decision will be final"
     ],
-    coordinators: [{ name: "Arjun Singh", contact: "9876543312" }, { name: "Poornima Rao", contact: "9876543313" }]
+    coordinators: [{ name: "Vikas S", contact: "9731218537" }, { name: "Prajwal J", contact: "8073334695" }]
   },
 
 ];
