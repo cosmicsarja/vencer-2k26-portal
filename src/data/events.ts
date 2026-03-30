@@ -104,7 +104,19 @@ export const branches: Branch[] = [
         duration: "3 Hours",
         venue: "Seminar Hall",
         rulebook: "/rulebooks/AI Shark Tank.pdf",
-        rules: ["Team of 2-3", "3-min pitch + Q&A", "Viable AI business ideas", "Judged on market potential, innovation, presentation"],
+        rules: [
+"Participation is allowed individually or in teams of up to 4 members",
+"Participants must report 10 minutes before the event begins",
+"The topic or problem statement will be provided on the spot",
+"The solution must be original and based on AI or technology",
+"Plagiarism is strictly prohibited",
+"Participants must bring their own laptop and internet connection",
+"All teams must strictly adhere to the given time limits",
+"Judges’ decision will be final and binding",
+"Round 1: Ideation – Participants analyze the problem statement and develop an innovative AI-based solution (45 minutes)",
+"Round 2: Final Pitch – 5 minutes for presentation and 2 minutes for Q&A with judges",
+"Participants must clearly explain their idea, implementation, and feasibility"
+],
         coordinators: [{ name: "Siddhant Sharma", contact: "9876543216" }, { name: "Divya Nair", contact: "9876543217" }]
       },
       {
