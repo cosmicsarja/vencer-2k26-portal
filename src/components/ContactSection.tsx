@@ -18,7 +18,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 max-w-5xl mx-auto mb-10 sm:mb-12">
           {[
             { icon: Mail, label: "Email", value: "info@aitmbgm.ac.in", href: "mailto:info@aitmbgm.ac.in" },
-            { icon: Phone, label: "Phone", value: "0831 243 8123/100", href: "tel:0831 243 8123/100" },
+            { icon: Phone, label: "Phone", value: "86609735448", href: "tel:86609735448" },
             { icon: MapPin, label: "Location", value: "AITM, Belagavi", href: "https://www.google.com/maps/place/Angadi+Institute+of+Technology+and+Management/@15.8446878,74.4669055,19z/data=!4m6!3m5!1s0x3bbf653f86391c41:0x6f90eeb682e03767!8m2!3d15.84528!4d74.471307!16s%2Fg%2F11bwdycjz0?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D" },
             { icon: Instagram, label: "Instagram", value: "@aitm_belagavi_", href: "https://www.instagram.com/aitm_belagavi_/" },
           ].map((item, i) => (
