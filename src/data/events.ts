@@ -388,34 +388,34 @@ export const branches: Branch[] = [
         category: "Technical" as const,
         description: "Design and build the strongest bridge using provided materials",
         prizePool: "Grand prizes",
-        entryFee: "₹100",
-        formLink: "https://forms.google.com",
+        entryFee: "₹30 per participant",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfo_kbBcTn1iypdJcXfHGK9XHNb0_sruwyIm6A7Ht0nmKREBw/viewform?embedded=true",
         date: "April 10, 2026",
         posterUrl: "public/posters/mech/1774851567356.png",
         branch: "MECH",
-        teamSize: "2-3 members",
-        duration: "4 Hours",
-        venue: "Workshop",
+        teamSize: "1 or 2 members",
+        duration: "2:30 pm onwards",
+        venue: "mechanical classroom",
         rulebook: "/rulebooks/Bridge Making Challenge.pdf",
         rules: ["Team of 2-3 members", "Materials: ice cream sticks and glue (provided)", "Span 30cm min", "Load test at center", "Best load-to-weight ratio wins"],
-        coordinators: [{ name: "Rajendra Sharma", contact: "9876543240" }, { name: "Samiya Khan", contact: "9876543241" }]
+        coordinators: [{ name: "Nabeel D", contact: "988688578" }, { name: "Naminath P", contact: "8867073077" }]
       },
       {
         title: "The Auto Expert",
-        category: "Technical",
+        category: "Technical", 
         description: "Mechanical and auto parts, logos, identification quiz",
         prizePool: "Grand prizes",
-        entryFee: "₹100",
-        formLink: "https://forms.google.com",
-        date: "April 11, 2026",
+        entryFee: "₹30 per participant",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdFn8hbf8QibbywsuR-6C1Ke5rBJmNb_noL0w4vebWL-GdHlA/viewform?embedded=true",
+        date: "April 10, 2026",
         posterUrl: "public/posters/mech/1774850972901.png",
         branch: "MECH",
-        teamSize: "Individual",
-        duration: "2 Hours",
-        venue: "Seminar Hall",
+        teamSize: "1 or 2 members",
+        duration: "11 am onwards",
+        venue: "mechanical classroom",
         rulebook: "/rulebooks/The Auto Expert.pdf",
         rules: ["Individual participation", "Multiple rounds: parts ID, logos, quiz", "No aids allowed", "Fastest accurate answers"],
-        coordinators: [{ name: "Harshit Verma", contact: "9876543242" }, { name: "Priya Nair", contact: "9876543243" }]
+        coordinators: [{ name: "Takkappa ", contact: "9611910131" }, { name: "Suraj M", contact: "7349306149" }]
       },
       {
     title: "Number Circle Cricket",
@@ -423,21 +423,21 @@ export const branches: Branch[] = [
     description: "Unique cricket variant with number scoring circle mechanics",
     prizePool: "Grand prizes",
     entryFee: "₹100",
-    formLink: "https://forms.google.com",
-    date: "April 11, 2026",
+    formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfEXh14rQ9EIDVEsoM9LTu_bfREcpk7EGXyyuu0zb2pV7cPHA/viewform?embedded=true",
+    date: "April 10, 2026",
     posterUrl: "public/posters/mech/1774851413605.png",
-    teamSize: "6 members",
-    duration: "2 Hours",
-    venue: "Sports Arena",
+    teamSize: "4 players",
+    duration: "11 am onwards",
+    venue: "clg ground",
     rulebook: "/rulebooks/Number Circle Cricket.pdf",
     rules: [
-      "Teams of 6 players each",
+      "Teams of 4 players each",
       "Special number circle scoring system",
       "6-over match format",
       "Boundary and wicket rules apply",
       "Fair play mandatory"
     ],
-    coordinators: [{ name: "Rajesh Kumar", contact: "9876543314" }, { name: "Naina Singh", contact: "9876543315" }]
+    coordinators: [{ name: "Prajwal M", contact: "9964904108" }, { name: "swapnil P", contact: "7892471326" }]
   },
       {
         title: "Stand-up Comedy",
@@ -445,13 +445,13 @@ export const branches: Branch[] = [
         description: "Unleash your inner comedian in the Iron Mountain Clan showdown – roast, joke, and conquer the stage with mechanical-themed humor!",
         prizePool: "Grand prizes",
         entryFee: "₹50",
-        formLink: "https://forms.google.com",
-        date: "April 10, 2026",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfZ7p4g1KvfOqovrjZbEG2s5lpu2pyE7q9fpE27c4zSFANQhw/viewform?embedded=true",
+        date: "April 11, 2026",
         posterUrl: "public/posters/mech/1774851688554.png",
         branch: "MECH",
         teamSize: "Individual",
-        duration: "1.5 Hours",
-        venue: "Seminar Hall",
+        duration: "11 am onwards",
+        venue: "design lab",
         rulebook: "/rulebooks/Stand-up Comedy.pdf",
         rules: [
           "Individual participation only",
@@ -461,20 +461,20 @@ export const branches: Branch[] = [
           "Judged on originality, delivery, and audience reaction",
           "Props allowed (keep it simple)"
         ],
-        coordinators: [{ name: "Deepak Chawla", contact: "9876543244" }, { name: "Shruti Singh", contact: "9876543245" }]
+        coordinators: [{ name: "Nishant M", contact: "8277357163" }, { name: "Varun K", contact: "9108428405" }]
       },
       {
     title: "Ping Pong (Table Tennis)",
-    category: "Gaming" as const,
+    category: "Non-Technical",
     description: "Fast-paced table tennis competition with exciting rallies and matches",
     prizePool: "Grand prizes",
-    entryFee: "₹100",
-    formLink: "https://forms.google.com",
-    date: "April 11, 2026",
+    entryFee: "₹50",
+    formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeWo8EXwtD2vNV924UORO7HahJCfixEpihWaFFej5D1ASHV1A/viewform?embedded=true",
+    date: "April 10, 2026",
     posterUrl: "public/posters/mech/1774852350510.png",
-    teamSize: "Individual or Pair",
-    duration: "3 Hours",
-    venue: "Sports Hall",
+    teamSize: "single or doubles",
+    duration: "11 am onwards",
+    venue: "sports room",
     rulebook: "/rulebooks/Ping Pong.pdf",
     rules: [
       "Individual or pair (doubles) format",
@@ -487,7 +487,7 @@ export const branches: Branch[] = [
       "Round-robin or knockout format based on entries",
       "Judges' decision is final"
     ],
-    coordinators: [{ name: "Srinivas Iyer", contact: "9876543318" }, { name: "Anaya Kumari", contact: "9876543319" }]
+    coordinators: [{ name: "Pradeep U", contact: "6361992135" }, { name: "Vinayak B", contact: "7676165547" }]
   }
   
     ],
