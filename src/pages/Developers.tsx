@@ -4,6 +4,8 @@ import sahilPhoto from "@/assets/sahil.png";
 import rohanPhoto from "@/assets/rhohan.png";
 import chetanPhoto from "@/assets/vencer-logo.png";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Developer {
   name: string;
@@ -76,40 +78,118 @@ const DeveloperCard = ({ dev }: { dev: Developer }) => {
 };
 
 const Developers = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  
+  const itemsPerPage = 1; // Show only 1 card at a time
+  const totalSlides = developers.length;
+  
+  const handlePrevious = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+  
+  const handleNext = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
+  
+  const visibleDeveloper = developers[currentIndex];
+
   return (
-    <section className="relative w-full min-h-screen py-24 pt-32 bg-gradient-to-b from-background via-slate-950/30 to-background">
-      <div className="container px-4 max-w-7xl w-full mx-auto">
+    <section className="relative w-full min-h-screen py-16 sm:py-20 md:py-24 pt-24 sm:pt-28 md:pt-32 bg-gradient-to-b from-background via-slate-950/30 to-background">
+      <div className="container px-4 sm:px-6 md:px-8 max-w-7xl w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
         >
           <motion.h1 
-            className="font-display text-4xl sm:text-5xl md:text-6xl tracking-wider pandora-gradient-text mb-6 font-bold"
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wider pandora-gradient-text mb-4 sm:mb-6 font-bold"
             animate={{ scale: [1, 1.03, 1] }}
             transition={{ duration: 4, repeat: Infinity }}
           >
-            Meet Our Developers
+            Developers
           </motion.h1>
-          <p className="font-body text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The brilliant minds crafting VENCER 2K26 portal experience
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto w-full pb-12">
-          {developers.map((dev) => (
-            <motion.div 
-              key={dev.name} 
-              className="flex justify-center items-start"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true, margin: "-50px" }}
+        {/* Carousel Container */}
+        <div className="relative w-full">
+          {/* Single Card Display */}
+          <div className="overflow-hidden flex justify-center">
+            <motion.div
+              className="w-full max-w-sm flex justify-center px-2 sm:px-4 pb-4 sm:pb-8 md:pb-12"
+              initial={{ x: direction > 0 ? 100 : -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: direction > 0 ? -100 : 100, opacity: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              <DeveloperCard dev={dev} />
+              <motion.div 
+                className="flex justify-center items-start"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <DeveloperCard dev={visibleDeveloper} />
+              </motion.div>
             </motion.div>
-          ))}
+          </div>
+
+          {/* Navigation Buttons - Mobile Optimized */}
+          <div className="flex flex-col gap-4 sm:gap-6 mt-6 sm:mt-8 md:mt-12">
+            {/* Slide Indicators - Primary on Mobile */}
+            <div className="flex gap-1.5 sm:gap-2.5 md:gap-3 flex-wrap justify-center px-2">
+              {developers.map((_, idx) => (
+                <motion.button
+                  key={idx}
+                  onClick={() => {
+                    setDirection(idx > currentIndex ? 1 : -1);
+                    setCurrentIndex(idx);
+                  }}
+                  className={`rounded-full transition-all duration-300 min-h-3 ${
+                    idx === currentIndex
+                      ? "bg-cyan-400 w-8 sm:w-10 h-3 sm:h-3.5"
+                      : "bg-slate-600 hover:bg-slate-500 w-3 sm:w-3.5 h-3 sm:h-3.5"
+                  }`}
+                  aria-label={`Go to ${developers[idx].name}`}
+                />
+              ))}
+            </div>
+
+            {/* Arrow Buttons - Horizontal Layout */}
+            <div className="flex justify-center items-center gap-3 sm:gap-4 md:gap-6 px-2">
+              <motion.button
+                onClick={handlePrevious}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-2.5 sm:p-3 md:p-3.5 rounded-full border border-cyan-500/50 hover:border-cyan-400 bg-slate-900/50 hover:bg-slate-800/80 transition-all duration-300 text-cyan-400 hover:text-cyan-300 active:bg-slate-700"
+                aria-label="Previous developer"
+              >
+                <ChevronLeft size={22} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
+              </motion.button>
+
+              {/* Developer Name Counter */}
+              <div className="text-center min-w-fit">
+                <p className="text-sm sm:text-base font-semibold text-cyan-400">
+                  {visibleDeveloper.name}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {currentIndex + 1}/{totalSlides}
+                </p>
+              </div>
+
+              <motion.button
+                onClick={handleNext}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-2.5 sm:p-3 md:p-3.5 rounded-full border border-cyan-500/50 hover:border-cyan-400 bg-slate-900/50 hover:bg-slate-800/80 transition-all duration-300 text-cyan-400 hover:text-cyan-300 active:bg-slate-700"
+                aria-label="Next developer"
+              >
+                <ChevronRight size={22} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
+              </motion.button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
