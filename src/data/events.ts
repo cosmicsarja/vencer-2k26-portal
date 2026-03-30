@@ -1223,27 +1223,6 @@ export const gamingEvents: Event[] = [
     coordinators: [{ name: "Dharun Kumar", contact: "9876543308" }, { name: "Vedica Singh", contact: "9876543309" }]
   },
   {
-    title: "Valorant Clash",
-    category: "Gaming" as const,
-    description: "5v5 tactical FPS team battles with high-stakes eliminations",
-    prizePool: "Grand prizes",
-    entryFee: "₹200",
-    formLink: "https://forms.google.com",
-    date: "April 11, 2026",
-    teamSize: "5 members",
-    duration: "Full Day",
-    venue: "LAN Zone",
-    rulebook: "/rulebooks/Valorant Clash.pdf",
-    rules: [
-      "Fixed 5-player teams",
-      "LAN tournament - no online play",
-      "Tournament admins control accounts",
-      "Standard Valorant competitive rules",
-      "Multiple maps and agents allowed"
-    ],
-    coordinators: [{ name: "Saurav Singh", contact: "9876543310" }, { name: "Sneha Kumar", contact: "9876543311" }]
-  },
-  {
     title: "Pandora Warriors (Mobile Gaming - Free Fire)",
     category: "Gaming" as const,
     description: "Show Your Skill, Claim the Throne - An adrenaline-pumping Battle Royale showdown. Test your tactical thinking, precision aiming, and team coordination.",
