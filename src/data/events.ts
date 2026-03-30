@@ -787,7 +787,7 @@ export const branches: Branch[] = [
         venue: "IN CLG Ground",
         rulebook: "/rulebooks/Robo Race Event.pdf",
         rules: ["Team of 3-4 members", "Standard robot chassis", "Navigate obstacle course", "Fastest time wins", "Multiple rounds", "Safety gear mandatory",],
-        coordinators: [{ name: "Varun Sharma", contact: "9876543284" }, { name: "Priyanka Singh", contact: "9876543285" }]
+        coordinators: [{ name: "Pramod V", contact: "8217564700" }, { name: "Ashish A", contact: "6364470388" }]
       },
       {
         title: "do or die arena",
@@ -814,7 +814,7 @@ export const branches: Branch[] = [
           "Combination of mental and physical tasks",
           "Judges decision final"
         ],
-        coordinators: [{ name: "Anirud Reddy", contact: "9876543286" }, { name: "Srishti Kapoor", contact: "9876543287" }]
+        coordinators: [{ name: "Shrivats S", contact: "8105640940" }, { name: "Shreya S", contact: "8088247900" }]
       },
       {
         title: "Volley Ball",
@@ -842,7 +842,7 @@ export const branches: Branch[] = [
           "Misbehavior leads to disqualification",
           "Registration online or on-spot"
         ],
-        coordinators: [{ name: "Srinivas Iyer", contact: "9876543316" }, { name: "Anaya Banerjee", contact: "9876543317" }]
+        coordinators: [{ name: "Abhinandan I", contact: "8660569165" }, { name: "Shreetej P", contact: "9538196123" }]
       },
 
     ],
