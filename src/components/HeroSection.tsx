@@ -146,7 +146,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
             to="/branches"
             className="inline-block font-display text-xs sm:text-sm tracking-wider px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-primary via-fest-cyan to-fest-blue text-primary-foreground font-bold hover:shadow-[0_0_35px_hsl(var(--fest-teal)_/_0.4)] transition-all duration-300 hover:scale-105"
           >
-            Enter the Tribes
+            Dive into the Tribes
           </Link>
         </motion.div>
       </div>
