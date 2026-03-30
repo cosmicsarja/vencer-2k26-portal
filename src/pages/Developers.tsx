@@ -32,7 +32,7 @@ const developers: Developer[] = [
     handle: " Kalki__33_",
     instagram: "https://www.instagram.com/kalki__33_?igsh=cnhxbHEzcXpib2dh",
     github: "https://github.com/chetanmatapati33",
-    linkedin: "https://linkedin.com/in/chetanm",
+    linkedin: "https://www.linkedin.com/in/chetan-mathapati-021092296?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Sahil Barbal",
