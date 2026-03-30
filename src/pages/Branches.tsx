@@ -47,7 +47,7 @@ const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branc
         <motion.img
           src={avatar}
           alt={`${tribe.clanName} Avatar`}
-          className="absolute right-[-10px] bottom-0 w-[100px] sm:w-[140px] opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
+          className="absolute right-[-5px] bottom-0 w-[70px] xs:w-[85px] sm:w-[100px] md:w-[140px] opacity-60 sm:opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
           loading="lazy"
           decoding="async"
           style={{
@@ -59,7 +59,7 @@ const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branc
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        <div className="relative p-4 sm:p-6 pr-[90px] sm:pr-[120px]">
+        <div className="relative p-3 xs:p-4 sm:p-6 pr-[70px] xs:pr-[85px] sm:pr-[100px] md:pr-[120px]">
           <span className={`font-display text-[10px] tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
             {tribe.biome}
           </span>
