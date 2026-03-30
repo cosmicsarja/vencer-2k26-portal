@@ -112,7 +112,7 @@ export const branches: Branch[] = [
         category: "Non-Technical" as const,
         description: "Creative no-fire cooking competition using innovative ingredients",
         prizePool: "Grand prizes",
-        entryFee: "₹100",
+        entryFee: "₹",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeaAwdfnvAlJj_m4AuslO3yiDYT81vCvWVafdSMmQ3SQxeXfw/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/AIDS/EDIBLE ART ARENA (1).jpg",
@@ -122,7 +122,7 @@ export const branches: Branch[] = [
         venue: "Food Zone",
         rulebook: "/rulebooks/Cooking Without Fire.pdf",
         rules: ["Team of 2-3", "No cooking appliances or fire", "Ingredients provided", "Judged on taste, creativity, presentation"],
-        coordinators: [{ name: "Rohan Iyer", contact: "9876543218" }, { name: "Shreya Desai", contact: "9876543219" }]
+        coordinators: [{ name: "Rohan Iyer ", contact: "9876543218" }, { name: "Shreya Desai", contact: "9876543219" }]
       },
       {
         title: "Brand Baazi - Sell It If U Can ",
@@ -141,9 +141,62 @@ export const branches: Branch[] = [
         rules: ["1-2 members", "60 seconds max", "Product revealed on spot", "Props and creativity encouraged"],
         coordinators: [{ name: "Arjun Kapoor", contact: "9876543220" }, { name: "Megha Saxena", contact: "9876543221" }]
       },
+      {
+        title: "Dodge Ball",
+        category: "Non-Technical" as const,
+        description: "High-energy dodgeball tournament with team coordination and agility challenges",
+        prizePool: "Grand prizes",
+        entryFee: "₹100",
+        formLink: "https://forms.google.com",
+        date: "April 10, 2026",
+        branch: "AI & DS",
+        teamSize: "8-10 members",
+        duration: "2 Hours",
+        venue: "Sports Ground",
+        rulebook: "/rulebooks/Dodge Ball.pdf",
+        rules: [
+          "Team of 8-10 players",
+          "Standard dodgeball rules apply",
+          "Multiple rounds: qualifiers and finals",
+          "No throwing above neck level",
+          "Fair play and sportsmanship mandatory",
+          "Teams must follow referee decisions",
+          "Best of 3 matches format",
+          "Safe equipment provided",
+          "Judges' decision is final"
+        ],
+        coordinators: [{ name: "Vikram Singh", contact: "9876543328" }, { name: "Priya Reddy", contact: "9876543329" }]
+      },
     ],
     culturalEvents: [],
-    gamingEvents: [],
+    gamingEvents: [
+      {
+        title: "Dodge Ball",
+        category: "Gaming",
+        description: "High-energy dodgeball tournament with team coordination and agility challenges",
+        prizePool: "Grand prizes",
+        entryFee: "₹100",
+        formLink: "https://forms.google.com",
+        date: "April 10, 2026",
+        branch: "AI & DS",
+        teamSize: "8-10 members",
+        duration: "2 Hours",
+        venue: "Sports Ground",
+        rulebook: "/rulebooks/Dodge Ball.pdf",
+        rules: [
+          "Team of 8-10 players",
+          "Standard dodgeball rules apply",
+          "Multiple rounds: qualifiers and finals",
+          "No throwing above neck level",
+          "Fair play and sportsmanship mandatory",
+          "Teams must follow referee decisions",
+          "Best of 3 matches format",
+          "Safe equipment provided",
+          "Judges' decision is final"
+        ],
+        coordinators: [{ name: "Vikram Singh", contact: "9876543328" }, { name: "Priya Reddy", contact: "9876543329" }]
+      }
+    ],
   },
   {
     name: "Computer Science Engineering",
@@ -1105,6 +1158,31 @@ export const gamingEvents: Event[] = [
       "Judges' decision is final"
     ],
     coordinators: [{ name: "Srinivas Iyer", contact: "9876543318" }, { name: "Anaya Kumari", contact: "9876543319" }]
+  },
+  {
+    title: "Dodge Ball",
+    category: "Gaming" as const,
+    description: "High-energy dodgeball tournament with team coordination and agility challenges",
+    prizePool: "Grand prizes",
+    entryFee: "₹100",
+    formLink: "https://forms.google.com",
+    date: "April 10, 2026",
+    teamSize: "8-10 members",
+    duration: "2 Hours",
+    venue: "Sports Ground",
+    rulebook: "/rulebooks/Dodge Ball.pdf",
+    rules: [
+      "Team of 8-10 players",
+      "Standard dodgeball rules apply",
+      "Multiple rounds: qualifiers and finals",
+      "No throwing above neck level",
+      "Fair play and sportsmanship mandatory",
+      "Teams must follow referee decisions",
+      "Best of 3 matches format",
+      "Safe equipment provided",
+      "Judges' decision is final"
+    ],
+    coordinators: [{ name: "Vikram Singh", contact: "9876543328" }, { name: "Priya Reddy", contact: "9876543329" }]
   },
 ];
 

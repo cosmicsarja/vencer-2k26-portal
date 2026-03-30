@@ -2,7 +2,7 @@ import ProfileCard from "@/components/ProfileCard";
 import cosmicsarjaPhoto from "@/assets/cosmicsarja-photo.png";
 import sahilPhoto from "@/assets/sahil.png";
 import rohanPhoto from "@/assets/rhohan.png";
-import chetanPhoto from "@/assets/vencer-logo.png";
+import chetanPhoto from "@/assets/chetan.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
