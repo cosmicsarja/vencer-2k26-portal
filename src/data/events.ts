@@ -123,24 +123,24 @@ export const branches: Branch[] = [
         entryFee: "₹200",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeq1ptoE1R5vMgfC7sRtNGIlns-2e6quFksW29NfDYYov_HNQ/viewform?embedded=true",
         date: "April 10, 2026",
-        posterUrl: "/posters/AIDS/Final_with_QR-Picsart-AiImageEnhancer.png",
+        posterUrl: "/posters/AIDS/Final_with_QR-Picsart-AiImageEnhancer.jpg",
         branch: "AI & DS",
         teamSize: "1-3 members",
         duration: "12 pm to 3 pm",
         venue: "Seminar Hall 2 AI dept ground Floor",
         rulebook: "/rulebooks/AI Shark Tank.pdf",
-        rules: [
-"Participation is allowed individually or in teams of up to 4 members",
+       rules: [
+"Participation: Individual or Team (up to 4 members)",
 "Participants must report 10 minutes before the event begins",
-"The topic or problem statement will be provided on the spot",
-"The solution must be original and based on AI or technology",
+"Problem statement will be provided on the spot",
+"Solution must be original and based on AI/technology",
 "Plagiarism is strictly prohibited",
 "Participants must bring their own laptop and internet connection",
-"All teams must strictly adhere to the given time limits",
+"Strict adherence to given time limits is required",
 "Judges’ decision will be final and binding",
-"Round 1: Ideation – Participants analyze the problem statement and develop an innovative AI-based solution (45 minutes)",
-"Round 2: Final Pitch – 5 minutes for presentation and 2 minutes for Q&A with judges",
-"Participants must clearly explain their idea, implementation, and feasibility"
+"Round 1: Ideation (45 minutes)",
+"Round 2: Final Pitch (5 minutes presentation + 2 minutes Q&A)",
+"Participants must clearly explain idea, implementation, and feasibility"
 ],
         coordinators: [{ name: "Arzaan Khan", contact: "7338462010" }, { name: "Aishwarya Byati", contact: "8660973548" }]
       },
@@ -172,7 +172,7 @@ export const branches: Branch[] = [
         coordinators: [{ name: "Anupreksha Patil", contact: "7019993207" }, { name: "Sagarika", contact: "9591448042" }]
       },
       {
-        title: "Brand Baazi - Sell It If U Can ",
+        title: "Brand Baazi - Sell It If U Can(One minute ad challenge)",
         category: "Non-Technical" as const,
         description: "Create compelling 60-second product advertisements",
         prizePool: "Grand prizes",
