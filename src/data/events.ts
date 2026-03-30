@@ -842,7 +842,7 @@ export const branches: Branch[] = [
           "Misbehavior leads to disqualification",
           "Registration online or on-spot"
         ],
-        coordinators: [{ name: "Abhinandan I", contact: "8660569165" }, { name: "Shreetej P", contact: "9538196123" }]
+        coordinators: [{ name: "Abhinandan I", contact: "8660569165" }, { name: "Shreetej B", contact: "9538196123" }]
       },
 
     ],
