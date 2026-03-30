@@ -1171,31 +1171,7 @@ export const gamingEvents: Event[] = [
     ],
     coordinators: [{ name: "Srinivas Iyer", contact: "9876543318" }, { name: "Anaya Kumari", contact: "9876543319" }]
   },
-  {
-    title: "Dodge Ball",
-    category: "Gaming" as const,
-    description: "High-energy dodgeball tournament with team coordination and agility challenges",
-    prizePool: "Grand prizes",
-    entryFee: "₹100",
-    formLink: "https://forms.google.com",
-    date: "April 10, 2026",
-    teamSize: "8-10 members",
-    duration: "2 Hours",
-    venue: "Sports Ground",
-    rulebook: "/rulebooks/Dodge Ball.pdf",
-    rules: [
-      "Team of 8-10 players",
-      "Standard dodgeball rules apply",
-      "Multiple rounds: qualifiers and finals",
-      "No throwing above neck level",
-      "Fair play and sportsmanship mandatory",
-      "Teams must follow referee decisions",
-      "Best of 3 matches format",
-      "Safe equipment provided",
-      "Judges' decision is final"
-    ],
-    coordinators: [{ name: "Vikram Singh", contact: "9876543328" }, { name: "Priya Reddy", contact: "9876543329" }]
-  },
+  
 ];
 
 
