@@ -21,6 +21,41 @@ const Events = () => {
   const [registrationLink, setRegistrationLink] = useState<string | null>(null);
 
   // Handle branch from URL query params
+  const isAnyModalOpen = selectedEvent !== null || registrationLink !== null;
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (selectedEvent || registrationLink) {
+        setSelectedEvent(null);
+        setRegistrationLink(null);
+      }
+    };
+
+    if (isAnyModalOpen) {
+      document.body.style.overflow = "hidden";
+      if (!window.history.state?.eventModalOpen) {
+        window.history.pushState({ eventModalOpen: true }, "");
+      }
+      window.addEventListener("popstate", handlePopState);
+    } else {
+      document.body.style.overflow = "";
+      window.removeEventListener("popstate", handlePopState);
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [selectedEvent, registrationLink, isAnyModalOpen]);
+
+  const closeModals = useCallback(() => {
+    setSelectedEvent(null);
+    setRegistrationLink(null);
+    if (window.history.state?.eventModalOpen) {
+      window.history.back();
+    }
+  }, []);
+
   useEffect(() => {
     const branchParam = searchParams.get("branch");
     if (branchParam) {
@@ -127,12 +162,12 @@ const Events = () => {
 
       <EventDetailModal
         event={selectedEvent}
-        onClose={() => setSelectedEvent(null)}
+        onClose={closeModals}
         onRegister={handleRegister}
       />
       <RegistrationModal
         formLink={registrationLink}
-        onClose={() => setRegistrationLink(null)}
+        onClose={closeModals}
       />
     </section>
   );

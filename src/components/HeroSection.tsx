@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useMemo, useState, forwardRef } from "react";
+import { useMemo, useState, useEffect, forwardRef } from "react";
 import { Briefcase, X, Sparkles, Music, Clock } from "lucide-react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
@@ -11,6 +11,36 @@ import vishwanathImg from "@/assets/vishwanath.jpg";
 
 const HeroSection = forwardRef<HTMLElement>((_, ref) => {
   const [isMysteryOpen, setIsMysteryOpen] = useState(false);
+  
+  // Intercept the browser back button so it closes the modal instead of navigating away
+  useEffect(() => {
+    const handlePopState = (e: PopStateEvent) => {
+      if (document.body.style.overflow === "hidden" || isMysteryOpen) {
+        setIsMysteryOpen(false);
+      }
+    };
+
+    if (isMysteryOpen) {
+      document.body.style.overflow = "hidden";
+      window.history.pushState({ modalOpen: true }, "");
+      window.addEventListener("popstate", handlePopState);
+    } else {
+      document.body.style.overflow = "";
+      window.removeEventListener("popstate", handlePopState);
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [isMysteryOpen]);
+
+  const closeMysteryModal = () => {
+    setIsMysteryOpen(false);
+    if (window.history.state?.modalOpen) {
+      window.history.back();
+    }
+  };
   
   const sporeData = useMemo(
     () =>
@@ -195,7 +225,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setIsMysteryOpen(false)}
+              onClick={closeMysteryModal}
               className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
             />
             
@@ -215,7 +245,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setIsMysteryOpen(false);
+                  closeMysteryModal();
                 }}
                 className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[100] rounded-full p-2 text-white/50 hover:bg-yellow-400/20 hover:text-yellow-400 transition-all cursor-pointer shadow-lg bg-black/40 border border-white/5"
                 aria-label="Close modal"

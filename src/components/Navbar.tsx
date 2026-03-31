@@ -233,6 +233,12 @@ const Navbar = memo(() => {
                 <Link
                   ref={(el) => { itemsRef.current[i] = el; }}
                   to={l.href}
+                  onClick={() => {
+                    if (open) {
+                      setOpen(false);
+                      closeMenu();
+                    }
+                  }}
                   className={`group flex items-baseline gap-4 py-3 transition-colors duration-300 ${
                     location.pathname === l.href
                       ? "text-primary"

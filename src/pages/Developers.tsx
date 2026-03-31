@@ -106,8 +106,28 @@ const Developers = () => {
 
         {/* Carousel Container */}
         <div className="relative w-full">
-          {/* Navigation Buttons - Mobile Optimized - ABOVE CARD */}
-          <div className="flex flex-col gap-2 sm:gap-4 md:gap-6 mb-4 sm:mb-6 md:mb-8">
+          {/* Single Card Display - Smaller on Mobile */}
+          <div className="overflow-hidden flex justify-center mb-8">
+            <motion.div
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md flex justify-center px-2 sm:px-4"
+              initial={{ x: direction > 0 ? 100 : -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: direction > 0 ? -100 : 100, opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <motion.div 
+                className="flex justify-center items-start"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <DeveloperCard dev={visibleDeveloper} />
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Navigation Buttons - Mobile Optimized - BELOW CARD */}
+          <div className="flex flex-col gap-2 sm:gap-4 md:gap-6 mt-4 sm:mt-6 md:mt-8">
             {/* Slide Indicators - Primary on Mobile */}
             <div className="flex gap-1.5 sm:gap-2.5 md:gap-3 flex-wrap justify-center px-2">
               {developers.map((_, idx) => (
@@ -159,26 +179,6 @@ const Developers = () => {
                 <ChevronRight size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
               </motion.button>
             </div>
-          </div>
-
-          {/* Single Card Display - Smaller on Mobile */}
-          <div className="overflow-hidden flex justify-center">
-            <motion.div
-              className="w-full max-w-xs sm:max-w-sm md:max-w-md flex justify-center px-2 sm:px-4"
-              initial={{ x: direction > 0 ? 100 : -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: direction > 0 ? -100 : 100, opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <motion.div 
-                className="flex justify-center items-start"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <DeveloperCard dev={visibleDeveloper} />
-              </motion.div>
-            </motion.div>
           </div>
         </div>
       </div>

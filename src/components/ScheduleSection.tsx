@@ -16,36 +16,80 @@ interface DaySchedule {
   events: ScheduleEvent[];
 }
 
-const schedule: DaySchedule[] = [
-  {
-    day: "Day 1",
-    date: "April 10, 2026",
-    events: [
-      { time: "9:30 AM", title: "Registration & Check-in", subtitle: "All participants report to venue", type: "Registration" },
-      { time: "10:00 AM", title: "Inauguration Ceremony", subtitle: "Official opening of Vencer 2K26", type: "Ceremony" },
-      { time: "10:30 AM", title: "Technical Events Begin", subtitle: "Tinker CAD · Pandora Logic War · Code Meme · Idea Canvas", type: "Technical" },
-      { time: "11:00 AM", title: "Sports & Non-Tech Events", subtitle: "Lagori · Number Circle Cricket · Ping Pong · Pictogram X", type: "Sports" },
-      { time: "12:00 PM", title: "AI & Innovation Events", subtitle: "AI Shark Tank · Pandora Logic War (Final Rounds)", type: "Technical" },
-      { time: "12:30 PM", title: "Brand Baazi — Sell It If U Can", subtitle: "One Minute Ad Challenge · AI & DS Dept", type: "NonTech" },
-      { time: "2:00 PM", title: "Afternoon Technical & Games", subtitle: "Bridge Making · Battle of Legends · Photography", type: "Technical" },
-      { time: "2:00 PM", title: "Tug of War", subtitle: "ECE Dept · Behind Open Amphitheatre", type: "Sports" },
-      { time: "4:00 PM", title: "Evening Events & Activities", subtitle: "Fun Junction · Pani Puri Eating · Cultural activities", type: "NonTech" },
-    ],
-  },
-  {
-    day: "Day 2",
-    date: "April 11, 2026",
-    events: [
-      { time: "10:00 AM", title: "Day 2 Events Kickoff", subtitle: "TechXhibit · AI Prompt Battle · Bug Crush · Hack The Hunt", type: "Technical" },
-      { time: "10:00 AM", title: "Sports Continue", subtitle: "Dodge Ball · Box Cricket · Treasure Hunt (Final)", type: "Sports" },
-      { time: "11:00 AM", title: "Creative & Cultural Events", subtitle: "Stand-up Comedy · Messy Masterpiece · Design Doodle Studio", type: "Cultural" },
-      { time: "11:00 AM", title: "Slow Bike Race", subtitle: "CSE Dept · Main Ground", type: "Sports" },
-      { time: "2:00 PM", title: "Afternoon Finals & Competitions", subtitle: "Edible Art Arena · Videography · One Minute Games", type: "NonTech" },
-      { time: "4:00 PM", title: "Event Wrap-ups & Results", subtitle: "All department events conclude", type: "Ceremony" },
-      { time: "6:00 PM", title: "🎤 Live Concert", subtitle: "Special guest singer performing LIVE — Star Night!", type: "Concert" },
-    ],
-  },
-];
+import { branches } from "@/data/events";
+
+const parseStartTime = (duration: string | undefined): { timeStr: string; minutes: number } => {
+  if (!duration) return { timeStr: "TBA", minutes: 9999 };
+  const match = duration.toLowerCase().match(/(\d+)(?::(\d+))?\s*(am|pm)?/);
+  if (!match) return { timeStr: duration, minutes: 9999 };
+  
+  let hours = parseInt(match[1]);
+  const mins = match[2] ? parseInt(match[2]) : 0;
+  // Try to infer AM/PM if not provided: assume 8 to 11 is AM, 1 to 7 is PM, 12 is PM
+  const period = match[3] || (hours >= 8 && hours <= 11 ? 'am' : 'pm');
+  
+  let totalMins = hours * 60 + mins;
+  if (period === 'pm' && hours !== 12) totalMins += 12 * 60;
+  if (period === 'am' && hours === 12) totalMins -= 12 * 60;
+  
+  const formattedHours = hours === 0 ? 12 : hours;
+  const formattedMins = mins.toString().padStart(2, '0');
+  
+  return { 
+    timeStr: `${formattedHours}:${formattedMins} ${period.toUpperCase()}`,
+    minutes: totalMins
+  };
+};
+
+const generateDynamicSchedule = () => {
+  const day1Events: any[] = [
+    { time: "9:30 AM", title: "Registration & Check-in", subtitle: "All participants report to venue", type: "Registration", _mins: 9 * 60 + 30 },
+    { time: "10:00 AM", title: "Inauguration Ceremony", subtitle: "Official opening of Vencer 2K26", type: "Ceremony", _mins: 10 * 60 },
+  ];
+  
+  const day2Events: any[] = [
+    { time: "4:00 PM", title: "Event Wrap-ups & Results", subtitle: "All department events conclude", type: "Ceremony", _mins: 16 * 60 },
+    { time: "6:00 PM", title: "🎤 Live Concert", subtitle: "Special guest singer performing LIVE — Star Night!", type: "Concert", _mins: 18 * 60 },
+  ];
+
+  branches.forEach(branch => {
+    const allEvents = [...branch.events, ...branch.culturalEvents, ...branch.gamingEvents];
+    
+    allEvents.forEach(evt => {
+      let type: EventType = "Technical";
+      if (evt.category === "Non-Technical") type = "NonTech";
+      if (evt.category === "Cultural") type = "Cultural";
+      if (evt.category === "Gaming") type = "Sports";
+
+      const timeInfo = parseStartTime(evt.duration);
+      
+      const newEvt = {
+        time: timeInfo.timeStr,
+        title: evt.title,
+        subtitle: `${branch.shortName} | ${evt.venue || 'TBA'}`,
+        type,
+        _mins: timeInfo.minutes
+      };
+
+      if (evt.date?.includes("10")) {
+        day1Events.push(newEvt);
+      } else if (evt.date?.includes("11")) {
+        day2Events.push(newEvt);
+      }
+    });
+  });
+
+  // Sort chronologically
+  day1Events.sort((a, b) => a._mins - b._mins);
+  day2Events.sort((a, b) => a._mins - b._mins);
+
+  return [
+    { day: "Day 1", date: "April 10, 2026", events: day1Events },
+    { day: "Day 2", date: "April 11, 2026", events: day2Events }
+  ] as DaySchedule[];
+};
+
+const schedule = generateDynamicSchedule();
 
 const typeConfig: Record<EventType, { color: string; bg: string; border: string; icon: React.ReactNode }> = {
   Registration: { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/30", icon: <Users size={13} /> },

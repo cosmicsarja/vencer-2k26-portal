@@ -39,7 +39,7 @@ const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branc
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: Math.min(index * 0.08, 0.4), duration: 0.6 }}
-        className={`relative rounded-2xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80 cursor-pointer`}
+        className={`relative rounded-2xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80 cursor-pointer min-h-[150px] sm:min-h-[180px] md:min-h-[200px] flex flex-col justify-center`}
         style={tribe.clanName === "Code Bloom Clan" ? { backgroundColor: "rgba(245, 180, 210, 0.1)" } : undefined}
       >
         <div className={`absolute inset-0 bg-gradient-to-br ${tribe.gradient}`} />
