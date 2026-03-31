@@ -72,7 +72,7 @@ const ContactSection = () => {
             { 
               branch: "Mechanical Engineering", 
               coord1: "Prathamesh patil",
-              phone1: "+91 8904308926",
+              phone1: "+91 9113281234",
               coord2: "Pradeep kulkarni ",
               phone2: "+91 8197898550",
             },
