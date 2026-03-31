@@ -66,8 +66,8 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
         <div className="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--fest-teal)_/_0.3)_0%,transparent_70%)]" />
       </motion.div>
 
-      {/* Floating spore particles - reduced count */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* Floating spore particles - reduced count and hidden on mobile for performance */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden sm:block">
         {sporeData.map((s, i) => (
           <motion.div
             key={i}
@@ -106,7 +106,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
           <img
             src={vencerLogo}
             alt="VENCER 2K26 Logo"
-            className="mx-auto w-[220px] sm:w-[320px] md:w-[420px] lg:w-[520px] bioluminescent-glow"
+            className="mx-auto w-[280px] sm:w-[320px] md:w-[420px] lg:w-[520px] bioluminescent-glow"
             loading="eager"
             width={520}
             height={260}

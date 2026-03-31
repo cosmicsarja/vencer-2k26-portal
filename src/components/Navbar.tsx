@@ -172,22 +172,22 @@ const Navbar = memo(() => {
           {/* Mobile toggle */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden z-[60] flex items-center gap-2 text-foreground p-2"
+            className="lg:hidden z-[60] flex items-center gap-3 text-foreground p-2"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
-            <span className="font-heading text-xs font-bold uppercase tracking-widest">
+            <span className="font-heading text-sm font-bold uppercase tracking-widest">
               {open ? "Close" : "Menu"}
             </span>
-            <span className="relative w-6 h-6 flex items-center justify-center">
+            <span className="relative w-8 h-8 flex items-center justify-center">
               <span
-                className={`absolute w-5 h-[2px] bg-current transition-all duration-300 ${
-                  open ? "rotate-45" : "-translate-y-1"
+                className={`absolute w-7 h-[2px] sm:h-[3px] bg-current transition-all duration-300 ${
+                  open ? "rotate-45" : "-translate-y-1.5"
                 }`}
               />
               <span
-                className={`absolute w-5 h-[2px] bg-current transition-all duration-300 ${
-                  open ? "-rotate-45" : "translate-y-1"
+                className={`absolute w-7 h-[2px] sm:h-[3px] bg-current transition-all duration-300 ${
+                  open ? "-rotate-45" : "translate-y-1.5"
                 }`}
               />
             </span>
