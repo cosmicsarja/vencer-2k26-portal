@@ -1,11 +1,13 @@
-# TODO: Update Gallery with New Photos
+# Task Progress: Fix GitHub Code Block Render Issue & Commit
 
-## Steps:
-- [x] User confirmed plan to update src/config/gallery.ts with 21 new tempImage JPEGs
-- [x] Create/edit src/config/gallery.ts with new GALLERY_PHOTOS array
-- [x] Verify no lint/TS errors (edit successful, no errors reported)
-- [x] Test gallery in browser (run dev server if needed)
-- [x] Mark complete and attempt_completion
+## Plan Steps:
+- [x] Understand issue: Binary image add/delete churn causing GitHub render glitch on latest commit.
+- [x] Confirm git status: src/assets/1.png deleted unstaged.
+- [ ] Stage deletion: `git rm src/assets/1.png`
+- [ ] Commit: `git commit -m "Fix deleted asset and resolve GitHub render issue"`
+- [ ] Push: `git push origin main`
+- [ ] Verify GitHub: Check if latest commit renders correctly.
+- [ ] Optional: Vercel PR for deploy trigger.
 
-Progress: Plan approved, proceeding to edit.
+**Current step: Stage & commit deletion.**
 
