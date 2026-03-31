@@ -159,26 +159,26 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.5, duration: 0.8 }}
-            className="z-20 mt-2 sm:mt-6"
+            className="z-20 mt-16 sm:mt-8 pb-4"
           >
             <button
               onClick={() => setIsMysteryOpen(true)}
-              className="group relative flex flex-col items-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 rounded-2xl p-2"
+              className="group relative flex flex-col items-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-2xl p-2"
             >
               <div className="relative flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center">
                 {/* Ambient glow behind box */}
-                <div className="absolute inset-0 bg-yellow-500/20 blur-xl rounded-full group-hover:bg-yellow-400/30 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-cyan-500/20 blur-xl rounded-full group-hover:bg-cyan-400/30 transition-colors duration-500" />
                 
                 <motion.img 
                   src={mysteryBoxImg} 
                   alt="Mystery Box" 
-                  className="relative z-10 w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(250,204,21,0.6)]"
+                  className="relative z-10 w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(6,182,212,0.6)]"
                   animate={{ rotate: 360 }}
                   transition={{ repeat: Infinity, ease: "linear", duration: 8 }}
                 />
-                <Sparkles size={16} className="absolute -top-1 -right-1 text-amber-300 animate-ping z-20" />
+                <Sparkles size={16} className="absolute -top-1 -right-1 text-cyan-300 animate-ping z-20" />
               </div>
-              <span className="text-[10px] sm:text-xs font-display tracking-widest text-yellow-400/80 group-hover:text-yellow-400 transition-colors uppercase whitespace-nowrap mt-1">
+              <span className="text-[10px] sm:text-xs font-display tracking-widest text-cyan-400/80 group-hover:text-cyan-300 transition-colors uppercase whitespace-nowrap mt-1">
                 Mystery Guest
               </span>
             </button>
@@ -251,7 +251,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
                 </h3>
                 
                 <p className="mb-4 font-body text-sm sm:text-base text-yellow-100/95 leading-relaxed font-medium">
-                  For the first time ever, a sensational Kannada singer is coming to electrify the stage at <span className="text-yellow-400 font-bold tracking-wide">VENCER 2K26!</span> 🔥
+                  For the first time ever, a sensational singer is coming to electrify the stage at <span className="text-yellow-400 font-bold tracking-wide">VENCER 2K26!</span> 🔥
                 </p>
 
                 <p className="mb-8 font-body text-sm sm:text-base text-white/70 leading-relaxed font-light">
