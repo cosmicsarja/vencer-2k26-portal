@@ -52,7 +52,7 @@ export const branches: Branch[] = [
         teamSize: "1-4 participants",
         duration: "12PM to 4:45PM",
         venue: "Seminar Hall 1 AI dept 1st Floor",
-        rulebook: "/rulebooks/Pandora Logic War.pdf",
+        rulebook: "/rulebooks/AI TECH RULES .pdf",
         rules: ["Team size: 1 to 4 members", "Each team must bring minimum 2 laptops", "Teams must arrange their own internet connection", "Participants must strictly follow event timings", "Any malpractice or unfair means leads to disqualification", "Judges' decision is final", "Round 1A: 25 MCQs (25 marks, 25 min)", "Round 1B: 5 coding questions (25 marks, 25 min)", "10% teams eliminated after Round 1", "Round 2: Debug 3 code snippets (30 marks, 25 min)", "20% teams eliminated after Round 2", "Final: QR scan → password → unlock zip → solve problem", "Only first 10 teams qualify for final round", "Winners based on total score across all rounds", "Final round on same day"],
         coordinators: [{ name: "Shivalingsarj Desai", contact: "9513804776" }, { name: "Nivedita Akkimaradi", contact: "8296663125" }]
       },
@@ -69,7 +69,7 @@ export const branches: Branch[] = [
         teamSize: "1-4 members",
         duration: "10 am. to 1 pm",
         venue: "seminar hall 1 AI dept 1st Floor",
-        rulebook: "/rulebooks/Project Expo.pdf",
+        rulebook: "/rulebooks/AI TECH RULES .pdf",
         rules: [
 "Participants must take part in a team",
 "Each team should have a minimum of 2 members and a maximum of 4 members",
@@ -94,7 +94,7 @@ export const branches: Branch[] = [
         teamSize: "1 or 2 participants",
         duration: "10 am to 3 pm",
         venue: "AI dept classroom no 1",
-        rulebook: "/rulebooks/AI Prompt Battle.pdf",
+        rulebook: "public/rulebooks/AI TECH RULES .pdf",
         rules: [
 "Participation: Individual or Team (1–2 members)",
 "Each team must bring their own laptop/mobile device",
@@ -128,7 +128,7 @@ export const branches: Branch[] = [
         teamSize: "1-4 members",
         duration: "12 pm to 3 pm",
         venue: "Seminar Hall 2 AI dept ground Floor",
-        rulebook: "/rulebooks/AI Shark Tank.pdf",
+        rulebook: "/rulebooks/AI TECH RULES .pdf",
        rules: [
 "Participation: Individual or Team (up to 4 members)",
 "Participants must report 10 minutes before the event begins",
@@ -157,7 +157,7 @@ export const branches: Branch[] = [
         teamSize: "1-4 members",
         duration: "10am to 1 pm",
         venue: "seminar hall 2 AI dept ground Floor",
-        rulebook: "/rulebooks/Cooking Without Fire.pdf",
+        rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
         rules: [
 "Each team must consist of 4 members, and all participants must carry their college ID cards",
 "All dishes must be prepared without using fire, induction, or any heating equipment",
@@ -184,7 +184,7 @@ export const branches: Branch[] = [
         teamSize: "1-4 members",
         duration: "12:30 pm to 4:30 pm",
         venue: "classroom no 1 AI dept 1st Floor",
-        rulebook: "/rulebooks/One Minute Ad Challenge.pdf",
+        rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
         rules: [
 "Open to all field students (inter-college participation allowed)",
 "Each team will be given a random product/object (e.g., beverage can, daily-use item, etc.)",
@@ -212,7 +212,7 @@ export const branches: Branch[] = [
         teamSize: "6 members",
         duration: "10 am onwards",
         venue: "Sports Ground",
-        rulebook: "/rulebooks/Dodge Ball.pdf",
+        rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
         rules: [
 "Only one ball is used in the game",
 "Teams consist of 6 players; any number of boys or girls are allowed",
@@ -247,7 +247,7 @@ export const branches: Branch[] = [
         teamSize: "8-10 members",
         duration: "10 am to 4 pm",
         venue: "Sports Ground",
-        rulebook: "/rulebooks/Dodge Ball.pdf",
+        rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
        rules: [
 "Only one ball is used in the game",
 "Teams consist of 6 players; any number of boys or girls are allowed",
@@ -710,15 +710,15 @@ export const branches: Branch[] = [
         prizePool: "Grand prizes",
         entryFee: "₹50",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSf2Caf8x70MiLRESHK0ymdgKK2AfU0qRxnT9s_SJt19h2ovqw/viewform?embedded=true",
-        date: "April 11, 2026",
+        date: "10/04/2026 ",
         posterUrl: "/posters/ECE/IMG-20260331-WA0012.jpg",
         branch: "ECE",
         teamSize: "Individual",
-        duration: "2 Hours",
-        venue: "Main Hall",
+        duration: "10am to 1pm ",
+        venue: "EC Dep. classroom 5.Fun ",
         rulebook: "/rulebooks/One Minute Games.pdf",
         rules: ["Individual", "60-sec challenges", "Multiple mini-games", "Points based"],
-        coordinators: [{ name: "Siddharth Jain", contact: "9876543262" }, { name: "Richa Modi", contact: "9876543263" }]
+        coordinators: [{ name: " Channabasappa Sabarada", contact: "8105032959" }, { name: "Sunil Chavan", contact: "8951531744)" }]
       },
       {
         title: "Meme Making",
@@ -731,11 +731,11 @@ export const branches: Branch[] = [
         posterUrl: "/posters/ECE/IMG-20260331-WA0020.jpg",
         branch: "ECE",
         teamSize: "Individual",
-        duration: "1.5 Hours",
+        duration: "10:30am to 1pm ",
         venue: "Lab",
         rulebook: "/rulebooks/Meme Making.pdf",
         rules: ["Individual", "Create tech memes", "Audience vote", "Original content"],
-        coordinators: [{ name: "Avinash Dubey", contact: "9876543264" }, { name: "Priya Choudhury", contact: "9876543265" }]
+        coordinators: [{ name: " Namrata ", contact: "6363593488" }, { name: "Chetan H", contact: "8867472005" }]
       },
       {
         title: "Tug of War",
