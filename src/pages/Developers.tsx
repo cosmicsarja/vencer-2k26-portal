@@ -10,6 +10,9 @@ interface Developer {
   role: string;
   photo: string;
   handle: string;
+  avatarObjectPosition?: string;
+  avatarFlipX?: boolean;
+  avatarLeft?: string;
   instagram?: string;
   github?: string;
   linkedin?: string;
@@ -21,6 +24,8 @@ const developers: Developer[] = [
     role: "Lead Developer",
     photo: cosmicsarjaPhoto,
     handle: "cosmicsarja",
+    avatarObjectPosition: "55% 30%",
+    avatarLeft: "left-[44%]",
     instagram: "https://instagram.com/cosmicsarja",
     github: "https://github.com/cosmicsarja",
     linkedin: "https://linkedin.com/in/cosmicsarja",
@@ -30,6 +35,7 @@ const developers: Developer[] = [
     role: " Developer",
     photo: chetanPhoto,
     handle: " Kalki__33_",
+    avatarObjectPosition: "60% 20%",
     instagram: "https://www.instagram.com/kalki__33_?igsh=cnhxbHEzcXpib2dh",
     github: "https://github.com/chetanmatapati33",
     linkedin: "https://www.linkedin.com/in/chetan-mathapati-021092296?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -44,6 +50,9 @@ const DeveloperCard = ({ dev }: { dev: Developer }) => {
       title={dev.role}
       handle={dev.handle}
       avatarUrl={dev.photo}
+      avatarObjectPosition={dev.avatarObjectPosition}
+      avatarFlipX={dev.avatarFlipX}
+      avatarLeft={dev.avatarLeft}
       status="Online"
       showUserInfo={true}
       enableTilt={true}

@@ -32,6 +32,9 @@ if (typeof document !== 'undefined' && !document.getElementById(KEYFRAMES_ID)) {
 
 interface ProfileCardProps {
   avatarUrl?: string;
+  avatarObjectPosition?: string;
+  avatarFlipX?: boolean;
+  avatarLeft?: string;
   iconUrl?: string;
   grainUrl?: string;
   innerGradient?: string;
@@ -66,6 +69,9 @@ interface TiltEngine {
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   avatarUrl = '',
+  avatarObjectPosition = '58% 30%',
+  avatarFlipX = false,
+  avatarLeft = 'left-1/2',
   iconUrl = '',
   grainUrl = '',
   innerGradient,
@@ -513,6 +519,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
             <div
               className="overflow-visible"
               style={{
+                position: 'relative',
+                zIndex: 6,
                 transform: 'translateZ(10px)',
                 gridArea: '1 / -1',
                 borderRadius: cardRadius,
@@ -521,16 +529,17 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               }}
             >
                 <img
-                  className="absolute left-1/2 top-[10%]"
+                  className={`absolute ${avatarLeft} top-[55%]`}
                   src={avatarUrl}
                   alt={`${name || 'User'} avatar`}
                   loading="lazy"
                   style={{
-                    width: '90%',
-                    height: '70%',
+                    width: '100%',
+                    height: '90%',
                     objectFit: 'cover',
+                    objectPosition: avatarObjectPosition,
                     transformOrigin: '50% 50%',
-                    transform: 'translateX(-50%) translateY(-50%) translateZ(0)',
+                    transform: `translateX(-50%) translateY(-50%) translateZ(0)${avatarFlipX ? ' scaleX(-1)' : ''}`,
                     borderRadius: cardRadius,
                     backfaceVisibility: 'hidden'
                   }}
@@ -619,7 +628,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
 
             {/* Details content */}
             <div
-              className="max-h-full overflow-hidden text-center relative z-[5]"
+              className="max-h-full overflow-hidden text-center relative z-[7]"
               style={{
                 transform:
                   'translate3d(calc(var(--pointer-from-left) * -6px + 3px), calc(var(--pointer-from-top) * -6px + 3px), 0.1px)',
@@ -629,7 +638,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                 pointerEvents: 'none'
               }}
             >
-              <div className="w-full absolute flex flex-col" style={{ top: '3em', display: 'flex', gridArea: 'auto' }}>
+              <div className="w-full absolute flex flex-col" style={{ top: '1.8em', display: 'flex', gridArea: 'auto' }}>
                 <h3
                   className="font-semibold m-0"
                   style={{
