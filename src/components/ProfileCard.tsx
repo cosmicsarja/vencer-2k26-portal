@@ -584,7 +584,12 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                     </div>
                     <div className="flex flex-col items-start gap-1.5">
                       <div className="text-sm font-medium text-white/90 leading-none">@{handle}</div>
-                      <div className="text-sm text-white/70 leading-none">{status}</div>
+                      <div className={`text-sm leading-none flex items-center gap-1.5 ${status?.toLowerCase() === 'online' ? 'text-green-400' : 'text-white/70'}`}>
+                        {status?.toLowerCase() === 'online' && (
+                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        )}
+                        {status}
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">

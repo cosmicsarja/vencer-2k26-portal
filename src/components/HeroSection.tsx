@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useMemo, useState, useEffect, forwardRef } from "react";
+import { useMemo, useState, useEffect, forwardRef, useRef } from "react";
 import { Briefcase, X, Sparkles, Music, Clock } from "lucide-react";
 import vencerLogo from "@/assets/vencer-logo.png";
 import pandoraBg from "@/assets/pandora-bg.png";
@@ -11,12 +11,14 @@ import vishwanathImg from "@/assets/vishwanath.jpg";
 
 const HeroSection = forwardRef<HTMLElement>((_, ref) => {
   const [isMysteryOpen, setIsMysteryOpen] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   
   // Intercept the browser back button so it closes the modal instead of navigating away
   useEffect(() => {
     const handlePopState = (e: PopStateEvent) => {
       if (document.body.style.overflow === "hidden" || isMysteryOpen) {
         setIsMysteryOpen(false);
+        if (audioRef.current) audioRef.current.pause();
       }
     };
 
@@ -24,19 +26,30 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
       document.body.style.overflow = "hidden";
       window.history.pushState({ modalOpen: true }, "");
       window.addEventListener("popstate", handlePopState);
+      
+      // Assure audio plays if opened (fallback for gesture)
+      if (!audioRef.current) {
+        audioRef.current = new Audio("/sound/Singer song.mp3");
+      }
+      audioRef.current.play().catch(e => console.error("Audio playback failed:", e));
     } else {
       document.body.style.overflow = "";
       window.removeEventListener("popstate", handlePopState);
+      if (audioRef.current) audioRef.current.pause();
     }
 
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("popstate", handlePopState);
+      if (audioRef.current) audioRef.current.pause();
     };
   }, [isMysteryOpen]);
 
   const closeMysteryModal = () => {
     setIsMysteryOpen(false);
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
     if (window.history.state?.modalOpen) {
       window.history.back();
     }
@@ -191,8 +204,15 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
             transition={{ delay: 1.5, duration: 0.8 }}
             className="z-20 mt-16 sm:mt-8 pb-4"
           >
-            <button
-              onClick={() => setIsMysteryOpen(true)}
+              <button
+              onClick={() => {
+                if (!audioRef.current) {
+                  audioRef.current = new Audio("/sound/Singer song.mp3");
+                }
+                audioRef.current.currentTime = 0;
+                audioRef.current.play().catch(e => console.error(e));
+                setIsMysteryOpen(true);
+              }}
               className="group relative flex flex-col items-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-2xl p-2"
             >
               <div className="relative flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center">
