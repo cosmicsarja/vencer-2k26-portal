@@ -39,7 +39,7 @@ const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branc
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: Math.min(index * 0.08, 0.4), duration: 0.6 }}
-        className={`relative rounded-2xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80 cursor-pointer min-h-[150px] sm:min-h-[180px] md:min-h-[200px] flex flex-col justify-center`}
+        className={`relative rounded-3xl overflow-hidden transition-all duration-500 group border-2 border-${tribe.accent}/30 ${tribe.borderGlow} bg-card/80 cursor-pointer min-h-[220px] sm:min-h-[240px] md:min-h-[280px] flex flex-col justify-center`}
         style={tribe.clanName === "Code Bloom Clan" ? { backgroundColor: "rgba(245, 180, 210, 0.1)" } : undefined}
       >
         <div className={`absolute inset-0 bg-gradient-to-br ${tribe.gradient}`} />
@@ -47,7 +47,7 @@ const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branc
         <motion.img
           src={avatar}
           alt={`${tribe.clanName} Avatar`}
-          className="absolute right-[-15px] bottom-0 w-[90px] sm:w-[110px] md:w-[160px] opacity-60 sm:opacity-70 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none z-[1]"
+          className="absolute right-[-10px] sm:right-[-15px] bottom-0 w-[140px] sm:w-[160px] md:w-[200px] opacity-70 sm:opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[1]"
           loading="lazy"
           decoding="async"
           style={{
@@ -59,24 +59,24 @@ const TribeCard = memo(({ branch, tribe, index, avatar }: { branch: typeof branc
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        <div className="relative p-3 sm:p-5 md:p-6 pr-[90px] sm:pr-[115px] md:pr-[165px]">
-          <span className={`font-display text-[8px] sm:text-[10px] md:text-xs tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
+        <div className="relative p-5 sm:p-6 md:p-8 pr-[120px] sm:pr-[140px] md:pr-[190px]">
+          <span className={`font-display text-[10px] sm:text-xs md:text-sm tracking-widest text-${tribe.accent} opacity-80 uppercase font-bold`}>
             {tribe.biome}
           </span>
 
-          <div className={`w-7 sm:w-9 md:w-10 h-7 sm:h-9 md:h-10 md:w-12 md:h-12 rounded-xl bg-${tribe.accent}/15 flex items-center justify-center my-2 sm:my-3 transition-all group-hover:bg-${tribe.accent}/25 group-hover:shadow-[0_0_20px_hsl(var(${tribe.glowVar})_/_0.3)]`}>
-            <Icon size={16} className={`text-${tribe.accent}`} />
+          <div className={`w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-xl bg-${tribe.accent}/15 flex items-center justify-center my-3 sm:my-4 transition-all group-hover:bg-${tribe.accent}/25 group-hover:shadow-[0_0_20px_hsl(var(${tribe.glowVar})_/_0.3)]`}>
+            <Icon size={20} className={`text-${tribe.accent} sm:w-6 sm:h-6 md:w-8 md:h-8`} />
           </div>
 
-          <h3 className="font-heading text-[11px] sm:text-sm md:text-base font-bold text-foreground mb-1">{tribe.clanName}</h3>
-          <p className={`font-heading text-[9px] sm:text-[10px] md:text-xs font-bold text-${tribe.accent} mb-1`}>{branch.name}</p>
-          <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground/80 mb-2 sm:mb-3 md:mb-4 leading-snug md:leading-relaxed line-clamp-2">{tribe.desc}</p>
+          <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1 sm:mb-2">{tribe.clanName}</h3>
+          <p className={`font-heading text-xs sm:text-sm md:text-base font-bold text-${tribe.accent} mb-2 sm:mb-3`}>{branch.name}</p>
+          <p className="text-xs sm:text-sm md:text-base text-muted-foreground/80 mb-4 sm:mb-5 md:mb-6 leading-relaxed line-clamp-3">{tribe.desc}</p>
 
           <div className="flex items-center justify-between gap-2">
-            <span className="text-[8px] sm:text-[9px] md:text-xs text-muted-foreground font-heading font-bold">
+            <span className="text-[10px] sm:text-xs md:text-sm text-foreground/90 font-heading font-bold">
               {totalEvents} Events
             </span>
-            <span className={`text-[8px] sm:text-[9px] md:text-xs font-display tracking-wider text-${tribe.accent} font-bold`}>
+            <span className={`text-[10px] sm:text-xs md:text-sm font-display tracking-wider text-${tribe.accent} font-bold`}>
               View Events →
             </span>
           </div>
