@@ -105,31 +105,23 @@ const Developers = () => {
         </motion.div>
 
         {/* Carousel Container */}
-        <div className="relative w-full">
-          {/* Single Card Display - Smaller on Mobile */}
-          <div className="overflow-hidden flex justify-center mb-8">
-            <motion.div
-              className="w-full max-w-xs sm:max-w-sm md:max-w-md flex justify-center px-2 sm:px-4"
-              initial={{ x: direction > 0 ? 100 : -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: direction > 0 ? -100 : 100, opacity: 0 }}
-              transition={{ duration: 0.5 }}
+        <div className="relative w-full flex flex-col items-center">
+          
+          {/* Navigation Buttons - MOVED UPSIDE */}
+          <div className="flex justify-between items-center w-full max-w-xs sm:max-w-sm md:max-w-md px-2 sm:px-4 mb-8 sm:mb-12 z-10 gap-4">
+            <motion.button
+              onClick={handlePrevious}
+              whileHover={{ scale: 1.1, boxShadow: "0 0 20px rgba(34, 211, 238, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              className="p-3 sm:p-4 rounded-xl border border-cyan-500/30 bg-slate-900/60 backdrop-blur-md transition-all duration-300 text-cyan-400 hover:text-cyan-300 hover:border-cyan-400 hover:bg-slate-800/80 group relative overflow-hidden"
+              aria-label="Previous developer"
             >
-              <motion.div 
-                className="flex justify-center items-start"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <DeveloperCard dev={visibleDeveloper} />
-              </motion.div>
-            </motion.div>
-          </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <ChevronLeft size={24} className="sm:w-6 sm:h-6 md:w-7 md:h-7 relative z-10" />
+            </motion.button>
 
-          {/* Navigation Buttons - Mobile Optimized - BELOW CARD */}
-          <div className="flex flex-col gap-2 sm:gap-4 md:gap-6 mt-4 sm:mt-6 md:mt-8">
-            {/* Slide Indicators - Primary on Mobile */}
-            <div className="flex gap-1.5 sm:gap-2.5 md:gap-3 flex-wrap justify-center px-2">
+            {/* Slide Indicators - BETWEEN BUTTONS */}
+            <div className="flex gap-2 sm:gap-3 flex-wrap justify-center items-center">
               {developers.map((_, idx) => (
                 <motion.button
                   key={idx}
@@ -137,48 +129,48 @@ const Developers = () => {
                     setDirection(idx > currentIndex ? 1 : -1);
                     setCurrentIndex(idx);
                   }}
+                  whileHover={{ scale: 1.2 }}
                   className={`rounded-full transition-all duration-300 min-h-2.5 ${
                     idx === currentIndex
-                      ? "bg-cyan-400 w-6 sm:w-8 h-2.5 sm:h-3"
-                      : "bg-slate-600 hover:bg-slate-500 w-2.5 sm:w-3 h-2.5 sm:h-3"
+                      ? "bg-cyan-400 w-8 sm:w-10 h-2.5 sm:h-3 shadow-[0_0_12px_rgba(34,211,238,0.7)]"
+                      : "bg-slate-700 hover:bg-slate-500 w-2.5 sm:w-3 h-2.5 sm:h-3 shadow-inner"
                   }`}
                   aria-label={`Go to ${developers[idx].name}`}
                 />
               ))}
             </div>
 
-            {/* Arrow Buttons - Horizontal Layout */}
-            <div className="flex justify-center items-center gap-2 sm:gap-4 md:gap-6 px-2">
-              <motion.button
-                onClick={handlePrevious}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 sm:p-2.5 md:p-3 rounded-full border border-cyan-500/50 hover:border-cyan-400 bg-slate-900/50 hover:bg-slate-800/80 transition-all duration-300 text-cyan-400 hover:text-cyan-300 active:bg-slate-700"
-                aria-label="Previous developer"
-              >
-                <ChevronLeft size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
-              </motion.button>
+            <motion.button
+              onClick={handleNext}
+              whileHover={{ scale: 1.1, boxShadow: "0 0 20px rgba(34, 211, 238, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              className="p-3 sm:p-4 rounded-xl border border-cyan-500/30 bg-slate-900/60 backdrop-blur-md transition-all duration-300 text-cyan-400 hover:text-cyan-300 hover:border-cyan-400 hover:bg-slate-800/80 group relative overflow-hidden"
+              aria-label="Next developer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-l from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <ChevronRight size={24} className="sm:w-6 sm:h-6 md:w-7 md:h-7 relative z-10" />
+            </motion.button>
+          </div>
 
-              {/* Developer Name Counter */}
-              <div className="text-center min-w-fit">
-                <p className="text-xs sm:text-sm font-semibold text-cyan-400">
-                  {visibleDeveloper.name}
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  {currentIndex + 1}/{totalSlides}
-                </p>
-              </div>
-
-              <motion.button
-                onClick={handleNext}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 sm:p-2.5 md:p-3 rounded-full border border-cyan-500/50 hover:border-cyan-400 bg-slate-900/50 hover:bg-slate-800/80 transition-all duration-300 text-cyan-400 hover:text-cyan-300 active:bg-slate-700"
-                aria-label="Next developer"
+          {/* Single Card Display - Smaller on Mobile */}
+          <div className="overflow-hidden flex justify-center w-full">
+            <motion.div
+              key={currentIndex}
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md flex justify-center px-2 sm:px-4"
+              initial={{ x: direction > 0 ? 50 : -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: direction > 0 ? -50 : 50, opacity: 0 }}
+              transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 30 }}
+            >
+              <motion.div 
+                className="flex justify-center items-start w-full"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
               >
-                <ChevronRight size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
-              </motion.button>
-            </div>
+                <DeveloperCard dev={visibleDeveloper} />
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
