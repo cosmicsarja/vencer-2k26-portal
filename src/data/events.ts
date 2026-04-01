@@ -279,7 +279,7 @@ export const branches: Branch[] = [
         category: "Technical" as const,
         description: "(Code Debugging)",
         prizePool: "Grand prizes",
-        entryFee: "₹100",
+        entryFee: "₹150",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeYPA2v0x_nCnpdcTYyLgNFvSEqIxVcRvnxzuamRXno76jrtA/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/CS/WhatsApp Image 2026-03-29 at 23.42.43.jpeg",
@@ -289,7 +289,7 @@ export const branches: Branch[] = [
         venue: "CS Lab 1",
         rulebook: "/rulebooks/Bug Crush.pdf",
         rules: ["Individual participation", "Debug provided buggy code", "Fastest correct fix wins", "Multiple rounds", "No internet access"],
-        coordinators: [{ name: "Vikram Singh", contact: "9876543222" }, { name: "Neha Kapoor", contact: "9876543223" }]
+        coordinators: [{ name: "Preetam K", contact: "7349013362" }, { name: "Gurubai", contact: "9632970069" }]
       },
       {
         title: "Code Meme",
@@ -306,14 +306,14 @@ export const branches: Branch[] = [
         venue: "CS Lab 2",
         rulebook: "/rulebooks/Code Meme.pdf",
         rules: ["Team of 1-2", "Create working code + memes", "Judged on humor & functionality", "Any language allowed"],
-        coordinators: [{ name: "Arjun Patel", contact: "9876543224" }, { name: "Divya Sharma", contact: "9876543225" }]
+        coordinators: [{ name: "Rashmi P", contact: "8618430975" }, { name: "Prajwal B", contact: "7483082096" }]
       },
       {
         title: "Hack The Hunt",
         category: "Technical" as const,
         description: "(Escape Room)",
         prizePool: "Grand prizes",
-        entryFee: "₹150",
+        entryFee: "₹200",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeFVUGtqFPZINqKQB_5Jc4OS40tDBnaCAXkXIdQIhetbpHoiA/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/CS/Vencer 2K26_ Hack the Hunt.png",
@@ -323,7 +323,7 @@ export const branches: Branch[] = [
         venue: "Workshop",
         rulebook: "/rulebooks/Hack The Hunt.pdf",
         rules: ["Team of 2-4", "Solve coding puzzles to escape", "Time-based scoring", "No external help"],
-        coordinators: [{ name: "Rohan Kumar", contact: "9876543226" }, { name: "Aisha Khan", contact: "9876543227" }]
+        coordinators: [{ name: "Pratiksha B", contact: "9482737977" }, { name: "Pradeep", contact: "8088818168" }]
       },
       {
         title: "Idea Canvas",
@@ -340,14 +340,14 @@ export const branches: Branch[] = [
         venue: "Seminar Hall",
         rulebook: "/rulebooks/Idea Canvas.pdf",
         rules: ["Individual", "Design tech poster", "A2 size", "Judged on clarity & creativity"],
-        coordinators: [{ name: "Sanjay Nair", contact: "9876543228" }, { name: "Pooja Verma", contact: "9876543229" }]
+        coordinators: [{ name: "Shru", contact: "9876543228" }, { name: "Pooja Verma", contact: "9876543229" }]
       },
       {
         title: "Box Cricket",
         category: "Non-Technical" as const,
         description: "",
         prizePool: "Grand prizes",
-        entryFee: "₹100",
+        entryFee: "₹200",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSf_jIlNPBB5us2UBWyob6a_-RUcgW3z5ua2mnANjPesde94JQ/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/CS/WhatsApp Image 2026-03-29 at 22.18.11.jpeg",
@@ -355,7 +355,7 @@ export const branches: Branch[] = [
         teamSize: "8-10 members",
         duration: "2 Hours",
         venue: "Sports Ground",
-        rulebook: "/rulebooks/Box Cricket.pdf",
+        rulebook: "/rulebooks/non technical Event .pdf",
         rules: ["Team of 8-10", "Box cricket format", "20 overs per innings", "Standard rules apply"],
         coordinators: [{ name: "Aman Singh", contact: "9876543230" }, { name: "Sneha Gupta", contact: "9876543231" }]
       },
@@ -364,7 +364,7 @@ export const branches: Branch[] = [
         category: "Non-Technical",
         description: "",
         prizePool: "Grand prizes",
-        entryFee: "₹50",
+        entryFee: "₹200",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLScdSHOVIUrKdrmZP5Vgg3D9Olc-ErHvYkDaQipRgOTEn3JCUg/viewform?embedded=true",
         date: "April 10, 2026",
         posterUrl: "/posters/CS/WhatsApp Image 2026-03-29 at 22.51.03.jpeg",
@@ -372,7 +372,7 @@ export const branches: Branch[] = [
         teamSize: "8-10 members",
         duration: "2 Hours",
         venue: "Sports Ground",
-        rulebook: "/rulebooks/Lagori.pdf",
+        rulebook: "/rulebooks/non technical Event .pdf",
         rules: ["Team of 8-10", "Lagori/7 Stones game", "Hit stones to win points", "Best of 3 sets"],
         coordinators: [{ name: "Ravi Desai", contact: "9876543232" }, { name: "Zara Ali", contact: "9876543233" }]
       },
@@ -381,7 +381,7 @@ export const branches: Branch[] = [
         category: "Non-Technical",
         description: "",
         prizePool: "Grand prizes",
-        entryFee: "₹50",
+        entryFee: "₹100",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdNyxzzlmuZo6lpGx8am46vWdl6wnFLz-1mvUO2J4kfcWDb3Q/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/CS/WhatsApp Image 2026-03-29 at 22.44.43.jpeg",
@@ -389,7 +389,7 @@ export const branches: Branch[] = [
         teamSize: "Individual",
         duration: "1 Hour",
         venue: "Main Ground",
-        rulebook: "/rulebooks/Slow Bike Race.pdf",
+        rulebook: "/rulebooks/non technical Event .pdf",
         rules: ["Individual", "Slowest to finish without stopping", "Balance challenge", "Non-motorized bicycles"],
         coordinators: [{ name: "Karan Malhotra", contact: "9876543234" }, { name: "Tanvi Iyer", contact: "9876543235" }]
       },
@@ -406,7 +406,7 @@ export const branches: Branch[] = [
         teamSize: "Individual",
         duration: "Full Day",
         venue: "Campus",
-        rulebook: "/rulebooks/Photography.pdf",
+        rulebook: "/rulebooks/non technical Event .pdf",
         rules: ["Individual", "Theme: Vencer 2K26", "Submit 5 best shots", "Judged by panel"],
         coordinators: [{ name: "Nikhil Rao", contact: "9876543236" }, { name: "Meera Joshi", contact: "9876543237" }]
       },
@@ -415,15 +415,15 @@ export const branches: Branch[] = [
         category: "Non-Technical",
         description: "",
         prizePool: "Grand prizes",
-        entryFee: "₹150",
-        formLink: "",
+        entryFee: "₹100",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfW480Md3pV2qz9SA85KgRZZDm_9TSZn6zU0klCiz9nzdKe_Q/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/CS/WhatsApp Image 2026-03-30 at 00.26.03.jpeg",
         branch: "CSE",
         teamSize: "1-2 members",
         duration: "Full Day",
         venue: "Campus",
-        rulebook: "/rulebooks/Videography.pdf",
+        rulebook: "/rulebooks/non technical Event .pdf",
         rules: ["1-2 members", "Short film 3-5 mins", "Theme: Vencer Spirit", "Editing allowed"],
         coordinators: [{ name: "Ashok Pandey", contact: "9876543238" }, { name: "Richa Yadav", contact: "9876543239" }]
       },
@@ -1312,9 +1312,10 @@ export const gamingEvents: Event[] = [
     category: "Gaming" as const,
     description: "Battlegrounds Mobile India - squad battle royale showdown",
     prizePool: "Grand prizes",
-    entryFee: "₹150",
+    entryFee: "₹400",
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdTYLd9n7oP7Zf96FaofoT1ZghTNtkPfQYfIUPSyBnSr_kJgw/viewform?embedded=true",
     date: "April 11, 2026",
+    posterUrl: "public/posters/CS/WhatsApp Image 2026-03-29 at 23.43.03.jpeg",
     teamSize: "4 members",
     duration: "Full Day",
     venue: "Gaming Zone",
@@ -1336,6 +1337,7 @@ export const gamingEvents: Event[] = [
     entryFee: "₹100",
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeRvf1FMaE340QwCOvZCDwcftRXkGW-ei97t6vwcqDB1bpBlQ/viewform?embedded=true",
     date: "April 10, 2026",
+    posterUrl: "public/posters/CS/WhatsApp Image 2026-03-29 at 23.43.14.jpeg",
     teamSize: "Individual",
     duration: "3 Hours",
     venue: "Gaming Lounge",
