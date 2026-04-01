@@ -296,7 +296,7 @@ const HeroSection = forwardRef<HTMLElement>((_, ref) => {
 
               {/* Right Column: Content */}
               <div className="w-full md:w-[55%] text-center md:text-left z-10">
-                <h3 className="mb-4 font-batsy text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow-[0_4px_15px_rgba(250,204,21,0.4)] leading-tight">
+                <h3 className="mb-4 font-display text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow-[0_4px_15px_rgba(250,204,21,0.4)] leading-tight">
                   VISHWANATH HAVERI
                 </h3>
                 

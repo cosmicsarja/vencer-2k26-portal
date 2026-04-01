@@ -108,7 +108,7 @@ const Developers = () => {
         <div className="relative w-full flex flex-col items-center">
           
           {/* Navigation Buttons - MOVED UPSIDE */}
-          <div className="flex justify-between items-center w-full max-w-xs sm:max-w-sm md:max-w-md px-2 sm:px-4 mb-8 sm:mb-12 z-10 gap-4">
+          <div className="flex justify-center items-center w-full max-w-xs sm:max-w-sm md:max-w-md px-2 sm:px-4 mb-8 sm:mb-12 z-10 gap-6 sm:gap-8">
             <motion.button
               onClick={handlePrevious}
               whileHover={{ scale: 1.1, boxShadow: "0 0 20px rgba(34, 211, 238, 0.4)" }}

@@ -59,7 +59,7 @@ const GallerySection = () => {
                 <img
                   src={`/moments/${card.filename}`}
                   alt={card.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-50 group-hover:opacity-100"
+                  className="w-full h-full object-cover transition-all duration-700 opacity-90 group-hover:opacity-100"
                   loading="lazy"
                   decoding="async"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 25vw, 15vw"
@@ -130,9 +130,9 @@ const GallerySection = () => {
               {/* Close Button */}
               <button
                 onClick={closeImage}
-                className="absolute -top-12 right-0 sm:-top-10 sm:right-0 p-2 text-white hover:text-primary transition-colors z-10"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 text-white/80 hover:text-white bg-black/40 hover:bg-black/60 rounded-full transition-all z-50 backdrop-blur-sm"
               >
-                <X className="w-8 h-8 sm:w-10 sm:h-10" />
+                <X className="w-6 h-6 sm:w-8 sm:h-8" />
               </button>
 
               {/* Main Image Container */}
@@ -157,7 +157,7 @@ const GallerySection = () => {
               </div>
 
               {/* Navigation Buttons */}
-              <div className="flex justify-between items-center mt-6 gap-4">
+              <div className="flex justify-center items-center mt-6 gap-20">
                 <button
                   onClick={prevImage}
                   disabled={selectedImage === 0}
@@ -165,29 +165,6 @@ const GallerySection = () => {
                 >
                   <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
                 </button>
-
-                {/* Thumbnail Strip */}
-                <div className="flex gap-2 overflow-x-auto flex-1 px-4 py-2">
-                  {cards.map((card, index) => (
-                    <button
-                      key={card.id}
-                      onClick={() => setSelectedImage(index)}
-                      className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                        selectedImage === index
-                          ? 'border-primary scale-105'
-                          : 'border-white/20 hover:border-white/40 opacity-70 hover:opacity-100'
-                      }`}
-                    >
-                      <img
-                        src={`/moments/${card.filename}`}
-                        alt={card.title}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </button>
-                  ))}
-                </div>
 
                 <button
                   onClick={nextImage}
