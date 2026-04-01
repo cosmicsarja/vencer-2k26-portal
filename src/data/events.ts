@@ -71,14 +71,14 @@ export const branches: Branch[] = [
         venue: "seminar hall 1 AI dept 1st Floor",
         rulebook: "/rulebooks/AI TECH RULES .pdf",
         rules: [
-"Participants must take part in a team",
-"Each team should have a minimum of 2 members and a maximum of 4 members",
-"Each team must present one unique project",
-"Projects can be from any technical domain such as AI-ML, IoT, Software Development, Robotics, etc.",
-"Participants must bring their own laptop, hardware, and required materials",
-"Each team will be given 15 minutes to present their project to the judges, followed by a short Q&A session",
-"Every team must prepare a presentation (PPT), and live demonstration"
-],
+          "Participants must take part in a team",
+          "Each team should have a minimum of 2 members and a maximum of 4 members",
+          "Each team must present one unique project",
+          "Projects can be from any technical domain such as AI-ML, IoT, Software Development, Robotics, etc.",
+          "Participants must bring their own laptop, hardware, and required materials",
+          "Each team will be given 15 minutes to present their project to the judges, followed by a short Q&A session",
+          "Every team must prepare a presentation (PPT), and live demonstration"
+        ],
         coordinators: [{ name: "NIKITA LADU DESAI", contact: "8296730926" }, { name: "KHUSHIYABEGAM HANAGI", contact: "8867284486" }]
       },
       {
@@ -96,23 +96,23 @@ export const branches: Branch[] = [
         venue: "AI dept classroom no 1",
         rulebook: "public/rulebooks/AI TECH RULES .pdf",
         rules: [
-"Participation: Individual or Team (1–2 members)",
-"Each team must bring their own laptop/mobile device",
-"Participants must arrange their own internet connection",
-"Internet usage is allowed only for AI tools (ChatGPT, Gemini, etc.)",
-"Participants must create original prompts during the event",
-"Any form of copying or unfair practice leads to disqualification",
-"Participants must strictly follow event timings and instructions",
-"Judges’ decision will be final and binding",
-"Round 1: Basic Prompt Challenge (understanding AI responses)",
-"Round 2: Constraint-Based Prompting (limits on words, tone, etc.)",
-"Round 3: Creative Prompt Challenge (problem-solving using AI)",
-"Top participants will qualify for the Final Round",
-"Final Round: Advanced prompt design + explanation of logic and output",
-"Evaluation based on Creativity, Accuracy, and Efficiency",
-"Winners will be decided based on overall performance across all rounds",
-"All rounds will be conducted on the same day"
-],
+          "Participation: Individual or Team (1–2 members)",
+          "Each team must bring their own laptop/mobile device",
+          "Participants must arrange their own internet connection",
+          "Internet usage is allowed only for AI tools (ChatGPT, Gemini, etc.)",
+          "Participants must create original prompts during the event",
+          "Any form of copying or unfair practice leads to disqualification",
+          "Participants must strictly follow event timings and instructions",
+          "Judges’ decision will be final and binding",
+          "Round 1: Basic Prompt Challenge (understanding AI responses)",
+          "Round 2: Constraint-Based Prompting (limits on words, tone, etc.)",
+          "Round 3: Creative Prompt Challenge (problem-solving using AI)",
+          "Top participants will qualify for the Final Round",
+          "Final Round: Advanced prompt design + explanation of logic and output",
+          "Evaluation based on Creativity, Accuracy, and Efficiency",
+          "Winners will be decided based on overall performance across all rounds",
+          "All rounds will be conducted on the same day"
+        ],
         coordinators: [{ name: "Mahesh Chandagadkar", contact: "9108427250" }, { name: "Sneha Mirashi", contact: "7406533952" }]
       },
       {
@@ -129,19 +129,19 @@ export const branches: Branch[] = [
         duration: "12 pm to 3 pm",
         venue: "Seminar Hall 2 AI dept ground Floor",
         rulebook: "/rulebooks/AI TECH RULES .pdf",
-       rules: [
-"Participation: Individual or Team (up to 4 members)",
-"Participants must report 10 minutes before the event begins",
-"Problem statement will be provided on the spot",
-"Solution must be original and based on AI/technology",
-"Plagiarism is strictly prohibited",
-"Participants must bring their own laptop and internet connection",
-"Strict adherence to given time limits is required",
-"Judges’ decision will be final and binding",
-"Round 1: Ideation (45 minutes)",
-"Round 2: Final Pitch (5 minutes presentation + 2 minutes Q&A)",
-"Participants must clearly explain idea, implementation, and feasibility"
-],
+        rules: [
+          "Participation: Individual or Team (up to 4 members)",
+          "Participants must report 10 minutes before the event begins",
+          "Problem statement will be provided on the spot",
+          "Solution must be original and based on AI/technology",
+          "Plagiarism is strictly prohibited",
+          "Participants must bring their own laptop and internet connection",
+          "Strict adherence to given time limits is required",
+          "Judges’ decision will be final and binding",
+          "Round 1: Ideation (45 minutes)",
+          "Round 2: Final Pitch (5 minutes presentation + 2 minutes Q&A)",
+          "Participants must clearly explain idea, implementation, and feasibility"
+        ],
         coordinators: [{ name: "Arzaan Khan", contact: "7338462010" }, { name: "Aishwarya Byati", contact: "8660973548" }]
       },
       {
@@ -159,16 +159,16 @@ export const branches: Branch[] = [
         venue: "seminar hall 2 AI dept ground Floor",
         rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
         rules: [
-"Each team must consist of 4 members, and all participants must carry their college ID cards",
-"All dishes must be prepared without using fire, induction, or any heating equipment",
-"Participants must bring all required raw materials (bread, fruits, vegetables, sauces, etc.) and basic tools (knives, peelers, plates, etc.)",
-"Use of pre-cooked or ready-made food items is strictly prohibited",
-"Total time allotted: 45–60 minutes",
-"Final presentation must include no-fire food preparation and fruit carving",
-"Each team must bring one special ingredient compulsorily",
-"A mystery ingredient will be provided during the event and must be used",
-"Surprise tasks will be given during the event"
-],
+          "Each team must consist of 4 members, and all participants must carry their college ID cards",
+          "All dishes must be prepared without using fire, induction, or any heating equipment",
+          "Participants must bring all required raw materials (bread, fruits, vegetables, sauces, etc.) and basic tools (knives, peelers, plates, etc.)",
+          "Use of pre-cooked or ready-made food items is strictly prohibited",
+          "Total time allotted: 45–60 minutes",
+          "Final presentation must include no-fire food preparation and fruit carving",
+          "Each team must bring one special ingredient compulsorily",
+          "A mystery ingredient will be provided during the event and must be used",
+          "Surprise tasks will be given during the event"
+        ],
         coordinators: [{ name: "Anupreksha Patil", contact: "7019993207" }, { name: "Sagarika", contact: "9591448042" }]
       },
       {
@@ -186,17 +186,17 @@ export const branches: Branch[] = [
         venue: "classroom no 1 AI dept 1st Floor",
         rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
         rules: [
-"Open to all field students (inter-college participation allowed)",
-"Each team will be given a random product/object (e.g., beverage can, daily-use item, etc.)",
-"Preparation time: 1 hour",
-"Teams must bring their own laptops or necessary requirements",
-"Participants must arrange their own internet facilities",
-"Teams must create at least one: poster (Canva), basic website, or AI-generated advertisement/video",
-"Each team must present their product on stage",
-"All 4 members should participate in the pitch",
-"Teams must market and sell their product creatively",
-"Pitch time: 3–5 minutes per team"
-],
+          "Open to all field students (inter-college participation allowed)",
+          "Each team will be given a random product/object (e.g., beverage can, daily-use item, etc.)",
+          "Preparation time: 1 hour",
+          "Teams must bring their own laptops or necessary requirements",
+          "Participants must arrange their own internet facilities",
+          "Teams must create at least one: poster (Canva), basic website, or AI-generated advertisement/video",
+          "Each team must present their product on stage",
+          "All 4 members should participate in the pitch",
+          "Teams must market and sell their product creatively",
+          "Pitch time: 3–5 minutes per team"
+        ],
         coordinators: [{ name: "Ganesh M Habib", contact: "8152032541" }, { name: "Akshata Hanamapure", contact: "7899674274" }]
       },
       {
@@ -214,22 +214,22 @@ export const branches: Branch[] = [
         venue: "Sports Ground",
         rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
         rules: [
-"Only one ball is used in the game",
-"Teams consist of 6 players; any number of boys or girls are allowed",
-"Teams playing inside or outside will be decided by a toss",
-"The ball must bounce once before hitting an opponent; direct hits are not allowed",
-"A player is OUT if he/she is hit by the ball after it bounces",
-"If the ball is caught, the inside player is OUT (not the thrower)",
-"The ball must always be thrown inside the court",
-"OUT players move outside the opponents court and cannot play again",
-"No crossing the centre line; stepping out results in OUT",
-"The team that eliminates all opponents or has more players remaining at the end wins",
-"Match duration is 3 minutes",
-"The thrower cannot hold the ball for more than 5 seconds",
-"ID cards of the respective college are mandatory (inter-college participants are allowed)",
-"Judge’s decision will be final",
-"Any disputes during the game will not be entertained"
-],
+          "Only one ball is used in the game",
+          "Teams consist of 6 players; any number of boys or girls are allowed",
+          "Teams playing inside or outside will be decided by a toss",
+          "The ball must bounce once before hitting an opponent; direct hits are not allowed",
+          "A player is OUT if he/she is hit by the ball after it bounces",
+          "If the ball is caught, the inside player is OUT (not the thrower)",
+          "The ball must always be thrown inside the court",
+          "OUT players move outside the opponents court and cannot play again",
+          "No crossing the centre line; stepping out results in OUT",
+          "The team that eliminates all opponents or has more players remaining at the end wins",
+          "Match duration is 3 minutes",
+          "The thrower cannot hold the ball for more than 5 seconds",
+          "ID cards of the respective college are mandatory (inter-college participants are allowed)",
+          "Judge’s decision will be final",
+          "Any disputes during the game will not be entertained"
+        ],
         coordinators: [{ name: "Somesh Kichadi", contact: "7411412948" }, { name: "Sneha Megeri", contact: "9110627268" }]
       }
     ],
@@ -248,23 +248,23 @@ export const branches: Branch[] = [
         duration: "10 am to 4 pm",
         venue: "Sports Ground",
         rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
-       rules: [
-"Only one ball is used in the game",
-"Teams consist of 6 players; any number of boys or girls are allowed",
-"Teams playing inside or outside will be decided by a toss",
-"The ball must bounce once before hitting an opponent; direct hits are not allowed",
-"A player is OUT if he/she is hit by the ball after it bounces",
-"If the ball is caught, the inside player is OUT (not the thrower)",
-"The ball must always be thrown inside the court",
-"OUT players move outside the opponents court and cannot play again",
-"No crossing the centre line; stepping out results in OUT",
-"The team that eliminates all opponents or has more players remaining at the end wins",
-"Match duration is 3 minutes",
-"The thrower cannot hold the ball for more than 5 seconds",
-"ID cards of the respective college are mandatory (inter-college participants are allowed)",
-"Judge’s decision will be final",
-"Any disputes during the game will not be entertained"
-],
+        rules: [
+          "Only one ball is used in the game",
+          "Teams consist of 6 players; any number of boys or girls are allowed",
+          "Teams playing inside or outside will be decided by a toss",
+          "The ball must bounce once before hitting an opponent; direct hits are not allowed",
+          "A player is OUT if he/she is hit by the ball after it bounces",
+          "If the ball is caught, the inside player is OUT (not the thrower)",
+          "The ball must always be thrown inside the court",
+          "OUT players move outside the opponents court and cannot play again",
+          "No crossing the centre line; stepping out results in OUT",
+          "The team that eliminates all opponents or has more players remaining at the end wins",
+          "Match duration is 3 minutes",
+          "The thrower cannot hold the ball for more than 5 seconds",
+          "ID cards of the respective college are mandatory (inter-college participants are allowed)",
+          "Judge’s decision will be final",
+          "Any disputes during the game will not be entertained"
+        ],
         coordinators: [{ name: "Vikram Singh", contact: "9876543328" }, { name: "Priya Reddy", contact: "9876543329" }]
       }
     ],
@@ -316,7 +316,7 @@ export const branches: Branch[] = [
         entryFee: "₹150",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeFVUGtqFPZINqKQB_5Jc4OS40tDBnaCAXkXIdQIhetbpHoiA/viewform?embedded=true",
         date: "April 11, 2026",
-        posterUrl:"/posters/CS/Vencer 2K26_ Hack the Hunt.png",
+        posterUrl: "/posters/CS/Vencer 2K26_ Hack the Hunt.png",
         branch: "CSE",
         teamSize: "2-4 members",
         duration: "3 Hours",
@@ -458,7 +458,7 @@ export const branches: Branch[] = [
       },
       {
         title: "The Auto Expert",
-        category: "Technical", 
+        category: "Technical",
         description: "Mechanical and auto parts, logos, identification quiz",
         prizePool: "Grand prizes",
         entryFee: "₹30",
@@ -475,28 +475,28 @@ export const branches: Branch[] = [
         coordinators: [{ name: "Takkappa ", contact: "9611910131" }, { name: "Suraj M", contact: "7349306149" }]
       },
       {
-    title: "Number Circle Cricket",
-    category: "Non-Technical",
-    description: "Unique cricket variant with number scoring circle mechanics",
-    prizePool: "Grand prizes",
-    entryFee: "₹100",
-    formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfEXh14rQ9EIDVEsoM9LTu_bfREcpk7EGXyyuu0zb2pV7cPHA/viewform?embedded=true",
-    date: "April 10, 2026",
-    posterUrl: "/posters/mech/1774851413605.png",
-    posterComingSoon: false,
-    teamSize: "4 players",
-    duration: "11 am onwards",
-    venue: "clg ground",
-    rulebook: "/rulebooks/Number Circle Cricket.pdf",
-    rules: [
-      "Teams of 4 players each",
-      "Special number circle scoring system",
-      "6-over match format",
-      "Boundary and wicket rules apply",
-      "Fair play mandatory"
-    ],
-    coordinators: [{ name: "Prajwal M", contact: "9964904108" }, { name: "swapnil P", contact: "7892471326" }]
-  },
+        title: "Number Circle Cricket",
+        category: "Non-Technical",
+        description: "Unique cricket variant with number scoring circle mechanics",
+        prizePool: "Grand prizes",
+        entryFee: "₹100",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfEXh14rQ9EIDVEsoM9LTu_bfREcpk7EGXyyuu0zb2pV7cPHA/viewform?embedded=true",
+        date: "April 10, 2026",
+        posterUrl: "/posters/mech/1774851413605.png",
+        posterComingSoon: false,
+        teamSize: "4 players",
+        duration: "11 am onwards",
+        venue: "clg ground",
+        rulebook: "/rulebooks/Number Circle Cricket.pdf",
+        rules: [
+          "Teams of 4 players each",
+          "Special number circle scoring system",
+          "6-over match format",
+          "Boundary and wicket rules apply",
+          "Fair play mandatory"
+        ],
+        coordinators: [{ name: "Prajwal M", contact: "9964904108" }, { name: "swapnil P", contact: "7892471326" }]
+      },
       {
         title: "Stand-up Comedy",
         category: "Non-Technical",
@@ -523,33 +523,33 @@ export const branches: Branch[] = [
         coordinators: [{ name: "Nishant M", contact: "8277357163" }, { name: "Varun K", contact: "9108428405" }]
       },
       {
-    title: "Ping Pong (Table Tennis)",
-    category: "Non-Technical",
-    description: "Fast-paced table tennis competition with exciting rallies and matches",
-    prizePool: "Grand prizes",
-    entryFee: "₹50",
-    formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeWo8EXwtD2vNV924UORO7HahJCfixEpihWaFFej5D1ASHV1A/viewform?embedded=true",
-    date: "April 10, 2026",
-    posterUrl: "/posters/mech/1774852350510.png",
-    posterComingSoon: false,
-    teamSize: "single or doubles",
-    duration: "11 am onwards",
-    venue: "sports room",
-    rulebook: "/rulebooks/Ping Pong.pdf",
-    rules: [
-      "Individual or pair (doubles) format",
-      "Standard table tennis rules apply",
-      "Best of 3 matches format",
-      "Modern ping pong tables and paddles provided",
-      "Official tournament-grade balls",
-      "Fair play and sportsmanship mandatory",
-      "No coaching allowed during matches",
-      "Round-robin or knockout format based on entries",
-      "Judges' decision is final"
-    ],
-    coordinators: [{ name: "Pradeep U", contact: "6361992135" }, { name: "Vinayak B", contact: "7676165547" }]
-  }
-  
+        title: "Ping Pong (Table Tennis)",
+        category: "Non-Technical",
+        description: "Fast-paced table tennis competition with exciting rallies and matches",
+        prizePool: "Grand prizes",
+        entryFee: "₹50",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeWo8EXwtD2vNV924UORO7HahJCfixEpihWaFFej5D1ASHV1A/viewform?embedded=true",
+        date: "April 10, 2026",
+        posterUrl: "/posters/mech/1774852350510.png",
+        posterComingSoon: false,
+        teamSize: "single or doubles",
+        duration: "11 am onwards",
+        venue: "sports room",
+        rulebook: "/rulebooks/Ping Pong.pdf",
+        rules: [
+          "Individual or pair (doubles) format",
+          "Standard table tennis rules apply",
+          "Best of 3 matches format",
+          "Modern ping pong tables and paddles provided",
+          "Official tournament-grade balls",
+          "Fair play and sportsmanship mandatory",
+          "No coaching allowed during matches",
+          "Round-robin or knockout format based on entries",
+          "Judges' decision is final"
+        ],
+        coordinators: [{ name: "Pradeep U", contact: "6361992135" }, { name: "Vinayak B", contact: "7676165547" }]
+      }
+
     ],
     culturalEvents: [],
     gamingEvents: [],
@@ -683,7 +683,23 @@ export const branches: Branch[] = [
         duration: "10:30am to 1pm",
         venue: "EC Dep. Lab",
         rulebook: "/rulebooks/RuleBook_ECE_Final.pdf",
-        rules: ["1-2 members", "CAD modeling challenge", "3D design competition", "Innovation judged"],
+        rules: [
+          "The event is open to all interested students ",
+          "Individual participation only ",
+          "The event will be conducted using Tinkercad Circuits ",
+          "Participants must design, code, and simulate their solution within Tinkercad ",
+          "Every participant must have a valid Tinkercad account ",
+          "Participants are responsible for logging in successfully ",
+          "Participants must use the assigned system/laptop ",
+          "Any technical issues must be immediately reported to organizers ",
+          "Problem statements will be given during the event ",
+          "Total time: 30-45 minutes ",
+          "Participants must complete: a. Circuit design b. Coding c. Simulation ",
+          "Copying circuits or code from others is strictly prohibited ",
+          "Any unfair practice will lead to disqualification ",
+          "Only properly working simulations will be considered ",
+          "Non-working circuits may receive partial marks "
+        ],
         coordinators: [{ name: "Shreyas Kalappanavar", contact: "8792880618" }, { name: "Chetan Arkasali", contact: "7019702015" }]
       },
       {
@@ -700,7 +716,18 @@ export const branches: Branch[] = [
         duration: "10am to 4pm ",
         venue: "Classroom 1, EC Dep.",
         rulebook: "/rulebooks/RuleBook_ECE_Final.pdf",
-        rules: ["Team of 2-4", "Solve clues around campus", "Tech-themed puzzles", "First team to finish wins"],
+        rules: [
+          "Each team consists of 3-4 members ",
+          "All participants must register as a team ",
+          "No individual participation allowed ",
+          "All participants must follow fair play ",
+          "Use of mobile phones is restricted unless permitted ",
+          "Teams must follow instructions of organizers and volunteers ",
+          "Any misconduct or cheating leads to disqualification ",
+          "The decision of judges/organizers is final ",
+          "The organizing team reserves the right to modify the rules if necessary ",
+          "The coordinator's decisions are final and binding "
+        ],
         coordinators: [{ name: "Pavitra Anantapur", contact: "9902045932" }, { name: "Rahul Angadi", contact: "8088126917" }]
       },
       {
@@ -717,7 +744,22 @@ export const branches: Branch[] = [
         duration: "10am to 1pm",
         venue: "EC Dep. classroom 5.",
         rulebook: "/rulebooks/RuleBook_ECE_Final.pdf",
-        rules: ["Individual", "60-sec challenges", "Multiple mini-games", "Points based"],
+        rules: [
+          "Pencil Bottle Drop: A pencil will be tied to the player's waist using a string to hang behind like a tail ",
+          "Pencil Bottle Drop: Player must squat and try to drop the pencil into the bottle without using hands ",
+          "Pencil Bottle Drop: Player must keep hands away from the pencil and bottle ",
+          "Pencil Bottle Drop: Use of hands or moving the bottle leads to disqualification ",
+          "Paper Plane Target: Players must stand behind the designated throwing line ",
+          "Paper Plane Target: Players have 60 seconds to throw paper planes into a bucket ",
+          "Paper Plane Target: Only planes remaining inside the bucket after time ends will be counted ",
+          "Paper Plane Target: Crossing the line while throwing results in the throw not being counted ",
+          "Balloon Keep Up: Player must keep the balloon in the air using only their head ",
+          "Balloon Keep Up: Player cannot use hands, shoulders, or any other body part ",
+          "Balloon Keep Up: If the balloon touches the floor or any other body part, the player is eliminated ",
+          "Oreo Stack: One player tilts their head back while a partner stacks Oreo cookies on their forehead ",
+          "Oreo Stack: Players cannot use glue, support, or hands to hold the cookies once stacked ",
+          "Oreo Stack: If the stack falls before the whistle, the team must restart the stack "
+        ],
         coordinators: [{ name: " Channabasappa Sabarada", contact: "8105032959" }, { name: "Sunil Chavan", contact: "8951531744)" }]
       },
       {
@@ -734,7 +776,19 @@ export const branches: Branch[] = [
         duration: "10:30am to 1pm",
         venue: "EC department classroom",
         rulebook: "/rulebooks/RuleBook_ECE_Final.pdf",
-        rules: ["Individual", "Create tech memes", "Audience vote", "Original content"],
+        rules: [
+          "Participants must create original memes based on the given theme or topic ",
+          "The theme/topic will be announced on the spot ",
+          "Participants can use mobile phones or laptops for creating memes ",
+          "Internet usage is allowed only for editing tools and resources, not for copying existing memes ",
+          "All memes must be created within the given time limit (30-45 minutes) ",
+          "The meme must be relevant, creative, and appropriate (no offensive or vulgar content) ",
+          "Plagiarism (copying existing memes) will lead to immediate disqualification ",
+          "Each participant can submit only one meme ",
+          "The final submission must be in image format (JPEG/PNG) ",
+          "Participants must submit their meme before the deadline to the coordinator ",
+          "Judges' decision will be final and binding "
+        ],
         coordinators: [{ name: " Namrata ", contact: "6363593488" }, { name: "Chetan H", contact: "8867472005" }]
       },
       {
@@ -751,7 +805,18 @@ export const branches: Branch[] = [
         duration: "2pm to 4pm",
         venue: "Behind open amphitheatre",
         rulebook: "/rulebooks/RuleBook_ECE_Final.pdf",
-        rules: ["Team 10-12", "Standard tug of war", "Best of 3 pulls"],
+        rules: [
+          "Each team must consist of 8 members (6 boys and 2 girls) ",
+          "All team members must participate in the match ",
+          "The game will be played between two teams at a time ",
+          "A centre line and boundary lines will be marked clearly ",
+          "Teams must pull the rope only after the referee's signal ",
+          "No sitting, kneeling, or lying down is allowed during the game ",
+          "Gloves and special gripping aids are not allowed ",
+          "Proper sportsmanship must be maintained ",
+          "Any form of misconduct will lead to disqualification ",
+          "The referee's decision will be final "
+        ],
         coordinators: [{ name: "  Anmol Ravat", contact: "9019402733" }, { name: "Tirakappa Bannimatti", contact: "7019453405" }]
       },
       {
@@ -762,13 +827,21 @@ export const branches: Branch[] = [
         entryFee: "₹50",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSef-jNtV33HYZ2EbJeZdeNGL0lVDYWh2zAJH4ha_paJ79pFSQ/viewform?embedded=true",
         date: "April 10, 2026 & 11, 2026",
-        posterUrl: "/posters/ECE/image.png",  
+        posterUrl: "/posters/ECE/image.png",
         branch: "ECE",
         teamSize: "Individual",
         duration: "10:30am to 4pm ",
         venue: "Infront of zerox shop",
         rulebook: "/rulebooks/RuleBook_ECE_Final.pdf",
-        rules: ["Individual", "Eating contest", "Spiciest pani puri", "Fastest eater"],
+        rules: [
+          "Individual participation only ",
+          "Time limit: 1 minute per round ",
+          "Participants must consume the pani puri completely (no spilling or wasting) ",
+          "Only one hand must be used; no external assistance allowed ",
+          "Drinking water during the round is not permitted ",
+          "Any form of cheating or misconduct will lead to disqualification ",
+          "Participants must follow hygiene and safety instructions "
+        ],
         coordinators: [{ name: "Vaishnavi Pavate", contact: "9113249142" }, { name: " Rakshita Umbrani", contact: "8431088653" }]
       },
       {
@@ -785,7 +858,14 @@ export const branches: Branch[] = [
         duration: " 11:00am to 4:00pm ",
         venue: "Collage ground",
         rulebook: "/rulebooks/RuleBook_ECE_Final.pdf",
-        rules: ["Multiple fun games", "Varied team sizes", "Cumulative scoring", "Entertainment focus"],
+        rules: [
+          "Only individual participation allowed ",
+          "The participant should complete the round of cycle in allotted time ",
+          "The participant's legs should not touch the ground while riding the cycle ",
+          "The participant should not cross the boundary; if crossed, the participant will be disqualified ",
+          "The participant who completes the round in min/less time will be the winner ",
+          "The coordinator decision will be final "
+        ],
         coordinators: [{ name: " Anirudh Joshi ", contact: "8147832528" }, { name: "Avadhoot D ", contact: "9876543271" }]
       },
     ],
@@ -846,14 +926,14 @@ export const branches: Branch[] = [
         venue: "LH 302",
         rulebook: "/rulebooks/VENCER_2K26_EEE_Rule_Book.pdf",
         rules: [
-"Participants present research or project work on technical topics related to electrical engineering or emerging technologies",
-"Time limit: 10-15 minutes per presentation including questions",
-"Presentation can be 2 or in groups (maximum 3 members per group)",
-"Required materials: PowerPoint presentation, research paper (hard copy or digital), or project documentation",
-"Judging criteria: Content quality (40%), Presentation skills (30%), Technical depth (20%), Innovation (10%)",
-"Only one opportunity to present; no retakes allowed",
-"Plagiarism will result in immediate disqualification"
-],
+          "Participants present research or project work on technical topics related to electrical engineering or emerging technologies",
+          "Time limit: 10-15 minutes per presentation including questions",
+          "Presentation can be 2 or in groups (maximum 3 members per group)",
+          "Required materials: PowerPoint presentation, research paper (hard copy or digital), or project documentation",
+          "Judging criteria: Content quality (40%), Presentation skills (30%), Technical depth (20%), Innovation (10%)",
+          "Only one opportunity to present; no retakes allowed",
+          "Plagiarism will result in immediate disqualification"
+        ],
         coordinators: [{ name: "Shridevi Baligar", contact: "9353924390" }, { name: "Shweta Doddannavar", contact: "6360384540" }]
       },
       {
@@ -872,15 +952,15 @@ export const branches: Branch[] = [
         venue: "LH 302",
         rulebook: "/rulebooks/VENCER_2K26_EEE_Rule_Book.pdf",
         rules: [
-"Dual participation: 2 players per game (individuals or pairs)",
-"Objective: Pocket your assigned coins and the queen coin to win",
-"Coin values: Black coin = 10 points, White coin = 20 points, Queen coin = 50 points",
-"The queen must be covered (pocketed) by pocketing another black or white coin of your colour",
-"Carom rules apply: Fouling results in opponent getting an additional striker",
-"First player/pair to pocket all their coins and cover the queen wins",
-"In case of tie, a single deciding round will be played",
-"Time limit per match: 15 minutes; if incomplete, highest score wins"
-],
+          "Dual participation: 2 players per game (individuals or pairs)",
+          "Objective: Pocket your assigned coins and the queen coin to win",
+          "Coin values: Black coin = 10 points, White coin = 20 points, Queen coin = 50 points",
+          "The queen must be covered (pocketed) by pocketing another black or white coin of your colour",
+          "Carom rules apply: Fouling results in opponent getting an additional striker",
+          "First player/pair to pocket all their coins and cover the queen wins",
+          "In case of tie, a single deciding round will be played",
+          "Time limit per match: 15 minutes; if incomplete, highest score wins"
+        ],
         coordinators: [{ name: "Nikhil gavada", contact: "6360045865" }, { name: "Amol Madwalkar", contact: "9481912285" }]
       },
       {
@@ -899,16 +979,16 @@ export const branches: Branch[] = [
         venue: "machine Lab",
         rulebook: "/rulebooks/VENCER_2K26_EEE_Rule_Book.pdf",
         rules: [
-"Team event: 1-3 participants per team",
-"Allocated space: 4ft × 4ft area per team or decided at that time of activity",
-"Objective: Create an artistic rangoli design reflecting theme, creativity, or cultural significance",
-"Materials allowed: Coloured powders, flower petals, beads, glitter, or any non-toxic dry materials",
-"No wet paints or liquid materials allowed",
-"Time limit: 60 minutes from start to finish",
-"Judging criteria: Creativity & theme interpretation (35%), Design complexity & intricacy (30%), Colour coordination & aesthetics (20%), Neatness & precision (15%)",
-"Any design that is incomplete or damaged during judging will not be penalized",
-"Participants must leave their work as is after completion for photography and judgment"
-],
+          "Team event: 1-3 participants per team",
+          "Allocated space: 4ft × 4ft area per team or decided at that time of activity",
+          "Objective: Create an artistic rangoli design reflecting theme, creativity, or cultural significance",
+          "Materials allowed: Coloured powders, flower petals, beads, glitter, or any non-toxic dry materials",
+          "No wet paints or liquid materials allowed",
+          "Time limit: 60 minutes from start to finish",
+          "Judging criteria: Creativity & theme interpretation (35%), Design complexity & intricacy (30%), Colour coordination & aesthetics (20%), Neatness & precision (15%)",
+          "Any design that is incomplete or damaged during judging will not be penalized",
+          "Participants must leave their work as is after completion for photography and judgment"
+        ],
         coordinators: [{ name: "Shraddha Aski", contact: "7676854434" }, { name: "Aishwarya Hippargi", contact: "8123492723" }]
       },
       {
@@ -927,16 +1007,16 @@ export const branches: Branch[] = [
         venue: "LH 301",
         rulebook: "/rulebooks/VENCER_2K26_EEE_Rule_Book.pdf",
         rules: [
-"Individual event: One participant at a time",
-"To Move the ring/disc along the intricately twisted metallic wire from start to finish without making contact with the wire",
-"Equipment: Metallic wire maze with a handle-stick and round loop attached",
-"Chances: Each participant gets 2 attempts",
-"Contact rule: If the ring touches the wire, an alarm/siren sounds, and the attempt ends",
-"Losing condition: If participant makes contact with the wire more than once in a single attempt, that attempt is lost",
-"Scoring: Winner determined by fastest time to complete the wire course among all participants",
-"In case of tie: Participant who made fewer mistakes/contacts is declared winner",
-"Time limit per attempt: 5 minutes; if not completed, attempt is considered failed."
-],
+          "Individual event: One participant at a time",
+          "To Move the ring/disc along the intricately twisted metallic wire from start to finish without making contact with the wire",
+          "Equipment: Metallic wire maze with a handle-stick and round loop attached",
+          "Chances: Each participant gets 2 attempts",
+          "Contact rule: If the ring touches the wire, an alarm/siren sounds, and the attempt ends",
+          "Losing condition: If participant makes contact with the wire more than once in a single attempt, that attempt is lost",
+          "Scoring: Winner determined by fastest time to complete the wire course among all participants",
+          "In case of tie: Participant who made fewer mistakes/contacts is declared winner",
+          "Time limit per attempt: 5 minutes; if not completed, attempt is considered failed."
+        ],
         coordinators: [{ name: "NIkhil Patil", contact: "9673132536" }, { name: "Maruti Bedaka", contact: "9481912285" }]
       }
     ],
@@ -1199,28 +1279,28 @@ export const culturalEvents: Event[] = [
     rulebook: "/rulebooks/Fashion show.pdf",
     rules: [
       "FOR GROUP:-",
-"The event has 2 rounds, including an elimination round",
-"Music must be submitted 2 days before the event in MP3 format",
-"Performance time limit: 3–4 minutes",
-"Any kind of vulgarity may lead to disqualification",
-"Green room will be provided for participants",
-"Outfit, makeup, and textures must match the given theme",
-"Participants must maintain proper behavior on stage",
-"Carrying a valid ID is compulsory",
-"No extra time will be provided for the performance",
-"Judges’ decision will be final",
-"FOR GROUP:-",
-"The event has 2 rounds: elimination round and final round",
-"Teams must be ready before the given time",
-"Green room will be provided for team members",
-"Music must be submitted 2 days before the event in MP3 format",
-"Dressing must be decent (not revealing)",
-"Performance time limit: 6–8 minutes",
-"At least 2 props are compulsory",
-"Participants must maintain proper behavior during the event",
-"No extra time will be provided for the performance",
-"Judges’ decision will be final"
-],
+      "The event has 2 rounds, including an elimination round",
+      "Music must be submitted 2 days before the event in MP3 format",
+      "Performance time limit: 3–4 minutes",
+      "Any kind of vulgarity may lead to disqualification",
+      "Green room will be provided for participants",
+      "Outfit, makeup, and textures must match the given theme",
+      "Participants must maintain proper behavior on stage",
+      "Carrying a valid ID is compulsory",
+      "No extra time will be provided for the performance",
+      "Judges’ decision will be final",
+      "FOR GROUP:-",
+      "The event has 2 rounds: elimination round and final round",
+      "Teams must be ready before the given time",
+      "Green room will be provided for team members",
+      "Music must be submitted 2 days before the event in MP3 format",
+      "Dressing must be decent (not revealing)",
+      "Performance time limit: 6–8 minutes",
+      "At least 2 props are compulsory",
+      "Participants must maintain proper behavior during the event",
+      "No extra time will be provided for the performance",
+      "Judges’ decision will be final"
+    ],
     coordinators: [{ name: "Suprim Roy", contact: "6362820636" }, { name: "Shilpa Malai", contact: "7204627271" }]
   },
 ];
