@@ -1309,9 +1309,9 @@ export const branches: Branch[] = [
         date: "April 10, 2026",
         posterUrl: "/posters/BCA/eva.png",
         branch: "BCA",
-        teamSize: "2 members",
+        teamSize: "2 Members",
         duration: "2 days (April 10-11, 2026)",
-        venue: "BCA classroom 1",
+        venue: "BCA Classroom 1",
         rulebook: "/rulebooks/Eva Intellect.pdf",
         rules: [
           "Student ID card is mandatory",
@@ -1322,19 +1322,19 @@ export const branches: Branch[] = [
           "Topics: C programming, DBMS, Python, Java",
           "Test your brainpower, boost your confidence",
         ],
-        coordinators: [{ name: "Tanuja k", contact: "7975741066" }, { name: "Sushil s", contact: "9353362031" }]
+        coordinators: [{ name: "Tanuja K", contact: "7975741066" }, { name: "Sushil S", contact: "9353362031" }]
       },
       {
         title: "Navi Voice (Debate)",
         category: "Technical",
         description: "Think, Speak, Lead - A premier communication platform designed to challenge students' intellectual boundaries. Engage in structured battles tackling contemporary social, ethical, and global issues.",
         prizePool: "Grand prizes",
-        entryFee: "₹150",
+        entryFee: "₹100",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeb1iPkF7WX7-9GM9nJyt_nZbgjd064eEM4jwLyDTU3SSXzoQ/viewform?embedded=true",
         date: "April 10, 2026",
         posterUrl: "/posters/BCA/navi.png",
         branch: "BCA",
-        teamSize: "idividual",
+        teamSize: "Individual",
         duration: "12 PM to 4 PM",
         venue: "BCA classroom 3",
         rulebook: "/rulebooks/Navi Voice.pdf",
@@ -1355,7 +1355,7 @@ export const branches: Branch[] = [
         category: "Non-Technical",
         description: "Turn your face into an Avatar masterpiece - A fun activity inspired by the movie Avatar. Paint faces using colors and patterns related to Na'vi culture and the world of Pandora.",
         prizePool: "Grand prizes",
-        entryFee: "₹150",
+        entryFee: "₹100",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLScdrJNPaShrjUtMf3uGT_p9FQte4rn7TztxqYUmvFqpy_EScQ/viewform?embedded=true",
         date: "April 11, 2026",
         posterUrl: "/posters/BCA/jacks.png",
@@ -1363,7 +1363,7 @@ export const branches: Branch[] = [
         teamSize: "Team of two members (artist and assistant)",
         duration: "12 PM to 5 PM",
         venue: "BCA classroom 2",
-        rulebook: "/rulebooks/Jack's Tribal Art.pdf",
+        rulebook: "/rulebooks/Jacktribalart.pdf",
         rules: [
           "Team of two members (art and artist)",
           "Participants should bring their own materials (colors, brushes, paint, etc.)",
@@ -1372,14 +1372,14 @@ export const branches: Branch[] = [
           "Judging based on: creativity, neatness, relevance to Avatar theme, color combination, overall presentation",
           "Judges' decision will be final"
         ],
-        coordinators: [{ name: "vaishnavi", contact: "8197718346" }, { name: "Amrut y", contact: "9482858458" }]
+        coordinators: [{ name: "Vaishnavi R", contact: "8197718346" }, { name: "Amrut Y", contact: "9482858458" }]
       },
       {
         title: "Avatar Reelverse (Reel Making)",
         category: "Non-Technical",
         description: "Create, Edit, Engage - Avatar themed reel making competition showcasing creativity, originality and the spirit of adventure. Blend fantasy with meaningful message exploration.",
         prizePool: "Grand prizes",
-        entryFee: "₹150",
+        entryFee: "₹100",
         formLink: "https://docs.google.com/forms/d/e/1FAIpQLScBpSUpnp0oyvKKYtcC5UdFMTq5xGTs6wFXowXCQkkpEdZ_Xg/viewform?embedded=true",
         date: "April 10, 2026 to April 11, 2026",
         posterUrl: "/posters/BCA/avatar reelverse.png",
@@ -1597,7 +1597,7 @@ export const gamingEvents: Event[] = [
       "Earphones/Headsets essential for communication",
       "Power bank recommended",
       "Follow fair play and respect all players and organizers",
-      "The organizer's decision will be final"
+      "The organizer's decision will be final",
     ],
     coordinators: [{ name: "Vikas S", contact: "9731218537" }, { name: "Prajwal J", contact: "8073334695" }]
   },
