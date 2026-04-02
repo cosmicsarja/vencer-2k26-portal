@@ -35,6 +35,7 @@ interface ProfileCardProps {
   avatarObjectPosition?: string;
   avatarFlipX?: boolean;
   avatarLeft?: string;
+  avatarHeight?: string;  // controls photo size within card
   iconUrl?: string;
   grainUrl?: string;
   innerGradient?: string;
@@ -72,6 +73,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   avatarObjectPosition = '58% 30%',
   avatarFlipX = false,
   avatarLeft = 'left-1/2',
+  avatarHeight = '90%',
   iconUrl = '',
   grainUrl = '',
   innerGradient,
@@ -469,12 +471,12 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
           }}
         />
       )}
-      <div ref={shellRef} className="relative z-[1] group">
+      <div ref={shellRef} className="relative z-[1] group" style={{ touchAction: 'pan-y' }}>
         <section
           className="grid relative overflow-hidden"
           style={{
             height: '80svh',
-            maxHeight: '540px',
+            maxHeight: '500px',
             aspectRatio: '0.718',
             borderRadius: cardRadius,
             backgroundBlendMode: 'color-dodge, normal, normal, normal',
@@ -535,7 +537,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   loading="lazy"
                   style={{
                     width: '100%',
-                    height: '90%',
+                    height: avatarHeight,
                     objectFit: 'cover',
                     objectPosition: avatarObjectPosition,
                     transformOrigin: '50% 50%',

@@ -1,8 +1,10 @@
 import ContactSection from "@/components/ContactSection";
+import PageBackground from "@/components/PageBackground";
 
 const Contact = () => {
   return (
-    <div className="pt-16 min-h-screen">
+    <div className="relative pt-16 min-h-screen">
+      <PageBackground />
       <ContactSection />
     </div>
   );

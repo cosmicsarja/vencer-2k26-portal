@@ -2,7 +2,9 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+
+
     <title>VENCER 2K26 — National Level Techno-Cultural Fest | AITM Belagavi</title>
     <meta name="description" content="VENCER 2K26 is the flagship national-level techno-cultural fest of Angadi Institute of Technology and Management, Belagavi. 50+ events, ₹5L+ prizes." />
     <meta name="author" content="AITM Belagavi" />
@@ -21,10 +23,20 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <!-- Mobile browser chrome color -->
+    <meta name="theme-color" content="#080d18" />
+    <!-- iOS web app meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Viewport: prevent auto-zoom on input focus -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+
 </html>

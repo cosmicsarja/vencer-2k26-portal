@@ -11,6 +11,8 @@ import signalSkyAvatar from "@/assets/signal-sky-avatar.png";
 import energyStormAvatar from "@/assets/energy-storm-avatar.png";
 import steelSentinelAvatar from "@/assets/steel-sentinel-avatar.png";
 import codeBloomAvatar from "@/assets/code-bloom-avatar.png";
+import PageBackground from "@/components/PageBackground";
+
 
 const avatars = [
   spiritTechAvatar, digitalForestAvatar, ironMountainAvatar,
@@ -91,6 +93,7 @@ TribeCard.displayName = "TribeCard";
 const Branches = () => {
   return (
     <section className="relative py-16 sm:py-20 md:py-24 pt-20 sm:pt-24 md:pt-28 min-h-screen">
+      <PageBackground />
       <div className="container px-3 sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -98,10 +101,10 @@ const Branches = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h1 className="font-display text-lg sm:text-2xl md:text-4xl tracking-wider pandora-gradient-text mb-2 sm:mb-3 md:mb-4">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-wider pandora-gradient-text mb-2 sm:mb-3 md:mb-4">
             The Tribes of VENCER
           </h1>
-          <p className="font-body text-xs sm:text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-1">
+          <p className="font-body text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-1">
             Eight clans, one world. Each tribe commands a unique biome of knowledge and innovation.
           </p>
         </motion.div>

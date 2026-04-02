@@ -21,7 +21,7 @@ const GallerySection = () => {
   };
 
   return (
-    <section id="gallery" className="relative py-24 bg-gradient-to-b from-background/50 to-muted/80">
+    <section id="gallery" className="relative py-24">
       <div className="container px-4 mx-auto">
         {/* Header */}
         <motion.div
@@ -31,7 +31,7 @@ const GallerySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20 max-w-3xl mx-auto"
         >
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl tracking-tight fest-gradient-text mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-tight fest-gradient-text mb-6">
             Gallery
           </h2>
           <p className="font-body text-xl text-muted-foreground leading-relaxed">
@@ -62,6 +62,7 @@ const GallerySection = () => {
                   className="w-full h-full object-cover transition-all duration-700 opacity-90 group-hover:opacity-100"
                   loading="lazy"
                   decoding="async"
+                  fetchPriority="low"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 25vw, 15vw"
                 />
                 {/* Overlay Gradient */}

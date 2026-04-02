@@ -6,6 +6,7 @@ import type { Event } from "@/data/events";
 import EventCard from "@/components/EventCard";
 import EventDetailModal from "@/components/EventDetailModal";
 import RegistrationModal from "@/components/RegistrationModal";
+import PageBackground from "@/components/PageBackground";
 
 const tabs = [
   { key: "branches" as const, label: "Tribe Events" },
@@ -89,6 +90,8 @@ const Events = () => {
 
   return (
     <section className="relative py-20 pt-24 sm:py-24 sm:pt-28 min-h-screen">
+      <PageBackground />
+
       <div className="container px-3 sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -96,8 +99,8 @@ const Events = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-8 sm:mb-12"
         >
-          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-wider pandora-gradient-text mb-3 sm:mb-4">Events</h1>
-          <p className="font-body text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-wider pandora-gradient-text mb-3 sm:mb-4">Events</h1>
+          <p className="font-body text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             50+ events across technical, cultural, and gaming categories. Click any event to view rules.
           </p>
         </motion.div>

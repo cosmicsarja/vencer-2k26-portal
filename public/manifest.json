@@ -1,0 +1,26 @@
+{
+  "name": "VENCER 2K26 — Techno-Cultural Fest",
+  "short_name": "VENCER 2K26",
+  "description": "National Level Techno-Cultural Fest at AITM Belagavi. 50+ events, ₹5L+ prizes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080d18",
+  "theme_color": "#080d18",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/placeholder.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/placeholder.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "entertainment"],
+  "lang": "en"
+}

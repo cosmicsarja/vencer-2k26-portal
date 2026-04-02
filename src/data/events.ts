@@ -1055,7 +1055,7 @@ export const branches: Branch[] = [
           "The participant who completes the round in min/less time will be the winner ",
           "The coordinator decision will be final "
         ],
-        coordinators: [{ name: " Anirudh Joshi ", contact: "8147832528" }, { name: "Avadhoot D ", contact: "9876543271" }]
+        coordinators: [{ name: " Anirudh Joshi ", contact: "8147832528" }, { name: "Avadhoot D ", contact: "7892230512" }]
       },
     ],
     culturalEvents: [],
@@ -1413,9 +1413,9 @@ export const culturalEvents: Event[] = [
     prizePool: "Grand prizes",
     entryFee: "₹200",
     formLink: "#",
-    date: "April 11, 2026",
+    date: "April 10, 2026",
     teamSize: "Individual",
-    duration: "Full Day",
+    duration: "12 Pm onwards",
     venue: "Main Stage",
     rulebook: "/rulebooks/Singing.pdf",
     rules: ["Individual participation", "Any genre accepted", "5-minute performance", "Live singing only", "Accompaniment allowed"],
@@ -1431,7 +1431,7 @@ export const culturalEvents: Event[] = [
     date: "April 10, 2026",
     teamSize: "Solo or Group (5-12)",
     duration: "Full Day",
-    venue: "Main Stage",
+    venue: "12 PM onwards",
     rulebook: "/rulebooks/Dance.pdf",
     rules: ["Solo or group", "3-8 minute performance", "Any dance form", "Props allowed (no fire)", "Music submitted beforehand"],
     coordinators: [{ name: "Nitin Kumar", contact: "9876543300" }, { name: "Anjali Verma", contact: "9876543301" }]
@@ -1443,9 +1443,9 @@ export const culturalEvents: Event[] = [
     prizePool: "Grand prizes",
     entryFee: "₹300",
     formLink: "#",
-    date: "April 11, 2026",
+    date: "April 10, 2026",
     teamSize: "Individual",
-    duration: "Full Day",
+    duration: "12 PM onwards",
     venue: "Main Stage",
     rulebook: "/rulebooks/Mr and Miss Vencer.pdf",
     rules: ["Individual (Male/Female categories)", "Theme-based ramp walk", "Q&A round", "Confidence & personality judged"],

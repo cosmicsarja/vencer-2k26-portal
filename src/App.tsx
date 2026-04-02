@@ -6,7 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import LoadingScreen from "./components/LoadingScreen";
+import SplashScreen from "./components/SplashScreen";
+import VideoPlayerScreen from "./components/VideoPlayerScreen";
 import ClickSpark from "./components/ClickSpark";
 
 // Lazy-loaded route components for code splitting
@@ -22,6 +23,9 @@ const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
+const SESSION_KEY = "vencer_intro_played";
+
+type AppPhase = "splash" | "intro" | "app";
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -30,11 +34,20 @@ const PageFallback = () => (
 );
 
 const App = () => {
-  const [loaded, setLoaded] = useState(false);
+  const alreadyPlayed = !!sessionStorage.getItem(SESSION_KEY);
+
+  // If already played this session → skip both splash and intro, go straight to app
+  const [phase, setPhase] = useState<AppPhase>(alreadyPlayed ? "app" : "splash");
 
   useEffect(() => {
     return useGlobalClickSound();
   }, []);
+
+  const handleSplashComplete = () => setPhase("intro");
+  const handleIntroComplete = () => {
+    sessionStorage.setItem(SESSION_KEY, "true");
+    setPhase("app");
+  };
 
   return (
     <ClickSpark sparkColor="hsl(175, 80%, 50%)" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
@@ -42,25 +55,41 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
-          <BrowserRouter>
-            <Suspense fallback={<PageFallback />}>
-              <Routes>
-                <Route element={<Layout />}>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/events" element={<Events />} />
-                  <Route path="/rulebook" element={<Rulebook />} />
-                  <Route path="/branches" element={<Branches />} />
-                  <Route path="/timeline" element={<Timeline />} />
-                  <Route path="/sponsors" element={<Sponsors />} />
-                  <Route path="/gallery" element={<Gallery />} />
-                  <Route path="/developers" element={<Developers />} />
-                  <Route path="/contact" element={<Contact />} />
-                </Route>
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </BrowserRouter>
+
+          {/* Phase 1: Splash screen (logo + progress bar) */}
+          {phase === "splash" && (
+            <SplashScreen onComplete={handleSplashComplete} />
+          )}
+
+          {/* Phase 2: Intro video */}
+          {phase === "intro" && (
+            <VideoPlayerScreen
+              videoSource="/videos/intro-video.mp4"
+              onComplete={handleIntroComplete}
+            />
+          )}
+
+          {/* Phase 3 (and always): The actual app — rendered in background so it's ready */}
+          <div style={{ visibility: phase === "app" ? "visible" : "hidden", pointerEvents: phase === "app" ? "auto" : "none" }}>
+            <BrowserRouter>
+              <Suspense fallback={<PageFallback />}>
+                <Routes>
+                  <Route element={<Layout />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/events" element={<Events />} />
+                    <Route path="/rulebook" element={<Rulebook />} />
+                    <Route path="/branches" element={<Branches />} />
+                    <Route path="/timeline" element={<Timeline />} />
+                    <Route path="/sponsors" element={<Sponsors />} />
+                    <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/developers" element={<Developers />} />
+                    <Route path="/contact" element={<Contact />} />
+                  </Route>
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </BrowserRouter>
+          </div>
         </TooltipProvider>
       </QueryClientProvider>
     </ClickSpark>

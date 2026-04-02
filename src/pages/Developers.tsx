@@ -1,9 +1,11 @@
 import ProfileCard from "@/components/ProfileCard";
 import cosmicsarjaPhoto from "@/assets/cosmicsarja-photo.png";
 import chetanPhoto from "@/assets/chetan.png";
+import rohanPhoto from "@/assets/rohan.png";
+import sahilPhoto from "@/assets/sahil.png";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Crown } from "lucide-react";
+import PageBackground from "@/components/PageBackground";
 
 interface Developer {
   name: string;
@@ -11,8 +13,12 @@ interface Developer {
   photo: string;
   handle: string;
   avatarObjectPosition?: string;
+  avatarHeight?: string;
   avatarFlipX?: boolean;
   avatarLeft?: string;
+  isLead?: boolean;
+  behindGlowColor?: string;
+  innerGradient?: string;
   instagram?: string;
   github?: string;
   linkedin?: string;
@@ -26,157 +32,182 @@ const developers: Developer[] = [
     handle: "cosmicsarja",
     avatarObjectPosition: "55% 30%",
     avatarLeft: "left-[44%]",
+    avatarHeight: "90%",
+    isLead: true,
+    // Gold / amber glow for Lead Developer
+    behindGlowColor: "rgba(255, 190, 70, 0.75)",
+    innerGradient: "linear-gradient(145deg,#7c5c1a99 0%,#f5c84255 100%)",
     instagram: "https://instagram.com/cosmicsarja",
     github: "https://github.com/cosmicsarja",
     linkedin: "https://linkedin.com/in/cosmicsarja",
   },
   {
     name: "Chetan M",
-    role: " Developer",
+    role: "Developer",
     photo: chetanPhoto,
-    handle: " Kalki__33_",
-    avatarObjectPosition: "60% 20%",
+    handle: "kalki__33_",
+    avatarObjectPosition: "62% 22%",
+    avatarLeft: "left-[48%]",
+    avatarHeight: "90%",
+    behindGlowColor: "rgba(125, 190, 255, 0.67)",
+    innerGradient: "linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)",
     instagram: "https://www.instagram.com/kalki__33_?igsh=cnhxbHEzcXpib2dh",
     github: "https://github.com/chetanmatapati33",
     linkedin: "https://www.linkedin.com/in/chetan-mathapati-021092296?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
-
+  {
+    name: "Sahil B",
+    role: "Developer",
+    photo: sahilPhoto,
+    handle: "sahil_b",
+    avatarObjectPosition: "50% 22%",
+    avatarLeft: "left-[50%]",
+    // Further reduced — user said still too big
+    avatarHeight: "52%",
+    behindGlowColor: "rgba(125, 190, 255, 0.67)",
+    innerGradient: "linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)",
+    instagram: "https://www.instagram.com/sahil_b",
+    github: "https://github.com/sahilb",
+    linkedin: "https://linkedin.com/in/sahilb",
+  },
+  {
+    name: "Rohan P",
+    role: "Developer",
+    photo: rohanPhoto,
+    handle: "rohan_p",
+    avatarObjectPosition: "50% 44%",
+    avatarLeft: "left-[50%]",
+    avatarHeight: "105%",
+    behindGlowColor: "rgba(125, 190, 255, 0.67)",
+    innerGradient: "linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)",
+    instagram: "https://www.instagram.com/rohan_p",
+    github: "https://github.com/rohanp",
+    linkedin: "https://linkedin.com/in/rohanp",
+  }
 ];
 
-const DeveloperCard = ({ dev }: { dev: Developer }) => {
-  return (
+const DeveloperCard = ({ dev, index }: { dev: Developer; index: number }) => (
+  <motion.div
+    style={{
+      touchAction: "pan-y",
+      // Explicit fixed width so cards never expand to fill grid cell and overlap
+      width: "240px",
+    }}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-20px" }}
+    transition={{ delay: index * 0.1, duration: 0.5 }}
+    className="relative flex flex-col items-center"
+  >
+    {/* Lead Developer crown badge */}
+    {dev.isLead && (
+      <div className="relative z-10 mb-2 flex items-center gap-1.5">
+        <span
+          className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest"
+          style={{
+            background: "linear-gradient(135deg, #f5a623, #f7cc50, #e08c10)",
+            color: "#1a0e00",
+            boxShadow: "0 0 16px rgba(245,166,35,0.6), 0 0 32px rgba(245,166,35,0.25)",
+          }}
+        >
+          <Crown className="w-3 h-3" />
+          Lead Developer
+        </span>
+      </div>
+    )}
+
+    {/* Outer glow ring for Lead */}
+    {dev.isLead && (
+      <div
+        className="absolute inset-0 rounded-2xl pointer-events-none -z-10"
+        style={{
+          background: "radial-gradient(ellipse at center, rgba(245,166,35,0.2) 0%, transparent 70%)",
+          filter: "blur(20px)",
+        }}
+      />
+    )}
+
     <ProfileCard
       name={dev.name}
       title={dev.role}
       handle={dev.handle}
       avatarUrl={dev.photo}
       avatarObjectPosition={dev.avatarObjectPosition}
-      avatarFlipX={dev.avatarFlipX}
       avatarLeft={dev.avatarLeft}
+      avatarHeight={dev.avatarHeight}
       status="Online"
       showUserInfo={true}
       enableTilt={true}
       enableMobileTilt={false}
       behindGlowEnabled={true}
-      behindGlowColor="rgba(125, 190, 255, 0.67)"
-      innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
+      behindGlowColor={dev.behindGlowColor ?? "rgba(125, 190, 255, 0.67)"}
+      innerGradient={dev.innerGradient ?? "linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"}
       instagramUrl={dev.instagram}
       githubUrl={dev.github}
       linkedinUrl={dev.linkedin}
     />
-  );
-};
+  </motion.div>
+);
 
-const Developers = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-  
-  const itemsPerPage = 1; // Show only 1 card at a time
-  const totalSlides = developers.length;
-  
-  const handlePrevious = () => {
-    setDirection(-1);
-    setCurrentIndex((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-  };
-  
-  const handleNext = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-  };
-  
-  const visibleDeveloper = developers[currentIndex];
+const Developers = () => (
+  <section className="relative w-full min-h-screen py-16 sm:py-20 md:py-24 pt-24 sm:pt-28 md:pt-32">
+    <PageBackground />
+    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto">
 
-  return (
-    <section className="relative w-full min-h-screen py-16 sm:py-20 md:py-24 pt-24 sm:pt-28 md:pt-32 bg-gradient-to-b from-background via-slate-950/30 to-background">
-      <div className="container px-4 sm:px-6 md:px-8 max-w-7xl w-full mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16 md:mb-20"
+      {/* Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-12 sm:mb-16"
+      >
+        <motion.h1
+          className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-wider pandora-gradient-text mb-3 font-bold"
+          animate={{ scale: [1, 1.02, 1] }}
+          transition={{ duration: 4, repeat: Infinity }}
         >
-          <motion.h1 
-            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wider pandora-gradient-text mb-4 sm:mb-6 font-bold"
-            animate={{ scale: [1, 1.03, 1] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            Developers
-          </motion.h1>
-        </motion.div>
+          Developers
+        </motion.h1>
+        <p className="font-body text-sm sm:text-base md:text-lg text-muted-foreground">
+          The team behind VENCER 2K26
+        </p>
+      </motion.div>
 
-        {/* Carousel Container */}
-        <div className="relative w-full flex flex-col items-center">
-          
-          {/* Navigation Buttons - MOVED UPSIDE */}
-          <div className="flex justify-center items-center w-full max-w-xs sm:max-w-sm md:max-w-md px-2 sm:px-4 mb-8 sm:mb-12 z-10 gap-6 sm:gap-8">
-            <motion.button
-              onClick={handlePrevious}
-              whileHover={{ scale: 1.1, boxShadow: "0 0 20px rgba(34, 211, 238, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-              className="p-3 sm:p-4 rounded-xl border border-cyan-500/30 bg-slate-900/60 backdrop-blur-md transition-all duration-300 text-cyan-400 hover:text-cyan-300 hover:border-cyan-400 hover:bg-slate-800/80 group relative overflow-hidden"
-              aria-label="Previous developer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <ChevronLeft size={24} className="sm:w-6 sm:h-6 md:w-7 md:h-7 relative z-10" />
-            </motion.button>
+      {/*
+        ┌─────────────────────────────────────────────────────────────────────┐
+        │  Layout strategy:                                                   │
+        │  Mobile  (< 640px): flex-col, each card CENTERED — no grid         │
+        │  Tablet  (640-1023px): 2×2 grid, cards centered in cells          │
+        │  Laptop  (1024-1279px): 2×2 grid, GAP increased — NO OVERLAP      │
+        │  Desktop (≥ 1280px): all 4 in one row                              │
+        │                                                                     │
+        │  Key: cards have FIXED 240px width — grid cells won't shrink them  │
+        └─────────────────────────────────────────────────────────────────────┘
+      */}
 
-            {/* Slide Indicators - BETWEEN BUTTONS */}
-            <div className="flex gap-2 sm:gap-3 flex-wrap justify-center items-center">
-              {developers.map((_, idx) => (
-                <motion.button
-                  key={idx}
-                  onClick={() => {
-                    setDirection(idx > currentIndex ? 1 : -1);
-                    setCurrentIndex(idx);
-                  }}
-                  whileHover={{ scale: 1.2 }}
-                  className={`rounded-full transition-all duration-300 min-h-2.5 ${
-                    idx === currentIndex
-                      ? "bg-cyan-400 w-8 sm:w-10 h-2.5 sm:h-3 shadow-[0_0_12px_rgba(34,211,238,0.7)]"
-                      : "bg-slate-700 hover:bg-slate-500 w-2.5 sm:w-3 h-2.5 sm:h-3 shadow-inner"
-                  }`}
-                  aria-label={`Go to ${developers[idx].name}`}
-                />
-              ))}
-            </div>
-
-            <motion.button
-              onClick={handleNext}
-              whileHover={{ scale: 1.1, boxShadow: "0 0 20px rgba(34, 211, 238, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-              className="p-3 sm:p-4 rounded-xl border border-cyan-500/30 bg-slate-900/60 backdrop-blur-md transition-all duration-300 text-cyan-400 hover:text-cyan-300 hover:border-cyan-400 hover:bg-slate-800/80 group relative overflow-hidden"
-              aria-label="Next developer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-l from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <ChevronRight size={24} className="sm:w-6 sm:h-6 md:w-7 md:h-7 relative z-10" />
-            </motion.button>
-          </div>
-
-          {/* Single Card Display - Smaller on Mobile */}
-          <div className="overflow-hidden flex justify-center w-full">
-            <motion.div
-              key={currentIndex}
-              className="w-full max-w-xs sm:max-w-sm md:max-w-md flex justify-center px-2 sm:px-4"
-              initial={{ x: direction > 0 ? 50 : -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: direction > 0 ? -50 : 50, opacity: 0 }}
-              transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 30 }}
-            >
-              <motion.div 
-                className="flex justify-center items-start w-full"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-              >
-                <DeveloperCard dev={visibleDeveloper} />
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
+      {/* Mobile — single column, perfectly centered */}
+      <div className="flex flex-col items-center gap-10 sm:hidden pb-16">
+        {developers.map((dev, i) => (
+          <DeveloperCard key={dev.name} dev={dev} index={i} />
+        ))}
       </div>
-    </section>
-  );
-};
+
+      {/* Tablet (sm-lg): 2×2 grid */}
+      <div className="hidden sm:grid xl:hidden grid-cols-2 gap-x-8 gap-y-12 place-items-center pb-16">
+        {developers.map((dev, i) => (
+          <DeveloperCard key={dev.name} dev={dev} index={i} />
+        ))}
+      </div>
+
+      {/* Desktop (xl+): 4 in a row */}
+      <div className="hidden xl:flex justify-center gap-10 2xl:gap-14 pb-16 flex-wrap">
+        {developers.map((dev, i) => (
+          <DeveloperCard key={dev.name} dev={dev} index={i} />
+        ))}
+      </div>
+
+    </div>
+  </section>
+);
 
 export default Developers;
-
