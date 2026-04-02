@@ -19,7 +19,29 @@ export default defineConfig(({ mode }) => ({
     VitePWA({
       registerType: "autoUpdate",
       workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg,mp3}"],
+        // Raise the per-file precache limit to 5 MB
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        // Only precache core app assets; exclude large poster & avatar images
+        globPatterns: ["**/*.{js,css,html,ico,svg,webp,jpg,jpeg,mp3}"],
+        globIgnores: [
+          "**/posters/**",
+          "**/assets/*avatar*",
+          "**/assets/*bg*",
+        ],
+        // Serve excluded large images via runtime caching (NetworkFirst)
+        runtimeCaching: [
+          {
+            urlPattern: /\/(posters|assets)\/.+\.(png|jpg|jpeg|webp)$/i,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "large-images",
+              expiration: {
+                maxEntries: 60,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+              },
+            },
+          },
+        ],
       },
       manifest: {
         name: "VENCER 2K26 — Techno-Cultural Fest",
