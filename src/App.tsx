@@ -9,6 +9,7 @@ import Layout from "./components/Layout";
 import SplashScreen from "./components/SplashScreen";
 import VideoPlayerScreen from "./components/VideoPlayerScreen";
 import ClickSpark from "./components/ClickSpark";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Lazy-loaded route components for code splitting
 const Home = lazy(() => import("./pages/Home"));
@@ -72,6 +73,7 @@ const App = () => {
           {/* Phase 3 (and always): The actual app — rendered in background so it's ready */}
           <div style={{ visibility: phase === "app" ? "visible" : "hidden", pointerEvents: phase === "app" ? "auto" : "none" }}>
             <BrowserRouter>
+              <ScrollToTop />
               <Suspense fallback={<PageFallback />}>
                 <Routes>
                   <Route element={<Layout />}>

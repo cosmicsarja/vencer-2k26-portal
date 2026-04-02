@@ -173,34 +173,8 @@ const Developers = () => (
         </p>
       </motion.div>
 
-      {/*
-        ┌─────────────────────────────────────────────────────────────────────┐
-        │  Layout strategy:                                                   │
-        │  Mobile  (< 640px): flex-col, each card CENTERED — no grid         │
-        │  Tablet  (640-1023px): 2×2 grid, cards centered in cells          │
-        │  Laptop  (1024-1279px): 2×2 grid, GAP increased — NO OVERLAP      │
-        │  Desktop (≥ 1280px): all 4 in one row                              │
-        │                                                                     │
-        │  Key: cards have FIXED 240px width — grid cells won't shrink them  │
-        └─────────────────────────────────────────────────────────────────────┘
-      */}
-
-      {/* Mobile — single column, perfectly centered */}
-      <div className="flex flex-col items-center gap-10 sm:hidden pb-16">
-        {developers.map((dev, i) => (
-          <DeveloperCard key={dev.name} dev={dev} index={i} />
-        ))}
-      </div>
-
-      {/* Tablet (sm-lg): 2×2 grid */}
-      <div className="hidden sm:grid xl:hidden grid-cols-2 gap-x-8 gap-y-12 place-items-center pb-16">
-        {developers.map((dev, i) => (
-          <DeveloperCard key={dev.name} dev={dev} index={i} />
-        ))}
-      </div>
-
-      {/* Desktop (xl+): 4 in a row */}
-      <div className="hidden xl:flex justify-center gap-10 2xl:gap-14 pb-16 flex-wrap">
+      {/* Unified Responsive Grid: 1 col on mobile, 2x2 on tablet/desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 place-items-center max-w-4xl mx-auto pb-16">
         {developers.map((dev, i) => (
           <DeveloperCard key={dev.name} dev={dev} index={i} />
         ))}

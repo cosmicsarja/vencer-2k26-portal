@@ -19,7 +19,7 @@ const socialLinks = [
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer ref={ref} className="border-t border-border/20 relative">
+    <footer ref={ref} className="border-t border-border/20 relative bg-background">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(175_80%_40%_/_0.03)_0%,transparent_50%)]" />
       <div className="container px-4 relative">
         

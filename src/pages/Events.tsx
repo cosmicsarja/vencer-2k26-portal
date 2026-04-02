@@ -110,11 +110,10 @@ const Events = () => {
             <button
               key={tab.key}
               onClick={() => { setActiveTab(tab.key); setActiveBranch(0); }}
-              className={`font-display text-[10px] sm:text-xs tracking-wider px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl transition-all duration-300 font-bold ${
-                activeTab === tab.key
+              className={`font-display text-[10px] sm:text-xs tracking-wider px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl transition-all duration-300 font-bold ${activeTab === tab.key
                   ? "bg-gradient-to-r from-primary to-fest-cyan text-primary-foreground shadow-[0_0_20px_hsl(var(--fest-teal)_/_0.3)]"
-                  : "bg-card/80 border-2 border-border text-muted-foreground hover:text-foreground"
-              }`}
+                  : "bg-muted border-2 border-transparent text-muted-foreground hover:text-foreground"
+                }`}
             >
               {tab.label}
             </button>
@@ -128,11 +127,10 @@ const Events = () => {
               <button
                 key={b.shortName}
                 onClick={() => setActiveBranch(i)}
-                className={`font-heading text-[10px] sm:text-xs px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all duration-300 font-bold ${
-                  activeBranch === i
+                className={`font-heading text-[10px] sm:text-xs px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all duration-300 font-bold ${activeBranch === i
                     ? "bg-card border-2 border-primary text-primary shadow-[0_0_15px_hsl(var(--fest-teal)_/_0.2)]"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
+                    : "bg-muted border-2 border-transparent text-muted-foreground hover:bg-card hover:text-foreground"
+                  }`}
               >
                 {b.shortName}
               </button>
