@@ -52,7 +52,7 @@ export const branches: Branch[] = [
         teamSize: "1-4 participants",
         duration: "12PM to 4:45PM",
         venue: "Seminar Hall 1 AI dept 1st Floor",
-        rulebook: "/rulebooks/AI TECH RULES .pdf",
+        rulebook: "public/rulebooks/AI TECH RULES 1 .pdf",
         rules: ["Team size: 1 to 4 members", "Each team must bring minimum 2 laptops", "Teams must arrange their own internet connection", "Participants must strictly follow event timings", "Any malpractice or unfair means leads to disqualification", "Judges' decision is final", "Round 1A: 25 MCQs (25 marks, 25 min)", "Round 1B: 5 coding questions (25 marks, 25 min)", "10% teams eliminated after Round 1", "Round 2: Debug 3 code snippets (30 marks, 25 min)", "20% teams eliminated after Round 2", "Final: QR scan → password → unlock zip → solve problem", "Only first 10 teams qualify for final round", "Winners based on total score across all rounds", "Final round on same day"],
         coordinators: [{ name: "Shivalingsarj Desai", contact: "9513804776" }, { name: "Nivedita Akkimaradi", contact: "8296663125" }]
       },
@@ -69,7 +69,7 @@ export const branches: Branch[] = [
         teamSize: "1-4 members",
         duration: "10 am. to 1 pm",
         venue: "seminar hall 1 AI dept 1st Floor",
-        rulebook: "/rulebooks/AI TECH RULES .pdf",
+        rulebook: "public/rulebooks/AI TECH RULES 1 .pdf",
         rules: [
           "Participants must take part in a team",
           "Each team should have a minimum of 2 members and a maximum of 4 members",
@@ -94,7 +94,7 @@ export const branches: Branch[] = [
         teamSize: "1 or 2 participants",
         duration: "10 am to 3 pm",
         venue: "AI dept classroom no 1",
-        rulebook: "public/rulebooks/AI TECH RULES .pdf",
+        rulebook: "/rulebooks/AI TECH RULES 1 .pdf",
         rules: [
           "Participation: Individual or Team (1–2 members)",
           "Each team must bring their own laptop/mobile device",
@@ -128,7 +128,7 @@ export const branches: Branch[] = [
         teamSize: "1-4 members",
         duration: "12 pm to 3 pm",
         venue: "Seminar Hall 2 AI dept ground Floor",
-        rulebook: "/rulebooks/AI TECH RULES .pdf",
+        rulebook: "/rulebooks/AI TECH RULES 1 .pdf",
         rules: [
           "Participation: Individual or Team (up to 4 members)",
           "Participants must report 10 minutes before the event begins",
@@ -157,7 +157,7 @@ export const branches: Branch[] = [
         teamSize: "1-4 members",
         duration: "10am to 1 pm",
         venue: "seminar hall 2 AI dept ground Floor",
-        rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
+        rulebook: "public/rulebooks/AI NON TECH rules 1.pdf",
         rules: [
           "Each team must consist of 4 members, and all participants must carry their college ID cards",
           "All dishes must be prepared without using fire, induction, or any heating equipment",
