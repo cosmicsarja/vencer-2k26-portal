@@ -1577,9 +1577,9 @@ export const gamingEvents: Event[] = [
     coordinators: [{ name: "sumith", contact: "8217523627" }, { name: "Suhas metri", contact: "7676172453" }]
   },
   {
-    title: "FIFA E-Football Championship",
+    title: "FIFA E-Football (Mobile Gaming)",
     category: "Gaming" as const,
-    description: "Console football championship featuring international teams and realistic gameplay",
+    description: "E-Football Mobile - Virtual football tournament for mobile gamers",
     prizePool: "Grand prizes",
     entryFee: "₹100",
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeRvf1FMaE340QwCOvZCDwcftRXkGW-ei97t6vwcqDB1bpBlQ/viewform?embedded=true",
