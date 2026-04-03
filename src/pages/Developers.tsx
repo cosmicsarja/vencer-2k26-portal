@@ -60,9 +60,8 @@ const DeveloperCard = ({ dev, index }: { dev: Developer; index: number }) => (
       touchAction: "pan-y",
     }}
     initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-20px" }}
-    transition={{ delay: index * 0.1, duration: 0.5 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: index * 0.15, duration: 0.5, ease: "easeOut" }}
     className="relative flex flex-col items-center w-[260px] sm:w-[300px]"
   >
     {/* Badge container with fixed height to ensure cards align even if one isn't lead */}
@@ -133,8 +132,9 @@ const Developers = () => (
       >
         <motion.h1
           className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-wider pandora-gradient-text mb-3 font-bold inline-block"
-          animate={{ scale: [1, 1.02, 1] }}
-          transition={{ duration: 4, repeat: Infinity }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
         >
           Developers
         </motion.h1>
