@@ -1465,7 +1465,7 @@ export const culturalEvents: Event[] = [
     description: "Pageant with ramp walk and personality test",
     prizePool: "Grand prizes",
     entryFee: "₹200",
-    formLink: "",
+    formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeC2ly47F8jisxRmqxe4bajR69E0hFiU643WREs9wQPv2C31Q/viewform?embedded=true",
     date: "April 10, 2026",
     posterUrl: "/posters/cult/cb586f60-9132-4944-88b2-f9052a0d3916.png",
     teamSize: "Individual",
