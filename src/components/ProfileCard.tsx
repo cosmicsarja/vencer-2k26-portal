@@ -458,7 +458,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   return (
     <div
       ref={wrapRef}
-      className={`relative ${className}`.trim()}
+      className={`relative w-full h-full ${className}`.trim()}
       style={{ perspective: '500px', transform: 'translate3d(0, 0, 0.1px)', ...cardStyle } as React.CSSProperties}
     >
       {behindGlowEnabled && (
@@ -471,13 +471,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
           }}
         />
       )}
-      <div ref={shellRef} className="relative z-[1] group" style={{ touchAction: 'pan-y' }}>
+      <div ref={shellRef} className="relative z-[1] group w-full h-full" style={{ touchAction: 'pan-y' }}>
         <section
-          className="grid relative overflow-hidden"
+          className="grid relative overflow-hidden w-full h-full"
           style={{
-            height: '80svh',
-            maxHeight: '500px',
-            aspectRatio: '0.718',
             borderRadius: cardRadius,
             backgroundBlendMode: 'color-dodge, normal, normal, normal',
             boxShadow:
@@ -555,21 +552,22 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   className="absolute z-[2] flex items-center justify-between pointer-events-auto"
                   style={
                     {
-                      '--ui-inset': '20px',
+                      '--ui-inset': '10px',
                       '--ui-radius-bias': '6px',
                       bottom: 'var(--ui-inset)',
                       left: 'var(--ui-inset)',
                       right: 'var(--ui-inset)',
-                      background: 'rgba(20, 20, 30, 1)',
+                      background: 'rgba(20, 20, 30, 0.95)',
+                      backdropFilter: 'blur(10px)',
                       borderRadius: 'calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)))',
-                      padding: '12px 14px'
+                      padding: '10px 10px'
                     } as React.CSSProperties
                   }
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     <div
                       className="rounded-full overflow-hidden border border-white/10 flex-shrink-0"
-                      style={{ width: '48px', height: '48px' }}
+                      style={{ width: '36px', height: '36px' }}
                     >
                       <img
                         className="w-full h-full object-cover rounded-full"
@@ -594,16 +592,16 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     {instagramUrl && (
                       <a
                         href={instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-[#E4405F] bg-[#E4405F]/20 hover:bg-[#E4405F]/30 transition-all duration-200 shadow-lg"
+                        className="w-8 h-8 flex items-center justify-center rounded-md border border-[#E4405F]/50 bg-[#E4405F]/20 hover:bg-[#E4405F]/30 transition-all duration-200 shadow-sm"
                         aria-label="Instagram"
                       >
-                        <Instagram size={24} className="text-[#E4405F]" />
+                        <Instagram size={16} className="text-[#E4405F]" />
                       </a>
                     )}
                     {linkedinUrl && (
@@ -611,10 +609,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         href={linkedinUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-[#0A66C2] bg-[#0A66C2]/20 hover:bg-[#0A66C2]/30 transition-all duration-200 shadow-lg"
+                        className="w-8 h-8 flex items-center justify-center rounded-md border border-[#0A66C2]/50 bg-[#0A66C2]/20 hover:bg-[#0A66C2]/30 transition-all duration-200 shadow-sm"
                         aria-label="LinkedIn"
                       >
-                        <Linkedin size={24} className="text-[#0A66C2]" />
+                        <Linkedin size={16} className="text-[#0A66C2]" />
                       </a>
                     )}
                     {githubUrl && (
@@ -622,10 +620,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         href={githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-white bg-white/10 hover:bg-white/20 transition-all duration-200 shadow-lg"
+                        className="w-8 h-8 flex items-center justify-center rounded-md border border-white/30 bg-white/10 hover:bg-white/20 transition-all duration-200 shadow-sm"
                         aria-label="GitHub"
                       >
-                        <Github size={24} className="text-white" />
+                        <Github size={16} className="text-white" />
                       </a>
                     )}
                   </div>
@@ -649,7 +647,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                 <h3
                   className="font-semibold m-0"
                   style={{
-                    fontSize: 'min(5svh, 3em)',
+                    fontSize: 'clamp(1.5rem, 6cqw, 2rem)',
+                    lineHeight: '1.2',
                     backgroundImage: 'linear-gradient(to bottom, #fff, #6f6fbe)',
                     backgroundSize: '1em 1.5em',
                     WebkitTextFillColor: 'transparent',
@@ -667,8 +666,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   className="font-semibold whitespace-nowrap mx-auto w-min"
                   style={{
                     position: 'relative',
-                    top: '-12px',
-                    fontSize: '16px',
+                    top: '0',
+                    fontSize: '14px',
                     margin: '0 auto',
                     backgroundImage: 'linear-gradient(to bottom, #fff, #4a4ac0)',
                     backgroundSize: '1em 1.5em',

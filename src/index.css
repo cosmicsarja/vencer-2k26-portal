@@ -144,7 +144,7 @@
 html.pandora-page-bg {
   background-image:
     linear-gradient(180deg, rgba(4, 8, 18, 0.65) 0%, rgba(4, 8, 18, 0.55) 50%, rgba(4, 8, 18, 1) 100%),
-    url('/bgfor.png');
+    url('./assets/bgfor.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
