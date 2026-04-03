@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Tribes", href: "/branches" },
   { label: "Events", href: "/events" },
   { label: "Schedule", href: "/timeline" },
+  { label: "Rulebook", href: "/rulebook" },
   { label: "Gallery", href: "/gallery" },
   { label: "Developers", href: "/developers" },
   { label: "Contact", href: "/contact" },

@@ -42,7 +42,7 @@ const Rulebook = () => {
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <a
-                href="/VENCER_2K26_Rulebook.pdf"
+                href="/rulebooks/vencer-rule-book%20(1).pdf"
                 download
                 className="inline-flex items-center gap-3 font-display text-sm tracking-wider px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_0_25px_hsl(25_95%_55%_/_0.4)] transition-all duration-300 hover:scale-105"
               >
@@ -71,7 +71,7 @@ const Rulebook = () => {
                   <X size={16} />
                 </button>
                 <iframe
-                  src="/VENCER_2K26_Rulebook.pdf"
+                  src="/rulebooks/vencer-rule-book%20(1).pdf"
                   className="w-full h-[70vh] rounded-xl border border-border/50"
                   title="VENCER 2K26 Rulebook"
                 />

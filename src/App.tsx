@@ -35,7 +35,7 @@ const PageFallback = () => (
 );
 
 const App = () => {
-  const alreadyPlayed = !!sessionStorage.getItem(SESSION_KEY);
+  const alreadyPlayed = !!localStorage.getItem(SESSION_KEY);
 
   // If already played this session → skip both splash and intro, go straight to app
   const [phase, setPhase] = useState<AppPhase>(alreadyPlayed ? "app" : "splash");
@@ -46,7 +46,7 @@ const App = () => {
 
   const handleSplashComplete = () => setPhase("intro");
   const handleIntroComplete = () => {
-    sessionStorage.setItem(SESSION_KEY, "true");
+    localStorage.setItem(SESSION_KEY, "true");
     setPhase("app");
   };
 
