@@ -1503,7 +1503,7 @@ export const culturalEvents: Event[] = [
     teamSize: "Group (8-10) or Solo",
     duration: "12pm onwards",
     venue: "Auditorium",
-    rulebook: "/rulebooks/Fashion show.pdf",
+    rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
     rules: [
       "FOR GROUP:-",
       "The event has 2 rounds, including an elimination round",
