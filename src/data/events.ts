@@ -1505,7 +1505,7 @@ export const culturalEvents: Event[] = [
     venue: "Auditorium",
     rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
     rules: [
-      "FOR GROUP:-",
+      "FOR Solo:-",
       "The event has 2 rounds, including an elimination round",
       "Music must be submitted 2 days before the event in MP3 format",
       "Performance time limit: 3–4 minutes",
