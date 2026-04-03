@@ -560,14 +560,15 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                       background: 'rgba(20, 20, 30, 0.95)',
                       backdropFilter: 'blur(10px)',
                       borderRadius: 'calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)))',
-                      padding: '10px 10px'
+                      padding: '8px 8px'
                     } as React.CSSProperties
                   }
                 >
-                  <div className="flex items-center gap-2">
+                  {/* Left: avatar + handle + status — shrinks & truncates */}
+                  <div className="flex items-center gap-1.5 min-w-0 flex-1 overflow-hidden">
                     <div
                       className="rounded-full overflow-hidden border border-white/10 flex-shrink-0"
-                      style={{ width: '36px', height: '36px' }}
+                      style={{ width: '28px', height: '28px' }}
                     >
                       <img
                         className="w-full h-full object-cover rounded-full"
@@ -582,26 +583,27 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         }}
                       />
                     </div>
-                    <div className="flex flex-col items-start gap-1.5">
-                      <div className="text-sm font-medium text-white/90 leading-none">@{handle}</div>
-                      <div className={`text-sm leading-none flex items-center gap-1.5 ${status?.toLowerCase() === 'online' ? 'text-green-400' : 'text-white/70'}`}>
+                    <div className="flex flex-col items-start gap-1 min-w-0 overflow-hidden">
+                      <div className="text-xs font-medium text-white/90 leading-none truncate w-full">@{handle}</div>
+                      <div className={`text-xs leading-none flex items-center gap-1 ${status?.toLowerCase() === 'online' ? 'text-green-400' : 'text-white/70'}`}>
                         {status?.toLowerCase() === 'online' && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse flex-shrink-0" />
                         )}
-                        {status}
+                        <span className="truncate">{status}</span>
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  {/* Right: social icons — never shrink, always visible */}
+                  <div className="flex items-center gap-1 flex-shrink-0 ml-1">
                     {instagramUrl && (
                       <a
                         href={instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-8 h-8 flex items-center justify-center rounded-md border border-[#E4405F]/50 bg-[#E4405F]/20 hover:bg-[#E4405F]/30 transition-all duration-200 shadow-sm"
+                        className="w-7 h-7 flex items-center justify-center rounded-md border border-[#E4405F]/50 bg-[#E4405F]/20 hover:bg-[#E4405F]/30 transition-all duration-200"
                         aria-label="Instagram"
                       >
-                        <Instagram size={16} className="text-[#E4405F]" />
+                        <Instagram size={14} className="text-[#E4405F]" />
                       </a>
                     )}
                     {linkedinUrl && (
@@ -609,10 +611,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         href={linkedinUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-8 h-8 flex items-center justify-center rounded-md border border-[#0A66C2]/50 bg-[#0A66C2]/20 hover:bg-[#0A66C2]/30 transition-all duration-200 shadow-sm"
+                        className="w-7 h-7 flex items-center justify-center rounded-md border border-[#0A66C2]/50 bg-[#0A66C2]/20 hover:bg-[#0A66C2]/30 transition-all duration-200"
                         aria-label="LinkedIn"
                       >
-                        <Linkedin size={16} className="text-[#0A66C2]" />
+                        <Linkedin size={14} className="text-[#0A66C2]" />
                       </a>
                     )}
                     {githubUrl && (
@@ -620,10 +622,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         href={githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-8 h-8 flex items-center justify-center rounded-md border border-white/30 bg-white/10 hover:bg-white/20 transition-all duration-200 shadow-sm"
+                        className="w-7 h-7 flex items-center justify-center rounded-md border border-white/30 bg-white/10 hover:bg-white/20 transition-all duration-200"
                         aria-label="GitHub"
                       >
-                        <Github size={16} className="text-white" />
+                        <Github size={14} className="text-white" />
                       </a>
                     )}
                   </div>
