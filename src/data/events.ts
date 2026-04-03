@@ -606,7 +606,7 @@ export const branches: Branch[] = [
         teamSize: "1 or 2 members",
         duration: "2:30 pm onwards",
         venue: "mechanical classroom",
-        rulebook: "/rulebooks/Bridge Making Challenge.pdf",
+        rulebook: "/rulebooks/mechanical event list 26-1.pdf.pdf",
         rules: ["Team of 2-3 members", "Materials: ice cream sticks and glue (provided)", "Span 30cm min", "Load test at center", "Best load-to-weight ratio wins"],
         coordinators: [{ name: "Nabeel D", contact: "988688578" }, { name: "Naminath P", contact: "8867073077" }]
       },
@@ -624,7 +624,7 @@ export const branches: Branch[] = [
         teamSize: "1 or 2 members",
         duration: "11 am onwards",
         venue: "mechanical classroom",
-        rulebook: "/rulebooks/The Auto Expert.pdf",
+        rulebook: "/rulebooks/mechanical event list 26-1.pdf.pdf",
         rules: ["Individual participation", "Multiple rounds: parts ID, logos, quiz", "No aids allowed", "Fastest accurate answers"],
         coordinators: [{ name: "Takkappa ", contact: "9611910131" }, { name: "Suraj M", contact: "7349306149" }]
       },
@@ -641,7 +641,7 @@ export const branches: Branch[] = [
         teamSize: "4 players",
         duration: "11 am onwards",
         venue: "clg ground",
-        rulebook: "/rulebooks/Number Circle Cricket.pdf",
+        rulebook: "/rulebooks/mechanical event list 26-1.pdf.pdf",
         rules: [
           "Teams of 4 players each",
           "Special number circle scoring system",
@@ -665,7 +665,7 @@ export const branches: Branch[] = [
         teamSize: "Individual",
         duration: "11 am onwards",
         venue: "design lab",
-        rulebook: "/rulebooks/Stand-up Comedy.pdf",
+        rulebook: "/rulebooks/mechanical event list 26-1.pdf.pdf",
         rules: [
           "Individual participation only",
           "5-minute performance max",
@@ -689,7 +689,7 @@ export const branches: Branch[] = [
         teamSize: "single or doubles",
         duration: "11 am onwards",
         venue: "sports room",
-        rulebook: "/rulebooks/Ping Pong.pdf",
+        rulebook: "/rulebooks/mechanical event list 26-1.pdf.pdf",
         rules: [
           "Individual or pair (doubles) format",
           "Standard table tennis rules apply",
@@ -1505,7 +1505,7 @@ export const culturalEvents: Event[] = [
     teamSize: "Group (8-10) or Solo",
     duration: "12pm onwards",
     venue: "Auditorium",
-    rulebook: "/rulebooks/AI NON TECH rules 1.pdf",
+    rulebook: "/rulebooks/aids/Cosmos Crown.pdf",
     rules: [
       "FOR Solo:-",
       "The event has 2 rounds, including an elimination round",
