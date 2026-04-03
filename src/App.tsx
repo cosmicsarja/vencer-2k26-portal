@@ -70,8 +70,8 @@ const App = () => {
             />
           )}
 
-          {/* Phase 3 (and always): The actual app — rendered in background so it's ready */}
-          <div style={{ visibility: phase === "app" ? "visible" : "hidden", pointerEvents: phase === "app" ? "auto" : "none" }}>
+          {/* Phase 3: The actual app — only mounted after intro completes */}
+          {phase === "app" && (
             <BrowserRouter>
               <ScrollToTop />
               <Suspense fallback={<PageFallback />}>
@@ -91,7 +91,7 @@ const App = () => {
                 </Routes>
               </Suspense>
             </BrowserRouter>
-          </div>
+          )}
         </TooltipProvider>
       </QueryClientProvider>
     </ClickSpark>

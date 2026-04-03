@@ -1,10 +1,21 @@
-const audio = typeof window !== "undefined" ? new Audio("/sound/s1.mp3") : null;
+// Lazy-initialized: audio is created only after the first user click
+let audio: HTMLAudioElement | null = null;
+
+function getAudio(): HTMLAudioElement | null {
+  if (typeof window === "undefined") return null;
+  if (!audio) {
+    audio = new Audio("/sound/s1.mp3");
+    audio.preload = "none"; // don't preload until needed
+    audio.volume = 0.5;
+  }
+  return audio;
+}
 
 export function playClickSound() {
-  if (!audio) return;
-  audio.currentTime = 0;
-  audio.volume = 0.5;
-  audio.play().catch(() => {});
+  const a = getAudio();
+  if (!a) return;
+  a.currentTime = 0;
+  a.play().catch(() => {});
 }
 
 export function useGlobalClickSound() {

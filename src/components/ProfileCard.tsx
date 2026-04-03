@@ -527,26 +527,26 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                 backfaceVisibility: 'hidden'
               }}
             >
-                <img
-                  className={`absolute ${avatarLeft} top-[55%]`}
-                  src={avatarUrl}
-                  alt={`${name || 'User'} avatar`}
-                  loading="lazy"
-                  style={{
-                    width: '100%',
-                    height: avatarHeight,
-                    objectFit: 'cover',
-                    objectPosition: avatarObjectPosition,
-                    transformOrigin: '50% 50%',
-                    transform: `translateX(-50%) translateY(-50%) translateZ(0)${avatarFlipX ? ' scaleX(-1)' : ''}`,
-                    borderRadius: cardRadius,
-                    backfaceVisibility: 'hidden'
-                  }}
-                  onError={e => {
-                    const t = e.target as HTMLImageElement;
-                    t.style.display = 'none';
-                  }}
-                />
+              <img
+                className={`absolute ${avatarLeft} top-[55%]`}
+                src={avatarUrl}
+                alt={`${name || 'User'} avatar`}
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  height: avatarHeight,
+                  objectFit: 'cover',
+                  objectPosition: avatarObjectPosition,
+                  transformOrigin: '50% 50%',
+                  transform: `translateX(-50%) translateY(-50%) translateZ(0)${avatarFlipX ? ' scaleX(-1)' : ''}`,
+                  borderRadius: cardRadius,
+                  backfaceVisibility: 'hidden'
+                }}
+                onError={e => {
+                  const t = e.target as HTMLImageElement;
+                  t.style.display = 'none';
+                }}
+              />
               {showUserInfo && (
                 <div
                   className="absolute z-[2] flex items-center justify-between pointer-events-auto"

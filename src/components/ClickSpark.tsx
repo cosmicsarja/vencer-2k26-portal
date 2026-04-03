@@ -66,12 +66,15 @@ const ClickSpark = ({
     [easing]
   );
 
-  useEffect(() => {
+  // rAF loop — only runs when sparks are alive
+  const animationIdRef = useRef<number | null>(null);
+
+  const startLoop = useCallback(() => {
+    if (animationIdRef.current !== null) return; // already running
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    let animationId: number;
 
     const draw = (timestamp: number) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -100,12 +103,22 @@ const ClickSpark = ({
         return true;
       });
 
-      animationId = requestAnimationFrame(draw);
+      if (sparksRef.current.length > 0) {
+        animationIdRef.current = requestAnimationFrame(draw);
+      } else {
+        animationIdRef.current = null; // loop stops itself
+      }
     };
 
-    animationId = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(animationId);
-  }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale]);
+    animationIdRef.current = requestAnimationFrame(draw);
+  }, [sparkColor, sparkSize, sparkRadius, duration, easeFunc, extraScale]);
+
+  // Cleanup rAF on unmount
+  useEffect(() => {
+    return () => {
+      if (animationIdRef.current !== null) cancelAnimationFrame(animationIdRef.current);
+    };
+  }, []);
 
   const handleClick = (e: React.MouseEvent) => {
     const canvas = canvasRef.current;
@@ -122,6 +135,7 @@ const ClickSpark = ({
     }));
 
     sparksRef.current.push(...newSparks);
+    startLoop(); // kick off loop on demand
   };
 
   return (
