@@ -1415,6 +1415,7 @@ export const culturalEvents: Event[] = [
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeHiEYYrhcUi6L9tbls5PlU7VVlZcCGBsR0DMzpsw8-XpD61w/viewform?embedded=true",
     date: "April 10, 2026",
     posterUrl: "/posters/cult/10ac5992-6671-47ad-8fbb-9618b0902e6d.png",
+    branch: "CSE",
     teamSize: "Individual",
     duration: "12 Pm onwards",
     venue: "Main Stage",
@@ -1430,8 +1431,7 @@ export const culturalEvents: Event[] = [
   "Judges’ decision will be final",
   "Any inappropriate content will lead to disqualification"
 ],
-    coordinators: [{ name: "", contact: "9876543298" }, { name: "Priya Singh", contact: "9876543299" }]
-  },
+ coordinators: [{ name: "Rudragouda Patil", contact: "9743519483" }, { name: "Pooja Gasti", contact: "72041 53235" },{ name: "Mallappa", contact: "7676067358" }]  },
   {
     title: "Dance",
     category: "Cultural",
@@ -1441,6 +1441,7 @@ export const culturalEvents: Event[] = [
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdUnCEs0GRZVAM7L04AE6DSjyqoFLSmabVbqAXCUFbGOyLdoQ/viewform?pli=1&embedded=true",
     date: "April 10, 2026",
     posterUrl: "/posters/cult/23025d18-5143-416e-bc4b-c81dd3cef54a.png",
+    branch: "CSE",
     teamSize: "Solo or Group (5-12)",
     duration: "Full Day",
     venue: "12 PM onwards",
@@ -1457,8 +1458,7 @@ export const culturalEvents: Event[] = [
   "Any inappropriate or vulgar content will lead to disqualification",
   "Teams must coordinate properly; incomplete performances may be penalized"
 ],
-    coordinators: [{ name: "Nitin Kumar", contact: "9876543300" }, { name: "Anjali Verma", contact: "9876543301" }]
-  },
+ coordinators: [{ name: "Rudragouda Patil", contact: "9743519483" }, { name: "Pooja Gasti", contact: "72041 53235" },{ name: "Mallappa", contact: "7676067358" }]  },
   {
     title: "Mr & Miss Vencer",
     category: "Cultural",
@@ -1468,12 +1468,26 @@ export const culturalEvents: Event[] = [
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeC2ly47F8jisxRmqxe4bajR69E0hFiU643WREs9wQPv2C31Q/viewform?embedded=true",
     date: "April 10, 2026",
     posterUrl: "/posters/cult/cb586f60-9132-4944-88b2-f9052a0d3916.png",
+    branch: "CSE",
     teamSize: "Individual",
     duration: "12 PM onwards",
     venue: "Main Stage",
-    rulebook: "/rulebooks/Mr and Miss Vencer.pdf",
-    rules: ["Individual (Male/Female categories)", "Theme-based ramp walk", "Q&A round", "Confidence & personality judged"],
-    coordinators: [{ name: "Akshay Sharma", contact: "9876543302" }, { name: "Diya Kapoor", contact: "9876543303" }]
+    rulebook: "/rulebooks/Mr & Miss Vencer.pdf",
+    rules: [
+  "Individual participation only (Mr / Miss categories)",
+  "Open to all college students",
+  "Participants must report 1 hour before event",
+  "Participation in all rounds is mandatory",
+  "Round 1: Creative self-introduction with any talent (2–3 min)",
+  "Round 2: Instant fun/stress tasks (1 min, no preparation)",
+  "Round 3: Theme-based ramp walk (Traditional / Western / Fusion)",
+  "Round 4: Q&A round for finalists (30–60 sec answers)",
+  "Participants must bring their own costumes and props",
+  "Time limits must be strictly followed",
+  "No misbehaviour or inappropriate content",
+  "Judges’ decision will be final"
+],
+    coordinators: [{ name: "Rudragouda Patil", contact: "9743519483" }, { name: "Pooja Gasti", contact: "72041 53235" },{ name: "Mallappa", contact: "7676067358" }]
   },
   {
     title: "Cosmos Crown(Fashion show)",
