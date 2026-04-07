@@ -1519,6 +1519,7 @@ export const culturalEvents: Event[] = [
       "No extra time will be provided for the performance",
       "Judges’ decision will be final",
       "FOR GROUP:-",
+      "Teams may include participants from multiple colleges for the Group Fashion Show; however, they will not be eligible for the General Championship.",
       "The event has 2 rounds: elimination round and final round",
       "Teams must be ready before the given time",
       "Green room will be provided for team members",
